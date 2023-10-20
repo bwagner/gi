@@ -1,0 +1,2358 @@
+Delivered-To: wernbag@gmail.com
+Received: by 2002:a05:6f02:219a:b0:4d:4bd3:a506 with SMTP id g26csp2811250rcf;
+        Mon, 1 May 2023 05:52:13 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ42wY8kkmJJ7vhy55JdQ3xGiZTRJfk+WzyMOXTx7EH15vWS1Tlp/bdcLlXo0MaEDPE31EUy3csamag=
+X-Received: by 2002:a50:8d08:0:b0:4bb:e549:a2ad with SMTP id s8-20020a508d08000000b004bbe549a2admr2934993eds.4.1682945532472;
+        Mon, 01 May 2023 05:52:12 -0700 (PDT)
+Authentication-Results: mx.google.com;
+       spf=fail (google.com: domain of srs0=jbkn=aw=mailgun.patreon.com=bounce+0cf02e.e05498-paulcarsonslab=bernhardwagner.net@harris.ch does not designate 69.72.32.187 as permitted sender) smtp.mailfrom="SRS0=jbKn=AW=mailgun.patreon.com=bounce+0cf02e.e05498-paulcarsonslab=bernhardwagner.net@harris.ch";
+       dkim=pass header.i=@mailgun.patreon.com header.s=krs header.b=DyjLrFWp
+Received-SPF: fail (google.com: domain of srs0=jbkn=aw=mailgun.patreon.com=bounce+0cf02e.e05498-paulcarsonslab=bernhardwagner.net@harris.ch does not designate 69.72.32.187 as permitted sender) client-ip=69.72.32.187;
+Received: by 2002:a17:907:a64c:b0:94f:3636:499b with POP3 id vu12-20020a170907a64c00b0094f3636499bmf8262081ejc.4;
+        Mon, 01 May 2023 05:52:12 -0700 (PDT)
+X-Gmail-Fetch-Info: me@bernhardwagner.net 1 mail.harris.ch 995 bwagner
+Return-Path: <SRS0=jbKn=AW=mailgun.patreon.com=bounce+0cf02e.e05498-paulcarsonslab=bernhardwagner.net@harris.ch>
+X-Original-To: paulcarsonslab@bernhardwagner.net
+Delivered-To: bwagner@harris.ch
+Received: from m32-187.mailgun.net (m32-187.mailgun.net [69.72.32.187])
+	by mail.harris.ch (Postfix) with UTF8SMTPS id 30ECD87B25
+	for <paulcarsonslab@bernhardwagner.net>; Mon,  1 May 2023 14:48:23 +0200 (CEST)
+Authentication-Results: mail.harris.ch;
+	dkim=pass (1024-bit key; unprotected) header.d=mailgun.patreon.com header.i=@mailgun.patreon.com header.b="DyjLrFWp";
+	dkim-atps=neutral
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.patreon.com;
+ q=dns/txt; s=krs; t=1682945301; x=1682952501; h=Message-Id: To: To: From:
+ From: Subject: Subject: Content-Type: Mime-Version: Date: Sender;
+ bh=VLIhYw3A7UtZpdahrCp6hb0Irf/4q91SCtE5iFuv1eE=;
+ b=DyjLrFWpHNett8dd8/ZpnFhbckQdE0V4br7BPWXIlG/3wjGXxWILErj5ZRSCEdwZLN1IANmti8vNMSEYKoQ7c7qCXmyO+E4uKMQbbpCS4PrA/bu5KttREF4SxGkA5R8PFiDrNsIMus3qqOxHC/9YjSSazq/pm+BaRZ0l5xDMT5Q=
+X-Mailgun-Sending-Ip: 69.72.32.187
+X-Mailgun-Sid: WyJlNDgxMSIsInBhdWxjYXJzb25zbGFiQGJlcm5oYXJkd2FnbmVyLm5ldCIsImUwNTQ5OCJd
+Received: from <unknown> (<unknown> []) by 918d82e4df54 with HTTP id
+ 644fb5153184584b8253dd8f; Mon, 01 May 2023 12:48:21 GMT
+Date: Mon, 01 May 2023 12:48:21 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="07e810e727607ec6dd46110450d3febd4798c08bc59e13492de1a8ca0fb6"
+Subject: Your Patreon receipt is here!
+From: Patreon <bingo@patreon.com>
+To: Bernhard Wagner <paulcarsonslab@bernhardwagner.net>
+X-Mailgun-Rewrite-Sender-Header: false
+X-Patreon-UUID: dbd9e0d3-7280-48e2-a075-fef59664c01b
+X-Mailgun-Variables: {"batch_id": "c28b38c1-9593-45e6-b9a2-1d7dbb859a44", "email_system": "legacy",
+ "task_id": "dbd9e0d3-7280-48e2-a075-fef59664c01b", "template_name":
+ "billformonthlycharge", "user_can_skip_additional_receipts": "False"}
+Message-Id: <20230501124821.17c6a77b703f6cf9@mailgun.patreon.com>
+X-Spam-Status: No, score=-98.9 required=5.5 tests=BAYES_50,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HTML_FONT_LOW_CONTRAST,HTML_IMAGE_RATIO_02,
+	HTML_MESSAGE,KAM_REALLYHUGEIMGSRC,RCVD_IN_DNSWL_NONE,RCVD_IN_MSPIKE_H2,
+	SPF_HELO_NONE,SPF_PASS,T_KAM_HTML_FONT_INVALID,T_REMOTE_IMAGE,
+	T_SCC_BODY_TEXT_LINE,UNPARSEABLE_RELAY,USER_IN_WELCOMELIST,
+	USER_IN_WHITELIST autolearn=no autolearn_force=no version=3.4.2
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.harris.ch
+X-Spam-Relay-Countries: US
+X-Spam-DCC: :trusty 1480; Body=1 Fuz1=1 Fuz2=1
+
+--07e810e727607ec6dd46110450d3febd4798c08bc59e13492de1a8ca0fb6
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+=F0=9F=8E=89 Your Patreon receipt is here! =F0=9F=8E=89 Tweet about it
+[https://email.mailgun.patreon.com/c/eJwckE3K5CAUAE8Td2n8jbpwMTCEuUV46ktHPm=
+OCvqanbz_0bKugFhWB0rGVHJJ0UbkkZm-8mrXBZY4e5CyyzTE640FrlgNyo71jGMTipNdGccHwh=
+FK38RmEZ6j4hPRhR7AGouYZuUCNi1gWgzImZd3uYffesRIkl4obLoTUToqHsGkBa6Plal_S7ifN=
+v-Xnqz1uoI5Xe6TrZDUcRPeY1K9JrpNc6V2IsH_dJNfSCBv9x4g0qZXwL03q9x_8sB5ueNUEfVx=
+tVIiT5hF7O6DnNzwb9kdDYgTj53skx-yRZzVb6fisHcoZuDXzjrvxy6ITF5ERnncFwq3BiSGWWv=
+ern1ejo37SAf2J7DWwbwnaNn7KvUHOhcrVoG4dE5abRlihDvwXAAD__5LdgBg world! I just=
+ supported
+Oli%20Larkin on @Patreon, and you can too! Internet high-five?
+https%3A%2F%2Fwww.patreon.com%2Folilarkin%3Futm_medium%3Dsocial%26utm_sourc=
+e%3Dtwitter%26utm_campaign%3Dplshare] This is a receipt for your charges at
+Patreon. Below you'll find a brief summary of your charge and links to any
+reward content on Patreon.
+
+Your next payment will be automatically deducted on Jun 1, 2023 from
+the payment method you provided.
+
+ Summary
+
+Charge date: May 1, 2023 at 5:48:01 AM PDT
+
+ Subtotal $10.00 =20
+Total $10.00 Charge details
+
+ [https://email.mailgun.patreon.com/c/eJxM0DvO6yAQQOHVmM7RgDGPguI22YY1wBCjY=
+GwBkZXdX6X76yOd4vM4wr7l6IIwfjGBz3a1yyxXUrO3KGYedfTerBalZNERrNIaRo4rI6xcF-CM=
+Dsxl698-6HCFXhi-bHcxgfIyBuuNQsWJhDYeAkedTAIOLDsBYoEVOBfSCP7gOijU2mtYkgrJThJ=
+-59enPi4cjc76COfBitvHuPq0_JvEcxLP-77_9kk8z5ILtneurLkLPyVg62ftBf0kwVOrO7Z446=
+tSe1QabGB__wyij5YgLrMWBmZpSMwIep0TpdUqJQNwzwYdV8FBW8WDnM-lpLMdZx17-YYd24vYp=
+1PbAtatv_O1YYx55LNi2RoFytfo7oml0_8AAAD__4o_fCQ]  Oli Larkin [https://email.=
+mailgun.patreon.com/c/eJxM0DvO6yAQQOHVmM7RgDGPguI22YY1wBCjYGwBkZXdX6X76yOd4=
+vM4wr7l6IIwfjGBz3a1yyxXUrO3KGYedfTerBalZNERrNIaRo4rI6xcF-CMDsxl698-6HCFXhi-=
+bHcxgfIyBuuNQsWJhDYeAkedTAIOLDsBYoEVOBfSCP7gOijU2mtYkgrJThJ-59enPi4cjc76COf=
+BitvHuPq0_JvEcxLP-77_9kk8z5ILtneurLkLPyVg62ftBf0kwVOrO7Z446tSe1QabGB__wyij5=
+YgLrMWBmZpSMwIep0TpdUqJQNwzwYdV8FBW8WDnM-lpLMdZx17-YYd24vYp1PbAtatv_O1YYx55=
+LNi2RoFytfo7oml0_8AAAD__4o_fCQ]=20
+$1 per month for May*
+
+ =20
+$1.00  [https://email.mailgun.patreon.com/c/eJxM0DGO6yAQgOHTmM4RjMGGguI1uYY=
+1MEOMFmMLiKLc_mm7rX_pL76AIx57Jh_BhsVGNTvjllkbXufgEGZFG4VgjUOtBXmWRjsr2KvVgt=
+NmkUrwibns_dsHn77wC-NXHN5qio5BIcVgk4IIOoEOiTbNQGRE9iBhkUYqBdqCeqgtrrhtYZNLW=
+mNyk5a_59e7Pm4cja_6iNcpij_GuPu0_JvgOcHz8_n87RM8sVLjgunqnUXzN75LxNav2guGScvA=
+rR7Y6IOvyu1ReYiB_eeXgQI5lrTMG1g5a8swo9zMnDgZt646ShXE4PMuOHiveLIPuZR0tfOq4yj=
+feGB7sXh3bnvEuveffO9IlEe-Kpa9ceR8j-6fWDr_DwAA__93C325]  Andre LaFosse [http=
+s://email.mailgun.patreon.com/c/eJxM0DGO6yAQgOHTmM4RjMGGguI1uYY1MEOMFmMLiKL=
+c_mm7rX_pL76AIx57Jh_BhsVGNTvjllkbXufgEGZFG4VgjUOtBXmWRjsr2KvVgtNmkUrwibns_d=
+sHn77wC-NXHN5qio5BIcVgk4IIOoEOiTbNQGRE9iBhkUYqBdqCeqgtrrhtYZNLWmNyk5a_59e7P=
+m4cja_6iNcpij_GuPu0_JvgOcHz8_n87RM8sVLjgunqnUXzN75LxNav2guGScvArR7Y6IOvyu1R=
+eYiB_eeXgQI5lrTMG1g5a8swo9zMnDgZt646ShXE4PMuOHiveLIPuZR0tfOq4yjfeGB7sXh3bnv=
+EuveffO9IlEe-Kpa9ceR8j-6fWDr_DwAA__93C325]=20
+$5 per month for April
+
+ =20
+$5.00  [https://email.mailgun.patreon.com/c/eJxM0L2urCAUQOGnkc4JvyIFxW3mNcz=
+esFVyEAwwMfP2N6c79UpW8SGMcG4p-iBXVGsQszNOzdrQMqMDOYtoI-JqHGjNoidutFsZebGs0m=
+mjuGB0Qcpb__ZBl890QPiy0--gpLTECXe9kF4Ut04ZdKilRa53lrzkUnHDhZB6leIlbFjAWrRc7=
+UvY3aT57_n4lNcNo1Etr1Avlv05xt0n9W-S70m-n-f52yf5hgjXUVusBSln1vwNnxyg9Vp6Bpw0=
+R2rlhBYfOAq1V6HBBvSfX4iI0RGParZy5bNeSc7ArZl32o1bFh24QDboujMM2gpc5DHlvNd21TL=
+O_A0ntIPYp1PbApSt_6R7gxjTSLVA3hoFSvfo_g250_8AAAD__3mhfY8]  Adam Gordon Bell=
+ [https://email.mailgun.patreon.com/c/eJxM0L2urCAUQOGnkc4JvyIFxW3mNczesFVyE=
+AwwMfP2N6c79UpW8SGMcG4p-iBXVGsQszNOzdrQMqMDOYtoI-JqHGjNoidutFsZebGs0mmjuGB0=
+Qcpb__ZBl890QPiy0--gpLTECXe9kF4Ut04ZdKilRa53lrzkUnHDhZB6leIlbFjAWrRc7UvY3aT=
+57_n4lNcNo1Etr1Avlv05xt0n9W-S70m-n-f52yf5hgjXUVusBSln1vwNnxyg9Vp6Bpw0R2rlhB=
+YfOAq1V6HBBvSfX4iI0RGParZy5bNeSc7ArZl32o1bFh24QDboujMM2gpc5DHlvNd21TLO_A0nt=
+IPYp1PbApSt_6R7gxjTSLVA3hoFSvfo_g250_8AAAD__3mhfY8]=20
+$4 per month for May*
+
+ =20
+$4.00  View Pledge History [https://email.mailgun.patreon.com/c/eJxM0D2urSA=
+UQOHRSIfhXygoXuM0zAa2Si6iAU7Mmf3L7W69klV8AUY8t5x8FDZIGzl12kmqNBoaHAjK05JCsN=
+qBUiR5ZFo5S9BzY4VTWjJO8IJctv7tAy9f8ID4Jad3wewiMWd2wYGpKEFL7ZI2QRuJKpDsBROSa=
+ca5UFbwmS_RwLKEhcndxN1Niv2ej0-dHxgN7zrH-yLFn2M8fZL_JrFOYn3f92-fxPoUTAd20vwD=
+nxKh9bv2AmFSLGCrJ7T0wlGxzRUHGdB_fgVSSA5ZknQRllFlUVBgi6Y77toZoyLjgQy8ngIDtwo=
+X-pBL2e923XWc5RtPaAeST8e2Rahb_8nPBinlke8KZWsYMT-j-xVKx_8BAAD__-CYerg]=20
+ * This creator charges up front. What is that?
+[https://email.mailgun.patreon.com/c/eJw0kD2O6yAURlcDHRG_NhQUr_E2rAtcYhSMLS=
+B6yqx-lGK6T_qOTnECzHjsJfkobVA2CuaMU0wbXFhwIJlIawrBGgda0-SRG-0sRS8WK502iguKJ=
+5S6j8-YePqKT4gfevhgxZJy4jbL6DKqYHJEZQXPQgXtBC1ecqm44UJIbaV4iDUusK5h5SovMTui=
+-df8fLfHDbPj1R7xOmn1x5z3IOofkRuR29_3gy3heH0ZIrcjErlhY-9B5AZ9lljxOyW3mmslFO3=
+-hneN0MfVRoVANA_Y2wE9_Ydnw_5oOOmE8fr2SSE55EmxVVrOtEXJgK-GZczGLYuOXAQ68bwrTN=
+wbnOhDqTVf_bzaPOonHtCfSN8D-x6h7eNV7h1SKrNcDereMWK55_Ab1IG_AQAA___uroOg]  Yo=
+u can see
+more details about your payment and any tax paid at any time on your member=
+ships
+page [https://email.mailgun.patreon.com/c/eJxM0D2urSAUQOHRSIfhXygoXuM0zAa2S=
+i6iAU7Mmf3L7W69klV8AUY8t5x8FDZIGzl12kmqNBoaHAjK05JCsNqBUiR5ZFo5S9BzY4VTWjJO=
+8IJctv7tAy9f8ID4Jad3wewiMWd2wYGpKEFL7ZI2QRuJKpDsBROSaca5UFbwmS_RwLKEhcndxN1=
+Niv2ej0-dHxgN7zrH-yLFn2M8fZL_JrFOYn3f92-fxPoUTAd20vwDnxKh9bv2AmFSLGCrJ7T0wl=
+GxzRUHGdB_fgVSSA5ZknQRllFlUVBgi6Y77toZoyLjgQy8ngIDtwoX-pBL2e923XWc5RtPaAeST=
+8e2Rahb_8nPBinlke8KZWsYMT-j-xVKx_8BAAD__-CYerg]. Psst. Just wanted to let y=
+ou know that
+you're actually changing the future of how art is made & funded. Keep being=
+ you.=20
+Get the Patreon app [https://email.mailgun.patreon.com/c/eJwskDGu5CAQBU9jMl=
+vQBgMBwSa-htVAe4w-xggYreb2q9H-9D1VBeVxhOtI0QUwfjVBzFbZdZaKttlbhFlEHb03yqKUL=
+DriSlrDyInNgJVq5YLRjSkf_dMH3S7TC8OHXQ6sWIMAea64AZdRBx5ABSKlpUdlWXLAYeWKCwHS=
+gFiEDhtq7TVfzy2cdpL8a369y1JxNHrKEp6bZXeNUfu0_plgn2DHWvuCtWb63hPs7_5_nWD_5Sb=
+YUxRcSqk2YQxrruI7B2z9KT2jnyT31MqFLf7FV6G2FBpsYP_5pok-WuJxnTUYPktDMCPXaj7pVH=
+bbZODCs0F3zTjoKHiT8ynn82n3U8aVP-HC9iL27tSOgOXoP6keGGMa6SmYj0aBUh3d7Zg7_QsAA=
+P__ZB2A_w]=20
+[https://email.mailgun.patreon.com/c/eJw80DGq5SAUgOHVaJeLHo0mhcXAIxsYpg5HPU=
+nkGQ3qY7i7H24z9Q9f8Xsc4dpTdAEWr5Ygp3Ve1aRnMpNfESYZbfR-mVfUmkdHYtbrwslJs8CqZ=
+yUkpxtT3vu7D7pdphPDm18OhJDGAlgKBxl9mEgQZ2EWo6U3lnhyIECJWUgJegH5kjYYtNZboQ4T=
+jpVp8ZHPn_J6cDSq5RXqzbO7xng6U78YbAy2J-P7ddZ6Zvp0BlsftRGDDZ-nM9giDUy5M7WlyNR=
+XqPd_D0tsNUUG5spMfVHZ__zmzT34kwO2XkvP6JkWnlq5sMW_eBZqr0KDD-zfn3HRx5VEVJOFRU=
+x6IZhQ2Hk66JhXY3QQ0vNB95Nx0F7wJudTzkdtdy3jyu9wYTuJ_3Rqe8Cy9-_07BhjGqkWzHujQ=
+OkZ3W2YO_0LAAD__--WjNE]=20
+[https://email.mailgun.patreon.com/c/eJwskLvOrCAYAJ9GOg33S0Fxmn0N8wGfShbRAB=
+uzb3-yyV_PZIoJMOKx5uQjt0HYyGannJilQj0HB3xmyaQQrHIgJUkeqZLOEvRMW-6kEpQRPCGXt=
+X_7wNMX3CF-yeG10QJdBJ1AqQCAUoDTQm8xRJGMItlzygVVlDEuLWcLM1GDMcFQsem4uUnSX3n_=
+1OWG0fCqS7xOUvwxxt0n8W_ir4m_nudZxpPHwPbjE3_92aT5Gz4lQutX7QXCJGnAVg9o6YG9Yls=
+qDjKgv38HUkgOaRKz4ZbO0iKfgRo1b7gpp7WMlAUy8LwLDFwrnOhDLmW72nnVcZRvPKDtSD4d2x=
+qhrv2d7xVSyiNfFcraMGK-R_cvKB3_BwAA___QYXut] [https://email.mailgun.patreon.=
+com/c/eJws0DvO4yAUQOHVmM4WYJ4FxTTZhnWBS4yCwQKiKLsfRfr7T6c4HmY4jxxd4MbvJrDVS=
+ruvQqJavQW-sqij90ZaEIJEh1QKawg6pgy3Qu6UEbwgl2N8x8TLFXxC-JLTaeAq8pggKI8RWKLB=
+s10LkSh6oYBkxynfqaSMcWE425gOCrT2mu5JhWQXQX_l57tuN8yOrW6hXaS4c857LPu_hT8W_vh=
+8PluCgL611w8s_PHHSXc3vEuAPlodBfwiqMdeT-jxA8-Kfas4yYTx-i2IPlqkcV81N3QVBvkKVM=
+s1YZJWKREo82TidReYeFS40PlcSmr9anWe5RtO6E8k74H9CFCP8cr3ATHmmVuFcnQMmO853APKw=
+P8BAAD__3ZkfBo]=20
+[https://email.mailgun.patreon.com/c/eJws0DHOrCAUxfHVSKcBBISC4jVuw9wLVyWDaI=
+DJZHb_MslXn19O8Ufo4dxS9EFanG0Qo9NuHpUmM6IDOYq4RESrHSjFoieulbOMvDBWOqVnLhhdk=
+PLWvq3T5TMdEL7s9Ao0GHSWy5k7bkCh4Tsi7GRQSZxZ8vK3aS6EVFaKSSzBwLLgwufdhN0Niv-e=
+j3eZHuiV7jKF-2LZn70_bZj_DXId5Pr5fKZUWoejwvUTg1z__CBXVv0D7xygtru0DDgojlTLCTV=
+-4ChUp0KddWivX4aI0RGP87hIy0dlSY7AFz3utGtnjApcIOt0PRk6bQUu8phy3u963aWf-RtOqA=
+exd6O6BShbe6VngxhTT3eBvFUKlJ7e_Aq50f8AAAD__2iWfIQ]=20
+[https://email.mailgun.patreon.com/c/eJwU0M2q3CAYgOGribsEfxNduCg9J4WzLJTSlX=
+zqlx_GmFQNw_Tqy6xfeBePhxY2t0cbuPZCB9YbZUQvFY69N8B7FqfovVYGpCTRIlXSaIKWjZobq=
+QRlBA_Yk6uv2vCwCVcIL7JZoRcVFyp1mCjlUjLUngs_GTUyMypOdsspF1RRxrjUnA1sCiNMk5-o=
+WMawmE7S93m983BBK3jmIZwHSXZr7aqd-NbxuePz8_kcXufdbo_v3vE5bJAzpo7Pv75__PvSPz-=
+2P18uyc-_7jd-_hBmJcVecKcApZ65JvCdpB5L3qDEJ6wZy5CxkQb18caJPhqkUfQT17SXGnkPdF=
+L9gosy4ygDZZ40PK4EDV2GA63fU1rOcpy5bekVNigrkrticQGyq4_9chDj3vYzQ3IFA-5Xq3aGV=
+PF_AAAA__-KEYJO] Patreon Inc.
+
+600 Townsend St, San Francisco, CA 94103
+
+This email was sent to paulcarsonslab@bernhardwagner.net
+
+Manage email settings [https://email.mailgun.patreon.com/c/eJxMkMuq5CAUAL8m=
+7tL4fixczCa_EY56TOQaE9Sm6b8f7qxmXVAUFWDGcy_JR26DsJGtTjmxSoV6DQ74ypJJIVjlQEq=
+SPFIlnSXombbcSSUoI3hBqfv4jomXr3hA_JLTA01aMUmzU9oZcFoopWwKVqqQRUZSPKdcUEUZ49=
+Jy9mImajAmGCqyjtktkv6aj3d7PTA73u0V74tUf875jEX8Wfi28O3z-fzPF74NnLO0Yyx8-9dGu=
+n_gXSP0cbdRISySBuzthJ4-cDTsr4aTTBg_vytSSA5pEqvhlq7SIl-BGrVmzMppLSNlgUy8ngoT=
+9wYX-lBqzXe_7jbP-o0n9APJe2DfI7R9_JRnh5TKLHeDuneMWJ45_AZ14N8AAAD__xKXfc8]
+--07e810e727607ec6dd46110450d3febd4798c08bc59e13492de1a8ca0fb6
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<div class=3D"sc-jrQzAO fkXKyS" style=3D"--global-radius-lg: 12px; --global=
+-radius-md: 8px; --global-radius-sm: 4px; --global-radius-circle: 50%; --gl=
+obal-radius-pill: 9999px; --global-radius-container: 6px; --global-opacity-=
+enabled: 1; --global-opacity-disabled: 0.3; --global-borderWidth-thin: 1px;=
+ --global-borderWidth-thick: 2px; --global-borderWidth-none: 0px; --global-=
+space-4: 4px; --global-space-8: 8px; --global-space-12: 12px; --global-spac=
+e-16: 16px; --global-space-24: 24px; --global-space-32: 32px; --global-spac=
+e-40: 40px; --global-space-48: 48px; --global-space-56: 56px; --global-cons=
+tant-white-default: #ffffff; --global-constant-white-hover: rgba(255,255,25=
+5,0.96); --global-constant-white-pressed: rgba(255,255,255,0.9); --global-c=
+onstant-whiteMuted-default: rgba(255,255,255,0.66); --global-constant-white=
+Muted-hover: rgba(255,255,255,0.8); --global-constant-whiteMuted-pressed: r=
+gba(255,255,255,0.86); --global-constant-whiteSubtle-default: rgba(255,255,=
+255,0.18); --global-constant-whiteSubtle-hover: rgba(255,255,255,0.34); --g=
+lobal-constant-whiteSubtle-pressed: rgba(255,255,255,0.5); --global-constan=
+t-black-default: #000000; --global-constant-black-hover: rgba(0,0,0,0.9); -=
+-global-constant-black-pressed: rgba(0,0,0,0.82); --global-constant-blackMu=
+ted-default: rgba(0,0,0,0.5); --global-constant-blackMuted-hover: rgba(0,0,=
+0,0.66); --global-constant-blackMuted-pressed: rgba(0,0,0,0.82); --global-c=
+onstant-blackSubtle-default: rgba(0,0,0,0.14); --global-constant-blackSubtl=
+e-hover: rgba(0,0,0,0.2); --global-constant-blackSubtle-pressed: rgba(0,0,0=
+,0.34); --global-nonSemantic-blueberry: #1a52a7; --global-nonSemantic-pumpk=
+in: #fb790e; --global-nonSemantic-lollipop: #ea1f44; --global-nonSemantic-h=
+olly: #0cac7e; --global-nonSemantic-honeycomb: #f5b400; --global-nonSemanti=
+c-ocean: #1d8acb; --global-nonSemantic-moonshade: #4f71ba; --global-nonSema=
+ntic-raspberry: #be2a61; --global-nonSemantic-lavender: #6e479d; --global-n=
+onSemantic-jasper: #f75058; --global-brand-discord: #5865f2; --global-brand=
+-facebook: #1877f2; --global-brand-google: #d9453d; --global-brand-memberfu=
+l: #de5b38; --global-brand-patreon: #f1465a; --global-brand-pinterest: #e60=
+023; --global-brand-reddit: #ff4500; --global-brand-spotify: #00db54; --glo=
+bal-brand-tumblr: #35465c; --global-brand-twitch: #9046ff; --global-brand-t=
+witter: #1da1f2; --global-brand-youtube: #ff0000; --temp-segmentedControl-r=
+adius: 8px; --temp-select-radius: 8px; --temp-select-horzPadding: 12px; --t=
+emp-textInput-radius: 8px; --temp-textInput-horzPadding: 12px; --temp-chip-=
+radius: 4px; --temp-chip-padding: 6px; --temp-pill-borderWidth: 1px; --temp=
+-dialog-radius: 12px; --temp-menu-radius: 12px; --global-fontFamilies-displ=
+ay: system-ui; --global-fontFamilies-heading: system-ui; --global-fontFamil=
+ies-body: system-ui; --global-fontFamilies-data: SF Mono; --global-lineHeig=
+hts-display: 1.2; --global-lineHeights-heading: 1.2; --global-lineHeights-b=
+ody: 1.3; --global-lineHeights-data: 1; --global-fontWeights-display-defaul=
+t: 600; --global-fontWeights-heading-default: 600; --global-fontWeights-bod=
+y-default: 400; --global-fontWeights-body-bold: 700; --global-fontWeights-d=
+ata-default: 400; --global-fontSizes-display-xl: 32px; --global-fontSizes-d=
+isplay-lg: 28px; --global-fontSizes-display-md: 24px; --global-fontSizes-he=
+ading-xl: 24px; --global-fontSizes-heading-lg: 22px; --global-fontSizes-hea=
+ding-md: 18px; --global-fontSizes-heading-sm: 16px; --global-fontSizes-head=
+ing-xs: 12px; --global-fontSizes-body-lg: 18px; --global-fontSizes-body-md:=
+ 16px; --global-fontSizes-body-sm: 14px; --global-fontSizes-data-md: 12px; =
+--global-letterSpacing-display: -2%; --global-letterSpacing-heading: -2%; -=
+-global-letterSpacing-body: -2%; --global-letterSpacing-data: 0%; --global-=
+paragraphSpacing-none: 0px; --global-paragraphSpacing-sm: 16px; --global-pa=
+ragraphSpacing-md: 18px; --global-paragraphSpacing-lg: 20px; --global-textC=
+ase-none: none; --global-textCase-uppercase: uppercase; --global-textDecora=
+tion-none: none; --component-fontFamilies-button: system-ui; --component-fo=
+ntWeights-button-default: 500; --component-letterSpacing-button: -2%; --com=
+ponent-radius-button: 8px; --component-fontSizes-button-lg: 18px; --compone=
+nt-fontSizes-button-md: 16px; --component-fontSizes-button-sm: 14px; --comp=
+onent-lineHeights-button: 1; --global-bg-page-default: #f6f7fa; --global-bg=
+-pageAlt-default: #ffffff; --global-bg-base-default: #ffffff; --global-bg-b=
+ase-hover: #f6f7fa; --global-bg-base-pressed: #e6e9f0; --global-bg-baseAlt-=
+default: #f6f7fa; --global-bg-baseAlt-hover: #e6e9f0; --global-bg-baseAlt-p=
+ressed: #d8dce5; --global-bg-elevated-default: #ffffff; --global-bg-elevate=
+d-hover: #f6f7fa; --global-bg-elevated-pressed: #e6e9f0; --global-content-r=
+egular-default: rgba(11,12,15,0.95); --global-content-regular-hover: rgba(8=
+,10,18,0.85); --global-content-regular-pressed: rgba(14,18,32,0.7); --globa=
+l-content-muted-default: rgba(14,18,32,0.7); --global-content-muted-hover: =
+rgba(8,10,18,0.85); --global-content-muted-pressed: rgba(11,12,15,0.95); --=
+global-content-inverted-default: rgba(250,251,255,0.98); --global-content-i=
+nverted-hover: rgba(246,248,254,0.94); --global-content-inverted-pressed: r=
+gba(241,244,253,0.9); --global-content-invertedMuted-default: rgba(233,237,=
+252,0.7); --global-content-invertedMuted-hover: rgba(237,241,253,0.84); --g=
+lobal-content-invertedMuted-pressed: rgba(241,244,253,0.9); --global-primar=
+y-onAction-default: rgba(255,255,255,0.96); --global-primary-onAction-hover=
+: rgba(255,255,255,0.9); --global-primary-onAction-pressed: rgba(255,255,25=
+5,0.86); --global-primary-muted-default: #e2ebf7; --global-primary-muted-ho=
+ver: #ceddf2; --global-primary-muted-pressed: #a4c1ed; --global-primary-onM=
+uted-default: #000000; --global-primary-onMuted-hover: rgba(0,0,0,0.9); --g=
+lobal-primary-onMuted-pressed: rgba(0,0,0,0.82); --global-secondary-onActio=
+n-default: #000000; --global-secondary-onAction-hover: rgba(0,0,0,0.9); --g=
+lobal-secondary-onAction-pressed: rgba(0,0,0,0.82); --global-secondary-mute=
+d-default: rgba(34,84,159,0.05); --global-secondary-muted-hover: rgba(34,84=
+,159,0.1); --global-secondary-muted-pressed: rgba(34,84,159,0.2); --global-=
+secondary-onMuted-default: #000000; --global-secondary-onMuted-hover: rgba(=
+0,0,0,0.9); --global-secondary-onMuted-pressed: rgba(0,0,0,0.82); --global-=
+success-action-default: #148565; --global-success-action-hover: #07694d; --=
+global-success-action-pressed: #094e3a; --global-success-onAction-default: =
+rgba(255,255,255,0.96); --global-success-onAction-hover: rgba(255,255,255,0=
+=2E9); --global-success-onAction-presse=
+d: rgba(255,255,255,0.86); --global-su=
+ccess-muted-default: #d9f5e4; --global-success-muted-hover: #bcedd5; --glob=
+al-success-muted-pressed: #7be0b1; --global-success-onMuted-default: #00000=
+0; --global-success-onMuted-hover: rgba(0,0,0,0.9); --global-success-onMute=
+d-pressed: rgba(0,0,0,0.82); --global-warning-action-default: #a83500; --gl=
+obal-warning-action-hover: #571900; --global-warning-action-pressed: #38100=
+0; --global-warning-onAction-default: rgba(255,255,255,0.96); --global-warn=
+ing-onAction-hover: rgba(255,255,255,0.9); --global-warning-onAction-presse=
+d: rgba(255,255,255,0.86); --global-warning-muted-default: #fcefca; --globa=
+l-warning-muted-hover: #fce5a5; --global-warning-muted-pressed: #ffda75; --=
+global-warning-onMuted-default: #000000; --global-warning-onMuted-hover: rg=
+ba(0,0,0,0.9); --global-warning-onMuted-pressed: rgba(0,0,0,0.82); --global=
+-critical-action-default: #e32144; --global-critical-action-hover: #be1332;=
+ --global-critical-action-pressed: #990620; --global-critical-onAction-defa=
+ult: rgba(255,255,255,0.96); --global-critical-onAction-hover: rgba(255,255=
+,255,0.9); --global-critical-onAction-pressed: rgba(255,255,255,0.86); --gl=
+obal-critical-muted-default: #f7dee0; --global-critical-muted-hover: #ffc2c=
+6; --global-critical-muted-pressed: #ff9ea5; --global-critical-onMuted-defa=
+ult: #000000; --global-critical-onMuted-hover: rgba(0,0,0,0.9); --global-cr=
+itical-onMuted-pressed: rgba(0,0,0,0.82); --global-border-action-default: r=
+gba(130,140,171,0.3); --global-border-action-hover: rgba(116,126,154,0.4); =
+--global-border-action-pressed: rgba(73,80,101,0.5); --global-border-muted-=
+default: rgba(141,152,185,0.2); --global-border-muted-hover: rgba(130,140,1=
+71,0.3); --global-border-muted-pressed: rgba(116,126,154,0.4); --global-box=
+Shadow-high: 0px 20px 40px 0px rgba(0,0,0,0.04),0px 6px 15px 0px rgba(0,0,0=
+,0.06),0px 1px 5px 0px rgba(0,0,0,0.08); --global-boxShadow-mid: 0px 0px 20=
+px 0px rgba(0,0,0,0.04),0px 4px 14px 0px rgba(0,0,0,0.06),0px 1px 5px 0px r=
+gba(0,0,0,0.08); --global-boxShadow-low: 0px 1px 4px 0px rgba(0,0,0,0.1),0p=
+x 0px 1px 0px rgba(0,0,0,0.1); --global-boxShadow-subtle: 0px 1px 4px 0px r=
+gba(0,0,0,0.04),0px 0px 1px 0px rgba(0,0,0,0.04); --component-dialog-overla=
+y-bg: rgba(38,45,64,0.6); --temp-chip-primaryBackground: #E2EBF7; --global-=
+fontStack-fallback: Roboto,sans-serif; --global-fontStack-data-fallback: Co=
+nsolas,'Liberation Mono',Menlo,Courier,monospace; --global-fontStack-displa=
+y: var(--global-fontFamilies-display),var(--global-fontStack-fallback); --g=
+lobal-fontStack-heading: var(--global-fontFamilies-heading),var(--global-fo=
+ntStack-fallback); --global-fontStack-body: var(--global-fontFamilies-body)=
+,var(--global-fontStack-fallback); --global-fontStack-button: var(--compone=
+nt-fontFamilies-button),var(--global-fontStack-fallback); --global-fontStac=
+k-data: var(--global-fontFamilies-data),var(--global-fontStack-data-fallbac=
+k); --global-primary-action-default: #f1465a; --global-primary-action-hover=
+: #CA0F25; --global-primary-action-pressed: #AD0D20; --global-secondary-act=
+ion-default: rgba(241,70,90,0.1); --global-secondary-action-hover: rgba(241=
+,70,90,0.15); --global-secondary-action-pressed: rgba(241,70,90,0.2);">
+  <html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" style=3D"font-fa=
+mily: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100=
+%;">
+
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0">
+    <title>Email from Patreon</title>
+    <style data-styled=3D"true" data-styled-version=3D"5.3.3">
+      @media (min-width:30rem) {
+        .etzASb {
+          margin: 10px 0;
+        }
+      }
+
+      @media (min-width:30rem) {
+        .sMRLr {
+          min-height: 40px;
+          max-height: 40px;
+          padding: 0 20px;
+        }
+      }
+
+      @media (min-width:30rem) {
+        .lbrxMQ {
+          min-height: 40px;
+          max-height: 40px;
+          padding: 0 20px;
+        }
+      }
+
+      @media (min-width:30rem) {
+        .kVRHRB {
+          border-radius: 6px;
+          overflow: hidden;
+        }
+      }
+
+      @media (min-width:30rem) {
+        .pzZKq {
+          padding: 24px;
+        }
+      }
+
+      @media (min-width:30rem) {
+        #component-playground .containerInner .fullWidthMobile,
+        .reactWrapper .containerInner .fullWidthMobile {
+          padding-left: 0;
+          padding-right: 0;
+          overflow-x: hidden;
+        }
+      }
+
+      @media only screen and (min-width:30em) {
+        .container {
+          width: 31rem;
+        }
+        .col-sm,
+        .col-sm-1,
+        .col-sm-10,
+        .col-sm-11,
+        .col-sm-12,
+        .col-sm-2,
+        .col-sm-3,
+        .col-sm-4,
+        .col-sm-5,
+        .col-sm-6,
+        .col-sm-7,
+        .col-sm-8,
+        .col-sm-9,
+        .col-sm-offset-1,
+        .col-sm-offset-10,
+        .col-sm-offset-11,
+        .col-sm-offset-12,
+        .col-sm-offset-2,
+        .col-sm-offset-3,
+        .col-sm-offset-4,
+        .col-sm-offset-5,
+        .col-sm-offset-6,
+        .col-sm-offset-7,
+        .col-sm-offset-8,
+        .col-sm-offset-9 {
+          box-sizing: border-box;
+          -webkit-box-flex: 0;
+          -webkit-flex: 0 0 auto;
+          -ms-flex: 0 0 auto;
+          -webkit-flex: 0 0 auto;
+          -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+          padding-right: .5rem;
+          padding-left: .5rem;
+        }
+        .col-sm {
+          -webkit-box-flex: 1;
+          -webkit-flex-grow: 1;
+          -ms-flex-positive: 1;
+          -webkit-box-flex: 1;
+          -webkit-flex-grow: 1;
+          -ms-flex-positive: 1;
+          flex-grow: 1;
+          -webkit-flex-basis: 0;
+          -ms-flex-preferred-size: 0;
+          -webkit-flex-basis: 0;
+          -ms-flex-preferred-size: 0;
+          flex-basis: 0;
+          max-width: 100%;
+        }
+        .col-sm-1 {
+          -webkit-flex-basis: 8.333%;
+          -ms-flex-preferred-size: 8.333%;
+          -webkit-flex-basis: 8.333%;
+          -ms-flex-preferred-size: 8.333%;
+          flex-basis: 8.333%;
+          max-width: 8.333%;
+        }
+        .col-sm-2 {
+          -webkit-flex-basis: 16.667%;
+          -ms-flex-preferred-size: 16.667%;
+          -webkit-flex-basis: 16.667%;
+          -ms-flex-preferred-size: 16.667%;
+          flex-basis: 16.667%;
+          max-width: 16.667%;
+        }
+        .col-sm-3 {
+          -webkit-flex-basis: 25%;
+          -ms-flex-preferred-size: 25%;
+          -webkit-flex-basis: 25%;
+          -ms-flex-preferred-size: 25%;
+          flex-basis: 25%;
+          max-width: 25%;
+        }
+        .col-sm-4 {
+          -webkit-flex-basis: 33.333%;
+          -ms-flex-preferred-size: 33.333%;
+          -webkit-flex-basis: 33.333%;
+          -ms-flex-preferred-size: 33.333%;
+          flex-basis: 33.333%;
+          max-width: 33.333%;
+        }
+        .col-sm-5 {
+          -webkit-flex-basis: 41.667%;
+          -ms-flex-preferred-size: 41.667%;
+          -webkit-flex-basis: 41.667%;
+          -ms-flex-preferred-size: 41.667%;
+          flex-basis: 41.667%;
+          max-width: 41.667%;
+        }
+        .col-sm-6 {
+          -webkit-flex-basis: 50%;
+          -ms-flex-preferred-size: 50%;
+          -webkit-flex-basis: 50%;
+          -ms-flex-preferred-size: 50%;
+          flex-basis: 50%;
+          max-width: 50%;
+        }
+        .col-sm-7 {
+          -webkit-flex-basis: 58.333%;
+          -ms-flex-preferred-size: 58.333%;
+          -webkit-flex-basis: 58.333%;
+          -ms-flex-preferred-size: 58.333%;
+          flex-basis: 58.333%;
+          max-width: 58.333%;
+        }
+        .col-sm-8 {
+          -webkit-flex-basis: 66.667%;
+          -ms-flex-preferred-size: 66.667%;
+          -webkit-flex-basis: 66.667%;
+          -ms-flex-preferred-size: 66.667%;
+          flex-basis: 66.667%;
+          max-width: 66.667%;
+        }
+        .col-sm-9 {
+          -webkit-flex-basis: 75%;
+          -ms-flex-preferred-size: 75%;
+          -webkit-flex-basis: 75%;
+          -ms-flex-preferred-size: 75%;
+          flex-basis: 75%;
+          max-width: 75%;
+        }
+        .col-sm-10 {
+          -webkit-flex-basis: 83.333%;
+          -ms-flex-preferred-size: 83.333%;
+          -webkit-flex-basis: 83.333%;
+          -ms-flex-preferred-size: 83.333%;
+          flex-basis: 83.333%;
+          max-width: 83.333%;
+        }
+        .col-sm-11 {
+          -webkit-flex-basis: 91.667%;
+          -ms-flex-preferred-size: 91.667%;
+          -webkit-flex-basis: 91.667%;
+          -ms-flex-preferred-size: 91.667%;
+          flex-basis: 91.667%;
+          max-width: 91.667%;
+        }
+        .col-sm-12 {
+          -webkit-flex-basis: 100%;
+          -ms-flex-preferred-size: 100%;
+          -webkit-flex-basis: 100%;
+          -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
+          max-width: 100%;
+        }
+        .col-sm-offset-1 {
+          margin-left: 8.333%;
+        }
+        .col-sm-offset-2 {
+          margin-left: 16.667%;
+        }
+        .col-sm-offset-3 {
+          margin-left: 25%;
+        }
+        .col-sm-offset-4 {
+          margin-left: 33.333%;
+        }
+        .col-sm-offset-5 {
+          margin-left: 41.667%;
+        }
+        .col-sm-offset-6 {
+          margin-left: 50%;
+        }
+        .col-sm-offset-7 {
+          margin-left: 58.333%;
+        }
+        .col-sm-offset-8 {
+          margin-left: 66.667%;
+        }
+        .col-sm-offset-9 {
+          margin-left: 75%;
+        }
+        .col-sm-offset-10 {
+          margin-left: 83.333%;
+        }
+        .col-sm-offset-11 {
+          margin-left: 91.667%;
+        }
+        .start-sm {
+          -webkit-box-pack: start;
+          -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+          -webkit-box-pack: start;
+          -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+          justify-content: flex-start;
+          text-align: start;
+        }
+        .center-sm {
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          text-align: center;
+        }
+        .end-sm {
+          -webkit-box-pack: end;
+          -webkit-justify-content: flex-end;
+          -ms-flex-pack: end;
+          -webkit-box-pack: end;
+          -webkit-justify-content: flex-end;
+          -ms-flex-pack: end;
+          justify-content: flex-end;
+          text-align: end;
+        }
+        .top-sm {
+          -webkit-box-align: start;
+          -webkit-align-items: flex-start;
+          -ms-flex-align: start;
+          -webkit-align-items: flex-start;
+          -webkit-box-align: flex-start;
+          -ms-flex-align: flex-start;
+          align-items: flex-start;
+        }
+        .middle-sm {
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+        }
+        .bottom-sm {
+          -webkit-box-align: end;
+          -webkit-align-items: flex-end;
+          -ms-flex-align: end;
+          -webkit-align-items: flex-end;
+          -webkit-box-align: flex-end;
+          -ms-flex-align: flex-end;
+          align-items: flex-end;
+        }
+        .around-sm {
+          -webkit-justify-content: space-around;
+          -ms-flex-pack: distribute;
+          -webkit-box-pack: space-around;
+          -webkit-justify-content: space-around;
+          -ms-flex-pack: space-around;
+          justify-content: space-around;
+        }
+        .between-sm {
+          -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+          -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+          justify-content: space-between;
+        }
+        .first-sm {
+          -webkit-box-ordinal-group: 0;
+          -webkit-order: -1;
+          -ms-flex-order: -1;
+          -webkit-order: -1;
+          -ms-flex-order: -1;
+          order: -1;
+        }
+        .last-sm {
+          -webkit-box-ordinal-group: 2;
+          -webkit-order: 1;
+          -ms-flex-order: 1;
+          -webkit-order: 1;
+          -ms-flex-order: 1;
+          order: 1;
+        }
+      }
+
+      @media only screen and (min-width:48em) {
+        .container {
+          width: 49rem;
+        }
+        .col-md,
+        .col-md-1,
+        .col-md-10,
+        .col-md-11,
+        .col-md-12,
+        .col-md-2,
+        .col-md-3,
+        .col-md-4,
+        .col-md-5,
+        .col-md-6,
+        .col-md-7,
+        .col-md-8,
+        .col-md-9,
+        .col-md-offset-1,
+        .col-md-offset-10,
+        .col-md-offset-11,
+        .col-md-offset-12,
+        .col-md-offset-2,
+        .col-md-offset-3,
+        .col-md-offset-4,
+        .col-md-offset-5,
+        .col-md-offset-6,
+        .col-md-offset-7,
+        .col-md-offset-8,
+        .col-md-offset-9 {
+          box-sizing: border-box;
+          -webkit-box-flex: 0;
+          -webkit-flex: 0 0 auto;
+          -ms-flex: 0 0 auto;
+          -webkit-flex: 0 0 auto;
+          -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+          padding-right: .5rem;
+          padding-left: .5rem;
+        }
+        .col-md {
+          -webkit-box-flex: 1;
+          -webkit-flex-grow: 1;
+          -ms-flex-positive: 1;
+          -webkit-box-flex: 1;
+          -webkit-flex-grow: 1;
+          -ms-flex-positive: 1;
+          flex-grow: 1;
+          -webkit-flex-basis: 0;
+          -ms-flex-preferred-size: 0;
+          -webkit-flex-basis: 0;
+          -ms-flex-preferred-size: 0;
+          flex-basis: 0;
+          max-width: 100%;
+        }
+        .col-md-1 {
+          -webkit-flex-basis: 8.333%;
+          -ms-flex-preferred-size: 8.333%;
+          -webkit-flex-basis: 8.333%;
+          -ms-flex-preferred-size: 8.333%;
+          flex-basis: 8.333%;
+          max-width: 8.333%;
+        }
+        .col-md-2 {
+          -webkit-flex-basis: 16.667%;
+          -ms-flex-preferred-size: 16.667%;
+          -webkit-flex-basis: 16.667%;
+          -ms-flex-preferred-size: 16.667%;
+          flex-basis: 16.667%;
+          max-width: 16.667%;
+        }
+        .col-md-3 {
+          -webkit-flex-basis: 25%;
+          -ms-flex-preferred-size: 25%;
+          -webkit-flex-basis: 25%;
+          -ms-flex-preferred-size: 25%;
+          flex-basis: 25%;
+          max-width: 25%;
+        }
+        .col-md-4 {
+          -webkit-flex-basis: 33.333%;
+          -ms-flex-preferred-size: 33.333%;
+          -webkit-flex-basis: 33.333%;
+          -ms-flex-preferred-size: 33.333%;
+          flex-basis: 33.333%;
+          max-width: 33.333%;
+        }
+        .col-md-5 {
+          -webkit-flex-basis: 41.667%;
+          -ms-flex-preferred-size: 41.667%;
+          -webkit-flex-basis: 41.667%;
+          -ms-flex-preferred-size: 41.667%;
+          flex-basis: 41.667%;
+          max-width: 41.667%;
+        }
+        .col-md-6 {
+          -webkit-flex-basis: 50%;
+          -ms-flex-preferred-size: 50%;
+          -webkit-flex-basis: 50%;
+          -ms-flex-preferred-size: 50%;
+          flex-basis: 50%;
+          max-width: 50%;
+        }
+        .col-md-7 {
+          -webkit-flex-basis: 58.333%;
+          -ms-flex-preferred-size: 58.333%;
+          -webkit-flex-basis: 58.333%;
+          -ms-flex-preferred-size: 58.333%;
+          flex-basis: 58.333%;
+          max-width: 58.333%;
+        }
+        .col-md-8 {
+          -webkit-flex-basis: 66.667%;
+          -ms-flex-preferred-size: 66.667%;
+          -webkit-flex-basis: 66.667%;
+          -ms-flex-preferred-size: 66.667%;
+          flex-basis: 66.667%;
+          max-width: 66.667%;
+        }
+        .col-md-9 {
+          -webkit-flex-basis: 75%;
+          -ms-flex-preferred-size: 75%;
+          -webkit-flex-basis: 75%;
+          -ms-flex-preferred-size: 75%;
+          flex-basis: 75%;
+          max-width: 75%;
+        }
+        .col-md-10 {
+          -webkit-flex-basis: 83.333%;
+          -ms-flex-preferred-size: 83.333%;
+          -webkit-flex-basis: 83.333%;
+          -ms-flex-preferred-size: 83.333%;
+          flex-basis: 83.333%;
+          max-width: 83.333%;
+        }
+        .col-md-11 {
+          -webkit-flex-basis: 91.667%;
+          -ms-flex-preferred-size: 91.667%;
+          -webkit-flex-basis: 91.667%;
+          -ms-flex-preferred-size: 91.667%;
+          flex-basis: 91.667%;
+          max-width: 91.667%;
+        }
+        .col-md-12 {
+          -webkit-flex-basis: 100%;
+          -ms-flex-preferred-size: 100%;
+          -webkit-flex-basis: 100%;
+          -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
+          max-width: 100%;
+        }
+        .col-md-offset-1 {
+          margin-left: 8.333%;
+        }
+        .col-md-offset-2 {
+          margin-left: 16.667%;
+        }
+        .col-md-offset-3 {
+          margin-left: 25%;
+        }
+        .col-md-offset-4 {
+          margin-left: 33.333%;
+        }
+        .col-md-offset-5 {
+          margin-left: 41.667%;
+        }
+        .col-md-offset-6 {
+          margin-left: 50%;
+        }
+        .col-md-offset-7 {
+          margin-left: 58.333%;
+        }
+        .col-md-offset-8 {
+          margin-left: 66.667%;
+        }
+        .col-md-offset-9 {
+          margin-left: 75%;
+        }
+        .col-md-offset-10 {
+          margin-left: 83.333%;
+        }
+        .col-md-offset-11 {
+          margin-left: 91.667%;
+        }
+        .start-md {
+          -webkit-box-pack: start;
+          -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+          -webkit-box-pack: start;
+          -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+          justify-content: flex-start;
+          text-align: start;
+        }
+        .center-md {
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          text-align: center;
+        }
+        .end-md {
+          -webkit-box-pack: end;
+          -webkit-justify-content: flex-end;
+          -ms-flex-pack: end;
+          -webkit-box-pack: end;
+          -webkit-justify-content: flex-end;
+          -ms-flex-pack: end;
+          justify-content: flex-end;
+          text-align: end;
+        }
+        .top-md {
+          -webkit-box-align: start;
+          -webkit-align-items: flex-start;
+          -ms-flex-align: start;
+          -webkit-align-items: flex-start;
+          -webkit-box-align: flex-start;
+          -ms-flex-align: flex-start;
+          align-items: flex-start;
+        }
+        .middle-md {
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+        }
+        .bottom-md {
+          -webkit-box-align: end;
+          -webkit-align-items: flex-end;
+          -ms-flex-align: end;
+          -webkit-align-items: flex-end;
+          -webkit-box-align: flex-end;
+          -ms-flex-align: flex-end;
+          align-items: flex-end;
+        }
+        .around-md {
+          -webkit-justify-content: space-around;
+          -ms-flex-pack: distribute;
+          -webkit-box-pack: space-around;
+          -webkit-justify-content: space-around;
+          -ms-flex-pack: space-around;
+          justify-content: space-around;
+        }
+        .between-md {
+          -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+          -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+          justify-content: space-between;
+        }
+        .first-md {
+          -webkit-box-ordinal-group: 0;
+          -webkit-order: -1;
+          -ms-flex-order: -1;
+          -webkit-order: -1;
+          -ms-flex-order: -1;
+          order: -1;
+        }
+        .last-md {
+          -webkit-box-ordinal-group: 2;
+          -webkit-order: 1;
+          -ms-flex-order: 1;
+          -webkit-order: 1;
+          -ms-flex-order: 1;
+          order: 1;
+        }
+      }
+
+      @media only screen and (min-width:64em) {
+        .container {
+          width: 65rem;
+        }
+        .col-lg,
+        .col-lg-1,
+        .col-lg-10,
+        .col-lg-11,
+        .col-lg-12,
+        .col-lg-2,
+        .col-lg-3,
+        .col-lg-4,
+        .col-lg-5,
+        .col-lg-6,
+        .col-lg-7,
+        .col-lg-8,
+        .col-lg-9,
+        .col-lg-offset-1,
+        .col-lg-offset-10,
+        .col-lg-offset-11,
+        .col-lg-offset-12,
+        .col-lg-offset-2,
+        .col-lg-offset-3,
+        .col-lg-offset-4,
+        .col-lg-offset-5,
+        .col-lg-offset-6,
+        .col-lg-offset-7,
+        .col-lg-offset-8,
+        .col-lg-offset-9 {
+          box-sizing: border-box;
+          -webkit-box-flex: 0;
+          -webkit-flex: 0 0 auto;
+          -ms-flex: 0 0 auto;
+          -webkit-flex: 0 0 auto;
+          -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+          padding-right: .5rem;
+          padding-left: .5rem;
+        }
+        .col-lg {
+          -webkit-box-flex: 1;
+          -webkit-flex-grow: 1;
+          -ms-flex-positive: 1;
+          -webkit-box-flex: 1;
+          -webkit-flex-grow: 1;
+          -ms-flex-positive: 1;
+          flex-grow: 1;
+          -webkit-flex-basis: 0;
+          -ms-flex-preferred-size: 0;
+          -webkit-flex-basis: 0;
+          -ms-flex-preferred-size: 0;
+          flex-basis: 0;
+          max-width: 100%;
+        }
+        .col-lg-1 {
+          -webkit-flex-basis: 8.333%;
+          -ms-flex-preferred-size: 8.333%;
+          -webkit-flex-basis: 8.333%;
+          -ms-flex-preferred-size: 8.333%;
+          flex-basis: 8.333%;
+          max-width: 8.333%;
+        }
+        .col-lg-2 {
+          -webkit-flex-basis: 16.667%;
+          -ms-flex-preferred-size: 16.667%;
+          -webkit-flex-basis: 16.667%;
+          -ms-flex-preferred-size: 16.667%;
+          flex-basis: 16.667%;
+          max-width: 16.667%;
+        }
+        .col-lg-3 {
+          -webkit-flex-basis: 25%;
+          -ms-flex-preferred-size: 25%;
+          -webkit-flex-basis: 25%;
+          -ms-flex-preferred-size: 25%;
+          flex-basis: 25%;
+          max-width: 25%;
+        }
+        .col-lg-4 {
+          -webkit-flex-basis: 33.333%;
+          -ms-flex-preferred-size: 33.333%;
+          -webkit-flex-basis: 33.333%;
+          -ms-flex-preferred-size: 33.333%;
+          flex-basis: 33.333%;
+          max-width: 33.333%;
+        }
+        .col-lg-5 {
+          -webkit-flex-basis: 41.667%;
+          -ms-flex-preferred-size: 41.667%;
+          -webkit-flex-basis: 41.667%;
+          -ms-flex-preferred-size: 41.667%;
+          flex-basis: 41.667%;
+          max-width: 41.667%;
+        }
+        .col-lg-6 {
+          -webkit-flex-basis: 50%;
+          -ms-flex-preferred-size: 50%;
+          -webkit-flex-basis: 50%;
+          -ms-flex-preferred-size: 50%;
+          flex-basis: 50%;
+          max-width: 50%;
+        }
+        .col-lg-7 {
+          -webkit-flex-basis: 58.333%;
+          -ms-flex-preferred-size: 58.333%;
+          -webkit-flex-basis: 58.333%;
+          -ms-flex-preferred-size: 58.333%;
+          flex-basis: 58.333%;
+          max-width: 58.333%;
+        }
+        .col-lg-8 {
+          -webkit-flex-basis: 66.667%;
+          -ms-flex-preferred-size: 66.667%;
+          -webkit-flex-basis: 66.667%;
+          -ms-flex-preferred-size: 66.667%;
+          flex-basis: 66.667%;
+          max-width: 66.667%;
+        }
+        .col-lg-9 {
+          -webkit-flex-basis: 75%;
+          -ms-flex-preferred-size: 75%;
+          -webkit-flex-basis: 75%;
+          -ms-flex-preferred-size: 75%;
+          flex-basis: 75%;
+          max-width: 75%;
+        }
+        .col-lg-10 {
+          -webkit-flex-basis: 83.333%;
+          -ms-flex-preferred-size: 83.333%;
+          -webkit-flex-basis: 83.333%;
+          -ms-flex-preferred-size: 83.333%;
+          flex-basis: 83.333%;
+          max-width: 83.333%;
+        }
+        .col-lg-11 {
+          -webkit-flex-basis: 91.667%;
+          -ms-flex-preferred-size: 91.667%;
+          -webkit-flex-basis: 91.667%;
+          -ms-flex-preferred-size: 91.667%;
+          flex-basis: 91.667%;
+          max-width: 91.667%;
+        }
+        .col-lg-12 {
+          -webkit-flex-basis: 100%;
+          -ms-flex-preferred-size: 100%;
+          -webkit-flex-basis: 100%;
+          -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
+          max-width: 100%;
+        }
+        .col-lg-offset-1 {
+          margin-left: 8.333%;
+        }
+        .col-lg-offset-2 {
+          margin-left: 16.667%;
+        }
+        .col-lg-offset-3 {
+          margin-left: 25%;
+        }
+        .col-lg-offset-4 {
+          margin-left: 33.333%;
+        }
+        .col-lg-offset-5 {
+          margin-left: 41.667%;
+        }
+        .col-lg-offset-6 {
+          margin-left: 50%;
+        }
+        .col-lg-offset-7 {
+          margin-left: 58.333%;
+        }
+        .col-lg-offset-8 {
+          margin-left: 66.667%;
+        }
+        .col-lg-offset-9 {
+          margin-left: 75%;
+        }
+        .col-lg-offset-10 {
+          margin-left: 83.333%;
+        }
+        .col-lg-offset-11 {
+          margin-left: 91.667%;
+        }
+        .start-lg {
+          -webkit-box-pack: start;
+          -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+          -webkit-box-pack: start;
+          -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+          justify-content: flex-start;
+          text-align: start;
+        }
+        .center-lg {
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          text-align: center;
+        }
+        .end-lg {
+          -webkit-box-pack: end;
+          -webkit-justify-content: flex-end;
+          -ms-flex-pack: end;
+          -webkit-box-pack: end;
+          -webkit-justify-content: flex-end;
+          -ms-flex-pack: end;
+          justify-content: flex-end;
+          text-align: end;
+        }
+        .top-lg {
+          -webkit-box-align: start;
+          -webkit-align-items: flex-start;
+          -ms-flex-align: start;
+          -webkit-align-items: flex-start;
+          -webkit-box-align: flex-start;
+          -ms-flex-align: flex-start;
+          align-items: flex-start;
+        }
+        .middle-lg {
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+        }
+        .bottom-lg {
+          -webkit-box-align: end;
+          -webkit-align-items: flex-end;
+          -ms-flex-align: end;
+          -webkit-align-items: flex-end;
+          -webkit-box-align: flex-end;
+          -ms-flex-align: flex-end;
+          align-items: flex-end;
+        }
+        .around-lg {
+          -webkit-justify-content: space-around;
+          -ms-flex-pack: distribute;
+          -webkit-box-pack: space-around;
+          -webkit-justify-content: space-around;
+          -ms-flex-pack: space-around;
+          justify-content: space-around;
+        }
+        .between-lg {
+          -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+          -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+          justify-content: space-between;
+        }
+        .first-lg {
+          -webkit-box-ordinal-group: 0;
+          -webkit-order: -1;
+          -ms-flex-order: -1;
+          -webkit-order: -1;
+          -ms-flex-order: -1;
+          order: -1;
+        }
+        .last-lg {
+          -webkit-box-ordinal-group: 2;
+          -webkit-order: 1;
+          -ms-flex-order: 1;
+          -webkit-order: 1;
+          -ms-flex-order: 1;
+          order: 1;
+        }
+      }
+
+      @media only screen and (min-width:85.375rem) {
+        .container {
+          width: 85.375rem;
+        }
+        .col-xl,
+        .col-xl-1,
+        .col-xl-10,
+        .col-xl-11,
+        .col-xl-12,
+        .col-xl-2,
+        .col-xl-3,
+        .col-xl-4,
+        .col-xl-5,
+        .col-xl-6,
+        .col-xl-7,
+        .col-xl-8,
+        .col-xl-9,
+        .col-xl-offset-1,
+        .col-xl-offset-10,
+        .col-xl-offset-11,
+        .col-xl-offset-12,
+        .col-xl-offset-2,
+        .col-xl-offset-3,
+        .col-xl-offset-4,
+        .col-xl-offset-5,
+        .col-xl-offset-6,
+        .col-xl-offset-7,
+        .col-xl-offset-8,
+        .col-xl-offset-9 {
+          box-sizing: border-box;
+          -webkit-box-flex: 0;
+          -webkit-flex: 0 0 auto;
+          -ms-flex: 0 0 auto;
+          -webkit-flex: 0 0 auto;
+          -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+          padding-right: .5rem;
+          padding-left: .5rem;
+        }
+        .col-xl {
+          -webkit-box-flex: 1;
+          -webkit-flex-grow: 1;
+          -ms-flex-positive: 1;
+          -webkit-box-flex: 1;
+          -webkit-flex-grow: 1;
+          -ms-flex-positive: 1;
+          flex-grow: 1;
+          -webkit-flex-basis: 0;
+          -ms-flex-preferred-size: 0;
+          -webkit-flex-basis: 0;
+          -ms-flex-preferred-size: 0;
+          flex-basis: 0;
+          max-width: 100%;
+        }
+        .col-xl-1 {
+          -webkit-flex-basis: 8.333%;
+          -ms-flex-preferred-size: 8.333%;
+          -webkit-flex-basis: 8.333%;
+          -ms-flex-preferred-size: 8.333%;
+          flex-basis: 8.333%;
+          max-width: 8.333%;
+        }
+        .col-xl-2 {
+          -webkit-flex-basis: 16.667%;
+          -ms-flex-preferred-size: 16.667%;
+          -webkit-flex-basis: 16.667%;
+          -ms-flex-preferred-size: 16.667%;
+          flex-basis: 16.667%;
+          max-width: 16.667%;
+        }
+        .col-xl-3 {
+          -webkit-flex-basis: 25%;
+          -ms-flex-preferred-size: 25%;
+          -webkit-flex-basis: 25%;
+          -ms-flex-preferred-size: 25%;
+          flex-basis: 25%;
+          max-width: 25%;
+        }
+        .col-xl-4 {
+          -webkit-flex-basis: 33.333%;
+          -ms-flex-preferred-size: 33.333%;
+          -webkit-flex-basis: 33.333%;
+          -ms-flex-preferred-size: 33.333%;
+          flex-basis: 33.333%;
+          max-width: 33.333%;
+        }
+        .col-xl-5 {
+          -webkit-flex-basis: 41.667%;
+          -ms-flex-preferred-size: 41.667%;
+          -webkit-flex-basis: 41.667%;
+          -ms-flex-preferred-size: 41.667%;
+          flex-basis: 41.667%;
+          max-width: 41.667%;
+        }
+        .col-xl-6 {
+          -webkit-flex-basis: 50%;
+          -ms-flex-preferred-size: 50%;
+          -webkit-flex-basis: 50%;
+          -ms-flex-preferred-size: 50%;
+          flex-basis: 50%;
+          max-width: 50%;
+        }
+        .col-xl-7 {
+          -webkit-flex-basis: 58.333%;
+          -ms-flex-preferred-size: 58.333%;
+          -webkit-flex-basis: 58.333%;
+          -ms-flex-preferred-size: 58.333%;
+          flex-basis: 58.333%;
+          max-width: 58.333%;
+        }
+        .col-xl-8 {
+          -webkit-flex-basis: 66.667%;
+          -ms-flex-preferred-size: 66.667%;
+          -webkit-flex-basis: 66.667%;
+          -ms-flex-preferred-size: 66.667%;
+          flex-basis: 66.667%;
+          max-width: 66.667%;
+        }
+        .col-xl-9 {
+          -webkit-flex-basis: 75%;
+          -ms-flex-preferred-size: 75%;
+          -webkit-flex-basis: 75%;
+          -ms-flex-preferred-size: 75%;
+          flex-basis: 75%;
+          max-width: 75%;
+        }
+        .col-xl-10 {
+          -webkit-flex-basis: 83.333%;
+          -ms-flex-preferred-size: 83.333%;
+          -webkit-flex-basis: 83.333%;
+          -ms-flex-preferred-size: 83.333%;
+          flex-basis: 83.333%;
+          max-width: 83.333%;
+        }
+        .col-xl-11 {
+          -webkit-flex-basis: 91.667%;
+          -ms-flex-preferred-size: 91.667%;
+          -webkit-flex-basis: 91.667%;
+          -ms-flex-preferred-size: 91.667%;
+          flex-basis: 91.667%;
+          max-width: 91.667%;
+        }
+        .col-xl-12 {
+          -webkit-flex-basis: 100%;
+          -ms-flex-preferred-size: 100%;
+          -webkit-flex-basis: 100%;
+          -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
+          max-width: 100%;
+        }
+        .col-xl-offset-1 {
+          margin-left: 8.333%;
+        }
+        .col-xl-offset-2 {
+          margin-left: 16.667%;
+        }
+        .col-xl-offset-3 {
+          margin-left: 25%;
+        }
+        .col-xl-offset-4 {
+          margin-left: 33.333%;
+        }
+        .col-xl-offset-5 {
+          margin-left: 41.667%;
+        }
+        .col-xl-offset-6 {
+          margin-left: 50%;
+        }
+        .col-xl-offset-7 {
+          margin-left: 58.333%;
+        }
+        .col-xl-offset-8 {
+          margin-left: 66.667%;
+        }
+        .col-xl-offset-9 {
+          margin-left: 75%;
+        }
+        .col-xl-offset-10 {
+          margin-left: 83.333%;
+        }
+        .col-xl-offset-11 {
+          margin-left: 91.667%;
+        }
+        .start-xl {
+          -webkit-box-pack: start;
+          -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+          -webkit-box-pack: start;
+          -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+          justify-content: flex-start;
+          text-align: start;
+        }
+        .center-xl {
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          text-align: center;
+        }
+        .end-xl {
+          -webkit-box-pack: end;
+          -webkit-justify-content: flex-end;
+          -ms-flex-pack: end;
+          -webkit-box-pack: end;
+          -webkit-justify-content: flex-end;
+          -ms-flex-pack: end;
+          justify-content: flex-end;
+          text-align: end;
+        }
+        .top-xl {
+          -webkit-box-align: start;
+          -webkit-align-items: flex-start;
+          -ms-flex-align: start;
+          -webkit-align-items: flex-start;
+          -webkit-box-align: flex-start;
+          -ms-flex-align: flex-start;
+          align-items: flex-start;
+        }
+        .middle-xl {
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+        }
+        .bottom-xl {
+          -webkit-box-align: end;
+          -webkit-align-items: flex-end;
+          -ms-flex-align: end;
+          -webkit-align-items: flex-end;
+          -webkit-box-align: flex-end;
+          -ms-flex-align: flex-end;
+          align-items: flex-end;
+        }
+        .around-xl {
+          -webkit-justify-content: space-around;
+          -ms-flex-pack: distribute;
+          -webkit-box-pack: space-around;
+          -webkit-justify-content: space-around;
+          -ms-flex-pack: space-around;
+          justify-content: space-around;
+        }
+        .between-xl {
+          -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+          -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+          justify-content: space-between;
+        }
+        .first-xl {
+          -webkit-box-ordinal-group: 0;
+          -webkit-order: -1;
+          -ms-flex-order: -1;
+          -webkit-order: -1;
+          -ms-flex-order: -1;
+          order: -1;
+        }
+        .last-xl {
+          -webkit-box-ordinal-group: 2;
+          -webkit-order: 1;
+          -ms-flex-order: 1;
+          -webkit-order: 1;
+          -ms-flex-order: 1;
+          order: 1;
+        }
+      }
+
+      @media (min-width:30rem) {
+        :root {
+          --global-fontFamilies-display: system-ui;
+          --global-fontFamilies-heading: system-ui;
+          --global-fontFamilies-body: system-ui;
+          --global-fontFamilies-data: SF Mono;
+          --global-lineHeights-display: 1.2;
+          --global-lineHeights-heading: 1.2;
+          --global-lineHeights-body: 1.4;
+          --global-lineHeights-data: 1;
+          --global-fontWeights-display-default: 600;
+          --global-fontWeights-heading-default: 600;
+          --global-fontWeights-body-default: 400;
+          --global-fontWeights-body-bold: 700;
+          --global-fontWeights-data-default: 400;
+          --global-fontSizes-display-xl: 52px;
+          --global-fontSizes-display-lg: 40px;
+          --global-fontSizes-display-md: 28px;
+          --global-fontSizes-heading-xl: 24px;
+          --global-fontSizes-heading-lg: 20px;
+          --global-fontSizes-heading-md: 16px;
+          --global-fontSizes-heading-sm: 14px;
+          --global-fontSizes-heading-xs: 12px;
+          --global-fontSizes-body-lg: 16px;
+          --global-fontSizes-body-md: 14px;
+          --global-fontSizes-body-sm: 12px;
+          --global-fontSizes-data-md: 12px;
+          --global-letterSpacing-display: 0%;
+          --global-letterSpacing-heading: -2%;
+          --global-letterSpacing-body: -2%;
+          --global-letterSpacing-data: 0%;
+          --global-paragraphSpacing-none: 0px;
+          --global-paragraphSpacing-sm: 16px;
+          --global-paragraphSpacing-md: 18px;
+          --global-paragraphSpacing-lg: 20px;
+          --global-textCase-none: none;
+          --global-textCase-uppercase: uppercase;
+          --global-textDecoration-none: none;
+          --component-lineHeights-button: 1;
+          --component-fontFamilies-button: system-ui;
+          --component-fontWeights-button-default: 500;
+          --component-letterSpacing-button: -2%;
+          --component-radius-button: 8px;
+          --component-fontSizes-button-lg: 16px;
+          --component-fontSizes-button-md: 14px;
+          --component-fontSizes-button-sm: 12px;
+        }
+      }
+
+      @media (min-width:30rem) {
+        #component-playground .containerInner .fullWidthMobile,
+        .reactWrapper .containerInner .fullWidthMobile {
+          padding-left: 0;
+          padding-right: 0;
+          overflow-x: hidden;
+        }
+      }
+    </style>
+  </head>
+
+  <body style=3D"min-width: 320px; background-color: #ffffff; width: 100%; =
+margin: 0; padding: 0; -webkit-text-size-adjust: 100%; -ms-text-size-adjust=
+: 100%;">
+    <table width=3D"100%" height=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0" border=3D"0" align=3D"left" valign=3D"top" style=3D"border-collapse: col=
+lapse; border-spacing: 0;">
+      <tbody>
+        <tr>
+          <td align=3D"center" valign=3D"top" style=3D"padding: 0;">
+            <table width=3D"600" align=3D"center" cellpadding=3D"0" cellspa=
+cing=3D"0" style=3D"border-collapse: collapse; border-spacing: 0; backgroun=
+d-color: #f6f7fa; text-align: center;" border=3D"0" valign=3D"top" bgcolor=
+=3D"var(--global-bg-page-default)">
+              <tbody>
+                <tr>
+                  <td style=3D"padding: 0;">
+                    <div class=3D"sc-hiCibw gdwnoD" style=3D"box-sizing: bo=
+rder-box; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.22,1); transi=
+tion: all 300ms cubic-bezier(0.19,1,0.22,1); text-align: left; padding-top:=
+ 0rem; padding-right: 16px; padding-bottom: 48px; padding-left: 16px; margi=
+n-top: 0rem; margin-right: 0rem; margin-bottom: 0rem; margin-left: 0rem;">
+                      <img src=3D"https://c5.patreon.com/external/logo/emai=
+l_wordmark.png" alt=3D"Patreon trademark" width=3D"20" class=3D"sc-bUhFKy H=
+eCJJ" style=3D"border: 0; width: 10rem;">
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td style=3D"padding: 0;">
+                    <div class=3D"sc-hiCibw dRteeF" style=3D"box-sizing: bo=
+rder-box; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.22,1); transi=
+tion: all 300ms cubic-bezier(0.19,1,0.22,1); padding-top: 0rem; padding-rig=
+ht: 16px; padding-bottom: 0rem; padding-left: 16px; margin-top: 0rem; margi=
+n-right: 0rem; margin-bottom: 0rem; margin-left: 0rem;"><span color=3D"cont=
+ent" class=3D"sc-iUKqMP hIsRlV" style=3D"color: rgba(11,12,15,0.95); font-f=
+amily: system-ui,Roboto,sans-serif; margin: 0; position: relative; text-tra=
+nsform: none; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.22,1); tr=
+ansition: all 300ms cubic-bezier(0.19,1,0.22,1); font-weight: 400; font-siz=
+e: 16px; line-height: 1.5;"><div overflow=3D"hidden" class=3D"sc-gWXbKe kVR=
+HRB" style=3D"background-color: #ffffff; overflow: hidden; box-shadow: 0px =
+1px 4px 0px rgba(0,0,0,0.1),0px 0px 1px 0px rgba(0,0,0,0.1);"><div overflow=
+=3D"hidden" class=3D"sc-cCcXHH pzZKq" style=3D"box-sizing: border-box; padd=
+ing: 24px 16px;"><span color=3D"content" class=3D"sc-iUKqMP gyyFHN" style=
+=3D"color: rgba(11,12,15,0.95); font-family: system-ui,Roboto,sans-serif; m=
+argin: 0; position: relative; text-transform: none; -webkit-transition: all=
+ 300ms cubic-bezier(0.19,1,0.22,1); transition: all 300ms cubic-bezier(0.19=
+,1,0.22,1); font-weight: 600; font-size: 22px; line-height: 1.25;">=F0=9F=
+=8E=89 Your Patreon receipt is here! =F0=9F=8E=89</span>
+                      <div
+                        class=3D"sc-hiCibw gXnYmF" style=3D"box-sizing: bor=
+der-box; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.22,1); transit=
+ion: all 300ms cubic-bezier(0.19,1,0.22,1); padding-top: 0rem; padding-righ=
+t: 0rem; padding-bottom: 0rem; padding-left: 0rem; margin-top: 32px; margin=
+-right: 0rem; margin-bottom: 32px; margin-left: 0rem;">
+                        <a aria-disabled=3D"false" href=3D"https://email.ma=
+ilgun.patreon.com/c/eJxMkd2q3CAQx5_G3EgWYzQfF7koPYQWCu0bhFEnG3uMBp10u29fsqe=
+U3s7vz_-DMUB2W7ybrBxMO9imHvXY1kpjV5sRZN243hkz6BGUqtyEQqtxqHBqukGOSreiqXAHH5=
+byLIT7FPAO9lltkwPXaz2sDYIcjAHTWSOlscoKoVfdVH6SQrZCi6aRapDNreltB31vetGunV1Hp=
+sTlfD_j7QDKmOLNpr0K00Z0FNZ-YnJmcqaHJ8J8MSZnHwkjvc6IxNqZ8Dex9u0LPvkj5eCYbPhX=
+_vMsxMt5HCkTOv49eCa1FN8gv_vIU-RMiR8foUx-5hAdf6aTW4icUnp5RMIckfjm71u9-l_I2pl=
+_VJP6KqevelrOj8fj_wGvWwo-vLIu7XzSvuzo_HnB9q0k6yFcuu4iJZ3Z4ov83foPWdgP8PeXy9=
+sRygYZqzwdcAYLuaRYAhimhMEcN8juAfeI-RaRKoLyfj3eGTeicG3dy0HUakBZg-h1veKqx65TV=
+jSmItyPAIRLhB0n40NYU95TpC087Qb5jtVZMC8W4lLe_bGAc558ihCWjBb9QWWaIRT8EwAA__8K=
+ac3Z" role=3D"button"
+                          class=3D"sc-ksdxgE sMRLr" style=3D"display: -webk=
+it-inline-box; display: -webkit-inline-flex; display: -ms-inline-flexbox; d=
+isplay: inline-flex; -webkit-box-pack: center; -webkit-justify-content: cen=
+ter; -ms-flex-pack: center; justify-content: center; -webkit-align-items: c=
+enter; -webkit-box-align: center; -ms-flex-align: center; align-items: cent=
+er; position: relative; box-sizing: border-box; font-size: 16px; font-weigh=
+t: 500; font-family: system-ui,Roboto,sans-serif; -webkit-text-decoration: =
+none; text-decoration: none; color: #f1465a; background-color: rgba(241,70,=
+90,0.1); border: 1px solid transparent; min-height: 44px; max-height: 44px;=
+ padding: 0 20px; border-radius: 8px; outline-offset: 0; line-height: 1; wi=
+dth: unset; white-space: unset; -webkit-transition: all 300ms cubic-bezier(=
+0.19,1,0.22,1); transition: all 300ms cubic-bezier(0.19,1,0.22,1);">
+                          <div class=3D"sc-egiyK jttZGU" style=3D"display: =
+-webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -w=
+ebkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: cen=
+ter; justify-content: center; -webkit-align-items: center; -webkit-box-alig=
+n: center; -ms-flex-align: center; align-items: center; -webkit-column-gap:=
+ 4px; column-gap: 4px; visibility: visible; padding: 0; margin: auto 0;">
+                            <div class=3D"sc-bqiRlB etzASb" style=3D"displa=
+y: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex;=
+ -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction=
+: column; -webkit-box-pack: center; -webkit-justify-content: center; -ms-fl=
+ex-pack: center; justify-content: center; -webkit-align-items: center; -web=
+kit-box-align: center; -ms-flex-align: center; align-items: center; height:=
+ 100%; white-space: nowrap; padding: 0 0 0 0; margin: 8px 0;">Tweet about i=
+t</div>
+                          </div>
+                        </a>
+                    </div>
+                    <div class=3D"sc-hiCibw bjwSBO" style=3D"box-sizing: bo=
+rder-box; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.22,1); transi=
+tion: all 300ms cubic-bezier(0.19,1,0.22,1); padding-top: 0rem; padding-rig=
+ht: 0rem; padding-bottom: 16px; padding-left: 0rem; margin-top: 0rem; margi=
+n-right: 0rem; margin-bottom: 16px; margin-left: 0rem; border-bottom: solid=
+ 1px #f6f7fa;">
+                      <p color=3D"content" class=3D"sc-iAKWXU iYstmW" style=
+=3D"color: rgba(11,12,15,0.95); font-family: system-ui,Roboto,sans-serif; p=
+osition: relative; text-transform: none; -webkit-transition: all 300ms cubi=
+c-bezier(0.19,1,0.22,1); transition: all 300ms cubic-bezier(0.19,1,0.22,1);=
+ text-align: left; font-weight: 400; margin: 8px 0rem; font-size: 16px; lin=
+e-height: 1.5;">This is a receipt for your charges at Patreon. Below you&#x=
+27;ll find a brief summary of your charge and links to any reward content o=
+n Patreon.</p>
+                      <p color=3D"content" class=3D"sc-iAKWXU iYstmW" style=
+=3D"color: rgba(11,12,15,0.95); font-family: system-ui,Roboto,sans-serif; p=
+osition: relative; text-transform: none; -webkit-transition: all 300ms cubi=
+c-bezier(0.19,1,0.22,1); transition: all 300ms cubic-bezier(0.19,1,0.22,1);=
+ text-align: left; font-weight: 400; margin: 8px 0rem; font-size: 16px; lin=
+e-height: 1.5;">Your next payment will be automatically deducted on Jun 1, =
+2023 from the payment method you provided.</p></div>
+                    <div class=3D"sc-hiCibw dcFxph" style=3D"box-sizing: bo=
+rder-box; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.22,1); transi=
+tion: all 300ms cubic-bezier(0.19,1,0.22,1); padding-top: 0rem; padding-rig=
+ht: 0rem; padding-bottom: 16px; padding-left: 0rem; margin-top: 16px; margi=
+n-right: 0rem; margin-bottom: 24px; margin-left: 0rem; border-bottom: solid=
+ 1px #f6f7fa;">
+                      <div class=3D"sc-hiCibw iAvXre" style=3D"box-sizing: =
+border-box; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.22,1); tran=
+sition: all 300ms cubic-bezier(0.19,1,0.22,1); padding-top: 0rem; padding-r=
+ight: 0rem; padding-bottom: 0rem; padding-left: 0rem; margin-top: 0rem; mar=
+gin-right: 0rem; margin-bottom: 24px; margin-left: 0rem;">
+                        <p color=3D"content" class=3D"sc-iAKWXU gzILsW" sty=
+le=3D"color: rgba(11,12,15,0.95); font-family: system-ui,Roboto,sans-serif;=
+ position: relative; text-transform: none; -webkit-transition: all 300ms cu=
+bic-bezier(0.19,1,0.22,1); transition: all 300ms cubic-bezier(0.19,1,0.22,1=
+); text-align: left; font-weight: 600; margin: 8px 0rem; font-size: 16px; l=
+ine-height: 1.5;">Summary</p>
+                        <p color=3D"content" class=3D"sc-iAKWXU iYstmW" sty=
+le=3D"color: rgba(11,12,15,0.95); font-family: system-ui,Roboto,sans-serif;=
+ position: relative; text-transform: none; -webkit-transition: all 300ms cu=
+bic-bezier(0.19,1,0.22,1); transition: all 300ms cubic-bezier(0.19,1,0.22,1=
+); text-align: left; font-weight: 400; margin: 8px 0rem; font-size: 16px; l=
+ine-height: 1.5;">Charge date: May 1, 2023 at 5:48:01 AM PDT</p></div>
+                      <table width=3D"100%" wrap=3D"break-word" spacing=3D"=
+1em" class=3D"sc-cvlWTT fEQUVJ" style=3D"word-wrap: break-word; border-spac=
+ing: 1em; table-layout: fixed; border-collapse: separate; margin-left: -1em=
+;">
+                        <tbody>
+                          <tr>
+                            <td align=3D"left" style=3D"padding: 0;">Subtot=
+al</td>
+                            <td colspan=3D"2" style=3D"padding: 0;"></td>
+                            <td align=3D"right" style=3D"padding: 0;">$10.0=
+0</td>
+                          </tr>
+                          <tr>
+                            <td align=3D"left" style=3D"padding: 0;"><span =
+color=3D"content" class=3D"sc-iUKqMP kUxFCd" style=3D"color: rgba(11,12,15,=
+0.95); font-family: system-ui,Roboto,sans-serif; margin: 0; position: relat=
+ive; text-transform: none; -webkit-transition: all 300ms cubic-bezier(0.19,=
+1,0.22,1); transition: all 300ms cubic-bezier(0.19,1,0.22,1); font-weight: =
+600; font-size: 16px; line-height: 1.5;">Total</span></td>
+                            <td
+                              colspan=3D"2" style=3D"padding: 0;"></td>
+                  <td align=3D"right" style=3D"padding: 0;"><span color=3D"=
+content" class=3D"sc-iUKqMP kUxFCd" style=3D"color: rgba(11,12,15,0.95); fo=
+nt-family: system-ui,Roboto,sans-serif; margin: 0; position: relative; text=
+-transform: none; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.22,1)=
+; transition: all 300ms cubic-bezier(0.19,1,0.22,1); font-weight: 600; font=
+-size: 16px; line-height: 1.5;">$10.00</span></td>
+                  </tr>
+                  </tbody>
+                  </table>
+                  </div>
+                  <div class=3D"sc-hiCibw edmgJT" style=3D"box-sizing: bord=
+er-box; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.22,1); transiti=
+on: all 300ms cubic-bezier(0.19,1,0.22,1); padding-top: 0rem; padding-right=
+: 0rem; padding-bottom: 0rem; padding-left: 0rem; margin-top: 16px; margin-=
+right: 0rem; margin-bottom: 0rem; margin-left: 0rem;">
+                    <p color=3D"content" class=3D"sc-iAKWXU gzILsW" style=
+=3D"color: rgba(11,12,15,0.95); font-family: system-ui,Roboto,sans-serif; p=
+osition: relative; text-transform: none; -webkit-transition: all 300ms cubi=
+c-bezier(0.19,1,0.22,1); transition: all 300ms cubic-bezier(0.19,1,0.22,1);=
+ text-align: left; font-weight: 600; margin: 8px 0rem; font-size: 16px; lin=
+e-height: 1.5;">Charge details</p>
+                    <table width=3D"100%" wrap=3D"break-word" spacing=3D"1e=
+m" class=3D"sc-cvlWTT fEQUVJ" style=3D"word-wrap: break-word; border-spacin=
+g: 1em; table-layout: fixed; border-collapse: separate; margin-left: -1em;"=
+>
+                      <tbody>
+                        <tr>
+                          <td colspan=3D"1" style=3D"padding: 0;">
+                            <a href=3D"https://email.mailgun.patreon.com/c/=
+eJxM0DvO6yAQQOHVmM7RgDGPguI22YY1wBCjYGwBkZXdX6X76yOd4vM4wr7l6IIwfjGBz3a1yyx=
+XUrO3KGYedfTerBalZNERrNIaRo4rI6xcF-CMDsxl698-6HCFXhi-bHcxgfIyBuuNQsWJhDYeAk=
+edTAIOLDsBYoEVOBfSCP7gOijU2mtYkgrJThJ-59enPi4cjc76COfBitvHuPq0_JvEcxLP-77_9=
+kk8z5ILtneurLkLPyVg62ftBf0kwVOrO7Z446tSe1QabGB__wyij5YgLrMWBmZpSMwIep0TpdUq=
+JQNwzwYdV8FBW8WDnM-lpLMdZx17-YYd24vYp1PbAtatv_O1YYx55LNi2RoFytfo7oml0_8AAAD=
+__4o_fCQ" class=3D"sc-jlRLRk fACeJb" style=3D"background-color: transparent=
+; border-radius: 4px; color: #f1465a; cursor: pointer; display: inline-bloc=
+k; width: 100%; font-weight: 400; max-width: 100%; overflow: hidden; -webki=
+t-text-decoration-skip: ink; text-decoration-skip: ink; -webkit-text-decora=
+tion: none; text-decoration: none; text-overflow: ellipsis; -webkit-transit=
+ion: all 300ms cubic-bezier(0.19,1,0.22,1); transition: all 300ms cubic-bez=
+ier(0.19,1,0.22,1); vertical-align: bottom; font-size: 16px; line-height: 1=
+=2E5;">
+                              <div class=3D"sc-hiCibw dTUxNZ" style=3D"box-=
+sizing: border-box; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.22,=
+1); transition: all 300ms cubic-bezier(0.19,1,0.22,1); padding-top: 0rem; p=
+adding-right: 0rem; padding-bottom: 0rem; padding-left: 0rem; margin-top: 0=
+rem; margin-right: 0rem; margin-bottom: 0rem; margin-left: 0rem; width: 100=
+%; max-width: 48px;">
+                                <div src=3D"https://c10.patreonusercontent.=
+com/4/patreon-media/p/campaign/337443/9a6b818d1c5c4153a3fe47687fbc5d6f/eyJo=
+Ijo3NSwidyI6NzV9/2.jpeg?token-time=3D2145916800&token-hash=3DRwehcGr6zBU0RJ=
+bJxQQO6vuTC0cUS_r5KXBTtkKhS84%3D" display=3D"block" class=3D"sc-jRQBWg gJex=
+WG" style=3D"border-radius: 50%; background-clip: padding-box; background-i=
+mage: url(https://c10.patreonusercontent.com/4/patreon-media/p/campaign/337=
+443/9a6b818d1c5c4153a3fe47687fbc5d6f/eyJoIjo3NSwidyI6NzV9/2.jpeg?token-time=
+=3D2145916800&token-hash=3DRwehcGr6zBU0RJbJxQQO6vuTC0cUS_r5KXBTtkKhS84%3D);=
+ overflow: hidden; background-repeat: no-repeat; background-position: cente=
+r; background-size: cover; box-sizing: border-box; border: 1px solid rgba(1=
+41,152,185,0.2); width: 100%; padding-bottom: 100%;"></div>
+                              </div>
+                            </a>
+                          </td>
+                          <td colspan=3D"3" style=3D"padding: 0;">
+                            <p color=3D"content" class=3D"sc-iAKWXU iYstmW"=
+ style=3D"color: rgba(11,12,15,0.95); font-family: system-ui,Roboto,sans-se=
+rif; position: relative; text-transform: none; -webkit-transition: all 300m=
+s cubic-bezier(0.19,1,0.22,1); transition: all 300ms cubic-bezier(0.19,1,0.=
+22,1); text-align: left; font-weight: 400; margin: 8px 0rem; font-size: 16p=
+x; line-height: 1.5;">
+                              <a href=3D"https://email.mailgun.patreon.com/=
+c/eJxM0DvO6yAQQOHVmM7RgDGPguI22YY1wBCjYGwBkZXdX6X76yOd4vM4wr7l6IIwfjGBz3a1y=
+yxXUrO3KGYedfTerBalZNERrNIaRo4rI6xcF-CMDsxl698-6HCFXhi-bHcxgfIyBuuNQsWJhDYe=
+AkedTAIOLDsBYoEVOBfSCP7gOijU2mtYkgrJThJ-59enPi4cjc76COfBitvHuPq0_JvEcxLP-77=
+_9kk8z5ILtneurLkLPyVg62ftBf0kwVOrO7Z446tSe1QabGB__wyij5YgLrMWBmZpSMwIep0Tpd=
+UqJQNwzwYdV8FBW8WDnM-lpLMdZx17-YYd24vYp1PbAtatv_O1YYx55LNi2RoFytfo7oml0_8AA=
+AD__4o_fCQ" class=3D"sc-jlRLRk cgNeZz" style=3D"background-color: transpare=
+nt; border-radius: 4px; color: #f1465a; cursor: pointer; display: inline-bl=
+ock; font-weight: 400; max-width: 100%; overflow: hidden; -webkit-text-deco=
+ration-skip: ink; text-decoration-skip: ink; -webkit-text-decoration: none;=
+ text-decoration: none; text-overflow: ellipsis; -webkit-transition: all 30=
+0ms cubic-bezier(0.19,1,0.22,1); transition: all 300ms cubic-bezier(0.19,1,=
+0.22,1); vertical-align: bottom; font-size: 16px; line-height: 1.5;">Oli La=
+rkin</a>
+                              <br><span color=3D"content" class=3D"sc-iUKqM=
+P hIsRlV" style=3D"color: rgba(11,12,15,0.95); font-family: system-ui,Robot=
+o,sans-serif; margin: 0; position: relative; text-transform: none; -webkit-=
+transition: all 300ms cubic-bezier(0.19,1,0.22,1); transition: all 300ms cu=
+bic-bezier(0.19,1,0.22,1); font-weight: 400; font-size: 16px; line-height: =
+1.5;">$1 per month for May*</span></p>
+                          </td>
+                          <td colspan=3D"1" style=3D"padding: 0;"></td>
+                          <td colspan=3D"1" style=3D"padding: 0;">$1.00</td=
+>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table width=3D"100%" wrap=3D"break-word" spacing=3D"1e=
+m" class=3D"sc-cvlWTT fEQUVJ" style=3D"word-wrap: break-word; border-spacin=
+g: 1em; table-layout: fixed; border-collapse: separate; margin-left: -1em;"=
+>
+                      <tbody>
+                        <tr>
+                          <td colspan=3D"1" style=3D"padding: 0;">
+                            <a href=3D"https://email.mailgun.patreon.com/c/=
+eJxM0DGO6yAQgOHTmM4RjMGGguI1uYY1MEOMFmMLiKLc_mm7rX_pL76AIx57Jh_BhsVGNTvjllk=
+bXufgEGZFG4VgjUOtBXmWRjsr2KvVgtNmkUrwibns_dsHn77wC-NXHN5qio5BIcVgk4IIOoEOiT=
+bNQGRE9iBhkUYqBdqCeqgtrrhtYZNLWmNyk5a_59e7Pm4cja_6iNcpij_GuPu0_JvgOcHz8_n87=
+RM8sVLjgunqnUXzN75LxNav2guGScvArR7Y6IOvyu1ReYiB_eeXgQI5lrTMG1g5a8swo9zMnDgZ=
+t646ShXE4PMuOHiveLIPuZR0tfOq4yjfeGB7sXh3bnvEuveffO9IlEe-Kpa9ceR8j-6fWDr_DwA=
+A__93C325" class=3D"sc-jlRLRk fACeJb" style=3D"background-color: transparen=
+t; border-radius: 4px; color: #f1465a; cursor: pointer; display: inline-blo=
+ck; width: 100%; font-weight: 400; max-width: 100%; overflow: hidden; -webk=
+it-text-decoration-skip: ink; text-decoration-skip: ink; -webkit-text-decor=
+ation: none; text-decoration: none; text-overflow: ellipsis; -webkit-transi=
+tion: all 300ms cubic-bezier(0.19,1,0.22,1); transition: all 300ms cubic-be=
+zier(0.19,1,0.22,1); vertical-align: bottom; font-size: 16px; line-height: =
+1.5;">
+                              <div class=3D"sc-hiCibw dTUxNZ" style=3D"box-=
+sizing: border-box; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.22,=
+1); transition: all 300ms cubic-bezier(0.19,1,0.22,1); padding-top: 0rem; p=
+adding-right: 0rem; padding-bottom: 0rem; padding-left: 0rem; margin-top: 0=
+rem; margin-right: 0rem; margin-bottom: 0rem; margin-left: 0rem; width: 100=
+%; max-width: 48px;">
+                                <div src=3D"https://c10.patreonusercontent.=
+com/4/patreon-media/p/campaign/1279112/89cccaa82e034b2aa7818047addc2130/eyJ=
+oIjo3NSwidyI6NzV9/1.jpg?token-time=3D2145916800&token-hash=3DNCVEQpRX-oRcoM=
+K3zGnJIfDbKsN4iLA-VCHKuSm6v50%3D" display=3D"block" class=3D"sc-jRQBWg gJex=
+WG" style=3D"border-radius: 50%; background-clip: padding-box; background-i=
+mage: url(https://c10.patreonusercontent.com/4/patreon-media/p/campaign/127=
+9112/89cccaa82e034b2aa7818047addc2130/eyJoIjo3NSwidyI6NzV9/1.jpg?token-time=
+=3D2145916800&token-hash=3DNCVEQpRX-oRcoMK3zGnJIfDbKsN4iLA-VCHKuSm6v50%3D);=
+ overflow: hidden; background-repeat: no-repeat; background-position: cente=
+r; background-size: cover; box-sizing: border-box; border: 1px solid rgba(1=
+41,152,185,0.2); width: 100%; padding-bottom: 100%;"></div>
+                              </div>
+                            </a>
+                          </td>
+                          <td colspan=3D"3" style=3D"padding: 0;">
+                            <p color=3D"content" class=3D"sc-iAKWXU iYstmW"=
+ style=3D"color: rgba(11,12,15,0.95); font-family: system-ui,Roboto,sans-se=
+rif; position: relative; text-transform: none; -webkit-transition: all 300m=
+s cubic-bezier(0.19,1,0.22,1); transition: all 300ms cubic-bezier(0.19,1,0.=
+22,1); text-align: left; font-weight: 400; margin: 8px 0rem; font-size: 16p=
+x; line-height: 1.5;">
+                              <a href=3D"https://email.mailgun.patreon.com/=
+c/eJxM0DGO6yAQgOHTmM4RjMGGguI1uYY1MEOMFmMLiKLc_mm7rX_pL76AIx57Jh_BhsVGNTvjl=
+lkbXufgEGZFG4VgjUOtBXmWRjsr2KvVgtNmkUrwibns_dsHn77wC-NXHN5qio5BIcVgk4IIOoEO=
+iTbNQGRE9iBhkUYqBdqCeqgtrrhtYZNLWmNyk5a_59e7Pm4cja_6iNcpij_GuPu0_JvgOcHz8_n=
+87RM8sVLjgunqnUXzN75LxNav2guGScvArR7Y6IOvyu1ReYiB_eeXgQI5lrTMG1g5a8swo9zMnD=
+gZt646ShXE4PMuOHiveLIPuZR0tfOq4yjfeGB7sXh3bnvEuveffO9IlEe-Kpa9ceR8j-6fWDr_D=
+wAA__93C325" class=3D"sc-jlRLRk cgNeZz" style=3D"background-color: transpar=
+ent; border-radius: 4px; color: #f1465a; cursor: pointer; display: inline-b=
+lock; font-weight: 400; max-width: 100%; overflow: hidden; -webkit-text-dec=
+oration-skip: ink; text-decoration-skip: ink; -webkit-text-decoration: none=
+; text-decoration: none; text-overflow: ellipsis; -webkit-transition: all 3=
+00ms cubic-bezier(0.19,1,0.22,1); transition: all 300ms cubic-bezier(0.19,1=
+,0.22,1); vertical-align: bottom; font-size: 16px; line-height: 1.5;">Andre=
+ LaFosse</a>
+                              <br><span color=3D"content" class=3D"sc-iUKqM=
+P hIsRlV" style=3D"color: rgba(11,12,15,0.95); font-family: system-ui,Robot=
+o,sans-serif; margin: 0; position: relative; text-transform: none; -webkit-=
+transition: all 300ms cubic-bezier(0.19,1,0.22,1); transition: all 300ms cu=
+bic-bezier(0.19,1,0.22,1); font-weight: 400; font-size: 16px; line-height: =
+1.5;">$5 per month for April</span></p>
+                          </td>
+                          <td colspan=3D"1" style=3D"padding: 0;"></td>
+                          <td colspan=3D"1" style=3D"padding: 0;">$5.00</td=
+>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table width=3D"100%" wrap=3D"break-word" spacing=3D"1e=
+m" class=3D"sc-cvlWTT fEQUVJ" style=3D"word-wrap: break-word; border-spacin=
+g: 1em; table-layout: fixed; border-collapse: separate; margin-left: -1em;"=
+>
+                      <tbody>
+                        <tr>
+                          <td colspan=3D"1" style=3D"padding: 0;">
+                            <a href=3D"https://email.mailgun.patreon.com/c/=
+eJxM0L2urCAUQOGnkc4JvyIFxW3mNczesFVyEAwwMfP2N6c79UpW8SGMcG4p-iBXVGsQszNOzdr=
+QMqMDOYtoI-JqHGjNoidutFsZebGs0mmjuGB0Qcpb__ZBl890QPiy0--gpLTECXe9kF4Ut04ZdK=
+ilRa53lrzkUnHDhZB6leIlbFjAWrRc7UvY3aT57_n4lNcNo1Etr1Avlv05xt0n9W-S70m-n-f52=
+yf5hgjXUVusBSln1vwNnxyg9Vp6Bpw0R2rlhBYfOAq1V6HBBvSfX4iI0RGParZy5bNeSc7ArZl3=
+2o1bFh24QDboujMM2gpc5DHlvNd21TLO_A0ntIPYp1PbApSt_6R7gxjTSLVA3hoFSvfo_g250_8=
+AAAD__3mhfY8" class=3D"sc-jlRLRk fACeJb" style=3D"background-color: transpa=
+rent; border-radius: 4px; color: #f1465a; cursor: pointer; display: inline-=
+block; width: 100%; font-weight: 400; max-width: 100%; overflow: hidden; -w=
+ebkit-text-decoration-skip: ink; text-decoration-skip: ink; -webkit-text-de=
+coration: none; text-decoration: none; text-overflow: ellipsis; -webkit-tra=
+nsition: all 300ms cubic-bezier(0.19,1,0.22,1); transition: all 300ms cubic=
+-bezier(0.19,1,0.22,1); vertical-align: bottom; font-size: 16px; line-heigh=
+t: 1.5;">
+                              <div class=3D"sc-hiCibw dTUxNZ" style=3D"box-=
+sizing: border-box; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.22,=
+1); transition: all 300ms cubic-bezier(0.19,1,0.22,1); padding-top: 0rem; p=
+adding-right: 0rem; padding-bottom: 0rem; padding-left: 0rem; margin-top: 0=
+rem; margin-right: 0rem; margin-bottom: 0rem; margin-left: 0rem; width: 100=
+%; max-width: 48px;">
+                                <div src=3D"https://c10.patreonusercontent.=
+com/4/patreon-media/p/campaign/7141068/a6e800efb9214046b007974cca7b9cac/eyJ=
+oIjo3NSwidyI6NzV9/2.png?token-time=3D2145916800&token-hash=3DaxCwMk_q-xrfoG=
+soNlFZqU1aWi6EkHrrdPsD6SOf1TA%3D" display=3D"block" class=3D"sc-jRQBWg gJex=
+WG" style=3D"border-radius: 50%; background-clip: padding-box; background-i=
+mage: url(https://c10.patreonusercontent.com/4/patreon-media/p/campaign/714=
+1068/a6e800efb9214046b007974cca7b9cac/eyJoIjo3NSwidyI6NzV9/2.png?token-time=
+=3D2145916800&token-hash=3DaxCwMk_q-xrfoGsoNlFZqU1aWi6EkHrrdPsD6SOf1TA%3D);=
+ overflow: hidden; background-repeat: no-repeat; background-position: cente=
+r; background-size: cover; box-sizing: border-box; border: 1px solid rgba(1=
+41,152,185,0.2); width: 100%; padding-bottom: 100%;"></div>
+                              </div>
+                            </a>
+                          </td>
+                          <td colspan=3D"3" style=3D"padding: 0;">
+                            <p color=3D"content" class=3D"sc-iAKWXU iYstmW"=
+ style=3D"color: rgba(11,12,15,0.95); font-family: system-ui,Roboto,sans-se=
+rif; position: relative; text-transform: none; -webkit-transition: all 300m=
+s cubic-bezier(0.19,1,0.22,1); transition: all 300ms cubic-bezier(0.19,1,0.=
+22,1); text-align: left; font-weight: 400; margin: 8px 0rem; font-size: 16p=
+x; line-height: 1.5;">
+                              <a href=3D"https://email.mailgun.patreon.com/=
+c/eJxM0L2urCAUQOGnkc4JvyIFxW3mNczesFVyEAwwMfP2N6c79UpW8SGMcG4p-iBXVGsQszNOz=
+drQMqMDOYtoI-JqHGjNoidutFsZebGs0mmjuGB0Qcpb__ZBl890QPiy0--gpLTECXe9kF4Ut04Z=
+dKilRa53lrzkUnHDhZB6leIlbFjAWrRc7UvY3aT57_n4lNcNo1Etr1Avlv05xt0n9W-S70m-n-f=
+52yf5hgjXUVusBSln1vwNnxyg9Vp6Bpw0R2rlhBYfOAq1V6HBBvSfX4iI0RGParZy5bNeSc7ArZ=
+l32o1bFh24QDboujMM2gpc5DHlvNd21TLO_A0ntIPYp1PbApSt_6R7gxjTSLVA3hoFSvfo_g250=
+_8AAAD__3mhfY8" class=3D"sc-jlRLRk cgNeZz" style=3D"background-color: trans=
+parent; border-radius: 4px; color: #f1465a; cursor: pointer; display: inlin=
+e-block; font-weight: 400; max-width: 100%; overflow: hidden; -webkit-text-=
+decoration-skip: ink; text-decoration-skip: ink; -webkit-text-decoration: n=
+one; text-decoration: none; text-overflow: ellipsis; -webkit-transition: al=
+l 300ms cubic-bezier(0.19,1,0.22,1); transition: all 300ms cubic-bezier(0.1=
+9,1,0.22,1); vertical-align: bottom; font-size: 16px; line-height: 1.5;">Ad=
+am Gordon Bell</a>
+                              <br><span color=3D"content" class=3D"sc-iUKqM=
+P hIsRlV" style=3D"color: rgba(11,12,15,0.95); font-family: system-ui,Robot=
+o,sans-serif; margin: 0; position: relative; text-transform: none; -webkit-=
+transition: all 300ms cubic-bezier(0.19,1,0.22,1); transition: all 300ms cu=
+bic-bezier(0.19,1,0.22,1); font-weight: 400; font-size: 16px; line-height: =
+1.5;">$4 per month for May*</span></p>
+                          </td>
+                          <td colspan=3D"1" style=3D"padding: 0;"></td>
+                          <td colspan=3D"1" style=3D"padding: 0;">$4.00</td=
+>
+                        </tr>
+                      </tbody>
+                    </table></div>
+                  <div class=3D"sc-hiCibw fWVupJ" style=3D"box-sizing: bord=
+er-box; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.22,1); transiti=
+on: all 300ms cubic-bezier(0.19,1,0.22,1); padding-top: 0rem; padding-right=
+: 0rem; padding-bottom: 0rem; padding-left: 0rem; margin-top: 32px; margin-=
+right: 0rem; margin-bottom: 0rem; margin-left: 0rem;">
+                    <a aria-disabled=3D"false" href=3D"https://email.mailgu=
+n.patreon.com/c/eJxM0D2urSAUQOHRSIfhXygoXuM0zAa2Si6iAU7Mmf3L7W69klV8AUY8t5x=
+8FDZIGzl12kmqNBoaHAjK05JCsNqBUiR5ZFo5S9BzY4VTWjJO8IJctv7tAy9f8ID4Jad3wewiMW=
+d2wYGpKEFL7ZI2QRuJKpDsBROSaca5UFbwmS_RwLKEhcndxN1Niv2ej0-dHxgN7zrH-yLFn2M8f=
+ZL_JrFOYn3f92-fxPoUTAd20vwDnxKh9bv2AmFSLGCrJ7T0wlGxzRUHGdB_fgVSSA5ZknQRllFl=
+UVBgi6Y77toZoyLjgQy8ngIDtwoX-pBL2e923XWc5RtPaAeST8e2Rahb_8nPBinlke8KZWsYMT-=
+j-xVKx_8BAAD__-CYerg" role=3D"button" class=3D"sc-ksdxgE lbrxMQ" style=3D"d=
+isplay: -webkit-inline-box; display: -webkit-inline-flex; display: -ms-inli=
+ne-flexbox; display: inline-flex; -webkit-box-pack: center; -webkit-justify=
+-content: center; -ms-flex-pack: center; justify-content: center; -webkit-a=
+lign-items: center; -webkit-box-align: center; -ms-flex-align: center; alig=
+n-items: center; position: relative; box-sizing: border-box; font-size: 16p=
+x; font-weight: 500; font-family: system-ui,Roboto,sans-serif; -webkit-text=
+-decoration: none; text-decoration: none; color: rgba(255,255,255,0.96); ba=
+ckground-color: #f1465a; border: 1px solid transparent; min-height: 44px; m=
+ax-height: 44px; padding: 0 20px; border-radius: 8px; outline-offset: 0; li=
+ne-height: 1; width: unset; white-space: unset; -webkit-transition: all 300=
+ms cubic-bezier(0.19,1,0.22,1); transition: all 300ms cubic-bezier(0.19,1,0=
+=2E22,1);">
+                      <div class=3D"sc-egiyK jttZGU" style=3D"display: -web=
+kit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webki=
+t-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center;=
+ justify-content: center; -webkit-align-items: center; -webkit-box-align: c=
+enter; -ms-flex-align: center; align-items: center; -webkit-column-gap: 4px=
+; column-gap: 4px; visibility: visible; padding: 0; margin: auto 0;">
+                        <div class=3D"sc-bqiRlB etzASb" style=3D"display: -=
+webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -we=
+bkit-flex-direction: column; -ms-flex-direction: column; flex-direction: co=
+lumn; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-p=
+ack: center; justify-content: center; -webkit-align-items: center; -webkit-=
+box-align: center; -ms-flex-align: center; align-items: center; height: 100=
+%; white-space: nowrap; padding: 0 0 0 0; margin: 8px 0;">View Pledge Histo=
+ry</div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class=3D"sc-hiCibw fWVupJ" style=3D"box-sizing: bord=
+er-box; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.22,1); transiti=
+on: all 300ms cubic-bezier(0.19,1,0.22,1); padding-top: 0rem; padding-right=
+: 0rem; padding-bottom: 0rem; padding-left: 0rem; margin-top: 32px; margin-=
+right: 0rem; margin-bottom: 0rem; margin-left: 0rem;">* This creator charge=
+s up front.
+                    <a href=3D"https://email.mailgun.patreon.com/c/eJw0kD2O=
+6yAURlcDHRG_NhQUr_E2rAtcYhSMLSB6yqx-lGK6T_qOTnECzHjsJfkobVA2CuaMU0wbXFhwIJl=
+IawrBGgda0-SRG-0sRS8WK502iguKJ5S6j8-YePqKT4gfevhgxZJy4jbL6DKqYHJEZQXPQgXtBC=
+1ecqm44UJIbaV4iDUusK5h5SovMTui-df8fLfHDbPj1R7xOmn1x5z3IOofkRuR29_3gy3heH0ZI=
+rcjErlhY-9B5AZ9lljxOyW3mmslFO3-hneN0MfVRoVANA_Y2wE9_Ydnw_5oOOmE8fr2SSE55Emx=
+VVrOtEXJgK-GZczGLYuOXAQ68bwrTNwbnOhDqTVf_bzaPOonHtCfSN8D-x6h7eNV7h1SKrNcDer=
+eMWK55_Ab1IG_AQAA___uroOg" class=3D"sc-jlRLRk cgNeZz" style=3D"background-c=
+olor: transparent; border-radius: 4px; color: #f1465a; cursor: pointer; dis=
+play: inline-block; font-weight: 400; max-width: 100%; overflow: hidden; -w=
+ebkit-text-decoration-skip: ink; text-decoration-skip: ink; -webkit-text-de=
+coration: none; text-decoration: none; text-overflow: ellipsis; -webkit-tra=
+nsition: all 300ms cubic-bezier(0.19,1,0.22,1); transition: all 300ms cubic=
+-bezier(0.19,1,0.22,1); vertical-align: bottom; font-size: 16px; line-heigh=
+t: 1.5;">What is that?</a>
+                  </div>
+                  <div class=3D"sc-hiCibw fWVupJ" style=3D"box-sizing: bord=
+er-box; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.22,1); transiti=
+on: all 300ms cubic-bezier(0.19,1,0.22,1); padding-top: 0rem; padding-right=
+: 0rem; padding-bottom: 0rem; padding-left: 0rem; margin-top: 32px; margin-=
+right: 0rem; margin-bottom: 0rem; margin-left: 0rem;"><span color=3D"conten=
+t" class=3D"sc-iUKqMP hIsRlV" style=3D"color: rgba(11,12,15,0.95); font-fam=
+ily: system-ui,Roboto,sans-serif; margin: 0; position: relative; text-trans=
+form: none; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.22,1); tran=
+sition: all 300ms cubic-bezier(0.19,1,0.22,1); font-weight: 400; font-size:=
+ 16px; line-height: 1.5;">You can see more details about your payment and a=
+ny tax paid at any time on your <a href=3D"https://email.mailgun.patreon.co=
+m/c/eJxM0D2urSAUQOHRSIfhXygoXuM0zAa2Si6iAU7Mmf3L7W69klV8AUY8t5x8FDZIGzl12km=
+qNBoaHAjK05JCsNqBUiR5ZFo5S9BzY4VTWjJO8IJctv7tAy9f8ID4Jad3wewiMWd2wYGpKEFL7Z=
+I2QRuJKpDsBROSaca5UFbwmS_RwLKEhcndxN1Niv2ej0-dHxgN7zrH-yLFn2M8fZL_JrFOYn3f9=
+2-fxPoUTAd20vwDnxKh9bv2AmFSLGCrJ7T0wlGxzRUHGdB_fgVSSA5ZknQRllFlUVBgi6Y77toZ=
+oyLjgQy8ngIDtwoX-pBL2e923XWc5RtPaAeST8e2Rahb_8nPBinlke8KZWsYMT-j-xVKx_8BAAD=
+__-CYerg" class=3D"sc-jlRLRk cgNeZz" style=3D"background-color: transparent=
+; border-radius: 4px; color: #f1465a; cursor: pointer; display: inline-bloc=
+k; font-weight: 400; max-width: 100%; overflow: hidden; -webkit-text-decora=
+tion-skip: ink; text-decoration-skip: ink; -webkit-text-decoration: none; t=
+ext-decoration: none; text-overflow: ellipsis; -webkit-transition: all 300m=
+s cubic-bezier(0.19,1,0.22,1); transition: all 300ms cubic-bezier(0.19,1,0.=
+22,1); vertical-align: bottom; font-size: 16px; line-height: 1.5;">membersh=
+ips page</a>.</span></div>
+                  <div
+                    class=3D"sc-hiCibw fWVupJ" style=3D"box-sizing: border-=
+box; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.22,1); transition:=
+ all 300ms cubic-bezier(0.19,1,0.22,1); padding-top: 0rem; padding-right: 0=
+rem; padding-bottom: 0rem; padding-left: 0rem; margin-top: 32px; margin-rig=
+ht: 0rem; margin-bottom: 0rem; margin-left: 0rem;"><span color=3D"gray3" cl=
+ass=3D"sc-iUKqMP iuKPlx" style=3D"color: rgba(14,18,32,0.7); font-family: s=
+ystem-ui,Roboto,sans-serif; margin: 0; position: relative; text-transform: =
+none; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.22,1); transition=
+: all 300ms cubic-bezier(0.19,1,0.22,1); font-weight: 400; font-size: 16px;=
+ line-height: 1.5;">Psst. Just wanted to let you know that you&#x27;re actu=
+ally changing the future of how art is made &amp; funded. Keep being you.</=
+span></div>
+</div>
+</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+  <td style=3D"padding: 0;">
+    <div class=3D"sc-hiCibw dRteeF" style=3D"box-sizing: border-box; -webki=
+t-transition: all 300ms cubic-bezier(0.19,1,0.22,1); transition: all 300ms =
+cubic-bezier(0.19,1,0.22,1); padding-top: 0rem; padding-right: 16px; paddin=
+g-bottom: 0rem; padding-left: 16px; margin-top: 0rem; margin-right: 0rem; m=
+argin-bottom: 0rem; margin-left: 0rem;">
+      <div class=3D"sc-hiCibw kXTnaC" style=3D"box-sizing: border-box; -web=
+kit-transition: all 300ms cubic-bezier(0.19,1,0.22,1); transition: all 300m=
+s cubic-bezier(0.19,1,0.22,1); padding-top: 24px; padding-right: 0rem; padd=
+ing-bottom: 24px; padding-left: 0rem; margin-top: 24px; margin-right: 0rem;=
+ margin-bottom: 0rem; margin-left: 0rem; border-top: solid 1px #f6f7fa; bor=
+der-bottom: solid 1px #f6f7fa;">
+        <div class=3D"sc-hiCibw edOxht" style=3D"box-sizing: border-box; -w=
+ebkit-transition: all 300ms cubic-bezier(0.19,1,0.22,1); transition: all 30=
+0ms cubic-bezier(0.19,1,0.22,1); padding-top: 0rem; padding-right: 0rem; pa=
+dding-bottom: 0rem; padding-left: 0rem; margin-top: 0rem; margin-right: 0re=
+m; margin-bottom: 0rem; margin-left: 0rem;">
+          <div class=3D"sc-hiCibw fbARbf" style=3D"box-sizing: border-box; =
+-webkit-transition: all 300ms cubic-bezier(0.19,1,0.22,1); transition: all =
+300ms cubic-bezier(0.19,1,0.22,1); padding-top: 0rem; padding-right: 0rem; =
+padding-bottom: 0rem; padding-left: 0rem; margin-top: 0rem; margin-right: 0=
+rem; margin-bottom: 16px; margin-left: 0rem;"><span color=3D"content" class=
+=3D"sc-iUKqMP wPlxW" style=3D"color: rgba(11,12,15,0.95); font-family: syst=
+em-ui,Roboto,sans-serif; margin: 0; position: relative; text-transform: non=
+e; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.22,1); transition: a=
+ll 300ms cubic-bezier(0.19,1,0.22,1); font-weight: 600; font-size: 24px; li=
+ne-height: 1.25;">Get the Patreon app</span></div>
+          <div
+            class=3D"sc-hiCibw edOxht" style=3D"box-sizing: border-box; -we=
+bkit-transition: all 300ms cubic-bezier(0.19,1,0.22,1); transition: all 300=
+ms cubic-bezier(0.19,1,0.22,1); padding-top: 0rem; padding-right: 0rem; pad=
+ding-bottom: 0rem; padding-left: 0rem; margin-top: 0rem; margin-right: 0rem=
+; margin-bottom: 0rem; margin-left: 0rem;">
+            <div class=3D"sc-hiCibw hJYzDf" style=3D"box-sizing: border-box=
+; display: inline-block; -webkit-transition: all 300ms cubic-bezier(0.19,1,=
+0.22,1); transition: all 300ms cubic-bezier(0.19,1,0.22,1); padding-top: 0r=
+em; padding-right: 0rem; padding-bottom: 0rem; padding-left: 0rem; margin-t=
+op: 0rem; margin-right: 0rem; margin-bottom: 0rem; margin-left: 0rem;">
+              <a href=3D"https://email.mailgun.patreon.com/c/eJwskDGu5CAQBU=
+9jMlvQBgMBwSa-htVAe4w-xggYreb2q9H-9D1VBeVxhOtI0QUwfjVBzFbZdZaKttlbhFlEHb03y=
+qKULDriSlrDyInNgJVq5YLRjSkf_dMH3S7TC8OHXQ6sWIMAea64AZdRBx5ABSKlpUdlWXLAYeWK=
+CwHSgFiEDhtq7TVfzy2cdpL8a369y1JxNHrKEp6bZXeNUfu0_plgn2DHWvuCtWb63hPs7_5_nWD=
+_5SbYUxRcSqk2YQxrruI7B2z9KT2jnyT31MqFLf7FV6G2FBpsYP_5pok-WuJxnTUYPktDMCPXaj=
+7pVHbbZODCs0F3zTjoKHiT8ynn82n3U8aVP-HC9iL27tSOgOXoP6keGGMa6SmYj0aBUh3d7Zg7_=
+QsAAP__ZB2A_w" target=3D"_blank" rel=3D"noopener noreferrer" class=3D"sc-jl=
+RLRk dQnieq" style=3D"background-color: transparent; border-radius: 4px; co=
+lor: #f1465a; cursor: pointer; display: inline-block; font-weight: 400; max=
+-width: 100%; overflow: hidden; -webkit-text-decoration-skip: ink; text-dec=
+oration-skip: ink; -webkit-text-decoration: none; text-decoration: none; te=
+xt-overflow: ellipsis; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.=
+22,1); transition: all 300ms cubic-bezier(0.19,1,0.22,1); vertical-align: b=
+ottom; line-height: 0px; font-size: 16px;">
+                <div class=3D"sc-hiCibw awJHu" style=3D"box-sizing: border-=
+box; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.22,1); transition:=
+ all 300ms cubic-bezier(0.19,1,0.22,1); padding-top: 0rem; padding-right: 0=
+rem; padding-bottom: 0rem; padding-left: 0rem; margin-top: 0rem; margin-rig=
+ht: 0rem; margin-bottom: 0rem; margin-left: 0rem; width: 96px; height: 32px=
+;">
+                  <img src=3D"https://c5.patreon.com/external/email/notify-=
+new-post/badge_appstore@2x.png" alt=3D"Download Patreon app for IOS" width=
+=3D"100%" height=3D"100%" style=3D"border: 0; object-fit: contain;">
+                </div>
+              </a>
+            </div>
+            <div class=3D"sc-hiCibw liUCgi" style=3D"box-sizing: border-box=
+; display: inline-block; -webkit-transition: all 300ms cubic-bezier(0.19,1,=
+0.22,1); transition: all 300ms cubic-bezier(0.19,1,0.22,1); padding-top: 0r=
+em; padding-right: 0rem; padding-bottom: 0rem; padding-left: 0rem; margin-t=
+op: 0rem; margin-right: 0rem; margin-bottom: 0rem; margin-left: 8px;">
+              <a href=3D"https://email.mailgun.patreon.com/c/eJw80DGq5SAUgO=
+HVaJeLHo0mhcXAIxsYpg5HPUnkGQ3qY7i7H24z9Q9f8Xsc4dpTdAEWr5Ygp3Ve1aRnMpNfESYZb=
+fR-mVfUmkdHYtbrwslJs8CqZyUkpxtT3vu7D7pdphPDm18OhJDGAlgKBxl9mEgQZ2EWo6U3lnhy=
+IECJWUgJegH5kjYYtNZboQ4TjpVp8ZHPn_J6cDSq5RXqzbO7xng6U78YbAy2J-P7ddZ6Zvp0Bls=
+ftRGDDZ-nM9giDUy5M7WlyNRXqPd_D0tsNUUG5spMfVHZ__zmzT34kwO2XkvP6JkWnlq5sMW_eB=
+Zqr0KDD-zfn3HRx5VEVJOFRUx6IZhQ2Hk66JhXY3QQ0vNB95Nx0F7wJudTzkdtdy3jyu9wYTuJ_=
+3Rqe8Cy9-_07BhjGqkWzHujQOkZ3W2YO_0LAAD__--WjNE" target=3D"_blank" rel=3D"no=
+opener noreferrer" class=3D"sc-jlRLRk dQnieq" style=3D"background-color: tr=
+ansparent; border-radius: 4px; color: #f1465a; cursor: pointer; display: in=
+line-block; font-weight: 400; max-width: 100%; overflow: hidden; -webkit-te=
+xt-decoration-skip: ink; text-decoration-skip: ink; -webkit-text-decoration=
+: none; text-decoration: none; text-overflow: ellipsis; -webkit-transition:=
+ all 300ms cubic-bezier(0.19,1,0.22,1); transition: all 300ms cubic-bezier(=
+0.19,1,0.22,1); vertical-align: bottom; line-height: 0px; font-size: 16px;"=
+>
+                <div class=3D"sc-hiCibw iorNNZ" style=3D"box-sizing: border=
+-box; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.22,1); transition=
+: all 300ms cubic-bezier(0.19,1,0.22,1); padding-top: 0rem; padding-right: =
+0rem; padding-bottom: 0rem; padding-left: 0rem; margin-top: 0rem; margin-ri=
+ght: 0rem; margin-bottom: 0rem; margin-left: 0rem; width: 109px; height: 32=
+px;">
+                  <img src=3D"https://c5.patreon.com/external/email/notify-=
+new-post/badge_google_playstore@2x.png" alt=3D"Download Patreon app for And=
+roid" width=3D"100%" height=3D"100%" style=3D"border: 0; object-fit: contai=
+n;">
+                </div>
+              </a>
+            </div>
+        </div>
+        <div class=3D"sc-hRMWxn gGkKkW" style=3D"display: block; clear: bot=
+h;"></div>
+      </div>
+    </div>
+    <div class=3D"sc-hiCibw hmZpFt" style=3D"box-sizing: border-box; -webki=
+t-transition: all 300ms cubic-bezier(0.19,1,0.22,1); transition: all 300ms =
+cubic-bezier(0.19,1,0.22,1); padding-top: 24px; padding-right: 0rem; paddin=
+g-bottom: 24px; padding-left: 0rem; margin-top: 0rem; margin-right: 0rem; m=
+argin-bottom: 0rem; margin-left: 0rem;">
+      <div class=3D"sc-hiCibw ijVouB" style=3D"box-sizing: border-box; disp=
+lay: inline-block; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.22,1=
+); transition: all 300ms cubic-bezier(0.19,1,0.22,1); padding-top: 0rem; pa=
+dding-right: 0rem; padding-bottom: 0rem; padding-left: 0rem; margin-top: 0r=
+em; margin-right: 0rem; margin-bottom: 0rem; margin-left: 0rem; width: 25px=
+; height: 24px; float: left;">
+        <img src=3D"https://c5.patreon.com/external/logo/email_logo.png" al=
+t=3D"Patreon trademark" class=3D"sc-bUhFKy kHnGGq" style=3D"border: 0; widt=
+h: 100%;">
+      </div>
+      <div class=3D"sc-hiCibw jgTrRC" style=3D"box-sizing: border-box; disp=
+lay: inline-block; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.22,1=
+); transition: all 300ms cubic-bezier(0.19,1,0.22,1); padding-top: 0rem; pa=
+dding-right: 0rem; padding-bottom: 0rem; padding-left: 0rem; margin-top: 0r=
+em; margin-right: 0rem; margin-bottom: 0rem; margin-left: 0rem; float: righ=
+t;">
+        <a href=3D"https://email.mailgun.patreon.com/c/eJwskLvOrCAYAJ9GOg33=
+S0Fxmn0N8wGfShbRABuzb3-yyV_PZIoJMOKx5uQjt0HYyGannJilQj0HB3xmyaQQrHIgJUkeqZL=
+OEvRMW-6kEpQRPCGXtX_7wNMX3CF-yeG10QJdBJ1AqQCAUoDTQm8xRJGMItlzygVVlDEuLWcLM1=
+GDMcFQsem4uUnSX3n_1OWG0fCqS7xOUvwxxt0n8W_ir4m_nudZxpPHwPbjE3_92aT5Gz4lQutX7=
+QXCJGnAVg9o6YG9YlsqDjKgv38HUkgOaRKz4ZbO0iKfgRo1b7gpp7WMlAUy8LwLDFwrnOhDLmW7=
+2nnVcZRvPKDtSD4d2xqhrv2d7xVSyiNfFcraMGK-R_cvKB3_BwAA___QYXut" class=3D"sc-j=
+lRLRk dQnieq" style=3D"background-color: transparent; border-radius: 4px; c=
+olor: #f1465a; cursor: pointer; display: inline-block; font-weight: 400; ma=
+x-width: 100%; overflow: hidden; -webkit-text-decoration-skip: ink; text-de=
+coration-skip: ink; -webkit-text-decoration: none; text-decoration: none; t=
+ext-overflow: ellipsis; -webkit-transition: all 300ms cubic-bezier(0.19,1,0=
+=2E22,1); transition: all 300ms cubic-b=
+ezier(0.19,1,0.22,1); vertical-align:=20=
+bottom; line-height: 0px; font-size: 16px;">
+          <div class=3D"sc-hiCibw jmmMiG" style=3D"box-sizing: border-box; =
+display: inline-block; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.=
+22,1); transition: all 300ms cubic-bezier(0.19,1,0.22,1); padding-top: 0rem=
+; padding-right: 0rem; padding-bottom: 0rem; padding-left: 0rem; margin-top=
+: 0rem; margin-right: 0rem; margin-bottom: 0rem; margin-left: 0rem; width: =
+32px; height: 32px;">
+            <img src=3D"https://c5.patreon.com/external/email/notify-new-po=
+st/tw@2x.png" width=3D"100%" height=3D"100%" style=3D"border: 0; object-fit=
+: contain;">
+          </div>
+        </a>
+        <a href=3D"https://email.mailgun.patreon.com/c/eJws0DvO4yAUQOHVmM4W=
+YJ4FxTTZhnWBS4yCwQKiKLsfRfr7T6c4HmY4jxxd4MbvJrDVSruvQqJavQW-sqij90ZaEIJEh1Q=
+Kawg6pgy3Qu6UEbwgl2N8x8TLFXxC-JLTaeAq8pggKI8RWKLBs10LkSh6oYBkxynfqaSMcWE425=
+gOCrT2mu5JhWQXQX_l57tuN8yOrW6hXaS4c857LPu_hT8W_vh8PluCgL611w8s_PHHSXc3vEuAP=
+lodBfwiqMdeT-jxA8-Kfas4yYTx-i2IPlqkcV81N3QVBvkKVMs1YZJWKREo82TidReYeFS40Plc=
+Smr9anWe5RtO6E8k74H9CFCP8cr3ATHmmVuFcnQMmO853APKwP8BAAD__3ZkfBo" class=3D"s=
+c-jlRLRk dQnieq" style=3D"background-color: transparent; border-radius: 4px=
+; color: #f1465a; cursor: pointer; display: inline-block; font-weight: 400;=
+ max-width: 100%; overflow: hidden; -webkit-text-decoration-skip: ink; text=
+-decoration-skip: ink; -webkit-text-decoration: none; text-decoration: none=
+; text-overflow: ellipsis; -webkit-transition: all 300ms cubic-bezier(0.19,=
+1,0.22,1); transition: all 300ms cubic-bezier(0.19,1,0.22,1); vertical-alig=
+n: bottom; line-height: 0px; font-size: 16px;">
+          <div class=3D"sc-hiCibw gzccfP" style=3D"box-sizing: border-box; =
+display: inline-block; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.=
+22,1); transition: all 300ms cubic-bezier(0.19,1,0.22,1); padding-top: 0rem=
+; padding-right: 0rem; padding-bottom: 0rem; padding-left: 0rem; margin-top=
+: 0rem; margin-right: 0rem; margin-bottom: 0rem; margin-left: 1.75rem; widt=
+h: 32px; height: 32px;">
+            <img src=3D"https://c5.patreon.com/external/email/notify-new-po=
+st/fb@2x.png" width=3D"100%" height=3D"100%" style=3D"border: 0; object-fit=
+: contain;">
+          </div>
+        </a>
+        <a href=3D"https://email.mailgun.patreon.com/c/eJws0DHOrCAUxfHVSKcB=
+BISC4jVuw9wLVyWDaIDJZHb_MslXn19O8Ufo4dxS9EFanG0Qo9NuHpUmM6IDOYq4RESrHSjFoie=
+ulbOMvDBWOqVnLhhdkPLWvq3T5TMdEL7s9Ao0GHSWy5k7bkCh4Tsi7GRQSZxZ8vK3aS6EVFaKSS=
+zBwLLgwufdhN0Niv-ej3eZHuiV7jKF-2LZn70_bZj_DXId5Pr5fKZUWoejwvUTg1z__CBXVv0D7=
+xygtru0DDgojlTLCTV-4ChUp0KddWivX4aI0RGP87hIy0dlSY7AFz3utGtnjApcIOt0PRk6bQUu=
+8phy3u963aWf-RtOqAexd6O6BShbe6VngxhTT3eBvFUKlJ7e_Aq50f8AAAD__2iWfIQ" class=
+=3D"sc-jlRLRk dQnieq" style=3D"background-color: transparent; border-radius=
+: 4px; color: #f1465a; cursor: pointer; display: inline-block; font-weight:=
+ 400; max-width: 100%; overflow: hidden; -webkit-text-decoration-skip: ink;=
+ text-decoration-skip: ink; -webkit-text-decoration: none; text-decoration:=
+ none; text-overflow: ellipsis; -webkit-transition: all 300ms cubic-bezier(=
+0.19,1,0.22,1); transition: all 300ms cubic-bezier(0.19,1,0.22,1); vertical=
+-align: bottom; line-height: 0px; font-size: 16px;">
+          <div class=3D"sc-hiCibw gzccfP" style=3D"box-sizing: border-box; =
+display: inline-block; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.=
+22,1); transition: all 300ms cubic-bezier(0.19,1,0.22,1); padding-top: 0rem=
+; padding-right: 0rem; padding-bottom: 0rem; padding-left: 0rem; margin-top=
+: 0rem; margin-right: 0rem; margin-bottom: 0rem; margin-left: 1.75rem; widt=
+h: 32px; height: 32px;">
+            <img src=3D"https://c5.patreon.com/external/email/notify-new-po=
+st/ig@2x.png" width=3D"100%" height=3D"100%" style=3D"border: 0; object-fit=
+: contain;">
+          </div>
+        </a>
+        <a href=3D"https://email.mailgun.patreon.com/c/eJwU0M2q3CAYgOGribsE=
+fxNduCg9J4WzLJTSlXzqlx_GmFQNw_Tqy6xfeBePhxY2t0cbuPZCB9YbZUQvFY69N8B7FqfovVY=
+GpCTRIlXSaIKWjZobqQRlBA_Yk6uv2vCwCVcIL7JZoRcVFyp1mCjlUjLUngs_GTUyMypOdsspF1=
+RRxrjUnA1sCiNMk5-oWMawmE7S93m983BBK3jmIZwHSXZr7aqd-NbxuePz8_kcXufdbo_v3vE5b=
+JAzpo7Pv75__PvSPz-2P18uyc-_7jd-_hBmJcVecKcApZ65JvCdpB5L3qDEJ6wZy5CxkQb18caJ=
+PhqkUfQT17SXGnkPdFL9gosy4ygDZZ40PK4EDV2GA63fU1rOcpy5bekVNigrkrticQGyq4_9chD=
+j3vYzQ3IFA-5Xq3aGVPF_AAAA__-KEYJO" class=3D"sc-jlRLRk dQnieq" style=3D"back=
+ground-color: transparent; border-radius: 4px; color: #f1465a; cursor: poin=
+ter; display: inline-block; font-weight: 400; max-width: 100%; overflow: hi=
+dden; -webkit-text-decoration-skip: ink; text-decoration-skip: ink; -webkit=
+-text-decoration: none; text-decoration: none; text-overflow: ellipsis; -we=
+bkit-transition: all 300ms cubic-bezier(0.19,1,0.22,1); transition: all 300=
+ms cubic-bezier(0.19,1,0.22,1); vertical-align: bottom; line-height: 0px; f=
+ont-size: 16px;">
+          <div class=3D"sc-hiCibw gzccfP" style=3D"box-sizing: border-box; =
+display: inline-block; -webkit-transition: all 300ms cubic-bezier(0.19,1,0.=
+22,1); transition: all 300ms cubic-bezier(0.19,1,0.22,1); padding-top: 0rem=
+; padding-right: 0rem; padding-bottom: 0rem; padding-left: 0rem; margin-top=
+: 0rem; margin-right: 0rem; margin-bottom: 0rem; margin-left: 1.75rem; widt=
+h: 32px; height: 32px;">
+            <img src=3D"https://c5.patreon.com/external/email/notify-new-po=
+st/yt@2x.png" width=3D"100%" height=3D"100%" style=3D"border: 0; object-fit=
+: contain;">
+          </div>
+        </a>
+      </div>
+      <div class=3D"sc-hRMWxn gGkKkW" style=3D"display: block; clear: both;=
+"></div>
+    </div>
+    <div class=3D"sc-hiCibw edOxht" style=3D"box-sizing: border-box; -webki=
+t-transition: all 300ms cubic-bezier(0.19,1,0.22,1); transition: all 300ms =
+cubic-bezier(0.19,1,0.22,1); padding-top: 0rem; padding-right: 0rem; paddin=
+g-bottom: 0rem; padding-left: 0rem; margin-top: 0rem; margin-right: 0rem; m=
+argin-bottom: 0rem; margin-left: 0rem;">
+      <p color=3D"gray2" class=3D"sc-iAKWXU gXyksb" style=3D"color: rgba(14=
+,18,32,0.7); font-family: system-ui,Roboto,sans-serif; margin: 0; position:=
+ relative; text-transform: none; -webkit-transition: all 300ms cubic-bezier=
+(0.19,1,0.22,1); transition: all 300ms cubic-bezier(0.19,1,0.22,1); text-al=
+ign: left; font-weight: 400; font-size: 16px; line-height: 1.5;">Patreon In=
+c.</p>
+      <p color=3D"gray2" class=3D"sc-iAKWXU gXyksb" style=3D"color: rgba(14=
+,18,32,0.7); font-family: system-ui,Roboto,sans-serif; margin: 0; position:=
+ relative; text-transform: none; -webkit-transition: all 300ms cubic-bezier=
+(0.19,1,0.22,1); transition: all 300ms cubic-bezier(0.19,1,0.22,1); text-al=
+ign: left; font-weight: 400; font-size: 16px; line-height: 1.5;">600 Townse=
+nd St, San Francisco, CA 94103</p>
+    </div>
+    <div class=3D"sc-hiCibw edmgJT" style=3D"box-sizing: border-box; -webki=
+t-transition: all 300ms cubic-bezier(0.19,1,0.22,1); transition: all 300ms =
+cubic-bezier(0.19,1,0.22,1); padding-top: 0rem; padding-right: 0rem; paddin=
+g-bottom: 0rem; padding-left: 0rem; margin-top: 16px; margin-right: 0rem; m=
+argin-bottom: 0rem; margin-left: 0rem;">
+      <p color=3D"gray2" class=3D"sc-iAKWXU gXyksb" style=3D"color: rgba(14=
+,18,32,0.7); font-family: system-ui,Roboto,sans-serif; margin: 0; position:=
+ relative; text-transform: none; -webkit-transition: all 300ms cubic-bezier=
+(0.19,1,0.22,1); transition: all 300ms cubic-bezier(0.19,1,0.22,1); text-al=
+ign: left; font-weight: 400; font-size: 16px; line-height: 1.5;">This email=
+ was sent to paulcarsonslab@bernhardwagner.net</p>
+      <div class=3D"sc-hiCibw jPTmqi" style=3D"box-sizing: border-box; -web=
+kit-transition: all 300ms cubic-bezier(0.19,1,0.22,1); transition: all 300m=
+s cubic-bezier(0.19,1,0.22,1); text-align: left; padding-top: 0rem; padding=
+-right: 0rem; padding-bottom: 0rem; padding-left: 0rem; margin-top: 0rem; m=
+argin-right: 0rem; margin-bottom: 0rem; margin-left: 0rem;">
+        <a href=3D"https://email.mailgun.patreon.com/c/eJxMkMuq5CAUAL8m7tL4=
+fixczCa_EY56TOQaE9Sm6b8f7qxmXVAUFWDGcy_JR26DsJGtTjmxSoV6DQ74ypJJIVjlQEqSPFI=
+lnSXombbcSSUoI3hBqfv4jomXr3hA_JLTA01aMUmzU9oZcFoopWwKVqqQRUZSPKdcUEUZ49Jy9m=
+ImajAmGCqyjtktkv6aj3d7PTA73u0V74tUf875jEX8Wfi28O3z-fzPF74NnLO0Yyx8-9dGun_gX=
+SP0cbdRISySBuzthJ4-cDTsr4aTTBg_vytSSA5pEqvhlq7SIl-BGrVmzMppLSNlgUy8ngoT9wYX=
+-lBqzXe_7jbP-o0n9APJe2DfI7R9_JRnh5TKLHeDuneMWJ45_AZ14N8AAAD__xKXfc8" class=
+=3D"sc-jlRLRk cgNeZz" style=3D"background-color: transparent; border-radius=
+: 4px; color: #f1465a; cursor: pointer; display: inline-block; font-weight:=
+ 400; max-width: 100%; overflow: hidden; -webkit-text-decoration-skip: ink;=
+ text-decoration-skip: ink; -webkit-text-decoration: none; text-decoration:=
+ none; text-overflow: ellipsis; -webkit-transition: all 300ms cubic-bezier(=
+0.19,1,0.22,1); transition: all 300ms cubic-bezier(0.19,1,0.22,1); vertical=
+-align: bottom; font-size: 16px; line-height: 1.5;">Manage email settings</=
+a>
+      </div>
+    </div>
+    </div>
+  </td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<img width=3D"1px" height=3D"1px" alt=3D"" src=3D"https://email.mailgun.pat=
+reon.com/o/eJwUz0uK7CAUANDVtDML_5-B07eNcK_eJNLGBLV41O6b2sCBg7DyudWSsgqoQ5Y8=
+2qi5seQ4RlBcFl8Qg41gDCuJhDUxMErSBRWN1UIyuqC2bX7mois1OiB_2JkwaLC7RIEOye3KGVK=
+gs7dBGJGNYzUpobSwQkplgpIv6bMD79ELvbu8xx8jvvLx7q8H1qC7v_J9sZEeeLcMY959NsAfI5=
+BGP2GU_3B0Gq9Oiy2Yv99XwRJJFM29CoKbQIqD8JbvtNvonMlCIlt0PQ0WbR0uSlhb2-9x3X2d7=
+ZNPGAex96SxZejb_K3PBqXUVe8ObRuUqT5rpn_QJv0FAAD__6ajbI4"></body>
+
+</html>
+</div>
+--07e810e727607ec6dd46110450d3febd4798c08bc59e13492de1a8ca0fb6--

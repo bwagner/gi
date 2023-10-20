@@ -1,0 +1,886 @@
+Delivered-To: wernbag@gmail.com
+Received: by 2002:a17:906:4096:0:0:0:0 with SMTP id u22csp3286501ejj;
+        Mon, 21 Feb 2022 17:53:41 -0800 (PST)
+X-Google-Smtp-Source: ABdhPJzqefvF/kzYhGau7oJ4UgdlUdYUewInvb45n3LK/wjl4oFo+UmFcQKHzoNCl0czc1tf6Bef
+X-Received: by 2002:a05:622a:1451:b0:2de:2c32:aeae with SMTP id v17-20020a05622a145100b002de2c32aeaemr6153073qtx.129.1645494821455;
+        Mon, 21 Feb 2022 17:53:41 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1645494821; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ZWiSNlFrkpd9YX33MwGcLR/jjIjnXWskaJ15ic7PK+rsK9Hxx0qtn47FV7ORxrW497
+         0ELPR/ueaGU+HzpTiZM1EYNZKJO9r+mCyKPQPZEdaX2FEeAkGqK7YsvgHO395RVhq5em
+         /U83S+xWIYdYrX955k5EY6PVzsKevkCtAy4Oe1YUHsNwTfeNumnIEe57ru1aCrqEE3r+
+         InJzN5++CFm/6NCJO0N5HHnR8Q1rPCVS6GjSd8WDMEmYCxwMgyGHtah9HHl8aYyf61wk
+         E7UGrnXAreL4XNCTZglmQHYUxhfzCSSZEx4gKv/gteHVoXCPFGqJk7ttHRMXAFvonnb+
+         9ylQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=SdKOuL79ytjFeiZuUsuUBHID6LKbKzynC1OYV4nhhoc=;
+        b=QnI3Bb4aa8C3APNHs9VxDNog71XPCsaRY69oo1XfEUyTbyoD+Db6g2aJBaO6dp+5qW
+         DJSntoBnDICTTriQWVtNKgXBQwF5BXoJT9goPrWqe6MPXiNoodW2c7E2yTQdlT02z7cd
+         LFD0GzQrlfotMfr+KrRgMa9G5Qgay+dRYizr1JlNT3SsTPkBnK+oWmlUOsnCFHngDJFn
+         74qoGkfVCsl5FFD1FPBEOqT1aOEJEGcsicRH/ZGt+y2mqQiixHCkPvkRI1wCyKLs54PP
+         TXG+Mrw4TMdNRTz613zO+TpZ+TMvxLM0anfABlaxFscYtgKxjdDLi8CqB7KZg7pl7gU9
+         dmpA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@namecheap.com header.s=s1 header.b="RKvVgJ/O";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Mv9RocS6;
+       spf=pass (google.com: domain of bounces+18856604-c8a5-wernbag=gmail.com@mailserviceemailout1.namecheap.com designates 167.89.64.97 as permitted sender) smtp.mailfrom="bounces+18856604-c8a5-wernbag=gmail.com@mailserviceemailout1.namecheap.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=namecheap.com
+Return-Path: <bounces+18856604-c8a5-wernbag=gmail.com@mailserviceemailout1.namecheap.com>
+Received: from xtrwqhsk.outbound-mail.sendgrid.net (xtrwqhsk.outbound-mail.sendgrid.net. [167.89.64.97])
+        by mx.google.com with ESMTPS id c11si2672945qtx.480.2022.02.21.17.53.40
+        for <wernbag@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 21 Feb 2022 17:53:41 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+18856604-c8a5-wernbag=gmail.com@mailserviceemailout1.namecheap.com designates 167.89.64.97 as permitted sender) client-ip=167.89.64.97;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@namecheap.com header.s=s1 header.b="RKvVgJ/O";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Mv9RocS6;
+       spf=pass (google.com: domain of bounces+18856604-c8a5-wernbag=gmail.com@mailserviceemailout1.namecheap.com designates 167.89.64.97 as permitted sender) smtp.mailfrom="bounces+18856604-c8a5-wernbag=gmail.com@mailserviceemailout1.namecheap.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=namecheap.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=namecheap.com;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	x-feedback-id:to;
+	s=s1; bh=SdKOuL79ytjFeiZuUsuUBHID6LKbKzynC1OYV4nhhoc=;
+	b=RKvVgJ/OSDvatUhpQrFbavmgy2QW9ELz7CJzf1THCyrftb/Ulf5H+K5cW/zRHvMmSrx8
+	zAU+HYPmhM+fxm1Y+bXHxnLgpoSgxewxTsMsPOhmhTuyqRSvwCOr6TRQbGsPc2nGYUBKeE
+	5WoWPupiBKwjhi0bnYh2d42Ng+s3CkHFFC57XDiLoO9bJml2LzcXYNZpWD3E6dz36mKL91
+	5/elu6w1KwHsCjuhRcYMJYB+BMAIo7h6mTLd1X/d4FnkmGjnmVc8TJQYrflFKqbIkcUD98
+	G014lpnEOGa358akL+M38DfD2qmFTVqpTZQzw1ebo96aPLb85DfW+qKBLLnf5Hxg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	x-feedback-id:to;
+	s=smtpapi; bh=SdKOuL79ytjFeiZuUsuUBHID6LKbKzynC1OYV4nhhoc=;
+	b=Mv9RocS6nHB3PJisDBQjwOs+1xxUSMSuIKoTpMPBmDblwJDno7ZA2JKWEJRp0ABpGgRI
+	ttFvRlva2ftVddilX06C7nZpPFzX/8XGFUvWOY7PGblljVnKDfdr1Kn0t3gYcGy7Kc6lZC
+	QQjx3gWlv/Eth3uQPfUSQf/yqbMAACjyk=
+Received: by filterdrecv-867544584f-vhgvn with SMTP id filterdrecv-867544584f-vhgvn-1-62144224-35
+        2022-02-22 01:53:40.464960734 +0000 UTC m=+14960024.174404398
+Received: from MTg4NTY2MDQ (unknown)
+	by geopod-ismtpd-1-1 (SG) with HTTP
+	id w5dA6I25SriuXjfJGV6dDA
+	Tue, 22 Feb 2022 01:53:40.355 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Date: Tue, 22 Feb 2022 01:53:40 +0000 (UTC)
+From: Namecheap Renewals <renewals@namecheap.com>
+Mime-Version: 1.0
+Message-ID: <w5dA6I25SriuXjfJGV6dDA@geopod-ismtpd-1-1>
+Subject: Bernhard, here's your auto-renewal notice
+X-Feedback-ID: 18856604:SG
+X-SG-EID: 
+ =?us-ascii?Q?WO3yfy31vHV92n9YsqoWQyxFlGr1e4EfbHSPP1dPRVinKCcg5MRMjgtx85B9qz?=
+ =?us-ascii?Q?DrLaf=2FPlDWiwV9uXqLBpVfMuKSVI9rzwSBk+yk=2F?=
+ =?us-ascii?Q?ejf1YftXDIL09XbeSu3GAoalduj+FdUasH4UZ5c?=
+ =?us-ascii?Q?my3h3U2x1PZ6=2FZi5eJR8+5qe4swkEdRjJIqYumj?=
+ =?us-ascii?Q?XX3Css=2FFYZexU2DkLEV2ByBiYp7H3V40f94nFxz?=
+ =?us-ascii?Q?X2VA3bJ4YVaX+dtUaJ58w5y1QK=2Fvsma6u8pWK0?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsbwVTEDmHsIRqfkQBSat5RR3lG62Ew8AjbwWxKz9HpP?=
+ =?us-ascii?Q?wdntWGafAkpM00QsJeH7DK=2Fhz23s5b3iq+FmB6q?=
+ =?us-ascii?Q?z6nuTTXOZ=2FkkkVABSKc97GObG=2Fvy8Y1ZF2=2FTpZ=2F?=
+ =?us-ascii?Q?V7igj+iJ8HwDYxQJ9lUfKVjD8cvTIUNsKNS1Nf8?=
+ =?us-ascii?Q?qqSVhpuDUkd0J7IpH9I9Lv5RjAApxnmorwE5qDG?=
+ =?us-ascii?Q?5HylPNAcfczMd8YC0=3D?=
+To: wernbag@gmail.com
+X-Entity-ID: +TqYScLt1MclhZqzACgs9w==
+
+<!DOCTYPE html><html><head>
+<title>Namecheap</title>
+<meta charset=3D"utf-8">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+
+<style type=3D"text/css">
+ /* CUSTOM FONT */ =20
+@import url('https://fonts.googleapis.com/css?family=3DOpen+Sans:400,600,70=
+0');
+
+/* iOS BLUE LINKS */
+a[x-apple-data-detectors] { color: inherit !important; text-decoration: non=
+e !important; font-size: inherit !important; font-family: inherit !importan=
+t; font-weight: inherit !important; line-height: inherit !important; }
+
+.btn_orange { background: #fd4f00; background-image: -webkit-linear-gradien=
+t(top, #FD4F00, #E03821); background-image: -moz-linear-gradient(top, #FD4F=
+00, #E03821); background-image: -ms-linear-gradient(top, #FD4F00, #E03821);=
+ background-image: -o-linear-gradient(top, #FD4F00, #E03821); background-im=
+age: linear-gradient(to bottom, #FD4F00, #E03821); }
+
+.btn_orange:hover { background: #fd4f00; background-image: -webkit-linear-g=
+radient(top, #e03b2e, #d02a2d); background-image: -moz-linear-gradient(top,=
+ #e03b2e, #d02a2d); background-image: -ms-linear-gradient(top, #e03b2e, #d0=
+2a2d); background-image: -o-linear-gradient(top, #e03b2e, #d02a2d); backgro=
+und-image: linear-gradient(to bottom, #e03b2e, #d02a2d); text-decoration: n=
+one; }
+   =20
+.btn_green { background: #89c0bf; background-image: -webkit-linear-gradient=
+(top, #89c0bf, #6f9897); background-image: -moz-linear-gradient(top, #89c0b=
+f, #6f9897); background-image: -ms-linear-gradient(top, #89c0bf, #6f9897); =
+background-image: -o-linear-gradient(top, #89c0bf, #6f9897); background-ima=
+ge: linear-gradient(to bottom, #89c0bf, #6f9897); text-decoration: none; }=20
+   =20
+.btn_green:hover { background: #3cb0fd; background-image: -webkit-linear-gr=
+adient(top, #3cb0fd, #3498db); background-image: -moz-linear-gradient(top, =
+#3cb0fd, #3498db); background-image: -ms-linear-gradient(top, #3cb0fd, #349=
+8db); background-image: -o-linear-gradient(top, #3cb0fd, #3498db); backgrou=
+nd-image: linear-gradient(to bottom, #3cb0fd, #3498db); text-decoration: no=
+ne; }
+
+u + #body a { color: inherit; text-decoration: none; font-size: inherit; fo=
+nt-family: inherit; font-weight: inherit; line-height: inherit; }=20
+   =20
+* { -webkit-text-size-adjust: none; -webkit-text-resize: 100%; text-resize:=
+ 100%; }
+   =20
+</style>=20
+<style type=3D"text/css">
+/* CLIENT-SPECIFIC STYLES */
+body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: =
+100%; }=20
+table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }=20
+img { -ms-interpolation-mode: bicubic; }=20
+img { border: 0; height: auto; line-height: 100%; outline: none; text-decor=
+ation: none; }=20
+table { border-collapse: collapse !important; }=20
+body { height: 100% !important; margin: 0 auto !important; padding: 0 !impo=
+rtant; width: 100% !important; }=20
+
+/* GMAIL ZOOM FIX */=20
+.gmailfix { display: none; display: none!important; }
+   =20
+/* ANDROID CENTER FIX */
+div[style*=3D"margin: 16px 0;"] {
+	margin: 0 !important;}
+</style>
+<!--[if (mso)|(mso 16)]>
+<style type=3D"text/css">
+a {text-decoration: none;}
+</style>
+<![endif]-->
+<!--[if (mso)|(mso 16)]>
+<style type=3D"text/css">
+body, table, td, a, span { font-family: Arial, Helvetica, sans-serif !impor=
+tant; }
+a {text-decoration: none;}
+<![endif]-->
+<!--[if mso]>
+<style type=3D"text/css">
+.fo {font-family: Arial, sans-serif;}
+</style>
+<![endif]-->
+</head>
+<body style=3D"margin:0;padding:0; background: #F2F2F2;" bgcolor=3D"#F2F2F2=
+">
+
+<!--[if !mso]><!-->
+<div style=3D"display: none; max-height: 0px; overflow: hidden;">Payment wi=
+ll be taken from your selected credit card.</div>     =20
+   =20
+<div style=3D"display: none; max-height: 0px; overflow: hidden;">
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nb=
+sp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nb=
+sp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nb=
+sp;&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=
+=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=
+=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;&nbsp;=E2=80=8C&nb=
+sp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nb=
+sp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nb=
+sp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=
+=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=
+=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=
+=8C&nbsp;&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nb=
+sp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nb=
+sp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;&nbsp;=E2=80=
+=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=
+=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=
+=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;</div>
+<!--<![endif]-->
+
+<table border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgco=
+lor=3D"#F2F2F2">
+  <tbody><tr>
+    <td align=3D"center" valign=3D"top" bgcolor=3D"#F2F2F2" style=3D"paddin=
+g:0px 0px 0px;"><!--[if (gte mso 9)|(IE)]>
+ <table width=3D"600" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" =
+border=3D"0">
+ <tr>
+ <td>
+<![endif]-->
+<!-- HEAD -->
+    <table align=3D"center" border=3D"0" width=3D"100%" cellpadding=3D"0" c=
+ellspacing=3D"0" bgcolor=3D"#ffffff" style=3D"width: 600px;">
+       <tbody><tr>
+          <td bgcolor=3D"#F2F2F2"><table align=3D"center" border=3D"0" widt=
+h=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"width: 600px;">
+       <tbody><tr>
+          <td><table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0">
+            <tbody><tr>
+              <td width=3D"50%"><table width=3D"100%" border=3D"0" cellspac=
+ing=3D"0" cellpadding=3D"0">
+                <tbody><tr>
+                  <td width=3D"50%" height=3D"20" style=3D"height: 20px;">&=
+nbsp;</td>
+                  <td width=3D"50%" height=3D"20" style=3D"height:20px;">&n=
+bsp;</td>
+                </tr>
+                <tr>
+                  <td align=3D"left">
+                    <table width=3D"100%" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0">
+                      <tbody><tr>
+                        <td align=3D"left" style=3D"padding: 0px 0px 0px 5p=
+x;" class=3D"logo-padding"><a href=3D"http://mailtrackemailout1.namecheap.c=
+om/ls/click?upn=3Dd4Ux3BKOIyI5eY6QPJogPyIQKgCf2RwqwYMdLDnTiQU2fUyBlNIp6Pzsv=
+RjEtfkThW-2B5ToJs1aH4oDvIlq9FZSIAdTiv1WG1mOmzQj-2FQ0QF-2Fl-2BzqPxXKiRncSqNJ=
+10J7gRk5vIc7RnXzE-2Fz52ACp8TeCQzNg5-2FxkA1GMDw-2FkGGTobQhj6z-2FxGd0ErHFqSS5=
+v8geD_dxM1A9Nt0Qu2-2BgnkS1jsqWh8hJdsWVzL7pDmP5Pj13Yh5Pas3kBhpEZIfm7YEz3gWsM=
+jbZkUNOlqB87eC1X28Pc8RRD-2BdYoprF5KcFfUE4A5LdqbzhoqSziTWeu9U9TTCYH51NGNyrlY=
+7ylNI4PFg81Q6ASiQWYy6jmtnUjrT9LejqRwwSuuuXvoci4DP2evJK5C0z2mrWZByOj9W2lO65z=
+kLJZBNBHszEVf-2FvIhbRfoL7V-2BhR0tuPX2jZPOr5GNmqlpaoffCYYkEfHgESxd3owY3Zy-2F=
+2JNT8HaM-2BjkBIfWqk15y5Hzs7NZecVGL2VluUV9MejNSxmBPCywnK4HhkULJ1iPK2a8IDZcMJ=
+VIX6MRgoWPrGchu86ldt9wrQBCm6S-2B4gRhnKAp7i2UHAEVhgp3a40p2hTxVJUtIcxQbP9o-3D=
+" target=3D"_blank"><img src=3D"https://mktg.namecheap.com/assets/common/lo=
+gos/Namecheap-Logo-240x40px.png" alt=3D"Namecheap" width=3D"220" height=3D"=
+40" border=3D"0" style=3D"color:#de3723; font-family: Helvetica, Arial, san=
+s-serif; font-size: 16px; display: block; text-align:left;" class=3D"logo">=
+</a></td>
+                      </tr>
+                  </tbody></table></td>
+                  <td><table width=3D"100%" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0" class=3D"mobile-hide">
+                    <tbody><tr>
+                      <td align=3D"right" style=3D"color:#A4A4A4; font-size=
+:16px; font-family: Arial, Helvetica, sans-serif; font-weight: 500; line-he=
+ight: 16px; padding: 22px 15px 4px 0px; text-decoration: none;"><a href=3D"=
+http://mailtrackemailout1.namecheap.com/ls/click?upn=3Dd4Ux3BKOIyI5eY6QPJog=
+PyIQKgCf2RwqwYMdLDnTiQVy390ZiRPIdQ4icZF-2FPo3d8ag36BKAbuv7tCo3VNXKQnlKLI-2B=
+D5lJgUlLyedhE1laWqJs4-2BJLO4kTNSNtnQLTKxVwyYGUhBSpBZc-2BF0Qn-2BsRsoqzwJ7-2F=
+JQKMTXhgY1XGJbg-2FggBpCwFhLVoPnZJfLfBC-2FPmaFDLTUyQgQ1u-2B5MJA-3D-3DD4Sx_dx=
+M1A9Nt0Qu2-2BgnkS1jsqWh8hJdsWVzL7pDmP5Pj13Yh5Pas3kBhpEZIfm7YEz3gWsMjbZkUNOl=
+qB87eC1X28Pc8RRD-2BdYoprF5KcFfUE4A5LdqbzhoqSziTWeu9U9TTCYH51NGNyrlY7ylNI4PF=
+g81Q6ASiQWYy6jmtnUjrT9LejqRwwSuuuXvoci4DP2evJK5C0z2mrWZByOj9W2lO65zkLJZBNBH=
+szEVf-2FvIhbRdmIYFVrBSWA4I8xxY5PJLNvsQCPsVZZv0uJSwD-2By2YkS7SifYYxdJVaOoEpe=
+UthVraqJTUth0qm0e7xIrkLryLmNjGqSj5wfgMR2sVeLGuGvsvX-2F7A31-2BtZCSadMKeBX3LM=
+EIQ7GPdPBfbEKqWCYuLFaBRoFV48oLp7zPYAsOuzhm3OKFJAy8z3vX0WNF1A98-3D" target=
+=3D"_blank" style=3D"color:#A4A4A4; text-decoration: none;">My Account</a><=
+/td>
+                    </tr>
+                  </tbody></table></td>
+                </tr>
+                <tr>
+                  <td height=3D"18" align=3D"left" style=3D"height: 18px;">=
+&nbsp;</td>
+                  <td height=3D"18" align=3D"left" style=3D"height: 18px;">=
+&nbsp;</td>
+                </tr>
+              </tbody></table></td>
+            </tr>
+          </tbody></table></td>
+        </tr>
+</tbody></table></td>
+        </tr>
+      </tbody></table>
+<!-- HEADER -->
+      <table align=3D"center" border=3D"0" width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" bgcolor=3D"#ffffff" style=3D"width: 600px;">
+        <tbody><tr>
+          <td bgcolor=3D"#5A6060"><table width=3D"100%" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"10">
+            <tbody><tr>
+              <td align=3D"center" style=3D"font-family: 'Open Sans', Arial=
+, Helvetica,  sans-serif; font-size: 26px; font-weight: 600; color:#FFFFFF;=
+ padding: 20px 10px 20px 10px;" class=3D"renew_heading"><span class=3D"fo">=
+Your Card is Ready for Auto-Renewal</span></td>
+            </tr>
+          </tbody></table></td>
+        </tr>
+      </tbody></table>
+      <!-- HERO -->
+      <table align=3D"center" border=3D"0" width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" bgcolor=3D"#ffffff" style=3D"width: 600px;">
+        <tbody><tr>
+          <td bgcolor=3D"#FFFFFF"><table width=3D"100%" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0">
+              <tbody><tr>
+                <td align=3D"center" style=3D"padding: 24px 30px 18px 30px;=
+"><img src=3D"https://mktg.namecheap.com/transactional/renewal/auto_renewal=
+/Upcoming_Auto-Renewal_3_ActiveCC.png" width=3D"200" height=3D"134" border=
+=3D"0" style=3D"display:block; max-height:134px; max-width:200px; width:100=
+%;" class=3D"img-fluid"></td>
+              </tr>
+            </tbody></table></td>
+        </tr>
+      </tbody></table>
+<!-- INTRO -->
+      <table align=3D"center" border=3D"0" width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" bgcolor=3D"#ffffff" style=3D"width: 600px;">
+        <tbody><tr>
+          <td bgcolor=3D"#FFFFFF"><table width=3D"100%" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0">
+              <tbody><tr>
+                <td align=3D"left" style=3D"color:#4A4A4A; font-family: Ari=
+al, Helvetica,  sans-serif; font-size: 15px; line-height: 24px; padding: 0p=
+x 40px 15px 40px;" class=3D"salutation_padding"><strong>Hi Bernhard,</stron=
+g></td>
+              </tr>
+              <tr>
+                <td align=3D"left" class=3D"last-padding" style=3D"color:#4=
+A4A4A; font-family: Arial, Helvetica,  sans-serif; font-size: 15px; line-he=
+ight: 24px; padding: 0px 40px 30px 40px;">We thought you'd like to know tha=
+t the following products are set to auto-renew between February 28 and Marc=
+h 29.</td>
+              </tr>
+          </tbody></table></td>
+        </tr>
+      </tbody></table>
+ <!-- AUTO-RENEWAL DETAILS -->
+      <table align=3D"center" border=3D"0" width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" bgcolor=3D"#ffffff" style=3D"width: 600px;">
+        <tbody><tr>
+          <td bgcolor=3D"#FFFFFF"><table width=3D"100%" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0">
+              <tbody><tr>
+                <td align=3D"left" style=3D"color:#4A4A4A; font-family: 'Op=
+en Sans', Helvetica, Arial, sans-serif; font-size: 22px; font-weight: 600; =
+padding: 0px 40px 18px 40px;" class=3D"renew_subheading"><span class=3D"fo"=
+>Auto-Renewal Details</span></td>
+              </tr>
+              <tr>
+                <td style=3D"padding: 0px 40px 30px 40px;" class=3D"package=
+-padding">
+                  <table width=3D"100%" border=3D"0" cellspacing=3D"0" cell=
+padding=3D"0">
+                    <tbody><tr>=20
+                      <td bgcolor=3D"#dcdcdc" style=3D"padding: 0px;"><tabl=
+e width=3D"520" border=3D"1" cellpadding=3D"4" cellspacing=3D"1">
+                        <tbody><tr>
+                          <td width=3D"260" align=3D"center" bgcolor=3D"#f3=
+f3f3" style=3D"border: 1px solid #dcdcdc; color:#4A4A4A; font-family: Arial=
+, Helvetica, sans-serif; font-size: 13px; font-weight: 700; line-height: 22=
+px; padding: 10px 0px 10px 0px; width: 260px;">Product Name</td>
+                          <td width=3D"140" align=3D"center" bgcolor=3D"#f3=
+f3f3" style=3D"border: 1px solid #dcdcdc; color:#4A4A4A; font-family: Arial=
+, Helvetica, sans-serif; font-size: 13px; font-weight: 700; line-height: 22=
+px; padding: 10px 0px 10px 0px; width: 130px;">Expiration Date</td>
+                          <td width=3D"140" align=3D"center" bgcolor=3D"#f3=
+f3f3" style=3D"border: 1px solid #dcdcdc; color:#4A4A4A; font-family: Arial=
+, Helvetica, sans-serif; font-size: 13px; font-weight: 700; line-height: 22=
+px; padding: 10px 0px 10px 0px; width: 130px;">Renewal Cost</td>
+                        </tr><!--  -->
+                        <tr>
+                            <td align=3D"center" bgcolor=3D"#FFFFFF" style=
+=3D"border: 1px solid #dcdcdc; color:#4A4A4A; font-family: Arial, Helvetica=
+, sans-serif; font-size: 13px; font-weight: 600; line-height: 22px; padding=
+: 10px 0px 10px 0px;"><a href=3D"" style=3D"color:#4A4A4A; text-decoration:=
+ none;">Domain Privacy for nosuch.biz</a></td>
+                          <td align=3D"center" bgcolor=3D"#FFFFFF" style=3D=
+"border: 1px solid #dcdcdc; color:#4A4A4A; font-family: Arial, Helvetica, s=
+ans-serif; font-size: 13px; font-weight: 600; line-height: 22px; padding: 1=
+0px 0px 10px 0px;">Mar 30, 2022</td>
+                          <td align=3D"center" bgcolor=3D"#FFFFFF" style=3D=
+"border: 1px solid #dcdcdc; color:#4A4A4A; font-family: Arial, Helvetica, s=
+ans-serif; font-size: 13px; font-weight: 600; line-height: 22px; padding: 1=
+0px 0px 10px 0px;">$0.00</td>
+                        </tr><!--  -->
+                        <tr>
+                            <td align=3D"center" bgcolor=3D"#FFFFFF" style=
+=3D"border: 1px solid #dcdcdc; color:#4A4A4A; font-family: Arial, Helvetica=
+, sans-serif; font-size: 13px; font-weight: 600; line-height: 22px; padding=
+: 10px 0px 10px 0px;"><a href=3D"" style=3D"color:#4A4A4A; text-decoration:=
+ none;">Domain Privacy for thelevi.net</a></td>
+                          <td align=3D"center" bgcolor=3D"#FFFFFF" style=3D=
+"border: 1px solid #dcdcdc; color:#4A4A4A; font-family: Arial, Helvetica, s=
+ans-serif; font-size: 13px; font-weight: 600; line-height: 22px; padding: 1=
+0px 0px 10px 0px;">Apr 4, 2022</td>
+                          <td align=3D"center" bgcolor=3D"#FFFFFF" style=3D=
+"border: 1px solid #dcdcdc; color:#4A4A4A; font-family: Arial, Helvetica, s=
+ans-serif; font-size: 13px; font-weight: 600; line-height: 22px; padding: 1=
+0px 0px 10px 0px;">$0.00</td>
+                        </tr><!--  -->
+                        <tr>
+                            <td align=3D"center" bgcolor=3D"#FFFFFF" style=
+=3D"border: 1px solid #dcdcdc; color:#4A4A4A; font-family: Arial, Helvetica=
+, sans-serif; font-size: 13px; font-weight: 600; line-height: 22px; padding=
+: 10px 0px 10px 0px;"><a href=3D"" style=3D"color:#4A4A4A; text-decoration:=
+ none;">thelevi.net</a></td>
+                          <td align=3D"center" bgcolor=3D"#FFFFFF" style=3D=
+"border: 1px solid #dcdcdc; color:#4A4A4A; font-family: Arial, Helvetica, s=
+ans-serif; font-size: 13px; font-weight: 600; line-height: 22px; padding: 1=
+0px 0px 10px 0px;">Apr 4, 2022</td>
+                          <td align=3D"center" bgcolor=3D"#FFFFFF" style=3D=
+"border: 1px solid #dcdcdc; color:#4A4A4A; font-family: Arial, Helvetica, s=
+ans-serif; font-size: 13px; font-weight: 600; line-height: 22px; padding: 1=
+0px 0px 10px 0px;">$15.16</td>
+                        </tr><!--  -->
+                        <tr>
+                            <td align=3D"center" bgcolor=3D"#FFFFFF" style=
+=3D"border: 1px solid #dcdcdc; color:#4A4A4A; font-family: Arial, Helvetica=
+, sans-serif; font-size: 13px; font-weight: 600; line-height: 22px; padding=
+: 10px 0px 10px 0px;"><a href=3D"" style=3D"color:#4A4A4A; text-decoration:=
+ none;">Domain Privacy for loopfestival.com</a></td>
+                          <td align=3D"center" bgcolor=3D"#FFFFFF" style=3D=
+"border: 1px solid #dcdcdc; color:#4A4A4A; font-family: Arial, Helvetica, s=
+ans-serif; font-size: 13px; font-weight: 600; line-height: 22px; padding: 1=
+0px 0px 10px 0px;">Apr 6, 2022</td>
+                          <td align=3D"center" bgcolor=3D"#FFFFFF" style=3D=
+"border: 1px solid #dcdcdc; color:#4A4A4A; font-family: Arial, Helvetica, s=
+ans-serif; font-size: 13px; font-weight: 600; line-height: 22px; padding: 1=
+0px 0px 10px 0px;">$0.00</td>
+                        </tr><!--  -->
+                        <tr>
+                            <td align=3D"center" bgcolor=3D"#FFFFFF" style=
+=3D"border: 1px solid #dcdcdc; color:#4A4A4A; font-family: Arial, Helvetica=
+, sans-serif; font-size: 13px; font-weight: 600; line-height: 22px; padding=
+: 10px 0px 10px 0px;"><a href=3D"" style=3D"color:#4A4A4A; text-decoration:=
+ none;">loopfestival.com</a></td>
+                          <td align=3D"center" bgcolor=3D"#FFFFFF" style=3D=
+"border: 1px solid #dcdcdc; color:#4A4A4A; font-family: Arial, Helvetica, s=
+ans-serif; font-size: 13px; font-weight: 600; line-height: 22px; padding: 1=
+0px 0px 10px 0px;">Apr 11, 2022</td>
+                          <td align=3D"center" bgcolor=3D"#FFFFFF" style=3D=
+"border: 1px solid #dcdcdc; color:#4A4A4A; font-family: Arial, Helvetica, s=
+ans-serif; font-size: 13px; font-weight: 600; line-height: 22px; padding: 1=
+0px 0px 10px 0px;">$14.16</td>
+                        </tr><!--  -->
+                        <tr>
+                            <td align=3D"center" bgcolor=3D"#FFFFFF" style=
+=3D"border: 1px solid #dcdcdc; color:#4A4A4A; font-family: Arial, Helvetica=
+, sans-serif; font-size: 13px; font-weight: 600; line-height: 22px; padding=
+: 10px 0px 10px 0px;"><a href=3D"" style=3D"color:#4A4A4A; text-decoration:=
+ none;">nosuch.biz</a></td>
+                          <td align=3D"center" bgcolor=3D"#FFFFFF" style=3D=
+"border: 1px solid #dcdcdc; color:#4A4A4A; font-family: Arial, Helvetica, s=
+ans-serif; font-size: 13px; font-weight: 600; line-height: 22px; padding: 1=
+0px 0px 10px 0px;">Apr 15, 2022</td>
+                          <td align=3D"center" bgcolor=3D"#FFFFFF" style=3D=
+"border: 1px solid #dcdcdc; color:#4A4A4A; font-family: Arial, Helvetica, s=
+ans-serif; font-size: 13px; font-weight: 600; line-height: 22px; padding: 1=
+0px 0px 10px 0px;">$17.16</td>
+                        </tr><!--  -->
+                        <tr>
+                          <td colspan=3D"2" align=3D"center" bgcolor=3D"#f3=
+f3f3" style=3D"border: 1px solid #dcdcdc; color:#4A4A4A; font-family: Arial=
+, Helvetica, sans-serif; font-size: 13px; font-weight: 700; line-height: 22=
+px; padding: 10px 0px 10px 0px;">Your total renewal cost will be:</td>
+                          <td align=3D"center" bgcolor=3D"#f3f3f3" style=3D=
+"border: 1px solid #dcdcdc; color:#4A4A4A; font-family: Arial, Helvetica, s=
+ans-serif; font-size: 13px; font-weight: 600; line-height: 22px; padding: 1=
+0px 0px 10px 0px;">$46.48</td>
+                        </tr>
+                      =20
+                      </tbody></table></td>
+                    </tr>
+                  </tbody></table>
+                </td>
+              </tr>
+            </tbody></table></td>
+        </tr>
+      </tbody></table>
+<!-- UPDATE CREDIT CARD -->
+      <table align=3D"center" border=3D"0" width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" bgcolor=3D"#ffffff" style=3D"width: 600px;">
+        <tbody><tr>
+          <td bgcolor=3D"#FFFFFF"><table width=3D"100%" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0">
+              <tbody>
+                  <tr>
+                <td align=3D"left" class=3D"last-padding" style=3D"color:#4=
+A4A4A; font-family: Arial, Helvetica,  sans-serif; font-size: 15px; line-he=
+ight: 24px; padding: 0px 40px 20px 40px;">We will try to auto-renew your do=
+main 30 days before it expires and your Namecheap account will be charged f=
+irst. If we find that there are insufficient funds available, we will then =
+try your default payment card.</td>
+              </tr>
+				  <!--  -->
+                  <tr>
+                <td align=3D"left" class=3D"last-padding" style=3D"color:#4=
+A4A4A; font-family: Arial, Helvetica,  sans-serif; font-size: 15px; line-he=
+ight: 24px; padding: 0px 40px 30px 40px;">If your account balance is empty,=
+ or there are issues with your card, the renewal will not happen.</td>
+              </tr>
+                  <tr>
+                <td align=3D"left" style=3D"color:#4A4A4A; font-family: 'Op=
+en Sans', Helvetica, Arial, sans-serif; font-size: 22px; font-weight: 600; =
+padding: 0px 40px 18px 40px;" class=3D"renew_subheading"><span class=3D"fo"=
+>Please note</span></td>
+              </tr>
+                  <tr>
+                <td align=3D"left" class=3D"last-padding" style=3D"color:#4=
+A4A4A; font-family: Arial, Helvetica,  sans-serif; font-size: 15px; line-he=
+ight: 24px; padding: 0px 40px 20px 40px;">As mentioned above, if there are =
+insufficient funds in your account, your default payment card will be charg=
+ed.</td>
+              </tr>
+                  <tr>
+                <td align=3D"left" class=3D"last-padding" style=3D"color:#4=
+A4A4A; font-family: Arial, Helvetica,  sans-serif; font-size: 15px; line-he=
+ight: 24px; padding: 0px 40px 20px 40px;">You have selected the card (MC **=
+** 0107) for auto-renewal payments. We'll attempt to charge your total bala=
+nce of $46.48 on the day of renewal.</td>
+              </tr>
+              <tr>
+                <td align=3D"left" class=3D"last-padding" style=3D"color:#4=
+A4A4A; font-family: Arial, Helvetica,  sans-serif; font-size: 15px; line-he=
+ight: 24px; padding: 0px 40px 0px 40px;">
+If you need to edit or update your credit card, you can do so easily from w=
+ithin your account.</td>
+              </tr>
+          </tbody></table></td>
+        </tr>
+      </tbody></table>
+<!-- CALL TO ACTION -->
+      <table align=3D"center" border=3D"0" width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" bgcolor=3D"#ffffff" style=3D"width: 600px;">
+        <tbody><tr>
+          <td bgcolor=3D"#FFFFFF"><table width=3D"100%" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0">
+              <tbody><tr>
+                <td style=3D"padding: 24px 40px 14px 40px;"><table width=3D=
+"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+                  <tbody><tr>
+                    <td align=3D"center"><table border=3D"0" cellspacing=3D=
+"0" cellpadding=3D"0">
+              <tbody><tr>
+                <td align=3D"center" style=3D"-webkit-border-radius: 4px; -=
+moz-border-radius: 4px; border-radius: 4px;" bgcolor=3D"#fd4f00" class=3D"b=
+tn_orange"><a href=3D"http://mailtrackemailout1.namecheap.com/ls/click?upn=
+=3Dd4Ux3BKOIyI5eY6QPJogP8HAkXzkw9tKWZdlh1GTXT0q1MARrH6IYHlmgBtjd-2BEXIbqbpi=
+L8RyNaaRJ-2BCWfKKNcxDClC4K72JhI6KweKmfI6RosnZGIrfT8-2BcUwJeb067r3v8rZ3WDVjr=
+KhsObhKOIPChPppV8POjm9QEdVH0ZwFS5WdBkZ1k59cltA2yg0B96pe8WZbLFI-2FV040LsSbNR=
+c-2BXlGR4sDuMbhWoD7NGy8-3DnDy9_dxM1A9Nt0Qu2-2BgnkS1jsqWh8hJdsWVzL7pDmP5Pj13=
+Yh5Pas3kBhpEZIfm7YEz3gWsMjbZkUNOlqB87eC1X28Pc8RRD-2BdYoprF5KcFfUE4A5Ldqbzho=
+qSziTWeu9U9TTCYH51NGNyrlY7ylNI4PFg81Q6ASiQWYy6jmtnUjrT9LejqRwwSuuuXvoci4DP2=
+evJK5C0z2mrWZByOj9W2lO65zkLJZBNBHszEVf-2FvIhbRc1yRZZhvGRqybDHiyAtr5JK6XIR2r=
+rr-2BTL5hULof6D0WsJEVIMVvgyMTR5hhWDjTMH-2BMKvxzQBFFp40JGFkVkrkKkZoRU4CQPLmy=
+LOglmpEaN22NQz-2Bmtmo4fI76-2BNWmh0eTBgZTt-2FPah03nOOuGm2rhnO2uApBIY3KIJyLp7=
+vFPEqv7514dQNkaXhJokEL0U-3D" target=3D"_blank" style=3D"font-size: 18px; fo=
+nt-family: Arial, Helvetica, sans-serif; color: #ffffff; text-decoration: n=
+one; font-style: normal; font-weight: 700; -webkit-border-radius: 4px; -moz=
+-border-radius: 4px; border-radius: 4px; padding: 8px 18px 9px 18px; border=
+: 1px solid #e0452f; display: inline-block;" class=3D"btn">Update Credit Ca=
+rd</a></td>
+                </tr>
+      </tbody></table></td>
+                  </tr>
+                </tbody></table></td>
+              </tr>
+            </tbody></table></td>
+        </tr>
+      </tbody></table>
+               <!-- IMPORTANT START -->
+     <!--    -->
+<!-- CALL TO ACTION -->     =20
+<table align=3D"center" border=3D"0" width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" bgcolor=3D"#ffffff" style=3D"width: 600px;">
+        <tbody><tr>
+          <td bgcolor=3D"#FFFFFF"><table width=3D"100%" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0">
+            <tbody><tr>
+              <td style=3D"padding: 30px 30px 0px 30px;"><table width=3D"10=
+0%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+                <tbody><tr>
+                  <td><table width=3D"180" border=3D"0" align=3D"left" cell=
+padding=3D"0" cellspacing=3D"0">
+                    <tbody><tr>
+                      <td align=3D"center" valign=3D"top" style=3D"padding-=
+bottom: 5px;"><table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadd=
+ing=3D"0">
+                        <tbody><tr>
+                          <td align=3D"center"><a href=3D"http://mailtracke=
+mailout1.namecheap.com/ls/click?upn=3Dd4Ux3BKOIyI5eY6QPJogPyIQKgCf2RwqwYMdL=
+DnTiQXbnDjF89RHLmYJ4avBXkjKS-2BCwDh3tFj0ZZhwPS7ujDfkXqqI6tPj6UnxxVUUn8ViOce=
+VsnZIVHBEThZG6CnRpN6bumEo1ygJlMBunxC7HA3O11y37nYdZHT58GJPXRU1LgComY-2Bg34hb=
+ulG8tNnlAUwlCcZaXejvxOLMC90VlM7qglpLDqofXz763BGhPK9w-3D2i5n_dxM1A9Nt0Qu2-2B=
+gnkS1jsqWh8hJdsWVzL7pDmP5Pj13Yh5Pas3kBhpEZIfm7YEz3gWsMjbZkUNOlqB87eC1X28Pc8=
+RRD-2BdYoprF5KcFfUE4A5LdqbzhoqSziTWeu9U9TTCYH51NGNyrlY7ylNI4PFg81Q6ASiQWYy6=
+jmtnUjrT9LejqRwwSuuuXvoci4DP2evJK5C0z2mrWZByOj9W2lO65zkLJZBNBHszEVf-2FvIhbR=
+dssluooULsZYJyaJSyj4axsITr7WUtov0uHhbEVa9R-2FuXF68q6vg4uW9w7tJm-2F-2F9-2F1D=
+wnbUdQI7qrM-2F-2FLJjD6n1e0l1g8oihF275GgtZk8lVHbC2p4QOH1nDDosqZ-2FgmZpBKyrwl=
+hvpa8bpZXZYO3xkqvVEyrdfmRRjOCN-2FHAPKK-2FCRmx-2BIAioQRaVvVlMv1U-3D" target=
+=3D"_blank"><img src=3D"https://mktg.namecheap.com/transactional/renewal/ho=
+sting/Assets/icon-why-namecheap.png" alt=3D"" border=3D"0" width=3D"62" hei=
+ght=3D"55" style=3D"font-family: Arial, Helvetica, sans-serif; font-size: 2=
+0px; color:#5c2f91; font-style:normal; text-align:center;"></a></td>
+                          </tr>
+                        <tr>
+                          <td align=3D"center" style=3D"font-family: Arial,=
+ Helvetica, sans-serif; font-size: 15px; line-height:20px; font-weight:700;=
+ color:#7B7676; padding: 18px 15px 25px 15px;"><a style=3D"color:#7B7676;; =
+text-decoration: none;" href=3D"http://mailtrackemailout1.namecheap.com/ls/=
+click?upn=3Dd4Ux3BKOIyI5eY6QPJogPyIQKgCf2RwqwYMdLDnTiQXbnDjF89RHLmYJ4avBXkj=
+KS-2BCwDh3tFj0ZZhwPS7ujDfkXqqI6tPj6UnxxVUUn8ViOceVsnZIVHBEThZG6CnRpN6bumEo1=
+ygJlMBunxC7HA5ycX5vG1tZ8qAvQmma1bFG2VwNHJFoYOyD2fOjFdMZwpEg7RpjZ2RWe2OQ1kKN=
+sxwiJy0m3cOzNxLbsSbOS9w0-3D00hW_dxM1A9Nt0Qu2-2BgnkS1jsqWh8hJdsWVzL7pDmP5Pj1=
+3Yh5Pas3kBhpEZIfm7YEz3gWsMjbZkUNOlqB87eC1X28Pc8RRD-2BdYoprF5KcFfUE4A5Ldqbzh=
+oqSziTWeu9U9TTCYH51NGNyrlY7ylNI4PFg81Q6ASiQWYy6jmtnUjrT9LejqRwwSuuuXvoci4DP=
+2evJK5C0z2mrWZByOj9W2lO65zkLJZBNBHszEVf-2FvIhbRcDkuXUNaqU6l-2B2uS2IMc0-2Bbs=
+9jpmI1Yg8uT4UAb1vUYIMXGqAg2TwqWhj-2B5cIhDEUy3vaahH5e1tDqoRLvDQ4-2BqeFdodsMW=
+4AWNpaMDDBHZDIb7C-2Fgv9uLzlhybSO6mHpNRbDOT1X79wDnqi4Ige7VyCQlZXsLwP6VAn6KPq=
+2fNC5KACohnO8ugWdTq2HELcI-3D" target=3D"_blank">WHY NAMECHEAP</a></td>
+                        </tr>
+                        </tbody></table></td>
+                      </tr>
+                    </tbody></table>
+                    <!--[if mso]></td><td><![endif]-->
+                    <table width=3D"180" border=3D"0" align=3D"right" cellp=
+adding=3D"0" cellspacing=3D"0">
+                      <tbody><tr>
+                        <td align=3D"center" valign=3D"top" style=3D"paddin=
+g-bottom: 5px;"><table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0">
+                          <tbody><tr>
+                            <td align=3D"center" valign=3D"middle"><a href=
+=3D"http://mailtrackemailout1.namecheap.com/ls/click?upn=3Dd4Ux3BKOIyI5eY6Q=
+PJogPyIQKgCf2RwqwYMdLDnTiQVy390ZiRPIdQ4icZF-2FPo3d8ag36BKAbuv7tCo3VNXKQnlKL=
+I-2BD5lJgUlLyedhE1laWqJs4-2BJLO4kTNSNtnQLTKxVwyYGUhBSpBZc-2BF0Qn-2BsY6YXuI9=
+0EREvYdJAZqC-2FT34e-2FKCa4JK3LkmR9JTJRVgZbpaXssaUy50Zc-2BkJVCPoQ-3D-3Dh4Xm_=
+dxM1A9Nt0Qu2-2BgnkS1jsqWh8hJdsWVzL7pDmP5Pj13Yh5Pas3kBhpEZIfm7YEz3gWsMjbZkUN=
+OlqB87eC1X28Pc8RRD-2BdYoprF5KcFfUE4A5LdqbzhoqSziTWeu9U9TTCYH51NGNyrlY7ylNI4=
+PFg81Q6ASiQWYy6jmtnUjrT9LejqRwwSuuuXvoci4DP2evJK5C0z2mrWZByOj9W2lO65zkLJZBN=
+BHszEVf-2FvIhbRfkVW9UcV79Ms5cj-2BbQQFDQWgyqZJR8U1UD9c2DTfZx42GuNxZy74Pjy78n=
+vjFNm1tD54CzieWU1jiIAHkfJhecQeMEnQIV9ChUdDKJnn6OhTMWSjvivwf0KjFr6O5uSRfuAHx=
+8QNXfeakK5XHLhOOUYBtklB8d1a4vqM3Qd-2B9jdwsSypgntMHGNDL-2Bol9VjfM-3D" target=
+=3D"_blank"><img src=3D"https://mktg.namecheap.com/transactional/renewal/ho=
+sting/Assets/icon-account-login.png" alt=3D"" border=3D"0" width=3D"56" hei=
+ght=3D"55" style=3D"font-family: Arial, Helvetica, sans-serif; font-size: 2=
+0px; color:#5c2f91; font-style:normal; text-align:center;"></a></td>
+                            </tr>
+                          <tr>
+                            <td align=3D"center" style=3D"font-family: Aria=
+l, Helvetica, sans-serif; font-size: 15px; line-height:20px; font-weight:70=
+0; color:#7B7676; padding: 18px 15px 25px 15px;"><a style=3D"color:#7B7676;=
+; text-decoration: none;" href=3D"http://mailtrackemailout1.namecheap.com/l=
+s/click?upn=3Dd4Ux3BKOIyI5eY6QPJogPyIQKgCf2RwqwYMdLDnTiQVy390ZiRPIdQ4icZF-2=
+FPo3d8ag36BKAbuv7tCo3VNXKQnlKLI-2BD5lJgUlLyedhE1laWqJs4-2BJLO4kTNSNtnQLTKxV=
+wyYGUhBSpBZc-2BF0Qn-2BsWI4qcsKOEX8i-2FXLTWqEUu1CP31zPPsyFRKLTf53P9Js9fEYGrm=
+Gnc9sKwqDbI3-2F8g-3D-3D4wbl_dxM1A9Nt0Qu2-2BgnkS1jsqWh8hJdsWVzL7pDmP5Pj13Yh5=
+Pas3kBhpEZIfm7YEz3gWsMjbZkUNOlqB87eC1X28Pc8RRD-2BdYoprF5KcFfUE4A5LdqbzhoqSz=
+iTWeu9U9TTCYH51NGNyrlY7ylNI4PFg81Q6ASiQWYy6jmtnUjrT9LejqRwwSuuuXvoci4DP2evJ=
+K5C0z2mrWZByOj9W2lO65zkLJZBNBHszEVf-2FvIhbRfZIVD3DIm7G8ws1TXCxsGGZZFZC0JUf2=
+U4gERpjrQwzM3IIK9Od4fQByxbQc7hhVVik2dP-2F-2FSj13Lof25aVUBdOivocIIQ8Xki-2BlY=
+nMFXcuDDWykRFoKljnD1PMEN3qy-2BHWD87sZhWjWBP1dwgDSg16XI4oRy2daq-2F-2BLNr3RIQ=
+VH6kXJ3BNZa9wM27ImFYk4U-3D" target=3D"_blank">MY ACCOUNT</a></td>
+                          </tr>
+                          </tbody></table></td>
+                        </tr>
+                      </tbody></table>
+                    <!--[if mso]></td><td><![endif]-->
+                    <table width=3D"180" border=3D"0" align=3D"right" cellp=
+adding=3D"0" cellspacing=3D"0">
+                      <tbody><tr>
+                        <td align=3D"center" valign=3D"top" style=3D"paddin=
+g-bottom: 5px;"><table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0">
+                          <tbody><tr>
+                            <td align=3D"center" valign=3D"middle"><a href=
+=3D"http://mailtrackemailout1.namecheap.com/ls/click?upn=3Dd4Ux3BKOIyI5eY6Q=
+PJogPyIQKgCf2RwqwYMdLDnTiQVdSR636m3MyBdJHG9sUFWb7WV15RKzdFgqm5nEtaUzDfWlTZD=
+ZCAkZuB24LuVtW7rBwPhNRtNBfFR9YGj0i-2BsviUjYLlXAAGq-2FZaF7R0VseDX1Yz24N7z9rk=
+VGcrm-2FwwMfZYL0-2FloR2DEQeI1At7cge8DBbgLUHlUCgkTirthNi8iqrXPiebaCMgBkDZMoG=
+gQ-3Dl_YK_dxM1A9Nt0Qu2-2BgnkS1jsqWh8hJdsWVzL7pDmP5Pj13Yh5Pas3kBhpEZIfm7YEz3=
+gWsMjbZkUNOlqB87eC1X28Pc8RRD-2BdYoprF5KcFfUE4A5LdqbzhoqSziTWeu9U9TTCYH51NGN=
+yrlY7ylNI4PFg81Q6ASiQWYy6jmtnUjrT9LejqRwwSuuuXvoci4DP2evJK5C0z2mrWZByOj9W2l=
+O65zkLJZBNBHszEVf-2FvIhbRcwu1YM03GzWDtfcxUzgrxSdcaWvkaUE59U29vWsJLz77hBeBBI=
+UF2aLdMJI6Vnl57imZrdXYEeFJG-2F5UaqjqQgUKTD-2F6i5eN3wmhmbGa-2FlmOIXQ6iRIh5dH=
+Exn7p6q-2FuMUpsW2oZScetjF2XiqmjiCQAxHjXELvm73iDZaWlBteIkTJffAeJ-2Fw8V4ACGGT=
+4vs-3D" target=3D"_blank"><img src=3D"https://mktg.namecheap.com/transactio=
+nal/renewal/hosting/Assets/icon-customer-support.png" alt=3D"" border=3D"0"=
+ width=3D"55" height=3D"55" style=3D"font-family: Arial, Helvetica, sans-se=
+rif; font-size: 20px; color:#5c2f91; font-style:normal; text-align:center;"=
+></a></td>
+                            </tr>
+                          <tr>
+                            <td align=3D"center" style=3D"font-family: Aria=
+l, Helvetica, sans-serif; font-size: 15px; line-height:20px; font-weight:70=
+0; color:#7B7676; padding: 18px 15px 25px 15px;"><a style=3D"color:#7B7676;=
+; text-decoration: none;" href=3D"http://mailtrackemailout1.namecheap.com/l=
+s/click?upn=3Dd4Ux3BKOIyI5eY6QPJogPyIQKgCf2RwqwYMdLDnTiQVdSR636m3MyBdJHG9sU=
+FWb7WV15RKzdFgqm5nEtaUzDfWlTZDZCAkZuB24LuVtW7rBwPhNRtNBfFR9YGj0i-2BsviUjYLl=
+XAAGq-2FZaF7R0VseLBnK4qO8amQb4eFJDdsQQcxF-2B2iM-2F7iPgOD1-2FK-2BsFANqt3FuTr=
+v6dNWw8Vu29mKk1OYcT7yhPPXI-2BhbCmKAOkY-3DgH_J_dxM1A9Nt0Qu2-2BgnkS1jsqWh8hJd=
+sWVzL7pDmP5Pj13Yh5Pas3kBhpEZIfm7YEz3gWsMjbZkUNOlqB87eC1X28Pc8RRD-2BdYoprF5K=
+cFfUE4A5LdqbzhoqSziTWeu9U9TTCYH51NGNyrlY7ylNI4PFg81Q6ASiQWYy6jmtnUjrT9LejqR=
+wwSuuuXvoci4DP2evJK5C0z2mrWZByOj9W2lO65zkLJZBNBHszEVf-2FvIhbRckKGvzVeYvvagd=
+V9fehmaCe3vX19xg3tf6vpX2egSPLl-2Bbw7vjuF2Q9qIO8kCwzKDXJyg1Xgwmfu0AHBNB-2BM3=
+aewYt2WHgy4w-2Fqr6RzxS6i0jlo1QhhYc5NmGhZfA-2FPA6mmwFVR4u0Uy0jGfbqc5c9kSCCfg=
+lEaIWMoK9THzBLz-2FTEQCSXHcyimTdBY16n3lA-3D" target=3D"_blank">SUPPORT CENTE=
+R</a></td>
+                          </tr>
+                          </tbody></table></td>
+                        </tr>
+                      </tbody></table>
+					 </td>
+                  </tr>
+                </tbody></table></td>
+            </tr>
+          </tbody></table></td>
+        </tr>
+      </tbody></table>
+ <!-- FOOTER -->
+						<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" class=3D"fluid" style=3D"max-width:600px; width:100%">
+						=09
+								<tbody><tr>
+									<td bgcolor=3D"#F2F2F2">
+									<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"w=
+idth:100%">
+									=09
+										=20
+  <tbody><tr>
+    <td align=3D"center" bgcolor=3D"#F2F2F2" style=3D"color: #A4A4A4; font-=
+family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; p=
+adding: 30px 20px 6px 20px;"><a href=3D"http://mailtrackemailout1.namecheap=
+.com/ls/click?upn=3Dd4Ux3BKOIyI5eY6QPJogPyIQKgCf2RwqwYMdLDnTiQVPZUmtBsxvna0=
+c3cjylNwv8-2BzpQ8UX9wU9PKTwrwVeniUJEvUhBn8AgSfLOt-2BmZBMOTZ2JJYnexdskKbAlpS=
+nY1O9S5z20MTiAVnuJqUWleksvmZFGNcwJz5ZOZdCiNVvYzUAJo4-2Bd5aR8WzjW51ThnunYFE6=
+h0-2BPROrgFvQdb9A-3D-3DQmIF_dxM1A9Nt0Qu2-2BgnkS1jsqWh8hJdsWVzL7pDmP5Pj13Yh5=
+Pas3kBhpEZIfm7YEz3gWsMjbZkUNOlqB87eC1X28Pc8RRD-2BdYoprF5KcFfUE4A5LdqbzhoqSz=
+iTWeu9U9TTCYH51NGNyrlY7ylNI4PFg81Q6ASiQWYy6jmtnUjrT9LejqRwwSuuuXvoci4DP2evJ=
+K5C0z2mrWZByOj9W2lO65zkLJZBNBHszEVf-2FvIhbRdTZTifRDe9aBJ3XI4hZBZWiDP-2Fx93P=
+waU2SyNSxmA84fcvL7EnXAOAUFlzw-2F70zJGq9TNuKbBuS5rCcEC26n4zKjwbLjvrT9n-2BGCR=
+JUhSxcOaTLLUxjOKnBqyTj62oCRh96howXLBIg9Fa0XZkftme97taHYj5BpO03VF9UzgHJjiQLK=
+q-2B7S9h2ls0rGfeNYo-3D" target=3D"_blank" style=3D"text-decoration:underlin=
+e; color:#A4A4A4;">About Us</a> | <a href=3D"http://mailtrackemailout1.name=
+cheap.com/ls/click?upn=3Dd4Ux3BKOIyI5eY6QPJogPyIQKgCf2RwqwYMdLDnTiQW2hXWYG0=
+Uw7NOYVy6xp7KUF3-2FN8CYV521s8Fl6iUA7iI-2FJx7K14Wft4Q2lcwC7SHaIOVwLIvaofmC9M=
+Si5ciQ41oUGklmNX6i45cDAo3oe34uEzB3ncgNzA4K3w3p-2BbuRkKwOb1WLbrzvGCV-2BElOPZ=
+PBje06Gkh-2F4ibA8btISkoQ-3D-3DE1LO_dxM1A9Nt0Qu2-2BgnkS1jsqWh8hJdsWVzL7pDmP5=
+Pj13Yh5Pas3kBhpEZIfm7YEz3gWsMjbZkUNOlqB87eC1X28Pc8RRD-2BdYoprF5KcFfUE4A5Ldq=
+bzhoqSziTWeu9U9TTCYH51NGNyrlY7ylNI4PFg81Q6ASiQWYy6jmtnUjrT9LejqRwwSuuuXvoci=
+4DP2evJK5C0z2mrWZByOj9W2lO65zkLJZBNBHszEVf-2FvIhbRfL6fqOj14opEL4rbWqPjYEr74=
+RsXlCHcJj6CN1reCzyRfo29FQmkDb1Oxz7q9Ug-2BLAhoNkdKmC99gWpy7kt7E9gzI8wtsQu-2F=
+rJjGIqNxwo3-2FY8UbGj4uqhO-2BS7PfGVKziNEERd5FQiH7pdC60eyLJFZg-2F5Rt11VRJbgv8=
+Y9qMUU9M0CDZ4ymhnfDhbbJjYB7s-3D" target=3D"_blank" style=3D"text-decoration=
+:underline; color:#A4A4A4;">Support</a> | <a href=3D"http://mailtrackemailo=
+ut1.namecheap.com/ls/click?upn=3Dd4Ux3BKOIyI5eY6QPJogPyIQKgCf2RwqwYMdLDnTiQ=
+W5TSvSxTkRqw31SGZIkfPe2jpuE39hIWU0rEFHYjLJQidHl3j7camzvoR-2BTxDGyLHilYMZ2Su=
+NsLaNd7ZnnFLbQdfBOwZRSOJO8CEIwgWAbl8ni1FnQVPhIoP2U3Ni-2BAPYA3kuq7vs12-2Fajp=
+XDqf1uibFh5zLSf-2FD9d4xbCQ9V7Ga-2BfePrp-2BWNoLOwf-2FD-2FWW8-3DMMyr_dxM1A9Nt=
+0Qu2-2BgnkS1jsqWh8hJdsWVzL7pDmP5Pj13Yh5Pas3kBhpEZIfm7YEz3gWsMjbZkUNOlqB87eC=
+1X28Pc8RRD-2BdYoprF5KcFfUE4A5LdqbzhoqSziTWeu9U9TTCYH51NGNyrlY7ylNI4PFg81Q6A=
+SiQWYy6jmtnUjrT9LejqRwwSuuuXvoci4DP2evJK5C0z2mrWZByOj9W2lO65zkLJZBNBHszEVf-=
+2FvIhbRcs8lwlNBW33SBZzWjgXQav12R2W0D0C1zlkC5pR6AKqsPAf9Gu39N2QUMpV7GN635iKv=
+HWkzFwJ5NAKzQQthAwV8em1Iw6aCE-2FkvM3D5aPm7-2FV9KbqFUH-2F5nd6UlAwoQfjUwucOVT=
+eSVZkpJq6sNkk-2BdW4Y4v-2B804k-2FTrz6-2FB3oO92NvtdJm7psN0v4YOUKWU-3D" target=
+=3D"_blank" style=3D"text-decoration:underline; color:#A4A4A4;">Privacy Pol=
+icy</a> | <a href=3D"http://mailtrackemailout1.namecheap.com/ls/click?upn=
+=3Dd4Ux3BKOIyI5eY6QPJogPyIQKgCf2RwqwYMdLDnTiQWbs66PiZYzboUI57c9U4pT8WGMwToa=
+8VnOblLxXkMlx5Yav49YnOldtGrCglSuqhwmixt7rvRJDLiG0EH7Fx6BV9a5qzYVqZQF02IisWU=
+vo3MjzOajCNPnO-2F4prFfoEg4kN6c0wsCJemyD1YaUG3ygtyhBX7NljHnpYS-2FFeKyFeQ-3D-=
+3DAwKf_dxM1A9Nt0Qu2-2BgnkS1jsqWh8hJdsWVzL7pDmP5Pj13Yh5Pas3kBhpEZIfm7YEz3gWs=
+MjbZkUNOlqB87eC1X28Pc8RRD-2BdYoprF5KcFfUE4A5LdqbzhoqSziTWeu9U9TTCYH51NGNyrl=
+Y7ylNI4PFg81Q6ASiQWYy6jmtnUjrT9LejqRwwSuuuXvoci4DP2evJK5C0z2mrWZByOj9W2lO65=
+zkLJZBNBHszEVf-2FvIhbRfZquR4ciFV3vO6n7rm3k4SJ0svBDRBWhvwdlhxCFjTKYRRF1Eg8cs=
+R0L5u6jMVq7nOqoHWuXp5Nwgxfagj9BzzPq90VTTiaOyTZurVkqlGQnsfLikmsxwqpOmE6NFeTG=
+v0K2lrGIg56W-2BK4IXqNMnQKTvDYBDlJbsDITkfwNiCvVdLGSWJVLyITBe7zlDzCsQ-3D" tar=
+get=3D"_blank" style=3D"text-decoration:underline; color:#A4A4A4;">Terms &a=
+mp; Conditions</a>&nbsp;|&nbsp;<a href=3D"http://mailtrackemailout1.nameche=
+ap.com/ls/click?upn=3Dd4Ux3BKOIyI5eY6QPJogPyIQKgCf2RwqwYMdLDnTiQVy390ZiRPId=
+Q4icZF-2FPo3d8ag36BKAbuv7tCo3VNXKQnlKLI-2BD5lJgUlLyedhE1laWqJs4-2BJLO4kTNSN=
+tnQLTKxVwyYGUhBSpBZc-2BF0Qn-2BscSOITxSIzbqli5Rg-2Fk8NuzZgTjB4GdV-2BCDby92ZK=
+w3Tx-2Bx5LKOHftmoyYfMYzOU-2FQ-3D-3D-pc__dxM1A9Nt0Qu2-2BgnkS1jsqWh8hJdsWVzL7=
+pDmP5Pj13Yh5Pas3kBhpEZIfm7YEz3gWsMjbZkUNOlqB87eC1X28Pc8RRD-2BdYoprF5KcFfUE4=
+A5LdqbzhoqSziTWeu9U9TTCYH51NGNyrlY7ylNI4PFg81Q6ASiQWYy6jmtnUjrT9LejqRwwSuuu=
+Xvoci4DP2evJK5C0z2mrWZByOj9W2lO65zkLJZBNBHszEVf-2FvIhbRck6yS2DoDgzsUDtHCGt7=
+aqSvfAUd1iwnp8xkBmqpqHpM3sSG7WE1bKXJlxh0-2FMh7S08Hu10vMVKi02SPwyA7bRNtXeBPM=
+Ns32Q-2Bcg6zKQMsbmO-2FTicQ39uv5IE-2BGQ6ksyKQGKtCvjdZVTPP2onmpQ8-2B0J697qjQi=
+2IlwPIOdmkllt6vYhJtehHEDYx2zdkqSw-3D" target=3D"_blank" style=3D"text-decor=
+ation:underline; color:#A4A4A4;">Account Login</a></td>
+  </tr>
+   <tr>
+										    <td align=3D"center" bgcolor=3D"#F2F2F2" style=3D"color: #A4A=
+4A4; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-heigh=
+t: 18px; padding: 10px 20px 0px 20px;"><a href=3D"" target=3D"_blank" style=
+=3D"color:#A4A4A4; text-decoration:none;">4600 East Washington Street, Suit=
+e 305, Phoenix,&nbsp;AZ&nbsp;85034,&nbsp;USA</a></td>
+									      </tr>
+  <tr>
+    <td align=3D"center" bgcolor=3D"#F2F2F2" style=3D"color:#A4A4A4; font-f=
+amily: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; te=
+xt-decoration: none; padding: 0px 20px 25px 20px;">Copyright =C2=A9 2022 <a=
+ href=3D"http://mailtrackemailout1.namecheap.com/ls/click?upn=3Dd4Ux3BKOIyI=
+5eY6QPJogPyIQKgCf2RwqwYMdLDnTiQU2fUyBlNIp6PzsvRjEtfkThW-2B5ToJs1aH4oDvIlq9F=
+ZSIAdTiv1WG1mOmzQj-2FQ0QEeOEt0-2BlIIOHbeU7T6-2FLdWa23gT3HIIJQBv02JGiE-2F8Vy=
+w4lcgjl9pOr7tOFeRxvulPxF-2FHs1LPLU8F9fRYkMkR66g_dxM1A9Nt0Qu2-2BgnkS1jsqWh8h=
+JdsWVzL7pDmP5Pj13Yh5Pas3kBhpEZIfm7YEz3gWsMjbZkUNOlqB87eC1X28Pc8RRD-2BdYoprF=
+5KcFfUE4A5LdqbzhoqSziTWeu9U9TTCYH51NGNyrlY7ylNI4PFg81Q6ASiQWYy6jmtnUjrT9Lej=
+qRwwSuuuXvoci4DP2evJK5C0z2mrWZByOj9W2lO65zkLJZBNBHszEVf-2FvIhbReftoJlrQx1cB=
+-2FBxdPDaaPFEBgLkdpJhm9swn02kTHO8qQQSDifZGEAq3QXuuye-2BBCwlbjExflesOU2M2Tfe=
+uE1tvJJoG4TgnjPNnpjORadVWEjFNnyKoKr3IYsaJWVnLBaSMr5D7R3gYFs8Kr51mjHpO-2BSir=
+mIonE5C6TYo-2BtCkEHqslm8FBQJXi4eL5EKO8M-3D" target=3D"_blank" style=3D"text=
+-decoration:none; color:#A4A4A4;">Namecheap.com</a></td>
+  </tr>
+        <tr>
+    <td align=3D"center" bgcolor=3D"#F2F2F2" style=3D"padding: 0px 20px 25p=
+x 20px;"><a href=3D"http://mailtrackemailout1.namecheap.com/ls/click?upn=3D=
+d4Ux3BKOIyI5eY6QPJogPyIQKgCf2RwqwYMdLDnTiQU2fUyBlNIp6PzsvRjEtfkThW-2B5ToJs1=
+aH4oDvIlq9FZSIAdTiv1WG1mOmzQj-2FQ0QEeOEt0-2BlIIOHbeU7T6-2FLdWa23gT3HIIJQBv0=
+2JGiE-2F8Vyw4lcgjl9pOr7tOFeRxvulPxF-2FHs1LPLU8F9fRYkMkKmVR_dxM1A9Nt0Qu2-2Bg=
+nkS1jsqWh8hJdsWVzL7pDmP5Pj13Yh5Pas3kBhpEZIfm7YEz3gWsMjbZkUNOlqB87eC1X28Pc8R=
+RD-2BdYoprF5KcFfUE4A5LdqbzhoqSziTWeu9U9TTCYH51NGNyrlY7ylNI4PFg81Q6ASiQWYy6j=
+mtnUjrT9LejqRwwSuuuXvoci4DP2evJK5C0z2mrWZByOj9W2lO65zkLJZBNBHszEVf-2FvIhbRd=
+SeykWMs0DSyO7nA1SJoA6biIASm2mqyeClPzFmerxbsubq5L4wZnJVhenmvquUvxSotjblylqCP=
+2eei58eSRHvlFRjBqNqA-2BHp14bqkclP4mgPHUzHGQdWBeWA5uVFJz5-2FX9RkYoiTpiG70Hnz=
+mrIEy5ywTMkPwze835WSIUcXKtlpPfLrfDyojKHKtLDJOc-3D" target=3D"_blank"><img s=
+rc=3D"https://mktg.namecheap.com/assets/common/logos/Namecheap-N-100x56.png=
+" height=3D"22" width=3D"40" border=3D"0" style=3D"display: block;"></a></t=
+d>
+ </tr>
+									=09
+									</tbody></table>
+									</td>
+								</tr>
+						=09
+						</tbody></table>
+
+      <!--[if (gte mso 9)|(IE)]>
+ </td>
+ </tr>
+ </table>
+<![endif]-->=20
+     </td>
+  </tr>
+</tbody></table>
+<!-- DomainMetadata=3D{"UserName":"chameneaper","Email":"wernbag@gmail.com"=
+,"Domains":["thelevi.net","loopfestival.com","nosuch.biz"]} -->
+
+<img src=3D"http://mailtrackemailout1.namecheap.com/wf/open?upn=3DorEH-2BA5=
+8pK9xPZmQhI5ThwPxQigG92I0DE24zYv4tfl6Fac7siW8ItTLm3Dk9dtd-2Fvg-2FZ2ffr5jqw-=
+2BawTMUql20gfdwGJg3HlbN7fpP9hiMNLDtobTrG0D66i1ZbYZHLNRO4Y1E4-2BkRziasc9W6uT=
+1OFGgbu8M2og2HW00XQg1X2Va-2FcaYom8Zpc2mRrIMIc7ec0D7t-2FkzWxjULTa8tgB7Pe5ajX=
+bsRqN7v-2BGh-2BBDYoMopQKHTRLidKO2e41uhBpYKEmPUtk8JvDsvjkv6R5Cg8wfsMqVOxFokc=
+kndsXatUT7ORzgybyIXRuNJgjaylLUT-2BoEhugcSanQMHlbuV-2BpLXw-2FkLKJVftHPrUygYp=
+DttUGcmRYKVGzSSrnGVg8GwVhH44gJ69OCXENdB-2BlNAIa1E33DJBsXa-2BWzFbbRM41jBg8Lq=
+Y17ddVLKf0KbovJFE" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"=
+height:1px !important;width:1px !important;border-width:0 !important;margin=
+-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;marg=
+in-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;p=
+adding-right:0 !important;padding-left:0 !important;"/></body></html>

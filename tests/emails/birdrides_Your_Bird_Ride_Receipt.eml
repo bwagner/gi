@@ -1,0 +1,855 @@
+Delivered-To: wernbag@gmail.com
+Received: by 2002:a05:6a10:eb8b:b0:278:bad0:142c with SMTP id ih11csp511682pxb;
+        Fri, 8 Apr 2022 16:23:10 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJzJX6kzXzA5SmQQ9YQ1kUZ+tsBbUbJJi9iPeUAnLI0G0SEraFXJaEXX5TVWQ7h7vKXpzzPpJ9G9I9U=
+X-Received: by 2002:a92:9406:0:b0:2be:6ace:7510 with SMTP id c6-20020a929406000000b002be6ace7510mr9148601ili.291.1649460189593;
+        Fri, 08 Apr 2022 16:23:09 -0700 (PDT)
+Authentication-Results: mx.google.com;
+       spf=fail (google.com: domain of srs0=x2k6=us=privaterelay.appleid.com=privaterelay.bounce.nqpjvydwtb@harris.ch does not designate 17.58.23.209 as permitted sender) smtp.mailfrom="SRS0=X2K6=US=privaterelay.appleid.com=privaterelay.bounce.nqpjvydwtb@harris.ch";
+       dkim=pass header.i=@privaterelay.appleid.com header.s=prv2019 header.b=EHTcno0p;
+       dkim=fail header.i=@amazonses.com header.s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx header.b=gcz75ehD
+Received-SPF: fail (google.com: domain of srs0=x2k6=us=privaterelay.appleid.com=privaterelay.bounce.nqpjvydwtb@harris.ch does not designate 17.58.23.209 as permitted sender) client-ip=17.58.23.209;
+Received: by 2002:a92:c94c:0:b0:2ca:3da8:3360 with POP3 id i12-20020a92c94c000000b002ca3da83360mf2219841ilq.5;
+        Fri, 08 Apr 2022 16:23:09 -0700 (PDT)
+X-Gmail-Fetch-Info: me@bernhardwagner.net 1 mail.harris.ch 995 bwagner
+Return-Path: <SRS0=X2K6=US=privaterelay.appleid.com=privaterelay.bounce.nqpjvydwtb@harris.ch>
+X-Original-To: icloud20130615@bernhardwagner.net
+Delivered-To: bwagner@harris.ch
+Received: from mr85p00im-ztdg06014601.me.com (mr85p00im-ztdg06014601.me.com [17.58.23.209])
+	by mail.harris.ch (Postfix) with ESMTPS id 7C23087768
+	for <icloud20130615@bernhardwagner.net>; Sat,  9 Apr 2022 01:13:11 +0200 (CEST)
+Authentication-Results: mail.harris.ch;
+	dkim=pass (2048-bit key; unprotected) header.d=privaterelay.appleid.com header.i=@privaterelay.appleid.com header.b="EHTcno0p";
+	dkim=fail reason="signature verification failed" (1024-bit key; unprotected) header.d=amazonses.com header.i=@amazonses.com header.b="gcz75ehD";
+	dkim-atps=neutral
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=privaterelay.appleid.com; s=prv2019; t=1649459590;
+	bh=woeshmhIgsae0tyBCIcH9jbDOM6FO3jnvh0E1NklcIE=;
+	h=Date:from:to:Message-ID:Subject:MIME-Version:Content-Type;
+	b=EHTcno0p6s5s4QKrYfifcn6LdteZ6i3H4p2xfhOWeH4Ffw+loGG07z72BHGsHnBiS
+	 VNKwVVgN2KhA+8NpFRDG1MwVDqo6e6h8lQP9doZhi+keIXfECx6cYPLtQ7JgVMyWz/
+	 j6WWUgd86HGEgpQMEnFMaGv2vqBaOnJG6QumWieOecfnoxfus/aw66XYm7RjahZbr7
+	 Z2aobkAqHBICfaGWYx9i9H/1Veoie6dxgFx7qULi6973byZbpzzCRIOhBgrWRx5vSw
+	 aStMMM9r5/6Z3cneTy8oQMmaqq5tkV/GtJ8g1miX6iMqy8mHRGB124NSbLjfGaZPAp
+	 ycHLv48nNWmUA==
+Received: from a27-129.smtp-out.us-west-2.amazonses.com (a27-129.smtp-out.us-west-2.amazonses.com [54.240.27.129])
+	by mr85p00im-ztdg06014601.me.com (Postfix) with ESMTPS id CE17D80558E
+	for <icloud20130615@bernhardwagner.net>; Fri,  8 Apr 2022 23:13:09 +0000 (UTC)
+Authentication-Results:dkim-verifier.icloud.com;
+	dkim=pass (1024-bit key) header.d=bird.co header.i=@bird.co header.b=YC/PeXp5
+Authentication-Results:dkim-verifier.icloud.com;
+	dkim=pass (1024-bit key) header.d=amazonses.com header.i=@amazonses.com header.b=gcz75ehD
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1649459589;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Feedback-ID;
+	bh=qgOWWFYeuNP78XOQRVuvzr3JSPRWxNuimzJCos+Duqs=;
+	b=gcz75ehDCwMft8T9MvYwTcu6kyRw/6urkyLl3akyLgz1uRu1wpskfNwIMGlPy66S
+	ZED5X4ZUXAqObA0j9wbcbgAK5H5CkiJoRwPPjZ+lPqhT9T9XPTbPNOlva3BVoUEpq/L
+	PaC59hIUfJ4CXwJJIeIzTYXo2FqiJmqYslLviSv0=
+Date: Fri, 8 Apr 2022 23:13:09 +0000
+from: Bird Rides <noreply_at_bird_co_nqpjvydwtb_72266027@privaterelay.appleid.com>
+to: nqpjvydwtb@privaterelay.appleid.com
+Message-ID: <010101800b73f072-877ec566-8a84-4006-9bd3-a902f601ae7e-000000@us-west-2.amazonses.com>
+Subject: Your Bird Ride Receipt
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_1696072_213356159.1649459588891"
+Feedback-ID: 1.us-west-2.feLzzaN9OqsdMve5RyqenH+yw5WI0406P0bOeMH2aco=:AmazonSES
+X-SES-Outgoing: 2022.04.08-54.240.27.129
+X-Pr-ID: 132c0da8-9e03-4140-ac9b-0d5b183af06a
+X-Pr-CD: 0
+X-Pr-R-CD: ac9112872512a28f836af930862f7ea0
+X-Pr-E-CD: 80f99f79881b5a34af8935df26744848
+X-Pr-T-CD: c853f0f988fa1815613448e2094251e7
+X-Spam-Status: No, score=1.2 required=5.5 tests=BAYES_50,DCC_CHECK,
+	DKIMWL_WL_HIGH,DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,HTML_MESSAGE,
+	KAM_SHORT,MIME_HTML_ONLY,RCVD_IN_DNSWL_LOW,RCVD_IN_MSPIKE_H4,
+	RCVD_IN_MSPIKE_WL,SPF_HELO_NONE,SPF_PASS,T_REMOTE_IMAGE,
+	T_SCC_BODY_TEXT_LINE autolearn=no autolearn_force=no version=3.4.2
+X-Spam-Level: *
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.harris.ch
+X-Spam-Relay-Countries: US US
+X-Spam-DCC: :trusty 1480; Body=1 Fuz1=many Fuz2=many
+
+------=_Part_1696072_213356159.1649459588891
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml"
+      xmlns:v=3D"urn:schemas-microsoft-com:vml"
+      xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+<head>
+  <title>BIRD</title>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8" =
+/>
+  <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" />
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0 " />
+  <meta name=3D"format-detection" content=3D"telephone=3Dno"/>
+  <style type=3D"text/css">
+    /* || General Styles */
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+      -webkit-text-size-adjust: 100% !important;
+      -ms-text-size-adjust: 100% !important;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #002139;
+    }
+    img {
+      border: 0 !important;
+      outline: none !important;
+    }
+    p {
+      margin: 0px !important;
+      padding: 0px !important;
+      font-size: 14px;
+      line-height: 24px;
+    }
+    hr {
+      height: 1px;
+      background-color: #000;
+      border: none;
+    }
+    td {
+      font-size: 14px;
+      line-height: 24px;
+    }
+    a {
+      color: #007AFF;
+    }
+    td, a, span {
+      border-collapse: collapse;
+      mso-line-height-rule: exactly;
+    }
+    .ExternalClass * {
+      line-height: 100%;
+    }
+    .em-defaultlink a {
+      color: inherit !important;
+      text-decoration: none !important;
+    }
+    span.MsoHyperlink {
+      mso-style-priority: 99;
+      color: inherit;
+    }
+    span.MsoHyperlinkFollowed {
+      mso-style-priority: 99;
+      color: inherit;
+    }
+
+    /* || Main Body */
+    .em-body {
+      margin: 0px;
+      padding: 0px;
+    }
+    .mj-td {
+      font-size: 0px;
+      padding: 10px 25px;
+      word-break: break-word;
+    }
+
+    /* || Header Table */
+    .header-table {
+      /* we want the background color for the header to be #EOF4FF,
+         but because of how dark mode is applied for some email clients,
+         the color will change unexpectedly if we set a background color.
+         Thus, we are going with this hack to maintain the light blue color
+         regardless of light/dark mode.
+       */
+      background-image: url('https://static.bird.co/email/receipts/e0f4ff_1=
+x1.png');
+    }
+    .logo-data-cell {
+      line-height: 0px;
+      font-size: 0px;
+    }
+    .bird-logo-img {
+      border: none;=20
+      display: block;=20
+      font-size: 14px;=20
+      line-height: 18px; =20
+      color: #000000;=20
+      text-align: center;
+      max-width: 88px;
+    }
+    .header-image {
+      border: 0;
+      display: block;
+      outline: none;
+      text-decoration: none;
+      height: auto;
+      width: 100%;
+      font-size: 13px;
+    }
+
+    /* || Body Table */
+    .nested-data-cell {
+      padding: 0px 30px 0px 30px;
+    }
+
+    /* || Utilities */
+    .no-text-decoration {
+      text-decoration: none;
+    }
+    .underline {
+      text-decoration: underline;
+    }
+    .center-text {
+      text-align: center;
+    }
+    .space-data-cell {
+      line-height: 1px;
+      font-size: 1px;
+    }
+
+    .bot-padding-10 {
+      padding-bottom: 10px;
+    }
+    .bolded {
+      font-weight: 700;
+    }
+
+    /* || Content */
+    .intro-text {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 24px;
+      text-align: left;
+      color: #002139;
+    }
+
+    .opening-text {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 17px;
+      text-align: left;
+      color: #002139;
+    }
+
+    /* || Misc Table */
+    .misc-text {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 28px;
+      text-align: left;
+      color: #FFFFFF;
+    }
+    .misc-link {
+      color: #FFFFFF !important;
+      text-decoration: underline !important;
+    }
+
+    /* || Footer Table */
+    .bird-logo {
+      border: 0;
+      display: block;
+      outline: none;
+      text-decoration: none;
+      height: auto;
+      width: 25%;
+      margin: 0 auto;
+      font-size: 13px;
+    }
+    .insta-logo-img {
+      border: none;=20
+      display: block;=20
+      font-family: Arial, sans-serif;=20
+      font-size: 11px;=20
+      line-height: 18px; =20
+      color: #ffffff;=20
+      text-align: center;
+      max-width: 21px;
+    }
+    .fb-logo-img {
+      border: none;=20
+      display: block;=20
+      font-family: Arial, sans-serif;=20
+      font-size: 11px;=20
+      line-height: 18px; =20
+      color: #ffffff;=20
+      text-align: center;
+      max-width: 21px;
+    }
+    .twitter-logo-img {
+      border: none;=20
+      display: block;=20
+      font-family: Arial, sans-serif;=20
+      font-size: 11px;=20
+      line-height: 18px; =20
+      color: #ffffff;=20
+      text-align: center;
+      max-width: 24px;
+    }
+    .footer-text {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;;
+      font-size: 12px;
+      line-height: 17px;
+      text-align: center;
+      color: #002139;
+    }
+    .footer-link {
+      color: inherit !important;
+      text-decoration: inherit !important;
+    }
+    .footer-link a {
+      color: inherit !important;
+      text-decoration: inherit !important;
+    }
+    .copyright {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;;
+      font-size: 12px;
+      line-height: 17px;
+      text-align: center;
+      color: #002139;
+      text-decoration: none;
+    }
+
+    /* || Receipt Paragraph */
+    .paragraph {
+      color: #002139;
+    }
+
+    /* || receiptBalanceTable */
+    .balance-table {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    .balance-line-item-circular-arrow {
+      font-weight: 700;
+      color: #002139;
+    }
+    .balance-line-item-right-arrow {
+      color: #002139;
+    }
+    .balance-line-item-title {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+      color: #8D8D8D;
+    }
+    .balance-line-item-amount {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 32px;
+      color: #002139;
+    }
+    .balance-divider {
+      height: 1px;
+      color: #EDEDED;
+      background-color: #EDEDED;
+      border: none;
+      margin-top: 0px;
+      margin-bottom: 20px;
+    }
+
+    /* || receiptInfoTable */
+    .info-table {
+      background-color: #EDEDED;
+    }
+    .info-line-item {
+      padding: 15px 15px;=20
+      font-size: 14px;=20
+      line-height: 32px;=20
+      width: 50%;=20
+      text-align: right;
+      color: #002139;
+    }
+
+    /* || receiptLineItemsTable */
+    .receipt-line-item-title {
+      padding: 5px 0 5px 10px;=20
+      width: 50%;=20
+      text-align: left;
+      color: #002139;
+    }
+    .receipt-line-item-amount {
+      padding: 5px 10px 5px 0;=20
+      width: 50%;=20
+      text-align: right;
+      color: #002139;
+    }
+    .credit-line-item {
+      font-weight: 500;
+    }
+
+    /* || receiptTotalTable */
+    .total-line-item-title {
+      padding: 5px 0 5px 10px;=20
+      width: 50%;=20
+      text-align: left;
+      color: #002139;
+    }
+    .total-line-item-amount {
+      padding: 5px 10px 5px 0;=20
+      width: 50%;=20
+      text-align: right;
+      color: #002139;
+    }
+
+    @media only screen and (min-width:480px) {
+      .mj-column-per-50 {
+        width: 50% !important;
+        max-width: 50%;
+      }
+
+      .mj-column-per-100 {
+        width: 100% !important;
+        max-width: 100%;
+      }
+    }
+
+    @media only screen and (min-width:481px) and (max-width:669px) {
+      .em-table {
+        width: 100% !important;
+      }
+      .em-wrapper {
+        width: 100% !important;
+      }
+      .em-side {
+        width: 15px !important;
+      }
+      .em-hide {
+        display: none !important;
+      }
+      .em-img {
+        width: 100% !important;
+        height: auto !important;
+      }
+      .em-center {
+        text-align: center !important;
+      }
+      .em-height {
+        height: 20px !important;
+      }
+      .em-top {
+        padding-top: 20px !important;
+      }
+      .em-pad {
+        padding: 0 10px !important;
+      }
+      .em-side38 {
+        width: 38px !important;
+      }
+    }
+
+    @media only screen and (max-width:480px) {
+      table.mj-full-width-mobile {
+        width: 100% !important;
+      }
+
+      td.mj-full-width-mobile {
+        width: auto !important;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .balance-line-item-title {
+        font-size: 10px;
+        line-height: 12px;
+      }
+      .balance-line-item-amount {
+        font-size: 12px;
+        line-height: 19px;
+      }
+      .em-table {
+        width: 100% !important;
+      }
+      .em-wrapper {
+        width: 100% !important;
+      }
+      .em-side {
+        width: 15px !important;
+      }
+      .em-hide {
+        display: none !important;
+      }
+      .em-img {
+        width: 100% !important;
+        height: auto !important;
+      }
+      .em-center {
+        text-align: center !important;
+      }
+      .em-height {
+        height: 20px !important;
+      }
+      .em-top {
+        padding-top: 20px !important;
+      }
+      .em-pad {
+        padding: 0 10px !important;
+      }
+      u + .em-body .em-full-wrap {
+        width: 100% !important;
+        width: 100vw !important;
+      }
+      .em-side38 {
+        width: 38px !important;
+      }
+    }
+  </style>
+  <style media=3D"screen and (min-width:480px)">
+    .moz-text-html .mj-column-per-50 {
+      width: 50% !important;
+      max-width: 50%;
+    }
+
+    .moz-text-html .mj-column-per-100 {
+      width: 100% !important;
+      max-width: 100%;
+    }
+  </style>
+</head>
+
+<body class=3D"em-body">
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" clas=
+s=3D"em-full-wrap">
+  <!--Header section -->
+  <tr>
+    <td align=3D"center" valign=3D"top">
+      <table align=3D"center" width=3D"574" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0" class=3D"em-table header-table">
+        <tr>
+          <td style=3D"direction:ltr;font-size:0px;padding:20px 0;text-alig=
+n:center;">
+            <div class=3D"mj-column-per-50 mj-outlook-group-fix" style=3D"f=
+ont-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-al=
+ign:middle;width:100%;">
+              <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"vertical-align:middle;" width=3D"100%">
+                <tbody>
+                  <tr>
+                    <td align=3D"left" class=3D"mj-td">
+                      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" role=3D"presentation" style=3D"border-collapse:collapse;border-spacing:0=
+px;">
+                        <tbody>
+                          <tr>
+                            <td style=3D"width:100px;">
+                              <img height=3D"auto" src=3D"https://static.bi=
+rd.co/email/receipts/bird-wordmark.png" class=3D"header-image" />
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class=3D"mj-column-per-50 mj-outlook-group-fix" style=3D"f=
+ont-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-al=
+ign:middle;width:100%;">
+              <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"vertical-align:middle;" width=3D"100%">
+                <tbody>
+                  <tr>
+                    <td align=3D"right" class=3D"mj-td">
+                      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" role=3D"presentation" style=3D"border-collapse:collapse;border-spacing:0=
+px;">
+                        <tbody>
+                          <tr>
+                            <td style=3D"width:150px;">
+                              <img height=3D"auto" src=3D"https://static.bi=
+rd.co/email/receipts/bird-city.png" class=3D"header-image" />
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <!--//Header section -->
+
+  <!--Body section -->
+  <tr>
+    <td align=3D"center" valign=3D"top">
+      <table align=3D"center" width=3D"670" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0" class=3D"em-table">
+        <tr>
+          <td valign=3D"top" align=3D"center">
+            <table width=3D"670" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" align=3D"center" class=3D"em-wrapper">
+              <tr>
+                <td width=3D"48" class=3D"em-side">&nbsp;</td>
+                <td valign=3D"top" align=3D"center">
+                  <table width=3D"574" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"0" align=3D"center" class=3D"em-wrapper" bgcolor=3D"#ffffff">
+                    <tr>
+                      <td height=3D"41">&nbsp;</td>
+                    </tr>
+                    <tr valign=3D"top">
+                      <td id=3D"nested" class=3D"nested-data-cell">
+  <p class=3D"paragraph">
+    <div class=3D"intro-text">
+      Hi Bernhard Wagner,
+    </div>
+  </p>
+  <br>
+
+  <p class=3D"paragraph">
+    <div class=3D"opening-text">
+      Thank you for riding with Bird! Here is your receipt:
+    </div>
+  </p>
+  <br>
+
+  <hr />
+  <div align=3D"center">
+    <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+        <tr>
+          <td nowrap=3D"nowrap" valign=3D"top" class=3D"receipt-line-item-t=
+itle debit-line-item">
+            Ride Charge
+          </td>
+          <td nowrap=3D"nowrap" valign=3D"top" class=3D"receipt-line-item-a=
+mount debit-line-item">
+            <span>CHF=C2=A03.70</span>
+          </td>
+        </tr>
+
+
+    </table>
+  </div>
+  <hr />
+
+  <div align=3D"center" class=3D"bot-padding-10">
+    <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+      <tr>
+        <td nowrap=3D"nowrap" valign=3D"top" class=3D"total-line-item-title=
+ bolded">
+          Total (Gross)
+        </td>
+        <td nowrap=3D"nowrap" valign=3D"top" class=3D"total-line-item-amoun=
+t bolded">
+          <span>CHF=C2=A03.70</span>
+        </td>
+      </tr>
+
+        <tr>
+          <td nowrap=3D"nowrap" valign=3D"top" class=3D"total-line-item-tit=
+le">
+            Incl. 7.7% VAT
+          </td>
+          <td nowrap=3D"nowrap" valign=3D"top" class=3D"total-line-item-amo=
+unt">
+            <span>CHF=C2=A00.26</span>
+          </td>
+        </tr>
+
+        <tr>
+          <td nowrap=3D"nowrap" valign=3D"top" class=3D"total-line-item-tit=
+le">
+            Total (Net)
+          </td>
+          <td nowrap=3D"nowrap" valign=3D"top" class=3D"total-line-item-amo=
+unt">
+            <span>CHF=C2=A03.44</span>
+          </td>
+        </tr>
+    </table>
+  </div>
+
+  <div align=3D"center">
+    <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" =
+class=3D"info-table">
+      <tr>
+        <td nowrap=3D"nowrap"></td>
+        <td nowrap=3D"nowrap" class=3D"info-line-item">
+          Receipt ID: <span class=3D"bolded">CH-SRI-2022-4-13753</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+    <div align=3D"center">
+      <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0=
+" class=3D"balance-table">
+        <tr class=3D"center-text">
+          <td nowrap=3D"nowrap">
+            <p class=3D"balance-line-item-title">Beginning Balance</p>
+            <p class=3D"balance-line-item-amount">CHF=C2=A010.00</p>
+          </td>
+
+
+          <td nowrap=3D"nowrap" class=3D"balance-line-item-right-arrow">
+            &#10132;
+          </td>
+
+          <td nowrap=3D"nowrap">
+            <p class=3D"balance-line-item-title">Remaining Balance</p>
+            <p class=3D"balance-line-item-amount">CHF=C2=A06.30</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <hr class=3D"balance-divider" />
+
+    <p class=3D"paragraph">
+      If you are on a Balance Auto Update plan, we will deduct the ride pri=
+ce from your preloaded balance and auto-reload your balance when it hits CH=
+F=C2=A00.
+    </p>
+    <br>
+
+  <p class=3D"paragraph">
+    For questions, check out <a href=3D"https://help.bird.co/hc/en-us/artic=
+les/360032350111-Receipt-request" target=3D"_blank">Help</a>.
+  </p>
+  <br>
+
+
+  <p class=3D"paragraph">Love,</p>
+  <p class=3D"paragraph">Bird</p>
+  <br>
+
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td height=3D"35" class=3D"space-data-cell">&nbsp;</t=
+d>
+                    </tr>
+                  </table>
+                </td>
+                <td width=3D"48" class=3D"em-side">&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <!--//Body section -->
+  <!--Footer section -->
+  <tr>
+    <td align=3D"center" valign=3D"top" bgcolor=3D"#ffffff">
+      <table align=3D"center" width=3D"670" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0" class=3D"em-table">
+        <tr>
+          <td height=3D"30">&nbsp;</td>
+        </tr>
+       =20
+        <!--  Bird Logo  -->
+        <tr>
+          <td>
+            <a href=3D"https://www.bird.co/" target=3D"_blank">
+              <img height=3D"auto" src=3D"https://static.bird.co/email/rece=
+ipts/bird-logo-2x.png" class=3D"bird-logo" />
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td height=3D"50">&nbsp;</td>
+        </tr>
+
+        <!--  Socials  -->
+        <tr>
+          <td valign=3D"top" align=3D"center" class=3D"em-pad"><table borde=
+r=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center">
+            <tr>
+              <td valign=3D"top" align=3D"center">
+                <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" ali=
+gn=3D"center">
+                  <tr>
+                    <td valign=3D"top" align=3D"center">
+                      <a href=3D"https://www.instagram.com/bird/" target=3D=
+"_blank" class=3D"no-text-decoration">
+                        <img src=3D"https://static.bird.co/email/logos/inst=
+a_dark.png" alt=3D"INSTA" height=3D"21" border=3D"0" width=3D"21" class=3D"=
+insta-logo-img" />
+                      </a>
+                    </td>
+                    <td width=3D"30">&nbsp;</td>
+                    <td valign=3D"top" align=3D"center">
+                      <a href=3D"https://twitter.com/BirdRide" target=3D"_b=
+lank" class=3D"no-text-decoration">
+                        <img src=3D"https://static.bird.co/email/logos/twit=
+ter_dark.png" alt=3D"TW" height=3D"21" border=3D"0" width=3D"24" class=3D"t=
+witter-logo-img" />
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td height=3D"30">&nbsp;</td>
+            </tr>
+          </td>
+        </tr>
+
+        <!--  Divider  -->
+        <tr>
+          <td>
+            <tr>
+              <td align=3D"center" class=3D"mj-td">
+                <p style=3D"border-top:solid 1px #E3E3E3;font-size:1px;marg=
+in:0px auto;width:100%;">
+                </p>
+              </td>
+            </tr>
+          </td>
+        </tr>
+
+        <!--  Agreements & Copyright  -->
+        <tr>
+          <td valign=3D"top" align=3D"center" class=3D"em-pad"><table borde=
+r=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center">
+            <tr>
+              <td align=3D"center" class=3D"mj-td">
+                <div class=3D"footer-text no-text-decoration bolded">
+                  <a href=3D"http://www.bird.co/agreement" target=3D"_blank=
+" class=3D"footer-link">Rental Agreement</a> -=20
+                  <a href=3D"http://www.bird.co/terms" target=3D"_blank" cl=
+ass=3D"footer-link">Terms of Service</a> -=20
+                  <a href=3D"http://www.bird.co/privacy" target=3D"_blank" =
+class=3D"footer-link">Privacy Policy
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td align=3D"center" class=3D"mj-td">
+                  <div class=3D"copyright">
+                    <span class=3D"bolded">&copy; BIRD</span> <span class=
+=3D"footer-link">406 Broadway Ste 369, Santa Monica, CA 90401</span>
+                  </div>
+              </td>
+            </tr>
+          </td>
+        </tr>
+
+       =20
+        <tr>
+          <td height=3D"60">&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <!--//Footer section -->
+
+</table>
+</body>
+</html>
+
+------=_Part_1696072_213356159.1649459588891--

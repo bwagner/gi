@@ -1,0 +1,17 @@
+
+I'd like you to outline the html anonymizer package for now. Please write a python package that reads the eml, performs the anonymization with all sensitive data as mentioned above. The package contains a main-function using Typer which allows verbose or quiet operation. verbose documents all discovered sensitive data and how it is being replaced. All calendar dates shall be valid, randomized, but optionally keeping the current year.
+
+Stumbled across this:
+https://inquest.readthedocs.io/projects/iocextract/en/latest/
+
+https://pypi.org/project/anonymization/
+
+https://pypi.org/project/pynonymizer/
+-> specialized in database
+
+https://pypi.org/project/Faker/
+https://pypi.org/project/privapy/
+
+https://pypi.org/project/pii-anonymizer/
+
+https://pypi.org/project/anonympy/

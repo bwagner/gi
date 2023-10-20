@@ -1,0 +1,1860 @@
+Delivered-To: wernbag@gmail.com
+Received: by 2002:a05:6f02:2081:b0:54:2239:3c78 with SMTP id f1csp1905979rcd;
+        Sat, 12 Aug 2023 12:18:46 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGG6vYDJGURKCAkAOwABOhQj4bGGm1Pt8d426vguhAkj4kWWFs8pTfO48kxNgHU6xS0kv7ggSZ1pwA=
+X-Received: by 2002:a05:6512:3dac:b0:4fe:7e1f:766a with SMTP id k44-20020a0565123dac00b004fe7e1f766amr4215325lfv.24.1691867925815;
+        Sat, 12 Aug 2023 12:18:45 -0700 (PDT)
+Authentication-Results: mx.google.com;
+       spf=fail (google.com: domain of srs0=cy7m=d5=privaterelay.appleid.com=privaterelay.bounce.yqh7nh2m6p@harris.ch does not designate 17.58.38.68 as permitted sender) smtp.mailfrom="SRS0=cY7M=D5=privaterelay.appleid.com=privaterelay.bounce.yqh7nh2m6p@harris.ch";
+       dkim=pass header.i=@privaterelay.appleid.com header.s=prv2019 header.b=mEkfoCyU;
+       dkim=fail header.i=@amazonses.com header.s=sokbgaaqhfgd6qjht2wmdajpuuanpimv header.b=UhaJ6Nki
+Received-SPF: fail (google.com: domain of srs0=cy7m=d5=privaterelay.appleid.com=privaterelay.bounce.yqh7nh2m6p@harris.ch does not designate 17.58.38.68 as permitted sender) client-ip=17.58.38.68;
+Received: by 2002:a05:6402:3908:b0:51b:ce43:9dbf with POP3 id fe8-20020a056402390800b0051bce439dbfmf2164201edb.6;
+        Sat, 12 Aug 2023 12:18:45 -0700 (PDT)
+X-Gmail-Fetch-Info: me@bernhardwagner.net 1 mail.harris.ch 995 bwagner
+Return-Path: <SRS0=cY7M=D5=privaterelay.appleid.com=privaterelay.bounce.yqh7nh2m6p@harris.ch>
+X-Original-To: icloud20130615@bernhardwagner.net
+Delivered-To: bwagner@harris.ch
+Received: from ms11p00im-ztdg17293301.me.com (ms11p00im-ztdg17293301.me.com [17.58.38.68])
+	by mail.harris.ch (Postfix) with ESMTPS id 6264688398
+	for <icloud20130615@bernhardwagner.net>; Sat, 12 Aug 2023 21:06:59 +0200 (CEST)
+Authentication-Results: mail.harris.ch;
+	dkim=pass (2048-bit key; unprotected) header.d=privaterelay.appleid.com header.i=@privaterelay.appleid.com header.b="mEkfoCyU";
+	dkim=fail reason="signature verification failed" (1024-bit key; unprotected) header.d=amazonses.com header.i=@amazonses.com header.b="UhaJ6Nki";
+	dkim-atps=neutral
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=privaterelay.appleid.com; s=prv2019; t=1691867217;
+	bh=0yDSxkZteA780OJrnLL4pwAqt9sbSEBnBtqbkk1KR5Q=;
+	h=Content-Type:From:To:Subject:Message-ID:Date:MIME-Version;
+	b=mEkfoCyUMnsfHKclgfDDDZZFUAQT4vEMWfDzT+7NID6serkKiA30/6xh2hRdNi4/N
+	 INa0kWOgak/fG6l016t/igBJIK5iwk/Vt3rKhWktVWMVwv1SMr7rBDiIi7MYclO+d9
+	 cm4RFomNOpUXtaY4gQVLk4yAePGUMKeAaobbVNGZSHsPcbjFlkiFX6/IsljfNd4rWx
+	 8ap2fx/+THDOS3QLSbN6rDbvY80FUQVnlePwaWy7wRbo5cii8+kMZ3QxOqQKVGKnBC
+	 oJP4Q5L97OmTN0w4vNY2u4c1vfcsh5RxWMhoITdl6Oz93RvmM741AM9z7Hxgm8ExAD
+	 tniYZvAxjK6WA==
+Received: from b224-53.smtp-out.eu-central-1.amazonses.com (b224-53.smtp-out.eu-central-1.amazonses.com [69.169.224.53])
+	by ms11p00im-ztdg17293301.me.com (Postfix) with ESMTPS id CF65688222B
+	for <icloud20130615@bernhardwagner.net>; Sat, 12 Aug 2023 19:06:56 +0000 (UTC)
+Authentication-Results: dkim-verifier.icloud.com;
+	dkim=pass (1024-bit key) header.d=bolt.eu header.i=@bolt.eu header.b=OgJM9PhK
+Authentication-Results: dkim-verifier.icloud.com;
+	dkim=pass (1024-bit key) header.d=amazonses.com header.i=@amazonses.com header.b=UhaJ6Nki
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=sokbgaaqhfgd6qjht2wmdajpuuanpimv; d=amazonses.com; t=1691867216;
+	h=Content-Type:From:To:Subject:Message-ID:Content-Transfer-Encoding:Date:MIME-Version:Feedback-ID;
+	bh=YwXjD8mcvvj4Zz1CNqyDoE/S/pHgfopwOhGVPFAvXYs=;
+	b=UhaJ6Nki4DPtpTqmnZn0Bpo1D9OEbb47H6YkLEFiX0zevoBYDR1UB5hWCjlKkN83
+	NKBk11z4lIyEiP5cQyLLiEnWDB1dWEhdbA17t8jq1OpSRSCxmNrNtlxr9e9XQC5qfY/
+	++UDqVtS5GwxkKEWN2qa+my41cCKZjwlwlDE2pSA=
+Content-Type: text/html; charset=utf-8
+From: Bolt Receipts <receipts_at_bolt_eu_yqh7nh2m6p_1e45970c@privaterelay.appleid.com>
+To: yqh7nh2m6p@privaterelay.appleid.com
+Subject: Your Bolt Scooter ride on Saturday
+Message-ID: <01070189eb24f939-bf775ac2-3a69-4e24-bed9-e203fc184dd6-000000@eu-central-1.amazonses.com>
+Content-Transfer-Encoding: quoted-printable
+Date: Sat, 12 Aug 2023 19:06:56 +0000
+MIME-Version: 1.0
+Feedback-ID: 1.eu-central-1.Iw3A2QVyXllb/zTSb0pR+vg3L1wSOw8eTtUZKrDF7hI=:AmazonSES
+X-SES-Outgoing: 2023.08.12-69.169.224.53
+X-Pr-ID: 9735b607-690f-4a52-9926-c69289eedd36
+X-Pr-CD: 0
+X-Pr-R-CD: aea34d2293861aafb9fc75767500c2d3
+X-Pr-E-CD: 34bf7974fb18faadce040282058e1bfc
+X-Pr-T-CD: 49c4c27bdf35d30fc018fc2dba2c9f7a
+X-Spam-Status: No, score=2.9 required=5.5 tests=BAYES_50,DCC_CHECK,
+	DKIMWL_WL_HIGH,DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,HTML_MESSAGE,
+	KAM_EU,KAM_HUGEIMGSRC,KAM_INFOUSMEBIZ,KAM_SHORT,MIME_HTML_ONLY,
+	POISEN_SPAM_PILL,POISEN_SPAM_PILL_1,RCVD_IN_DNSWL_LOW,
+	RCVD_IN_MSPIKE_H3,RCVD_IN_MSPIKE_WL,SPF_HELO_NONE,SPF_PASS,
+	T_REMOTE_IMAGE autolearn=no autolearn_force=no version=3.4.2
+X-Spam-Level: **
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.harris.ch
+X-Spam-Relay-Countries: US US
+X-Spam-DCC: :trusty 1481; Body=1 Fuz1=many Fuz2=many
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.=
+org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; =
+charset=3DUTF-8">
+    <meta name=3D"x-apple-disable-message-reformatting">
+    <meta name=3D"format-detection" content=3D"telephone=3Dno">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width; =
+initial-scale=3D1; maximum-scale=3D1; user-scalable=3Dno;">
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3D9; IE=3D8; IE=3D7;=
+ IE=3DEDGE">
+
+    <title>Purchase confirmation</title>
+    <style type=3D"text/css">
+        @media only screen and (max-width:600px) {
+            .headingLarge {
+                font-size: 28px !important;
+                line-height: 36px !important;
+            }
+            .bodyLarge {
+                font-size: 16px !important;
+            }
+            .bodyLargeBold {
+                font-size: 16px !important;
+            }
+        }
+
+        @media only screen and (max-width:600px) {
+            #headerContainer,
+            #bodyContainer,
+            #footerContainer,
+            #imageContainerGreen,
+            #imageContainerWhite {
+                width: 100% !important;
+            }
+            .spacing-outer {
+                padding-top: 24px !important;
+                padding-right: 16px !important;
+                padding-left: 16px !important;
+            }
+            .spacing-outer-sides {
+                padding-right: 16px !important;
+                padding-left: 16px !important;
+            }
+            .spacing-outer-32 {
+                padding-top: 28px !important;
+                padding-right: 16px !important;
+                padding-left: 16px !important;
+            }
+            .spacing-outer-24 {
+                padding-top: 0px;
+                padding-bottom: 0px;
+                padding-right: 16px !important;
+                padding-left: 16px !important;
+            }
+            .spacing-outer-16 {
+                padding-top: 0px !important;
+                padding-bottom: 0px !important;
+                padding-right: 0px !important;
+                padding-left: 0px !important;
+            }
+            .spacing-bottom-16-sm {
+                padding-bottom: 12px !important;
+            }
+            .spacing-top-8-sm {
+                padding-top: 4px !important;
+            }
+            .spacing-bottom-40-sm {
+                padding-bottom: 24px !important;
+            }
+            .spacing-outer-banner {
+                padding-top: 24px !important;
+                padding-right: 24px !important;
+                padding-left: 24px !important;
+                padding-bottom: 24px !important;
+            }
+            .container-border-top,
+            .container-border-bottom {
+                border: 0 !important;
+                border-radius: 0 !important;
+            }
+            .container-border-bottom {
+                border-bottom: 1px solid #F4F4F6 !important;
+            }
+            .promo {
+                background: #249E64 !important;
+        }
+        .promo-padding-right {
+            padding-right: 24px !important;
+        }
+        .promo-code-width {
+            width: 100% !important;
+        }
+        .banner-spacing {
+            padding-right: 20px !important;
+        }
+        .spacing-car-image {
+            padding-right: 16px !important;
+        }
+        }
+
+        @media only screen and (max-width: 480px) {
+            u ~ div,
+            u + #body {
+                min-width: 100% !important;
+            }
+        }
+
+        @media only screen and (max-width:600px) {
+            .headingLarge {
+                font-size: 28px !important;
+                line-height: 36px !important;
+            }
+            .bodyLarge {
+                font-size: 16px !important;
+            }
+            .bodyLargeBold {
+                font-size: 16px !important;
+            }
+        }
+
+        @media only screen and (max-width:600px) {
+            #headerContainer,
+            #bodyContainer,
+            #footerContainer,
+            #imageContainerGreen,
+            #imageContainerWhite {
+                width: 100% !important;
+            }
+            .spacing-outer {
+                padding-top: 24px !important;
+                padding-right: 16px !important;
+                padding-left: 16px !important;
+            }
+            .spacing-outer-sides {
+                padding-right: 16px !important;
+                padding-left: 16px !important;
+            }
+            .spacing-outer-32 {
+                padding-top: 28px !important;
+                padding-right: 16px !important;
+                padding-left: 16px !important;
+            }
+            .spacing-outer-24 {
+                padding-top: 0px;
+                padding-bottom: 0px;
+                padding-right: 16px !important;
+                padding-left: 16px !important;
+            }
+            .spacing-outer-16 {
+                padding-top: 0px !important;
+                padding-bottom: 0px !important;
+                padding-right: 0px !important;
+                padding-left: 0px !important;
+            }
+            .spacing-bottom-16-sm {
+                padding-bottom: 12px !important;
+            }
+            .spacing-top-8-sm {
+                padding-top: 4px !important;
+            }
+            .spacing-bottom-40-sm {
+                padding-bottom: 24px !important;
+            }
+            .spacing-outer-banner {
+                padding-top: 24px !important;
+                padding-right: 24px !important;
+                padding-left: 24px !important;
+                padding-bottom: 24px !important;
+            }
+            .container-border-top,
+            .container-border-bottom {
+                border: 0 !important;
+                border-radius: 0 !important;
+            }
+            .container-border-bottom {
+                border-bottom: 1px solid #F4F4F6 !important;
+            }
+            .promo {
+                background: #249E64 !important;
+        }
+        .promo-padding-right {
+            padding-right: 24px !important;
+        }
+        .promo-code-width {
+            width: 100% !important;
+        }
+        .banner-spacing {
+            padding-right: 20px !important;
+        }
+        .spacing-car-image {
+            padding-right: 16px !important;
+        }
+        }
+
+        @media only screen and (max-width: 480px) {
+            u ~ div,
+            u + #body {
+                min-width: 100% !important;
+            }
+        }
+    </style>
+
+</head>
+
+<body id=3D"body" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; height: 100% !important; margin: 0; =
+padding: 0; width: 100% !important;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" =
+id=3D"bodyTable" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; height: 100% !important; margin: 0; mso-table-lspace: 0pt !important; =
+mso-table-rspace: 0pt !important; padding: 0; width: 100% !important; =
+word-break: break-word;">
+    <tbody>
+    <tr>
+        <td align=3D"center" valign=3D"top" width=3D"100%" =
+style=3D"width:100%; max-width:100%; min-width:100%;">
+
+            <!-- Email Header -->
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+width=3D"100%" id=3D"headerWrapper" bgcolor=3D"#249E64" =
+style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+background-color: #249E64; border-collapse: collapse; border-spacing: 0; =
+mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                <tbody>
+                <tr>
+                    <td align=3D"center" valign=3D"top">
+                        <table border=3D"0" cellpadding=3D"16" =
+cellspacing=3D"0" width=3D"600" id=3D"headerContainer" =
+style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt !=
+important; mso-table-rspace: 0pt !important; word-break: break-word;">
+                            <tbody>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" =
+class=3D"spacing-outer container-border-top" style=3D"border-bottom: 0; =
+border-left: 1px solid #E9EAEE; border-right: 1px solid #E9EAEE; =
+border-top: 0; display: block; padding-left: 40px; padding-right: 40px; =
+padding-top: 40px;">
+
+                                    <!-- Email Header Content -->
+                                    <table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%" id=3D"headerContent" =
+style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt !=
+important; mso-table-rspace: 0pt !important; word-break: break-word;">
+                                        <tbody>
+                                        <tr>
+                                            <td align=3D"center" =
+valign=3D"top">
+
+                                                <table border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" id=3D"headerContentLogo"=
+ style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+border-collapse: collapse; border-spacing: 0; max-width: 100%; min-width: =
+100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td =
+align=3D"left">
+                                                            <img =
+src=3D"https://taxify-static-content-for-public-web.s3.eu-central-1.=
+amazonaws.com/invoicing/email_resource/carsharing/logo.png" border=3D"0" =
+width=3D"56" height=3D"32" alt=3D"Bolt" class=3D"bodySmall =
+color-contentPrimaryInverted img" id=3D"imgLogo" style=3D"-ms-interpolation=
+-mode: bicubic; border: 0; color: #FFFFFF; display: block; font-family: =
+'Euclid Circular B', Arial, Avenir, Helvetica, Verdana, sans-serif; =
+font-size: 14px; font-style: normal; font-weight: normal; line-height: =
+20px; outline: none; text-decoration: none;">
+                                                        </td>
+                                                        <td =
+align=3D"right">
+
+                                                            <table =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" =
+id=3D"headerContentHeading" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td =
+align=3D"right">
+                                                                        =
+<span class=3D"caption color-contentPrimaryInverted" style=3D"color: =
+#FFFFFF; font-family: 'Euclid Circular B', Arial, Avenir, Helvetica, =
+Verdana, sans-serif; font-size: 12px; font-style: normal; font-weight: =
+normal; line-height: 16px;">Total: </span>
+                                                                        =
+<span class=3D"captionBold color-contentPrimaryInverted" style=3D"color: =
+#FFFFFF; font-family: 'Euclid Circular B', Arial, Avenir, Helvetica, =
+Verdana, sans-serif; font-size: 12px; font-style: normal; font-weight: =
+bold; line-height: 16px;">2.69 SFr</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td =
+align=3D"right">
+                                                                        =
+<span class=3D"caption color-contentPrimaryInverted" style=3D"color: =
+#FFFFFF; font-family: 'Euclid Circular B', Arial, Avenir, Helvetica, =
+Verdana, sans-serif; font-size: 12px; font-style: normal; font-weight: =
+normal; line-height: 16px;">Sat, 2023-08-12</span>
+                                                                    </td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td =
+class=3D"height-40" colspan=3D"2" style=3D"height: 40px;"></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+
+                                                <!-- if =
+[$email_subscription_disclaimer] is not empty -->
+                                                <table border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" id=3D"headerContentHeadi=
+ng" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt !=
+important; mso-table-rspace: 0pt !important; word-break: break-word;">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td align=3D"left" =
+valign=3D"top" class=3D"spacing-bottom-16" style=3D"padding-bottom: =
+16px;">
+                                                            <h1 =
+class=3D"headingLarge color-contentPrimaryInverted mp0" style=3D"color: =
+#FFFFFF; font-family: 'Euclid Circular B', Arial, Avenir, Helvetica, =
+Verdana, sans-serif; font-size: 36px; font-style: normal; font-weight: =
+bold; line-height: 44px; margin: 0 !important; padding: 0 !=
+important;">Thanks for riding with us, Bernhard</h1>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align=3D"left" =
+valign=3D"top">
+                                                            <span =
+class=3D"bodyLarge color-contentPrimaryInverted" style=3D"color: #FFFFFF; =
+font-family: 'Euclid Circular B', Arial, Avenir, Helvetica, Verdana, =
+sans-serif; font-size: 18px; font-style: normal; font-weight: normal; =
+line-height: 24px;">We hope you enjoyed your ride</span>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- // Email Header Content -->
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <!--/ Email Header -->
+
+            <!-- Image Header -->
+            <table cellpadding=3D"0" cellspacing=3D"0" =
+style=3D"--ms-text-style-adjust: 100%; --webkit-text-size-adjust: 100%; =
+-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+border-collapse: collapse; border-spacing: 0; border-width: 0; max-width: =
+100%; min-width: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: =
+0pt !important; width: 100%; word-break: break-word;">
+                <tbody>
+                <tr>
+                    <td valign=3D"top">
+                        <table cellpadding=3D"1" cellspacing=3D"0" =
+style=3D"--ms-text-style-adjust: 100%; --webkit-text-size-adjust: 100%; =
+-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+border-collapse: collapse; border-spacing: 0; border-width: 0; max-width: =
+100%; min-width: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: =
+0pt !important; width: 100%; word-break: break-word;">
+                            <tbody>
+                            <tr>
+                                <td bgcolor=3D"#249E64" =
+style=3D"height:54px;"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td align=3D"center" valign=3D"top" width=3D"600px" =
+background=3D"https://taxify-static-content-for-public-web.s3.eu-central-1.=
+amazonaws.com/invoicing/email_resource/carsharing/td%23249E64.png" =
+style=3D"width: 600px;background-image: url(https://taxify-static-content-f=
+or-public-web.s3.eu-central-1.amazonaws.com/invoicing/email_resource/carsha=
+ring/td%23249E64.png);" height=3D"112">
+
+                        <!--[if gte mso 9]>
+                        <v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" =
+fill=3D"true" stroke=3D"false" style=3D"width:600px; height:112px;" =
+fillcolor=3D"#249E64">
+                            <v:fill type=3D"gradient" color2=3D"#249E64" =
+colors=3D"0% #FFFFFF, 51% #FFFFFF, 51% #249E64" position=3D"0, 0" =
+origin=3D"0, 0" />
+                            <v:textbox inset=3D"0,0,0,0">
+                        <![endif]-->
+                        <table cellpadding=3D"0" cellspacing=3D"0" =
+width=3D"600px" class=3D"container-border-top" style=3D"--ms-text-style-adj=
+ust: 100%; --webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-bottom: 0; border-collapse: =
+collapse; border-left: 1px solid #E9EAEE; border-right: 1px solid #E9EAEE; =
+border-spacing: 0; border-top: 0; box-sizing: border-box; display: block; =
+mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; width: =
+100%; word-break: break-word;">
+                            <tbody>
+                            <tr>
+                                <td></td>
+                                <td width=3D"600" valign=3D"top" =
+align=3D"right" class=3D"spacing-car-image" style=3D"padding-right: =
+40px;">
+
+                                    <img src=3D"https://images.bolt.=
+eu/rentals/order/invoice_scooter_icon.png" height=3D"112" alt=3D"Car" =
+style=3D"-ms-interpolation-mode: bicubic; border: 0; outline: none; =
+text-decoration: none;">
+
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!--[if gte mso 9]>
+                        </v:textbox>
+                        </v:rect>
+                        <![endif]-->
+                    </td>
+                    <td valign=3D"top">
+                        <table cellpadding=3D"1" cellspacing=3D"0" =
+style=3D"--ms-text-style-adjust: 100%; --webkit-text-size-adjust: 100%; =
+-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+border-collapse: collapse; border-spacing: 0; border-width: 0; max-width: =
+100%; min-width: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: =
+0pt !important; width: 100%; word-break: break-word;">
+                            <tbody>
+                            <tr>
+                                <td bgcolor=3D"#249E64" height=3D"54px" =
+style=3D"height: 54px"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <!--/ Image Header -->
+
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<!-- Email Body -->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" =
+id=3D"bodyWrapper" bgcolor=3D"#FFFFFF" style=3D"-ms-text-size-adjust: 100%;=
+ -webkit-text-size-adjust: 100%; background-color: #FFFFFF; =
+border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt !=
+important; mso-table-rspace: 0pt !important; word-break: break-word;">
+    <tbody>
+    <tr>
+        <td align=3D"center" valign=3D"top">
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+width=3D"600" id=3D"bodyContainer" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+
+                <tbody>
+                <tr>
+                    <td align=3D"center" valign=3D"top" =
+class=3D"container-border-bottom" style=3D"border-bottom: 1px solid =
+#E9EAEE; border-bottom-left-radius: 16px; border-bottom-right-radius: 16px;=
+ border-left: 1px solid #E9EAEE; border-right: 1px solid #E9EAEE; =
+border-top: 0; border-top-left-radius: 0; border-top-right-radius: 0; =
+display: block;">
+
+                        <!-- Info Labels -->
+                        <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                            <tbody>
+                            <tr>
+                                <td class=3D"spacing-outer-sides" =
+style=3D"padding-bottom: 24px; padding-left: 40px; padding-right: 40px; =
+padding-top: 24px;">
+                                    <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!--/ Info Labels-->
+
+                        <!-- Total row -->
+                        <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                            <tbody>
+                            <tr>
+                                <td class=3D"spacing-outer-sides" =
+style=3D"padding-left: 40px; padding-right: 40px;">
+                                    <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                                        <tbody>
+                                        <tr>
+                                            <td class=3D"spacing-bottom-16-=
+sm spacing-top-8-sm" style=3D"padding-bottom: 16px; padding-top: 8px;">
+                                                <table width=3D"100%" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adj=
+ust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse; =
+border-spacing: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt =
+!important; word-break: break-word;">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td =
+class=3D"heading color-contentPrimary" style=3D"color: #2F313F; =
+font-family: 'Euclid Circular B', Arial, Avenir, Helvetica, Verdana, =
+sans-serif; font-size: 28px; font-style: normal; font-weight: bold; =
+line-height: 36px;">
+                                                            =
+<span>Total</span>
+                                                        </td>
+                                                        <td align=3D"right"=
+ class=3D"heading color-contentPrimary" style=3D"color: #2F313F; =
+font-family: 'Euclid Circular B', Arial, Avenir, Helvetica, Verdana, =
+sans-serif; font-size: 28px; font-style: normal; font-weight: bold; =
+line-height: 36px;">
+                                                            <span>2.69 =
+SFr</span>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!-- /Total row -->
+                        <!-- Element Divider -->
+                        <table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                            <tbody>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" =
+width=3D"100%" class=3D"spacing-outer-sides" style=3D"padding-bottom: 0px; =
+padding-left: 40px; padding-right: 40px; padding-top: 0px;">
+
+                                    <table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%" id=3D"elementDivider1" height=3D"1" =
+style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+border-collapse: collapse; border-spacing: 0; height: 1px; =
+mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                                        <tbody>
+                                        <tr>
+                                            <td align=3D"center" =
+valign=3D"top" bgcolor=3D"#F0F2F5" width=3D"100%" style=3D"background-color=
+:#F0F2F5; height: 1px;"></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!-- // Element Divider -->
+                        <!-- Details -->
+                        <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                            <tbody>
+                            <tr>
+                                <td class=3D"spacing-outer-sides" =
+style=3D"padding-bottom: 0px; padding-left: 40px; padding-right: 40px; =
+padding-top: 16px;">
+                                    <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                                        <tbody>
+                                        <tr>
+                                            <td class=3D"spacing-bottom-16"=
+ style=3D"padding-bottom: 16px;">
+                                                <table width=3D"100%" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adj=
+ust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse; =
+border-spacing: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt =
+!important; word-break: break-word;">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td =
+class=3D"bodyLarge color-contentPrimary" style=3D"color: #2F313F; =
+font-family: 'Euclid Circular B', Arial, Avenir, Helvetica, Verdana, =
+sans-serif; font-size: 18px; font-style: normal; font-weight: normal; =
+line-height: 24px;">
+                                                            =
+<span>Unlock</span>
+                                                        </td>
+                                                        <td align=3D"right"=
+ class=3D"bodyLarge color-contentPrimary" style=3D"color: #2F313F; =
+font-family: 'Euclid Circular B', Arial, Avenir, Helvetica, Verdana, =
+sans-serif; font-size: 18px; font-style: normal; font-weight: normal; =
+line-height: 24px;">
+                                                            <span>0.50 =
+SFr</span>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                                        <tbody>
+                                        <tr>
+                                            <td class=3D"spacing-bottom-16"=
+ style=3D"padding-bottom: 16px;">
+                                                <table width=3D"100%" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adj=
+ust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse; =
+border-spacing: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt =
+!important; word-break: break-word;">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td =
+class=3D"bodyLarge color-contentPrimary" style=3D"color: #2F313F; =
+font-family: 'Euclid Circular B', Arial, Avenir, Helvetica, Verdana, =
+sans-serif; font-size: 18px; font-style: normal; font-weight: normal; =
+line-height: 24px;">
+                                                            =
+<span>Duration</span>
+                                                        </td>
+                                                        <td align=3D"right"=
+ class=3D"bodyLarge color-contentPrimary" style=3D"color: #2F313F; =
+font-family: 'Euclid Circular B', Arial, Avenir, Helvetica, Verdana, =
+sans-serif; font-size: 18px; font-style: normal; font-weight: normal; =
+line-height: 24px;">
+                                                            <span>2.19 =
+SFr</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td =
+class=3D"bodySmall color-contentSecondary comment-spacing" style=3D"color: =
+#818391; font-family: 'Euclid Circular B', Arial, Avenir, Helvetica, =
+Verdana, sans-serif; font-size: 14px; font-style: normal; font-weight: =
+normal; line-height: 20px; padding-top: 4px;">
+                                                            <span>5 min 37 =
+sec</span>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!-- Element Divider -->
+                        <table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                            <tbody>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" =
+width=3D"100%" class=3D"spacing-outer-sides" style=3D"padding-bottom: 0px; =
+padding-left: 40px; padding-right: 40px; padding-top: 0px;">
+
+                                    <table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%" id=3D"elementDivider2" height=3D"1" =
+style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+border-collapse: collapse; border-spacing: 0; height: 1px; =
+mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                                        <tbody>
+                                        <tr>
+                                            <td align=3D"center" =
+valign=3D"top" bgcolor=3D"#F0F2F5" width=3D"100%" style=3D"background-color=
+:#F0F2F5; height: 1px;"></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!-- // Element Divider -->
+                        <!-- Totals -->
+                        <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                            <tbody>
+                            <tr>
+                                <td class=3D"spacing-outer-sides" =
+style=3D"padding-bottom: 0px; padding-left: 40px; padding-right: 40px; =
+padding-top: 16px;">
+                                    <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                                        <tbody>
+                                        <tr>
+                                            <td class=3D"spacing-bottom-16"=
+ style=3D"padding-bottom: 16px;">
+                                                <table width=3D"100%" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adj=
+ust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse; =
+border-spacing: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt =
+!important; word-break: break-word;">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td =
+class=3D"bodyLarge color-contentPrimary" style=3D"color: #2F313F; =
+font-family: 'Euclid Circular B', Arial, Avenir, Helvetica, Verdana, =
+sans-serif; font-size: 18px; font-style: normal; font-weight: normal; =
+line-height: 24px;">
+                                                            =
+<span>Subtotal</span>
+                                                        </td>
+                                                        <td align=3D"right"=
+ class=3D"bodyLarge color-contentPrimary " style=3D"color: #2F313F; =
+font-family: 'Euclid Circular B', Arial, Avenir, Helvetica, Verdana, =
+sans-serif; font-size: 18px; font-style: normal; font-weight: normal; =
+line-height: 24px;">
+                                                            <span>2.69 =
+SFr</span>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!-- / Totals -->
+                        <!-- Element Divider -->
+                        <table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                            <tbody>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" =
+width=3D"100%" class=3D"spacing-outer-sides" style=3D"padding-bottom: 0px; =
+padding-left: 40px; padding-right: 40px; padding-top: 0px;">
+
+                                    <table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%" id=3D"elementDivider6" height=3D"1" =
+style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+border-collapse: collapse; border-spacing: 0; height: 1px; =
+mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                                        <tbody>
+                                        <tr>
+                                            <td align=3D"center" =
+valign=3D"top" bgcolor=3D"#F0F2F5" width=3D"100%" style=3D"background-color=
+:#F0F2F5; height: 1px;"></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!-- // Element Divider -->
+                        <!-- Total charged -->
+                        <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                            <tbody>
+                            <tr>
+                                <td class=3D"spacing-outer-sides" =
+style=3D"padding-left: 40px; padding-right: 40px; padding-top: 24px;">
+                                    <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                                        <tbody>
+                                        <tr>
+                                            <td class=3D"spacing-bottom-16"=
+ style=3D"padding-bottom: 16px;">
+                                                <table width=3D"100%" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adj=
+ust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse; =
+border-spacing: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt =
+!important; word-break: break-word;">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td =
+class=3D"bodyLargeBold color-contentPrimary" style=3D"color: #2F313F; =
+font-family: 'Euclid Circular B', Arial, Avenir, Helvetica, Verdana, =
+sans-serif; font-size: 18px; font-style: normal; font-weight: bold; =
+line-height: 24px;">
+                                                            <span>Total =
+charged</span>
+                                                        </td>
+                                                        <td align=3D"right"=
+ class=3D"bodyLargeBold color-contentPrimary" style=3D"color: #2F313F; =
+font-family: 'Euclid Circular B', Arial, Avenir, Helvetica, Verdana, =
+sans-serif; font-size: 18px; font-style: normal; font-weight: bold; =
+line-height: 24px;">
+                                                            <span>2.69 =
+SFr</span>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                                        <tbody>
+                                        <tr>
+                                            <td class=3D"spacing-bottom-16"=
+ style=3D"padding-bottom: 16px;">
+                                                <table width=3D"100%" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adj=
+ust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse; =
+border-spacing: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt =
+!important; word-break: break-word;">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td align=3D"left" =
+valign=3D"middle" width=3D"32" class=3D"imgWrapper">
+                                                            <img =
+src=3D"https://static.bolt.eu/payment/icons/mastercard.png" border=3D"0" =
+width=3D"24" height=3D"24" alt=3D"MasterCard" class=3D"bodySmall =
+color-contentSecondary img" id=3D"imgPayment" style=3D"-ms-interpolation-mo=
+de: bicubic; border: 0; color: #818391; display: block; font-family: =
+'Euclid Circular B', Arial, Avenir, Helvetica, Verdana, sans-serif; =
+font-size: 14px; font-style: normal; font-weight: normal; line-height: =
+20px; outline: none; text-decoration: none;">
+                                                        </td>
+                                                        <td align=3D"left" =
+class=3D"bodyLarge " style=3D"font-family: 'Euclid Circular B', Arial, =
+Avenir, Helvetica, Verdana, sans-serif; font-size: 18px; font-style: =
+normal; font-weight: normal; line-height: 24px;">
+                                                            =
+<span>=E2=80=A2=E2=80=A2=E2=80=A2=E2=80=A2 0107</span>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <!-- Space divider -->
+                            <tr>
+                                <td>
+                                    <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" >
+                                        <tr>
+                                            <td height=3D"22px;" =
+style=3D"height: 22px;"></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <!-- End of Space divider -->
+                            </tbody>
+                        </table>
+                        <!-- / Total charged -->
+                        <!-- Hold info -->
+                        <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                            <tbody>
+                            <tr>
+                                <td class=3D"spacing-outer-sides" =
+style=3D"padding-bottom: 0px; padding-left: 40px; padding-right: 40px; =
+padding-top: 0px;">
+                                    <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                                        <tbody>
+                                        <tr>
+                                            <td class=3D"spacing-bottom-24"=
+ style=3D"padding-bottom: 24px;">
+                                                <table width=3D"100%" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adj=
+ust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse; =
+border-spacing: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt =
+!important; word-break: break-word;">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <span =
+class=3D"bodySmall color-contentPrimary" style=3D"color: #2F313F; =
+font-family: 'Euclid Circular B', Arial, Avenir, Helvetica, Verdana, =
+sans-serif; font-size: 14px; font-style: normal; font-weight: normal; =
+line-height: 20px;">A temporary hold could have been placed on your card or=
+ Bolt Balance at the beginning of the ride to verify the payment method. =
+This hold is not an actual charge. The funds are already released or will =
+be released once the payment method verification is completed. This hold =
+should also disappear from your account statement shortly after this. =
+</span>
+                                                            <span><a =
+href=3D"https://bolt.eu/en/support/articles/6730768930194-payment-verificat=
+ion-booking/" class=3D"link" style=3D"text-decoration: none !=
+important;"><span class=3D"bodySmall color-linkPrimary" style=3D"color: =
+#249E64; font-family: 'Euclid Circular B', Arial, Avenir, Helvetica, =
+Verdana, sans-serif; font-size: 14px; font-style: normal; font-weight: =
+normal; line-height: 20px;">Learn more about card authorisation.=
+</span></a>
+                                                  </span>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!-- / Hold info -->
+                        <!-- AD -->
+                        <table width=3D"100%" bgcolor=3D"#E3FDED" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse:c=
+ollapse;background-color:#E3FDED;background-image:url(..=
+/assets/img/visuals/visual_plannet.png);background-repeat:no-repeat;backgro=
+und-position:right center;background-attachment:scroll;background-size:80px=
+ 160px;border-spacing:0;word-break:break-word;mso-table-lspace:0pt !=
+important;mso-table-rspace:0pt !important;-ms-text-size-adjust:100%;-webkit=
+-text-size-adjust:100%;" >
+                            <tr>
+                                <td class=3D"spacing-outer color-green900" =
+style=3D"color:#186841;padding-top:40px;padding-right:40px;padding-left:40p=
+x;" >
+                                    <a href=3D"https://bolt.eu/en/green/" =
+style=3D"text-decoration:none !important;" >
+                                        <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse: collapse;">
+                                            <tr>
+                                                <td>
+                                                    <table width=3D"100%" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse:c=
+ollapse;border-spacing:0;word-break:break-word;mso-table-lspace:0pt !=
+important;mso-table-rspace:0pt !important;-ms-text-size-adjust:100%;-webkit=
+-text-size-adjust:100%;" >
+                                                        <tr>
+                                                        <td =
+style=3D"padding-top:0;padding-bottom:16px;padding-right:80px;padding-left:=
+0;" >
+                                                            <span =
+class=3D"heading color-green900" style=3D"color:#186841;font-size:28px;font=
+-weight:bold;line-height:36px;font-family:'Euclid Circular B', Arial, =
+Avenir, Helvetica, Verdana, sans-serif;font-style:normal;" >You just made a=
+ greener choice. Well done!</span>
+                                                        </td>
+                                                        </tr>
+                                                        <tr>
+                                                        <td =
+class=3D"spacing-bottom-40-sm" style=3D"padding-right:80px;padding-bottom:4=
+0px;" >
+                                                            <span =
+class=3D"bodyLarge color-green900" style=3D"color:#186841;font-size:18px;fo=
+nt-weight:normal;line-height:24px;font-family:'Euclid Circular B', Arial, =
+Avenir, Helvetica, Verdana, sans-serif;font-style:normal;" >The emissions =
+from your scooter ride were neutralised through carbon offset projects. =
+Bolt has committed to becoming carbon net zero by 2040. While we=E2=80=99re=
+ working towards making more zero-emission rides available, we=E2=80=99re =
+purchasing independently-verified carbon credits to offset the emissions of=
+ our scooter customer rides.</span>
+                                                        </td>
+                                                        </tr>
+                                                        <tr>
+                                                        <td =
+class=3D"spacing-bottom-40-sm " style=3D"padding-bottom:40px;" >
+                                                            <span =
+class=3D"bodyLargeBold color-green900" style=3D"color:#186841;font-size:18p=
+x;font-weight:bold;line-height:24px;font-family:'Euclid Circular B', Arial,=
+ Avenir, Helvetica, Verdana, sans-serif;font-style:normal;" >Read =
+more</span>
+                                                        </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td>
+                                                    <img =
+src=3D"https://upload.taxify.eu/EmailTemplateImage/300624-image-769.png" =
+width=3D"80px" height=3D"160px" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- End of AD -->
+                        <!-- Ride details -->
+                        <table width=3D"100%" height=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                            <tbody>
+                            <tr>
+                                <td class=3D"spacing-outer-32" =
+style=3D"padding-left: 40px; padding-right: 40px; padding-top: 32px;">
+                                    <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                                        <tbody>
+                                        <tr>
+                                            <td class=3D"heading =
+spacing-bottom-4 color-contentPrimary" style=3D"color: #2F313F; =
+font-family: 'Euclid Circular B', Arial, Avenir, Helvetica, Verdana, =
+sans-serif; font-size: 28px; font-style: normal; font-weight: bold; =
+line-height: 36px; padding-bottom: 4px;">
+                                                <span>Ride details</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class=3D"bodySmall =
+color-contentSecondary spacing-bottom-16" style=3D"color: #818391; =
+font-family: 'Euclid Circular B', Arial, Avenir, Helvetica, Verdana, =
+sans-serif; font-size: 14px; font-style: normal; font-weight: normal; =
+line-height: 20px; padding-bottom: 16px;">
+                                                <span>Sat, =
+2023-08-12</span>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                                        <tbody>
+                                        <tr>
+                                            <td valign=3D"top" =
+style=3D"background: url(https://taxify-static-content-for-public-web.s3.=
+eu-central-1.amazonaws.com/invoicing/email_resource/carsharing/ic_start.=
+png) top -33px left no-repeat; background-size: 24px; width: 24px;">
+                                            </td>
+                                            <td valign=3D"center" =
+class=3D"bodyLarge color-contentPrimary" style=3D"color: #2F313F; =
+font-family: 'Euclid Circular B', Arial, Avenir, Helvetica, Verdana, =
+sans-serif; font-size: 18px; font-style: normal; font-weight: normal; =
+line-height: 24px; padding: 0 16px 17px 16px;">
+                                                <table width=3D"100%" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adj=
+ust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse; =
+border-spacing: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt =
+!important; word-break: break-word;">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td =
+class=3D"color-contentPrimary" style=3D"color: #2F313F;">
+                                                            =
+<span>Burgstrasse 1</span>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td valign=3D"bottom" =
+align=3D"right" class=3D"bodyLarge color-contentSecondary" style=3D"color: =
+#818391; font-family: 'Euclid Circular B', Arial, Avenir, Helvetica, =
+Verdana, sans-serif; font-size: 18px; font-style: normal; font-weight: =
+normal; line-height: 24px; padding: 0 16px 17px 16px; width: 48px;">
+                                                <span style=3D"word-break: =
+keep-all;">21:00</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign=3D"top" =
+style=3D"background: url(https://taxify-static-content-for-public-web.s3.=
+eu-central-1.amazonaws.com/invoicing/email_resource/carsharing/ic_finish.=
+png) bottom 12px left no-repeat; background-size: 24px; padding-bottom: =
+24px; width: 24px;">
+                                            </td>
+                                            <td valign=3D"center" =
+class=3D"bodyLarge color-contentPrimary" style=3D"color: #2F313F; =
+font-family: 'Euclid Circular B', Arial, Avenir, Helvetica, Verdana, =
+sans-serif; font-size: 18px; font-style: normal; font-weight: normal; =
+line-height: 24px; padding: 0 16px 17px 16px;">
+                                                <table width=3D"100%" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adj=
+ust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse; =
+border-spacing: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt =
+!important; word-break: break-word;">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td =
+class=3D"color-contentPrimary" style=3D"color: #2F313F;">
+                                                            =
+<span>St=C3=BCssistrasse 65</span>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+
+                                            </td>
+                                            <td valign=3D"bottom" =
+class=3D"bodyLarge color-contentSecondary" align=3D"right" style=3D"color: =
+#818391; font-family: 'Euclid Circular B', Arial, Avenir, Helvetica, =
+Verdana, sans-serif; font-size: 18px; font-style: normal; font-weight: =
+normal; line-height: 24px; padding: 0 16px 17px 16px; width: 48px;">
+                                                <span style=3D"word-break: =
+keep-all;">21:05</span>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- Element Divider -->
+                                    <table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                                        <tbody>
+                                        <tr>
+                                            <td align=3D"center" =
+valign=3D"top" width=3D"100%" style=3D"padding-bottom: 16px;">
+                                                <table border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" id=3D"elementDivider4" =
+height=3D"1" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust:=
+ 100%; border-collapse: collapse; border-spacing: 0; height: 1px; =
+mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td =
+align=3D"center" valign=3D"top" bgcolor=3D"#F0F2F5" width=3D"100%" =
+style=3D"background-color:#F0F2F5; height: 1px;"></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- // Element Divider -->
+                                    <table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" style=3D"border-collapse:collapse;border-spacing:0;word-b=
+reak:break-word;mso-table-lspace:0pt !important;mso-table-rspace:0pt !=
+important;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;" >
+                                        <tbody>
+                                            <tr>
+                                                <td =
+class=3D"spacing-bottom-16" style=3D"padding-bottom:16px;" >
+                                                    <table border=3D"0" =
+bgcolor=3D"#5B68F6" cellpadding=3D"0" cellspacing=3D"0" =
+style=3D"border-collapse:collapse;border-radius:100px;background-color:#F4F=
+4F6;background-image:none;background-repeat:repeat;background-position:top =
+left;background-attachment:scroll;border-spacing:0;word-break:break-word;ms=
+o-table-lspace:0pt !important;mso-table-rspace:0pt !=
+important;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;" >
+                                                        <tr>
+                                                            <td =
+class=3D"bodySmall color-contentPrimary spacing-outer-badge" =
+style=3D"color:#2F313F;font-size:14px;font-weight:normal;line-height:20px;f=
+ont-family:'Euclid Circular B', Arial, Avenir, Helvetica, Verdana, =
+sans-serif;font-style:normal;padding-top:4px;padding-bottom:4px;padding-lef=
+t:12px;padding-right:12px;" >
+                                                                =
+<span>Scooter</span>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td  valign=3D"middle" =
+class=3D"spacing-bottom-16" style=3D"padding-left:16px;padding-bottom:16px;=
+" >
+                                                    <span =
+class=3D"bodySmall color-contentSecondary" style=3D"color:#818391;font-size=
+:14px;font-weight:normal;line-height:20px;font-family:'Euclid Circular B', =
+Arial, Avenir, Helvetica, Verdana, sans-serif;font-style:normal;" >
+                                                        1.18 km =E2=80=A2 6=
+ min=20
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!-- End of ride details -->
+                        <!-- Safety note -->
+                        <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse:collapse;borde=
+r-spacing:0;word-break:break-word;mso-table-lspace:0pt !=
+important;mso-table-rspace:0pt !important;-ms-text-size-adjust:100%;-webkit=
+-text-size-adjust:100%;" >
+                            <tr>
+                                <td class=3D"spacing-outer-sides" =
+style=3D"padding-top:24px;padding-bottom:6px;padding-right:40px;padding-lef=
+t:40px;" >
+                                    <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse:collapse;borde=
+r-spacing:0;word-break:break-word;mso-table-lspace:0pt !=
+important;mso-table-rspace:0pt !important;-ms-text-size-adjust:100%;-webkit=
+-text-size-adjust:100%;" >
+                                        <tr>
+                                            <!-- Label success -->
+                                            <td class=3D"spacing-bottom-8" =
+style=3D"padding-bottom:8px;" >
+                                                <table width=3D"100%" =
+border=3D"0" bgcolor=3D"#E3FDED" cellpadding=3D"0" cellspacing=3D"0" =
+style=3D"border-collapse:collapse;border-radius:4px;background-color:#E3FDE=
+D;background-image:none;background-repeat:repeat;background-position:top =
+left;background-attachment:scroll;border-spacing:0;word-break:break-word;ms=
+o-table-lspace:0pt !important;mso-table-rspace:0pt !=
+important;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;" >
+                                                    <tr>
+                                                        <td =
+class=3D"bodySmall color-green700 spacing-outer-label" =
+style=3D"color:#249E64;font-size:14px;font-weight:normal;line-height:20px;f=
+ont-family:'Euclid Circular B', Arial, Avenir, Helvetica, Verdana, =
+sans-serif;font-style:normal;padding-top:12px;padding-bottom:12px;padding-l=
+eft:16px;padding-right:16px;" >
+                                                            <span =
+class=3D"color-green700" style=3D"color:#249E64;" >All scooters have passed=
+ a regular maintenance and safety checks before hitting the streets</span>
+                                                        </td>
+                                                        <td align=3D"right"=
+ style=3D"padding-right:12px;" >
+                                                            <img =
+src=3D"https://taxify-static-content-for-public-web.s3.eu-central-1.=
+amazonaws.com/invoicing/email_resource/carsharing/safety+toolkit.png" =
+border=3D"0" width=3D"24" height=3D"24" alt=3D"Check" class=3D"bodySmall =
+color-contentPrimaryInverted img" style=3D"border-width:0;outline-style:non=
+e;text-decoration:none;-ms-interpolation-mode:bicubic;color:#FFFFFF;font-si=
+ze:14px;font-weight:normal;line-height:20px;font-family:'Euclid Circular B'=
+, Arial, Avenir, Helvetica, Verdana, sans-serif;font-style:normal;display:b=
+lock;" />
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <!-- /Label success -->
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <!--/ Safety note -->
+                        <!-- Insurance note -->
+                        <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse:collapse;borde=
+r-spacing:0;word-break:break-word;mso-table-lspace:0pt !=
+important;mso-table-rspace:0pt !important;-ms-text-size-adjust:100%;-webkit=
+-text-size-adjust:100%;" >
+                            <tr>
+                                <td class=3D"spacing-outer-sides" =
+style=3D"padding-top:6px;padding-bottom:6px;padding-right:40px;padding-left=
+:40px;" >
+                                    <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse:collapse;borde=
+r-spacing:0;word-break:break-word;mso-table-lspace:0pt !=
+important;mso-table-rspace:0pt !important;-ms-text-size-adjust:100%;-webkit=
+-text-size-adjust:100%;" >
+                                        <tr>
+                                            <!-- Label success -->
+                                            <td class=3D"spacing-bottom-8" =
+style=3D"padding-bottom:8px;" >
+                                                <table width=3D"100%" =
+border=3D"0" bgcolor=3D"#E3FDED" cellpadding=3D"0" cellspacing=3D"0" =
+style=3D"border-collapse:collapse;border-radius:4px;background-color:#E3FDE=
+D;background-image:none;background-repeat:repeat;background-position:top =
+left;background-attachment:scroll;border-spacing:0;word-break:break-word;ms=
+o-table-lspace:0pt !important;mso-table-rspace:0pt !=
+important;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;" >
+                                                    <tr>
+                                                        <td =
+class=3D"bodySmall color-green700 spacing-outer-label" =
+style=3D"color:#249E64;font-size:14px;font-weight:normal;line-height:20px;f=
+ont-family:'Euclid Circular B', Arial, Avenir, Helvetica, Verdana, =
+sans-serif;font-style:normal;padding-top:12px;padding-bottom:12px;padding-l=
+eft:16px;padding-right:16px;" >
+                                                            <span =
+class=3D"color-green700" style=3D"color:#249E64;" >This ride was protected =
+by Bolt Shield=E2=84=A2</span>
+                                                        </td>
+                                                        <td align=3D"right"=
+ style=3D"padding-right:12px;" >
+                                                            <img =
+src=3D"https://taxify-static-content-for-public-web.s3.eu-central-1.=
+amazonaws.com/invoicing/email_resource/carsharing/safety+toolkit.png" =
+border=3D"0" width=3D"24" height=3D"24" alt=3D"Check" class=3D"bodySmall =
+color-contentPrimaryInverted img" style=3D"border-width:0;outline-style:non=
+e;text-decoration:none;-ms-interpolation-mode:bicubic;color:#FFFFFF;font-si=
+ze:14px;font-weight:normal;line-height:20px;font-family:'Euclid Circular B'=
+, Arial, Avenir, Helvetica, Verdana, sans-serif;font-style:normal;display:b=
+lock;" />
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <!-- /Label success -->
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <!--/ Insurance note -->
+                        <!-- Space divider-->
+                        <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                            <tbody>
+                            <tr>
+                                <td height=3D"24px;" style=3D"height: =
+24px;"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!-- End of Space divider -->
+
+                        <!-- LINKS -->
+
+                        <!-- Invoice -->
+                        <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                            <tbody>
+                            <tr>
+                                <td class=3D"spacing-outer-sides" =
+style=3D"padding-bottom: 0px; padding-left: 40px; padding-right: 40px;">
+                                    <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                                        <tbody>
+                                        <tr>
+                                            <td style=3D"padding-top: 16px;=
+ padding-bottom: 16px;">
+                                                <table width=3D"100%" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adj=
+ust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse; =
+border-spacing: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt =
+!important; word-break: break-word;">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <a =
+href=3D"https://doclink.live.boltsvc.net/invoice/pdf?=
+i=3DCH1223-40204&k=3D8a98a84d86eb280b1f6ca253f1202bdf" class=3D"bodyMedium =
+color-linkPrimary" style=3D"color: #249E64; font-family: 'Euclid Circular =
+B', Arial, Avenir, Helvetica, Verdana, sans-serif; font-size: 16px; =
+font-style: normal; font-weight: normal; line-height: 24px;text-decoration:=
+ none !important;">
+                                                                =
+<span>Download PDF invoice</span>
+                                                            </a>
+                                                        </td>
+                                                        <td =
+align=3D"right">
+                                                            <img =
+src=3D"https://taxify-static-content-for-public-web.s3.eu-central-1.=
+amazonaws.com/invoicing/email_resource/carsharing/ic_external.png" =
+border=3D"0" width=3D"24" height=3D"24" alt=3D"PDF" class=3D"bodySmall =
+color-contentSecondary img" id=3D"imgPDF" style=3D"-ms-interpolation-mode: =
+bicubic; border: 0; color: #818391; display: block; font-family: 'Euclid =
+Circular B', Arial, Avenir, Helvetica, Verdana, sans-serif; font-size: =
+14px; font-style: normal; font-weight: normal; line-height: 20px; outline: =
+none; text-decoration: none;">
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!-- End of invoice -->
+                        <!-- Element Divider -->
+                        <table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                            <tbody>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" =
+width=3D"100%" class=3D"spacing-outer-sides" style=3D"padding-bottom: 0px; =
+padding-left: 40px; padding-right: 40px; padding-top: 0px;">
+
+                                    <table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%" id=3D"elementDivider5" height=3D"1" =
+style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+border-collapse: collapse; border-spacing: 0; height: 1px; =
+mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                                        <tbody>
+                                        <tr>
+                                            <td align=3D"center" =
+valign=3D"top" bgcolor=3D"#F0F2F5" width=3D"100%" style=3D"background-color=
+:#F0F2F5; height: 1px;"></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!-- // Element Divider -->
+                        <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                            <tbody>
+                            <tr>
+                                <td class=3D"spacing-outer-sides" =
+style=3D"padding-bottom: 24px; padding-left: 40px; padding-right: 40px; =
+padding-top: 0px;">
+                                    <table width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                                        <tbody>
+                                        <tr>
+                                            <td style=3D"padding-top: 16px;=
+ padding-bottom: 16px;">
+                                                <table width=3D"100%" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adj=
+ust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse; =
+border-spacing: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt =
+!important; word-break: break-word;">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <a =
+href=3D"https://bolt.onelink.me/sbJ2/7it9dupj" class=3D"bodyMedium =
+color-linkPrimary" style=3D"text-decoration: none !important;color: =
+#249E64; font-family: 'Euclid Circular B', Arial, Avenir, Helvetica, =
+Verdana, sans-serif; font-size: 16px; font-style: normal; font-weight: =
+normal; line-height: 24px;">
+                                                                =
+<span>Contact support</span>
+                                                            </a>
+                                                        </td>
+                                                        <td align=3D"right"=
+ class=3D"bodyLarge color-contentPrimary" style=3D"color: #2F313F; =
+font-family: 'Euclid Circular B', Arial, Avenir, Helvetica, Verdana, =
+sans-serif; font-size: 18px; font-style: normal; font-weight: normal; =
+line-height: 24px;">
+                                                            <img =
+src=3D"https://taxify-static-content-for-public-web.s3.eu-central-1.=
+amazonaws.com/invoicing/email_resource/carsharing/ic_external.png" =
+border=3D"0" width=3D"24" height=3D"24" alt=3D"Support" class=3D"bodySmall =
+color-contentSecondary img" id=3D"imgSupport" style=3D"-ms-interpolation-mo=
+de: bicubic; border: 0; color: #818391; display: block; font-family: =
+'Euclid Circular B', Arial, Avenir, Helvetica, Verdana, sans-serif; =
+font-size: 14px; font-style: normal; font-weight: normal; line-height: =
+20px; outline: none; text-decoration: none;">
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!-- End of LINKS -->
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<!--/ Email Body -->
+
+
+<!-- Email Footer -->
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" =
+id=3D"footerWrapper" bgcolor=3D"#FFFFFF" style=3D"-ms-text-size-adjust: =
+100%; -webkit-text-size-adjust: 100%; background-color: #FFFFFF; =
+border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt !=
+important; mso-table-rspace: 0pt !important; word-break: break-word;">
+    <tbody>
+    <tr>
+        <td align=3D"center" valign=3D"top">
+            <table border=3D"0" cellspacing=3D"0" width=3D"600" =
+id=3D"footerContainer" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                <tbody>
+                <tr>
+                    <td align=3D"center" valign=3D"top" =
+class=3D"spacing-outer spacing-bottom-40-sm" style=3D"padding-bottom: 40px;=
+ padding-left: 40px; padding-right: 40px; padding-top: 40px;">
+
+                        <!-- Email Footer Content -->
+                        <table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%" id=3D"footerContent" =
+style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt !=
+important; mso-table-rspace: 0pt !important; word-break: break-word;">
+                            <tbody>
+                            <tr>
+                                <td align=3D"center" valign=3D"top">
+
+                                    <table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%" class=3D"bodySmall color-contentTertiary" =
+style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+border-collapse: collapse; border-spacing: 0; color: #A9ABB9; font-family: =
+'Euclid Circular B', Arial, Avenir, Helvetica, Verdana, sans-serif; =
+font-size: 14px; font-style: normal; font-weight: normal; line-height: =
+20px; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+word-break: break-word;">
+                                        <tbody>
+                                        <tr>
+                                            <td align=3D"center" =
+valign=3D"top">
+                                                <span>Service provider Bolt=
+ Operations O=C3=9C</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align=3D"center" =
+valign=3D"top">
+                                                <span>Vana-L=C3=B5una tn 15=
+, Tallinn 10134, Estonia</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align=3D"center" =
+valign=3D"top">
+                                                <span>Reg. code 14532901 =
+=E2=80=A2 VAT no. CHE-202.342.381 TVA</span>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" =
+id=3D"footerWrapper" bgcolor=3D"#FFFFFF" style=3D"-ms-text-size-adjust: =
+100%; -webkit-text-size-adjust: 100%; background-color: #FFFFFF; =
+border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt !=
+important; mso-table-rspace: 0pt !important; word-break: break-word;">
+    <tbody>
+    <tr>
+        <td align=3D"center" valign=3D"top">
+            <table border=3D"0" class=3D"spacing-outer" cellspacing=3D"0" =
+width=3D"600" id=3D"footerContainer" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: =
+0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; =
+padding-left: 40px; padding-right: 40px; padding-top: 40px; word-break: =
+break-word;">
+                <tbody>
+                <tr>
+                    <td align=3D"center" valign=3D"top" =
+class=3D"spacing-bottom-24" style=3D"padding-bottom: 24px;">
+
+                        <!-- Email Footer Content -->
+                        <table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%" id=3D"footerContent" =
+style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt !=
+important; mso-table-rspace: 0pt !important; word-break: break-word;">
+                            <tbody>
+                            <tr>
+                                <td align=3D"center" valign=3D"top">
+                                    <table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%" id=3D"footerContentCaption" =
+style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt !=
+important; mso-table-rspace: 0pt !important; word-break: break-word;">
+                                        <tbody>
+                                        <tr>
+                                            <td align=3D"center" =
+valign=3D"top" class=3D"spacing-bottom-8" style=3D"padding-bottom: 8px;">
+                                                <span class=3D"bodySmall =
+color-contentSecondary" style=3D"color: #818391; font-family: 'Euclid =
+Circular B', Arial, Avenir, Helvetica, Verdana, sans-serif; font-size: =
+14px; font-style: normal; font-weight: normal; line-height: 20px;">Made =
+with =F0=9F=92=9A in Estonia</span>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%" id=3D"footerContentSocial" =
+style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt !=
+important; mso-table-rspace: 0pt !important; word-break: break-word;">
+                                        <tbody>
+                                        <tr>
+                                            <td align=3D"center" =
+valign=3D"middle">
+                                                <table border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" width=3D"initial" =
+style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt !=
+important; mso-table-rspace: 0pt !important; word-break: break-word;">
+                                                    <tbody>
+                                                    <tr>
+                                                        <!-- if =
+[$social_twitter_facebook] is not empty -->
+                                                        <td =
+align=3D"center" valign=3D"middle" width=3D"40" class=3D"imgWrapper">
+                                                            <a =
+href=3D"https://www.facebook.com/Bolt/" class=3D"link" =
+style=3D"text-decoration: none !important;"><img src=3D"https://taxify-stat=
+ic-content-for-public-web.s3.eu-central-1.amazonaws.=
+com/invoicing/email_resource/carsharing/ic_social_facebook.png" =
+width=3D"24" height=3D"24" alt=3D"Facebook" class=3D"bodySmall =
+color-contentSecondary img-social-link" style=3D"-ms-interpolation-mode: =
+bicubic; border: 0; color: #818391; display: block; font-family: 'Euclid =
+Circular B', Arial, Avenir, Helvetica, Verdana, sans-serif; font-size: =
+14px; font-style: normal; font-weight: normal; line-height: 20px; outline: =
+none; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; =
+padding-top: 8px; text-decoration: none;"></a>
+                                                        </td>
+                                                        <!-- // end if -->
+
+                                                        <!-- if =
+[$social_instagram_url] is not empty -->
+                                                        <td =
+align=3D"center" valign=3D"middle" width=3D"40" class=3D"imgWrapper">
+                                                            <a =
+href=3D"https://www.instagram.com/bolt/" class=3D"link" =
+style=3D"text-decoration: none !important;"><img src=3D"https://taxify-stat=
+ic-content-for-public-web.s3.eu-central-1.amazonaws.=
+com/invoicing/email_resource/carsharing/ic_social_instagram.png" =
+width=3D"24" height=3D"24" alt=3D"Instagram" class=3D"bodySmall =
+color-contentSecondary img-social-link" style=3D"-ms-interpolation-mode: =
+bicubic; border: 0; color: #818391; display: block; font-family: 'Euclid =
+Circular B', Arial, Avenir, Helvetica, Verdana, sans-serif; font-size: =
+14px; font-style: normal; font-weight: normal; line-height: 20px; outline: =
+none; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; =
+padding-top: 8px; text-decoration: none;"></a>
+                                                        </td>
+                                                        <!-- // end if -->
+
+                                                        <!-- if =
+[$social_twitter_url] is not empty -->
+                                                        <td =
+align=3D"center" valign=3D"middle" width=3D"40" class=3D"imgWrapper">
+                                                            <a =
+href=3D"https://twitter.com/Boltapp" class=3D"link" =
+style=3D"text-decoration: none !important;"><img src=3D"https://taxify-stat=
+ic-content-for-public-web.s3.eu-central-1.amazonaws.=
+com/invoicing/email_resource/carsharing/ic_social_twitter.png" width=3D"24"=
+ height=3D"24" alt=3D"Twitter" class=3D"bodySmall color-contentSecondary =
+img-social-link" style=3D"-ms-interpolation-mode: bicubic; border: 0; =
+color: #818391; display: block; font-family: 'Euclid Circular B', Arial, =
+Avenir, Helvetica, Verdana, sans-serif; font-size: 14px; font-style: =
+normal; font-weight: normal; line-height: 20px; outline: none; =
+padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: =
+8px; text-decoration: none;"></a>
+                                                        </td>
+                                                        <!-- // end if -->
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!-- // Email Footer Content -->
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<!--/ Email Footer -->
+
+<img src=3D"https://node.bolt.eu/email-internal/pixel?=
+id=3D2519c52a058d4e3772a30930e337344923e048f7232bed158dc853d656ae3f2893e8e2=
+a7dec3.gif" style=3D"width:1px;height:1px;"/></body>
+
+</html>

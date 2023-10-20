@@ -1,0 +1,312 @@
+{
+  "uuid": "8663bdc2-18a5-4d94-90c3-072478cf2679",
+  "root": "/Users/bwagner/projects/get_invoices",
+  "codebase": {
+    "tree": {
+      "./": {
+        "entries": [
+          "message_handler.py",
+          "mkdist.py",
+          "main.py",
+          "plugins/"
+        ],
+        "profile": [560, 131, 72, 0]
+      },
+      "plugins/": {
+        "entries": [
+          "tier_message_handler.py",
+          "bird_rides_message_handler.py",
+          "brack_message_handler.py",
+          "nzz_message_handler.py",
+          "iway_message_handler.py",
+          "musik_hug_message_handler.py",
+          "kobo_message_handler.py",
+          "patreon_message_handler.py",
+          "namecheap_heres_your_auto_renewal_message_handler.py",
+          "bolt_message_handler.py",
+          "apple_deutsch_message_handler.py",
+          "new_york_jazz_workshop_message_handler.py",
+          "sbb_message_handler.py",
+          "__init__.py",
+          "apple_message_handler.py",
+          "music_store_message_handler.py",
+          "lehmanns_message_handler.py",
+          "orell_fuessli_message_handler.py",
+          "buecher_de_message_handler.py",
+          "namecheap_important_auto_renewal_message_handler.py",
+          "apfelkiste_message_handler.py",
+          "lime_message_handler.py",
+          "micasa_message_handler.py"
+        ],
+        "profile": [421, 43, 0, 0]
+      }
+    },
+    "files": {
+      "message_handler.py": {
+        "checksum": "d251be5c9fbbee8b778abd6d690bb178",
+        "profile": [97, 24, 34, 0],
+        "measurements": [
+          {"unit_name": "cd", "start": {"line": 21, "column": 1}, "end": {"line": 34, "column": 27}, "value": 8},
+          {"unit_name": "temporary_locale", "start": {"line": 38, "column": 1}, "end": {"line": 48, "column": 52}, "value": 8},
+          {"unit_name": "mark_and_archive", "start": {"line": 63, "column": 5}, "end": {"line": 65, "column": 13}, "value": 3},
+          {"unit_name": "mark_and_archive", "start": {"line": 74, "column": 5}, "end": {"line": 78, "column": 24}, "value": 4},
+          {"unit_name": "mark_and_archive", "start": {"line": 87, "column": 5}, "end": {"line": 88, "column": 83}, "value": 2},
+          {"unit_name": "__init__", "start": {"line": 92, "column": 5}, "end": {"line": 105, "column": 49}, "value": 11},
+          {"unit_name": "set_params", "start": {"line": 107, "column": 5}, "end": {"line": 110, "column": 57}, "value": 4},
+          {"unit_name": "process", "start": {"line": 113, "column": 5}, "end": {"line": 148, "column": 25}, "value": 24},
+          {"unit_name": "get_handlers", "start": {"line": 151, "column": 5}, "end": {"line": 160, "column": 10}, "value": 10},
+          {"unit_name": "process_msgs", "start": {"line": 162, "column": 5}, "end": {"line": 205, "column": 37}, "value": 34},
+          {"unit_name": "get_query_params", "start": {"line": 208, "column": 5}, "end": {"line": 209, "column": 13}, "value": 2},
+          {"unit_name": "get_type", "start": {"line": 212, "column": 5}, "end": {"line": 213, "column": 13}, "value": 2},
+          {"unit_name": "handle_html", "start": {"line": 215, "column": 5}, "end": {"line": 216, "column": 118}, "value": 2},
+          {"unit_name": "handle_attachment", "start": {"line": 221, "column": 5}, "end": {"line": 222, "column": 124}, "value": 2},
+          {"unit_name": "save_html", "start": {"line": 227, "column": 5}, "end": {"line": 238, "column": 57}, "value": 9},
+          {"unit_name": "save", "start": {"line": 240, "column": 5}, "end": {"line": 250, "column": 62}, "value": 8},
+          {"unit_name": "rename_receipt", "start": {"line": 252, "column": 5}, "end": {"line": 265, "column": 51}, "value": 9},
+          {"unit_name": "filter_messages", "start": {"line": 267, "column": 5}, "end": {"line": 284, "column": 24}, "value": 9},
+          {"unit_name": "next_int", "start": {"line": 286, "column": 5}, "end": {"line": 298, "column": 28}, "value": 4}
+        ]
+      },
+      "mkdist.py": {
+        "checksum": "5de85fae7f06fefc851be40888343d23",
+        "profile": [34, 64, 0, 0],
+        "measurements": [
+          {"unit_name": "delete_dir", "start": {"line": 12, "column": 1}, "end": {"line": 30, "column": 17}, "value": 17},
+          {"unit_name": "setup_dist_dir", "start": {"line": 33, "column": 1}, "end": {"line": 38, "column": 21}, "value": 6},
+          {"unit_name": "build", "start": {"line": 41, "column": 1}, "end": {"line": 42, "column": 76}, "value": 2},
+          {"unit_name": "get_pypi_version", "start": {"line": 45, "column": 1}, "end": {"line": 61, "column": 46}, "value": 17},
+          {"unit_name": "bump_version", "start": {"line": 64, "column": 1}, "end": {"line": 90, "column": 38}, "value": 12},
+          {"unit_name": "set_version_in_pyproject", "start": {"line": 93, "column": 1}, "end": {"line": 119, "column": 41}, "value": 14},
+          {"unit_name": "main", "start": {"line": 122, "column": 1}, "end": {"line": 160, "column": 6}, "value": 30}
+        ]
+      },
+      "main.py": {
+        "checksum": "cb2ce880165f2ceb732b2dccacf5bb28",
+        "profile": [8, 0, 38, 0],
+        "measurements": [
+          {"unit_name": "assert_host", "start": {"line": 98, "column": 1}, "end": {"line": 102, "column": 20}, "value": 5},
+          {"unit_name": "t_main", "start": {"line": 105, "column": 1}, "end": {"line": 147, "column": 45}, "value": 38},
+          {"unit_name": "main", "start": {"line": 150, "column": 1}, "end": {"line": 152, "column": 22}, "value": 3}
+        ]
+      },
+      "plugins/tier_message_handler.py": {
+        "checksum": "b7539876714930461249b992e7c7f774",
+        "profile": [21, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "get_type", "start": {"line": 9, "column": 5}, "end": {"line": 10, "column": 27}, "value": 2},
+          {"unit_name": "get_query_params", "start": {"line": 12, "column": 5}, "end": {"line": 16, "column": 10}, "value": 5},
+          {"unit_name": "handle_html", "start": {"line": 18, "column": 5}, "end": {"line": 33, "column": 48}, "value": 14}
+        ]
+      },
+      "plugins/bird_rides_message_handler.py": {
+        "checksum": "68c3a9e1ca4f356276f4d6cb0e608675",
+        "profile": [16, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "get_type", "start": {"line": 10, "column": 5}, "end": {"line": 11, "column": 27}, "value": 2},
+          {"unit_name": "get_query_params", "start": {"line": 13, "column": 5}, "end": {"line": 17, "column": 10}, "value": 4},
+          {"unit_name": "handle_html", "start": {"line": 19, "column": 5}, "end": {"line": 30, "column": 48}, "value": 10}
+        ]
+      },
+      "plugins/brack_message_handler.py": {
+        "checksum": "4f0100a16be1cb1fa44288b6afce8956",
+        "profile": [17, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "get_type", "start": {"line": 11, "column": 5}, "end": {"line": 12, "column": 35}, "value": 2},
+          {"unit_name": "get_query_params", "start": {"line": 14, "column": 5}, "end": {"line": 18, "column": 10}, "value": 5},
+          {"unit_name": "extract_txt", "start": {"line": 20, "column": 5}, "end": {"line": 25, "column": 77}, "value": 6},
+          {"unit_name": "handle_attachment", "start": {"line": 27, "column": 5}, "end": {"line": 30, "column": 34}, "value": 4}
+        ]
+      },
+      "plugins/nzz_message_handler.py": {
+        "checksum": "6d41639a31d732da6b59b30830096609",
+        "profile": [25, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "get_type", "start": {"line": 11, "column": 5}, "end": {"line": 12, "column": 31}, "value": 2},
+          {"unit_name": "get_query_params", "start": {"line": 14, "column": 5}, "end": {"line": 18, "column": 10}, "value": 5},
+          {"unit_name": "extract_txt", "start": {"line": 20, "column": 5}, "end": {"line": 27, "column": 73}, "value": 8},
+          {"unit_name": "handle_attachment", "start": {"line": 29, "column": 5}, "end": {"line": 38, "column": 33}, "value": 10}
+        ]
+      },
+      "plugins/iway_message_handler.py": {
+        "checksum": "cf1fc4aa72dedf64f2703f2c53bc9698",
+        "profile": [23, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "get_type", "start": {"line": 11, "column": 5}, "end": {"line": 12, "column": 26}, "value": 2},
+          {"unit_name": "get_query_params", "start": {"line": 14, "column": 5}, "end": {"line": 22, "column": 10}, "value": 9},
+          {"unit_name": "extract_txt", "start": {"line": 24, "column": 5}, "end": {"line": 31, "column": 14}, "value": 8},
+          {"unit_name": "handle_attachment", "start": {"line": 33, "column": 5}, "end": {"line": 36, "column": 34}, "value": 4}
+        ]
+      },
+      "plugins/musik_hug_message_handler.py": {
+        "checksum": "65557de255a11c4c1b1e9016eab6d7a6",
+        "profile": [21, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "get_type", "start": {"line": 11, "column": 5}, "end": {"line": 12, "column": 30}, "value": 2},
+          {"unit_name": "get_query_params", "start": {"line": 14, "column": 5}, "end": {"line": 18, "column": 10}, "value": 5},
+          {"unit_name": "extract_txt", "start": {"line": 20, "column": 5}, "end": {"line": 29, "column": 73}, "value": 10},
+          {"unit_name": "handle_attachment", "start": {"line": 31, "column": 5}, "end": {"line": 34, "column": 34}, "value": 4}
+        ]
+      },
+      "plugins/kobo_message_handler.py": {
+        "checksum": "9c54382feaed53403deb52e2a66ec093",
+        "profile": [15, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "get_type", "start": {"line": 10, "column": 5}, "end": {"line": 11, "column": 31}, "value": 2},
+          {"unit_name": "get_query_params", "start": {"line": 13, "column": 5}, "end": {"line": 17, "column": 10}, "value": 5},
+          {"unit_name": "handle_html", "start": {"line": 19, "column": 5}, "end": {"line": 28, "column": 48}, "value": 8}
+        ]
+      },
+      "plugins/patreon_message_handler.py": {
+        "checksum": "37e1f7f0d8f4df69bb0b6b74cda42232",
+        "profile": [16, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "get_type", "start": {"line": 11, "column": 5}, "end": {"line": 12, "column": 31}, "value": 2},
+          {"unit_name": "get_query_params", "start": {"line": 14, "column": 5}, "end": {"line": 17, "column": 10}, "value": 4},
+          {"unit_name": "handle_html", "start": {"line": 19, "column": 5}, "end": {"line": 30, "column": 48}, "value": 10}
+        ]
+      },
+      "plugins/namecheap_heres_your_auto_renewal_message_handler.py": {
+        "checksum": "fb2631823aafe68c93611b18ba5c07c9",
+        "profile": [18, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "get_type", "start": {"line": 10, "column": 5}, "end": {"line": 11, "column": 26}, "value": 2},
+          {"unit_name": "get_query_params", "start": {"line": 13, "column": 5}, "end": {"line": 17, "column": 10}, "value": 5},
+          {"unit_name": "handle_html", "start": {"line": 19, "column": 5}, "end": {"line": 31, "column": 48}, "value": 11}
+        ]
+      },
+      "plugins/bolt_message_handler.py": {
+        "checksum": "e4a38fbcaf1d9197d73fb51fdce71695",
+        "profile": [12, 18, 0, 0],
+        "measurements": [
+          {"unit_name": "get_type", "start": {"line": 13, "column": 5}, "end": {"line": 14, "column": 27}, "value": 2},
+          {"unit_name": "get_query_params", "start": {"line": 16, "column": 5}, "end": {"line": 19, "column": 10}, "value": 4},
+          {"unit_name": "handle_html", "start": {"line": 21, "column": 5}, "end": {"line": 50, "column": 44}, "value": 18},
+          {"unit_name": "extract_txt", "start": {"line": 52, "column": 5}, "end": {"line": 57, "column": 77}, "value": 6}
+        ]
+      },
+      "plugins/apple_deutsch_message_handler.py": {
+        "checksum": "cfd9bf6b3a19d5a32279217792d4726c",
+        "profile": [19, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "get_type", "start": {"line": 11, "column": 5}, "end": {"line": 12, "column": 35}, "value": 2},
+          {"unit_name": "get_query_params", "start": {"line": 14, "column": 5}, "end": {"line": 18, "column": 10}, "value": 5},
+          {"unit_name": "extract_txt", "start": {"line": 20, "column": 5}, "end": {"line": 27, "column": 14}, "value": 8},
+          {"unit_name": "handle_attachment", "start": {"line": 29, "column": 5}, "end": {"line": 32, "column": 34}, "value": 4}
+        ]
+      },
+      "plugins/new_york_jazz_workshop_message_handler.py": {
+        "checksum": "f79ea59e08c5aa47866499e69aaefc2f",
+        "profile": [15, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "get_type", "start": {"line": 10, "column": 5}, "end": {"line": 11, "column": 31}, "value": 2},
+          {"unit_name": "get_query_params", "start": {"line": 13, "column": 5}, "end": {"line": 17, "column": 10}, "value": 5},
+          {"unit_name": "handle_html", "start": {"line": 19, "column": 5}, "end": {"line": 27, "column": 48}, "value": 8}
+        ]
+      },
+      "plugins/sbb_message_handler.py": {
+        "checksum": "7ff938c9bc5ddcea3c6ea256d8b09dd9",
+        "profile": [16, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "get_type", "start": {"line": 11, "column": 5}, "end": {"line": 12, "column": 27}, "value": 2},
+          {"unit_name": "get_query_params", "start": {"line": 14, "column": 5}, "end": {"line": 17, "column": 10}, "value": 4},
+          {"unit_name": "extract_txt", "start": {"line": 19, "column": 5}, "end": {"line": 31, "column": 85}, "value": 6},
+          {"unit_name": "handle_attachment", "start": {"line": 33, "column": 5}, "end": {"line": 36, "column": 34}, "value": 4}
+        ]
+      },
+      "plugins/__init__.py": {
+        "checksum": "dc2b541820efd8dcbc20f986fc817558",
+        "profile": [10, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "init", "start": {"line": 6, "column": 1}, "end": {"line": 18, "column": 38}, "value": 5},
+          {"unit_name": "iter_namespace", "start": {"line": 11, "column": 5}, "end": {"line": 15, "column": 28}, "value": 5}
+        ]
+      },
+      "plugins/apple_message_handler.py": {
+        "checksum": "166fef794e3be6880b355b93c917077c",
+        "profile": [22, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "get_type", "start": {"line": 11, "column": 5}, "end": {"line": 12, "column": 35}, "value": 2},
+          {"unit_name": "get_query_params", "start": {"line": 14, "column": 5}, "end": {"line": 18, "column": 10}, "value": 5},
+          {"unit_name": "handle_html", "start": {"line": 20, "column": 5}, "end": {"line": 43, "column": 29}, "value": 15}
+        ]
+      },
+      "plugins/music_store_message_handler.py": {
+        "checksum": "999084bf3f38da2d5afa62f125904e63",
+        "profile": [29, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "get_type", "start": {"line": 11, "column": 5}, "end": {"line": 12, "column": 35}, "value": 2},
+          {"unit_name": "get_query_params", "start": {"line": 14, "column": 5}, "end": {"line": 18, "column": 10}, "value": 5},
+          {"unit_name": "extract_txt", "start": {"line": 20, "column": 5}, "end": {"line": 29, "column": 14}, "value": 10},
+          {"unit_name": "handle_attachment", "start": {"line": 31, "column": 5}, "end": {"line": 42, "column": 33}, "value": 12}
+        ]
+      },
+      "plugins/lehmanns_message_handler.py": {
+        "checksum": "5fa2ed2d4341c29aa62f3679019f525a",
+        "profile": [20, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "get_type", "start": {"line": 10, "column": 5}, "end": {"line": 11, "column": 31}, "value": 2},
+          {"unit_name": "get_query_params", "start": {"line": 13, "column": 5}, "end": {"line": 17, "column": 10}, "value": 5},
+          {"unit_name": "handle_html", "start": {"line": 19, "column": 5}, "end": {"line": 33, "column": 10}, "value": 13}
+        ]
+      },
+      "plugins/orell_fuessli_message_handler.py": {
+        "checksum": "cb17ace636a9c02d71d95fd0c89af6cd",
+        "profile": [19, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "get_type", "start": {"line": 10, "column": 5}, "end": {"line": 11, "column": 31}, "value": 2},
+          {"unit_name": "get_query_params", "start": {"line": 13, "column": 5}, "end": {"line": 17, "column": 10}, "value": 5},
+          {"unit_name": "handle_html", "start": {"line": 19, "column": 5}, "end": {"line": 37, "column": 83}, "value": 12}
+        ]
+      },
+      "plugins/buecher_de_message_handler.py": {
+        "checksum": "790a42a2a890a278a110ac3f6cdc1634",
+        "profile": [25, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "get_type", "start": {"line": 12, "column": 5}, "end": {"line": 13, "column": 31}, "value": 2},
+          {"unit_name": "get_query_params", "start": {"line": 15, "column": 5}, "end": {"line": 19, "column": 10}, "value": 5},
+          {"unit_name": "handle_html", "start": {"line": 21, "column": 5}, "end": {"line": 27, "column": 10}, "value": 7},
+          {"unit_name": "handle_attachment", "start": {"line": 29, "column": 5}, "end": {"line": 32, "column": 34}, "value": 4},
+          {"unit_name": "extract_txt", "start": {"line": 34, "column": 5}, "end": {"line": 40, "column": 69}, "value": 7}
+        ]
+      },
+      "plugins/namecheap_important_auto_renewal_message_handler.py": {
+        "checksum": "205fbc1469f6c8e828e4ba3335c08b22",
+        "profile": [20, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "get_type", "start": {"line": 10, "column": 5}, "end": {"line": 11, "column": 26}, "value": 2},
+          {"unit_name": "get_query_params", "start": {"line": 13, "column": 5}, "end": {"line": 17, "column": 10}, "value": 5},
+          {"unit_name": "handle_html", "start": {"line": 19, "column": 5}, "end": {"line": 34, "column": 48}, "value": 13}
+        ]
+      },
+      "plugins/apfelkiste_message_handler.py": {
+        "checksum": "21671ffa477f7a0924ab793f72dfcd2d",
+        "profile": [14, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "get_type", "start": {"line": 9, "column": 5}, "end": {"line": 10, "column": 30}, "value": 2},
+          {"unit_name": "get_query_params", "start": {"line": 12, "column": 5}, "end": {"line": 16, "column": 10}, "value": 5},
+          {"unit_name": "handle_html", "start": {"line": 18, "column": 5}, "end": {"line": 22, "column": 51}, "value": 5},
+          {"unit_name": "handle_attachment", "start": {"line": 24, "column": 5}, "end": {"line": 25, "column": 38}, "value": 2}
+        ]
+      },
+      "plugins/lime_message_handler.py": {
+        "checksum": "70da6b632d8306e82522a075756c5b6c",
+        "profile": [11, 25, 0, 0],
+        "measurements": [
+          {"unit_name": "__init__", "start": {"line": 12, "column": 5}, "end": {"line": 15, "column": 29}, "value": 4},
+          {"unit_name": "get_type", "start": {"line": 17, "column": 5}, "end": {"line": 18, "column": 27}, "value": 2},
+          {"unit_name": "get_query_params", "start": {"line": 20, "column": 5}, "end": {"line": 24, "column": 10}, "value": 5},
+          {"unit_name": "handle_html", "start": {"line": 26, "column": 5}, "end": {"line": 53, "column": 48}, "value": 25}
+        ]
+      },
+      "plugins/micasa_message_handler.py": {
+        "checksum": "d2347089908d980245f03eb04d24c395",
+        "profile": [17, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "get_type", "start": {"line": 10, "column": 5}, "end": {"line": 11, "column": 30}, "value": 2},
+          {"unit_name": "get_query_params", "start": {"line": 13, "column": 5}, "end": {"line": 17, "column": 10}, "value": 5},
+          {"unit_name": "handle_html", "start": {"line": 19, "column": 5}, "end": {"line": 29, "column": 48}, "value": 10}
+        ]
+      }
+    }
+  }
+}

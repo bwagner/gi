@@ -1,0 +1,1738 @@
+Delivered-To: wernbag@gmail.com
+Received: by 2002:a05:6f02:c69c:b0:56:fee6:831c with SMTP id y28csp179793rcd;
+        Mon, 11 Sep 2023 22:27:54 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHAjMA3TsNd1z0zB5vcYreEvWolnJYJ47aDMqGsUXUbqfIvqPgAq4rfNgp66GJk+lkvgcd5kfNF/Ns=
+X-Received: by 2002:a2e:9919:0:b0:2b9:b9c8:99 with SMTP id v25-20020a2e9919000000b002b9b9c80099mr9600647lji.22.1694496472860;
+        Mon, 11 Sep 2023 22:27:52 -0700 (PDT)
+Authentication-Results: mx.google.com;
+       spf=fail (google.com: domain of srs0=xmxv=e4=order.info.sbb.ch=bounce_sbb+xmt77jqg3q3ywvbf4m7u5wk6hgu@harris.ch does not designate 93.191.162.130 as permitted sender) smtp.mailfrom="SRS0=XmxV=E4=order.info.sbb.ch=bounce_sbb+xmt77jqg3q3ywvbf4m7u5wk6hgu@harris.ch";
+       dkim=pass header.i=@inxserver.com header.s=202007 header.b=KZurU01z;
+       dkim=pass header.i=@order.info.sbb.ch header.s=inx58838273 header.b=AjyaLfZC
+Received-SPF: fail (google.com: domain of srs0=xmxv=e4=order.info.sbb.ch=bounce_sbb+xmt77jqg3q3ywvbf4m7u5wk6hgu@harris.ch does not designate 93.191.162.130 as permitted sender) client-ip=93.191.162.130;
+Received: by 2002:a05:600c:1e0f:b0:3fe:fc75:242e with POP3 id ay15-20020a05600c1e0f00b003fefc75242emf9104540wmb.6;
+        Mon, 11 Sep 2023 22:27:52 -0700 (PDT)
+X-Gmail-Fetch-Info: me@bernhardwagner.net 1 mail.harris.ch 995 bwagner
+Return-Path: <SRS0=XmxV=E4=order.info.sbb.ch=bounce_sbb+xmt77jqg3q3ywvbf4m7u5wk6hgu@harris.ch>
+X-Original-To: swisspass.ch@bernhardwagner.net
+Delivered-To: bwagner@harris.ch
+Received: from inxmx171.inxserver.de (inxmx171.inxserver.de [93.191.162.130])
+	by mail.harris.ch (Postfix) with ESMTPS id 9AD0F88232
+	for <swisspass.ch@bernhardwagner.net>; Tue, 12 Sep 2023 07:19:01 +0200 (CEST)
+Authentication-Results: mail.harris.ch;
+	dkim=pass (2048-bit key; unprotected) header.d=inxserver.com header.i=@inxserver.com header.b="KZurU01z";
+	dkim=pass (2048-bit key; unprotected) header.d=order.info.sbb.ch header.i=@order.info.sbb.ch header.b="AjyaLfZC";
+	dkim-atps=neutral
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=inxserver.com;
+	s=202007; t=1694495936; r=y;
+	bh=4yTXe+hcyby5kSpcZqbyaQdAyiKlNFBhIumDs0HnlCQ=;
+	h=DKIM-Signature:Date:From:Reply-To:To:Message-ID:Subject:
+	 MIME-Version:Content-Type:List-Id:X-CSA-Complaints:Feedback-ID;
+	b=KZurU01z6jVOsnfiDOH0RRSg3798EJjWtotszFUi8jW7MPqiVI2dwV5X1zF7leLGq
+	 oGRnQdWibu4d4QML1ZiHr+hPHW6Kpge6SwvIMZRDWqNqa/76ij59WizehidMOU2BV0
+	 T+napMGAPuHyQJN4vIJu4y74gTxXxM+1fCBsU+E1Hncur9AzsMrMEtB47yxOs1PaX4
+	 4gTK0fz4t/O9FTUD15MMcFx/HW6/76/4mF6k4zZAaBBgFi9TwcMp+tnMcvKZSG0sSP
+	 ABLHlFRxF9dN6h8XFAduTWHfdiDWUNS0ZkCb805uRyLEVdajcGB8w2EfjGxcZk/hq9
+	 B9pO6G/p0Xv3g==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; t=1694495936;
+	s=inx58838273; d=order.info.sbb.ch;
+	h=Date:From:Reply-To:To:Message-ID:Subject:MIME-Version:Content-Type:List-Help:List-Id:Feedback-ID;
+	bh=4yTXe+hcyby5kSpcZqbyaQdAyiKlNFBhIumDs0HnlCQ=;
+	b=AjyaLfZCTcXpST6DZ6d4n383y7YIrKWb8J4mhbk0WyJBuTqOiFtuK8+Y5P0VF/r+
+	j6jeJKTlsQhTz8bQHDYyxaJo3inKnGKkGgvIoTVYVHe5lCXz2hbrab561jGpqCXs6Q6
+	67Q8SpMnMGdFlifhQiBuzFo+f45a46qrDBs7C1Uq32kQLgmvUkcC0u4zUeoATC0uXH4
+	3g3uxqKplhExCdiCxarWiuSLInqs5R3ANf7ZVjSfjB50BNxZ2+QrtA4h8nTxXIR6YqV
+	oDwKH4kLu3BKymMsCHNSHYqzC1lU1b1YPDFk/Wuj3gLHzoi8/NVijAkSz7lgduTxbJm
+	5YuGxuBJ0Q==
+Date: Tue, 12 Sep 2023 05:18:56 +0000 (UTC)
+From: SBB CFF FFS <noreply@order.info.sbb.ch>
+Reply-To: SBB CFF FFS <noreply@sbb.ch>
+To: swisspass.ch@bernhardwagner.net
+Message-ID: <INXCOM3.sbb.x.mt77jqg3q3ywvbf4m7uq.mugr6qfjrrdo7agjxnrh3fvq7a@order.info.sbb.ch>
+Subject: =?UTF-8?Q?EasyRide_purchase_receipt_=E2=80=93_your_journeys_on_11.09.2023?=
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_8912118_521483281.1694495936024"
+List-Help: <https://www.sbb.ch/easyride>
+List-Id: <sbb.easyride-sbb-customer-mailing-2.order.info.sbb.ch>
+X-CSA-Complaints: csa-complaints@eco.de
+Feedback-ID: xcom-sbb-64243c2c4a1266721eb1ba5a:xcom-sbb:tx:inxmailde
+X-Spam-Status: No, score=0.9 required=5.5 tests=BAYES_50,DKIMWL_WL_MED,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,HTML_MESSAGE,KAM_SHORT,
+	POISEN_SPAM_PILL,POISEN_SPAM_PILL_1,RCVD_IN_DNSWL_NONE,SPF_HELO_NONE,
+	SPF_PASS autolearn=no autolearn_force=no version=3.4.2
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.harris.ch
+X-Spam-Relay-Countries: DE
+X-Spam-DCC: :trusty 1480; Body=1 Fuz1=1 Fuz2=1
+
+------=_Part_8912118_521483281.1694495936024
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+
++++ EasyRide purchase receipt =E2=80=93 your journeys on 11.09.2023
+
+Click here for the web view of this e-mailing. https://order.info.sbb.ch/r/=
+wxmc/sbb/mt77jqg3q3ywvbf4m7uq/lisbttudggatnhgeicia/kzlozjdjkzfv2/2bmxyfi6id=
+zbozcuzipmbcuxcu
+
+++ Table of contents.
+
+- Section 1: Editorial
+
+- Section Further information
+
+- Footer
+
+[End of Table of contents].
+
+
+++ Section 1: Editorial
+
+Hello Bernhard Wagner
+
+Thank you for travelling with EasyRide.
+
+Order number 58181315649
+
+
+Payment charge
+Reference number 230912071855088041
+
+Payment method
+PostFinance Card xxxx9546
+
+Date
+12.09.2023
+
+Amount
+CHF 39.30
+
+
+
+Your journeys on 11.09.2023
+Journey from Z=C3=BCrich, Schaffhauserplatz
+To Oensingen
+Class 2nd class
+
+Journey from Farnern, Jura
+To Z=C3=BCrich, Schaffhauserplatz
+Class 2nd class
+
+
+
+
+
+Tickets charged
+Order number=20
+
+Item
+
+Point-to-point Ticket
+Z=C3=BCrich, Schaffhauserplatz - Oensingen via Z=C3=BCrich - Olten
+Reference no. 863032870
+Item no. 125
+
+Fare
+
+2nd class, single journey, Half-Fare Travelcard
+Valid: 11.09.2023 00:00 =E2=80=93 12.09.2023 05:00
+
+Price
+
+CHF 18.00
+incl. 7.7% VAT
+
+Item
+
+Libero Individual Ticket
+1-2 Zones, null
+Reference no. 863032865
+Item no. 10972
+
+Fare
+
+2nd class, Half-Fare Travelcard
+Valid: 11.09.2023 16:31 =E2=80=93 11.09.2023 17:31
+
+Price
+
+CHF 2.80
+incl. 7.7% VAT
+
+Item
+
+Point-to-point Ticket
+Wangen an der Aare - Z=C3=BCrich, Schaffhauserplatz via Olten - Z=C3=BCrich
+Reference no. 863032874
+Item no. 125
+
+Fare
+
+2nd class, single journey, Half-Fare Travelcard
+Valid: 11.09.2023 00:00 =E2=80=93 12.09.2023 05:00
+
+Price
+
+CHF 18.50
+incl. 7.7% VAT
+
+Total
+CHF 39.30
+
+[End of Section 1].
+
+
+++ Section Further information
+
+Do you have any questions about the charges made?
+Open the list of your past EasyRide journeys in SBB Mobile and choose the r=
+elevant travel day. Then select the option 'Report a problem with this jour=
+ney' and send us your question. We will look into it and get back to you pr=
+omptly. You can find the order overview in your account under =E2=80=98Orde=
+rs=E2=80=99.
+
+Do you have a general question or feedback about EasyRide?
+Contact us easily via the contact form (in the =E2=80=98Profile=E2=80=99 ta=
+b on SBB Mobile under =E2=80=98Help and Feedback=E2=80=99) or consult our F=
+AQs on sbb.ch/en/easyride under =E2=80=98Help & contact=E2=80=99.
+
+FAQ SBB Mobile and SBB Preview
+https://www.sbb.ch/en/timetable/mobile-apps/sbb-mobile/faq.html
+
+FAQ EasyRide
+https://www.sbb.ch/en/help-and-contact/produkte-services/apps/sbb-mobile-sb=
+b-preview/faq-easyride.html
+
+General terms and conditions (GTC)
+https://www.sbb.ch/en/timetable/mobile-apps/sbb-mobile/easyride/agb.html
+
+[End of Section Further information]
+
+
+++ Footer
+
+http://www.facebook.com/sbb.cff.ffs.ch
+
+https://twitter.com/RailService
+
+https://instagram.com/sbbcffffs/?hl=3Den
+
+http://blog.sbb.ch/
+
+http://www.youtube.com/sbbcffffs
+
+Your account on sbb.ch. https://www.sbb.ch/en
+
+SBB CFF FFS
+Wylerstrasse 123/125
+CH-3000 Bern 65
+
+VAT number: CHE-102.909.703
+
+https://www.sbb.ch/en
+
+If you have any questions about your order or your journey, please contact =
+the SBB Contact Center. Please state your order number and the date of trav=
+el for each enquiry.
+https://www.sbb.ch/en/meta/kontakte/ticketshop-onlinetickets-mobiletickets.=
+html
+
+[End of Footer]
+
+[End of EasyRide purchase receipt =E2=80=93 your journeys on 11.09.2023]
+------=_Part_8912118_521483281.1694495936024
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DU=
+TF-8" />
+        <title>EasyRide purchase receipt =E2=80=93 your journeys on 11.09.2=
+023</title>
+        <meta content=3D"text/html;charset=3DUTF-8" http-equiv=3D"content-t=
+ype" />
+        <meta content=3D"width=3Ddevice-width,initial-scale=3D1,maximum-sca=
+le=3D1,target-densitydpi=3Ddevice-dpi" name=3D"viewport" />
+        <style type=3D"text/css">
+        /* mso visited link fix */
+       =20
+        a {
+            color: #f22300; =20
+            text-decoration: none;
+        }
+       =20
+        a:link {
+            color: #f22300;
+            text-decoration: none;
+        }
+       =20
+        a:visited {
+            color: #f22300;
+            text-decoration: none;
+        }
+       =20
+        a:active {
+            color: #f22300;
+            text-decoration: none;
+        }
+       =20
+        a:hover {
+            color: #f22300;
+            text-decoration: none;
+        }
+       =20
+        .red a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+       =20
+        .red a:link {
+            color: #ffffff;
+            text-decoration: none;
+        }
+       =20
+        .red a:visited {
+            color: #ffffff;
+            text-decoration: none;
+        }
+       =20
+        .red a:active {
+            color: #ffffff;
+            text-decoration: none;
+        }
+       =20
+        .red a:hover {
+            color: #ffffff;
+            text-decoration: none;
+        }
+       =20
+        .footer a {
+            color: #4c4c4c;
+            text-decoration: none;
+        }
+       =20
+        .footer a:link {
+            color: #4c4c4c;
+            text-decoration: none;
+        }
+       =20
+        .footer a:visited {
+            color: #4c4c4c;
+            text-decoration: none;
+        }
+       =20
+        .footer a:active {
+            color: #4c4c4c;
+            text-decoration: none;
+        }
+       =20
+        .footer a:hover {
+            color: #4c4c4c;
+            text-decoration: none;
+        }
+        /* outlook.com line-height fix */
+       =20
+        .ExternalClass * {
+            line-height: 100%
+        }
+
+        /* iOS BLUE LINKS */
+        a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+        }
+
+        /* Mobile */
+       =20
+        @media only screen and (max-device-width: 600px),
+        only screen and (max-width: 600px) {
+            /* Global */
+            body {
+                min-width: 320px !important;
+                font-size: 100% !important;
+                -webkit-text-size-adjust: none !important;
+            }
+            /* Helpers medium */
+            .hidden {
+                display: none !important;
+            }
+            .block {
+                display: block !important;
+                float: left !important;
+                width: 100% !important;
+            }
+            .mobile-only {
+                max-width: none !important;
+                max-height: none !important;
+                display: block !important;
+            }
+            .fullwidth {
+                width: 100% !important;
+            }
+            .autowidth {
+                width: auto !important;
+            }
+            .autoheight {
+                height: auto !important;
+            }
+            /* Main sizes medium */
+            .contentpadding {
+                width: 15px !important;
+            }
+            .mainwidth {
+                width: 480px !important;
+            }
+            .innerwidth {
+                width: 450px !important;
+            }
+            /* Content sizes medium */
+            .height-20 {
+                height: 20px !important;
+            }
+            .no-size {
+                width: 1px !important;
+                height: 0px !important;
+            }
+            .white_background {
+                background-color: #ffffff !important;
+            }
+            .width_25 {
+                width: 25px !important;
+            }
+            .width_184 {
+                width: 184px !important;
+            }
+            .padding_top_10 {
+                padding-top: 10px !important;
+            }
+            .padding_top_15 {
+                padding-top: 15px !important;
+            }
+            .padding_top_40 {
+                padding-top: 40px !important;
+            }
+            .padding_bottom_0 {
+                padding-bottom: 0px !important;
+            }
+            .padding_bottom_12 {
+                padding-bottom: 12px !important;
+            }
+            .padding_bottom_20 {
+                padding-bottom: 20px !important;
+            }
+            .padding_bottom_30 {
+                padding-bottom: 30px !important;
+            }
+            .padding_bottom_60 {
+                padding-bottom: 60px !important;
+            }
+            .show {
+                font-family: Arial, sans-serif;
+                box-sizing: border-box;
+                display: block !important;
+                width: 480px !important;
+                height: auto !important;
+                max-width: none !important;
+                max-height: none !important;
+                line-height: normal !important;
+            }
+            .bgcolor {
+                background-color: #eb0000 !important;
+            }
+            .padding-top-15 {
+                padding-top: 15px !important;
+            }
+            .padding-bottom-15 {
+                padding-bottom: 15px !important;
+            }
+            .padding-left-15 {
+                padding-left: 15px !important;
+            }
+            .padding-right-15 {
+                padding-right: 15px !important;
+            }
+            .bgimage-size {
+                background-size: 480px !important;
+                height: 245px !important;
+            }
+        }
+       =20
+        @media only screen and (max-device-width: 480px),
+        only screen and (max-width: 480px) {
+            /* Helpers small */
+            /* Main sizes small */
+            .fullwidth-s {
+                width: 100% !important;
+            }
+            .contentpadding {
+                width: 12px !important;
+            }
+            .mainwidth {
+                width: 100% !important;
+            }
+            .innerwidth {
+                width: 296px !important;
+            }
+            .show {
+                width: 320px !important;
+            }
+            .bgcolor {
+                background-color: #eb0000 !important;
+            }
+            .padding-top-12-s {
+                padding-top: 12px !important;
+            }
+            .padding-bottom-12-s {
+                padding-bottom: 12px !important;
+            }
+            .padding-left-12-s {
+                padding-left: 12px !important;
+            }
+            .padding-right-12-s {
+                padding-right: 12px !important;
+            }
+            .bgimage-size {
+                background-size: 320px !important;
+                height: 163px !important;
+            }
+            /* Content */
+            /* .element-padding { padding-bottom: 20px !important; } */
+        }
+        /*iOS Fix - set color for auto links in text*/
+       =20
+        .gmailautolinks a {
+            color: #4c4c4c !important;
+        }
+        /* iOS BLUE LINKS */
+        a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+        }
+        </style>
+    </head>
+
+<body style=3D"margin:0;padding:0;">
+    <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" =
+style=3D"background-color:#f5f5f5;">
+        <tr>
+            <td align=3D"center">
+                <table style=3D"background-color:#f5f5f5" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0" width=3D"100%" class=3D"fullwidth fullwidth=
+-m">
+                    <tr>
+                        <td width=3D"40" class=3D"global-padding" style=3D"=
+font-family: Arial, sans-serif; font-size: 1px;">
+
+                            <!--[if mso]>
+                            <img alt=3D"" border=3D"0" height=3D"1" width=
+=3D"1" src=3D"http://mailing.sbb.ch/images0/framework/sbb_nl/spacer.gif">
+                            <![endif]-->
+
+                            <div style=3D"display:none;">
+                                <span style=3D"display:none;font-size:1px;c=
+olor:#f5f5f5;"></span>
+                            </div>
+                            <table cellpadding=3D"0" cellspacing=3D"0" bord=
+er=3D"0" width=3D"40" class=3D"global-padding">
+                                <tr>
+                                    <td style=3D"font-family: Arial, sans-s=
+erif; font-size: 1px;" valign=3D"top"></td>
+                                </tr>
+                            </table>
+                        </td>
+                            <td style=3D"line-height:18px;font-size:13px;fo=
+nt-family:Arial, Helvetica, sans-serif;font-weight:normal;font-style:normal=
+;text-decoration:none;color:#888888;" align=3D"center" valign=3D"middle" he=
+ight=3D"50" width=3D"100%" class=3D"header-mailref">
+                                <a style=3D"line-height:18px;font-size:13px=
+;font-family:Arial, Helvetica, sans-serif;font-weight:normal;font-style:nor=
+mal;text-decoration:none;color:#888888;" target=3D"_blank" href=3D"https://=
+order.info.sbb.ch/r/wxmc/sbb/mt77jqg3q3ywvbf4m7uq/lisbttudggatnhgeicia/kzlo=
+zjdjkzfv2/2bmxyfi6idzbozcuzipmbcuxcu">Click here for the web view of this e=
+-mailing.</a>
+                            </td>
+                        <td width=3D"40" class=3D"global-padding">
+                            <table cellpadding=3D"0" cellspacing=3D"0" bord=
+er=3D"0" width=3D"40" class=3D"global-padding">
+                                <tr>
+                                    <td style=3D"font-family: Arial, sans-s=
+erif; font-size: 1px;" valign=3D"top"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table style=3D"background-color:#f5f5f5;" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" width=3D"700" class=3D"mainwidth white_bac=
+kground">
+                    <tr>
+                        <td height=3D"20" valign=3D"top" align=3D"left" sty=
+le=3D"font-family: Arial, sans-serif; font-weight: normal; font-size: 1px;"=
+></td>
+                    </tr>
+                </table>
+                <table style=3D"background-color:#ffffff;" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" width=3D"700" class=3D"mainwidth">
+                    <tr>
+                        <td width=3D"20" class=3D"contentpadding" align=3D"=
+left"></td>
+                        <td style=3D"font-family: Arial, sans-serif; font-w=
+eight: normal; font-size: 12px; color:#000000;" valign=3D"top" align=3D"lef=
+t">
+                            <table cellpadding=3D"0" cellspacing=3D"0" bord=
+er=3D"0" width=3D"100%">
+                                <tr>
+                                    <td style=3D"display:none;max-width:0;m=
+ax-height:0;" align=3D"right" valign=3D"top" height=3D"1" class=3D"mobile-o=
+nly block fullwidth autoheight padding_top_15">
+                                        <a href=3D"https://order.info.sbb.c=
+h/r/gxmcc/sbb/ZCRTZFGpMm3RCj0W/ZP_0wNuG8WqEvGfp/eI8_OHpRnFmM-v55/bJox1QEb9R=
+90jFZQnXraFA?url=3Dhttps%3A%2F%2Fwww.sbb.ch" class=3D"mobile-only" style=3D=
+"max-width:0;max-height:0;display:none;" target=3D"_blank"><img alt=3D"" sr=
+c=3D"http://mailing.sbb.ch/images0/framework/sbb_nl/logo.png" class=3D"mobi=
+le-only width_184 autoheight" width=3D"1" height=3D"0" style=3D"max-width:0=
+;max-height:0;display:none;" border=3D"0" /></a>
+                                    </td>
+                                    <td style=3D"font-family: Arial, sans-s=
+erif; font-weight: normal; font-size: 14px; color:#000000; padding: 24px 0p=
+x 10px;" align=3D"left" valign=3D"top" class=3D"block fullwidth padding_top=
+_15"></td>
+                                    <td style=3D"font-family: Arial, sans-s=
+erif; font-weight: normal; font-size: 12px; color:#000000; line-height: 0px=
+; padding: 20px 0px 15px;" align=3D"right" valign=3D"top" class=3D"hidden">
+                                        <a href=3D"https://order.info.sbb.c=
+h/r/gxmcc/sbb/ZCRTZFGpMm3RCj0W/ZP_0wNuG8WqEvGfp/eI8_OHpRnFmM-v55/bJox1QEb9R=
+90jFZQnXraFA?url=3Dhttps%3A%2F%2Fwww.sbb.ch" class=3D"hidden" target=3D"_bl=
+ank"><img alt=3D"" src=3D"http://mailing.sbb.ch/images0/framework/sbb_nl/lo=
+go.png" class=3D"hidden no-size" width=3D"229" style=3D"display:block;" bor=
+der=3D"0" /></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width=3D"20" class=3D"contentpadding" align=3D"=
+left"></td>
+                    </tr>
+                </table>
+                <table style=3D"background-color:#ffffff;" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" width=3D"700" class=3D"mainwidth">
+                    <tr>
+                        <td width=3D"20" class=3D"contentpadding" align=3D"=
+left"></td>
+                        <td style=3D"font-family: Arial, sans-serif; font-w=
+eight: normal; font-size: 12px; color:#000000; padding-bottom: 15px; paddin=
+g-top: 11px;" valign=3D"top" align=3D"left">
+                            <table cellpadding=3D"0" cellspacing=3D"0" bord=
+er=3D"0" width=3D"100%">
+                                <tr>
+                                    <td style=3D"font-family: Arial, sans-s=
+erif; font-weight: normal; line-height: 34px; font-size: 22px; color:#00000=
+0;" align=3D"left" valign=3D"top">
+                                      Hello Bernhard Wagner
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style=3D"font-family: Arial, sans-s=
+erif; font-size: 0px; line-height: 1px;" height=3D"1"></td>
+                                </tr>
+                                <tr>
+                                    <td style=3D"font-family: Arial, sans-s=
+erif; font-weight: normal; font-size: 14px; color:#4c4c4c; padding-bottom: =
+12px;" align=3D"left" valign=3D"top">
+                                       =20
+                                        <br/>Thank you for travelling with =
+EasyRide.
+                                    <br /><br /><span style=3D"font-weight:=
+ normal; color: #B1B1B1;">Order number</span> 58181315649
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width=3D"20" class=3D"contentpadding" align=3D"=
+left"></td>
+                    </tr>
+                </table>
+                <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" wid=
+th=3D"700" class=3D"mainwidth">
+                    <tr>
+                        <td style=3D"font-size: 1px; line-height: 1px;" wid=
+th=3D"100%" height=3D"15" align=3D"left">
+                            <table cellpadding=3D"0" cellspacing=3D"0" bord=
+er=3D"0" width=3D"100%">
+                                <tr>
+                                    <td style=3D"font-size: 1px; line-heigh=
+t: 1px;" height=3D"15" align=3D"left"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- InvoiceOrRefund -->
+                <table style=3D"background-color:#ffffff;" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" width=3D"700" class=3D"mainwidth">
+                    <tr>
+                        <td width=3D"20" class=3D"contentpadding" align=3D"=
+left"></td>
+                        <td style=3D"font-family: Arial, sans-serif; font-w=
+eight: normal; font-size: 12px; color:#000000; padding-bottom: 15px; paddin=
+g-top: 11px;" valign=3D"top" align=3D"left">
+                            <table cellpadding=3D"0" cellspacing=3D"0" bord=
+er=3D"0" width=3D"100%">
+                                <tr>
+                                    <td align=3D"left">
+                                        <table style=3D"background-color: #=
+ffffff;" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+                                            <tr>
+                                                <td style=3D"font-family: A=
+rial, sans-serif; font-weight: normal; line-height: 34px; font-size: 22px; =
+color: #000000; padding-top: 12px; padding-bottom: 5px;" align=3D"left" val=
+ign=3D"top">Payment charge</td>
+                                            </tr>
+                                            <tr>
+                                                <td style=3D"font-family: A=
+rial, sans-serif; font-weight: normal; font-size: 14px; color: #B1B1B1; pad=
+ding-bottom:2px;" class=3D"gmailautolinks" align=3D"left" valign=3D"top">
+                                                    Reference number <span =
+style=3D"font-weight: normal; color: #4C4C4C;">230912071855088041</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table style=3D"background-color: #ffffff;" cel=
+lpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+                                <tr>
+                                    <td style=3D"font-family: Arial, sans-s=
+erif; font-weight: normal; font-size: 12px; color: #4c4c4c; padding-top: 0p=
+x; padding-bottom: 12px;" valign=3D"top" align=3D"left">
+                                        <table cellpadding=3D"0" cellspacin=
+g=3D"0" border=3D"0" width=3D"100%">
+                                            <tr>
+                                                <th align=3D"left" valign=
+=3D"top" width=3D"213" class=3D"block fullwidth">
+                                                    <table cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" width=3D"100%">
+                                                        <tr>
+                                                            <td height=3D"1=
+2" style=3D"height: 12px; font-size: 1px; line-height: 1px;" />
+                                                        </tr>
+                                                        <tr>
+                                                            <td style=3D"fo=
+nt-family: Arial, sans-serif; font-weight: normal; font-size: 14px; color: =
+#B1B1B1; padding-bottom:2px;" align=3D"left" valign=3D"top">
+                                                                Payment met=
+hod<br />
+                                                                <span style=
+=3D"font-weight: normal; color: #4C4C4C;">PostFinance Card xxxx9546</span>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </th>
+                                                <th width=3D"10" class=3D"h=
+idden" align=3D"left"></th>
+                                                <th align=3D"left" valign=
+=3D"top" width=3D"213" class=3D"block fullwidth">
+                                                    <table cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" width=3D"100%">
+                                                        <tr>
+                                                            <td height=3D"1=
+2" style=3D"height: 12px; font-size: 1px; line-height: 1px;" />
+                                                        </tr>
+                                                        <tr>
+                                                            <td style=3D"fo=
+nt-family: Arial, sans-serif; font-weight: normal; font-size: 14px; color: =
+#B1B1B1; padding-bottom:2px;" align=3D"left" valign=3D"top">
+                                                                Date<br />
+                                                                <span style=
+=3D"font-weight: normal; color: #4C4C4C;">12.09.2023</span>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </th>
+                                                <th width=3D"10" class=3D"b=
+lock fullwidth" align=3D"left"></th>
+                                                <th align=3D"left" valign=
+=3D"top" width=3D"213" class=3D"block fullwidth">
+                                                    <table cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" width=3D"100%">
+                                                        <tr>
+                                                            <td height=3D"1=
+2" style=3D"height: 12px; font-size: 1px; line-height: 1px;" />
+                                                        </tr>
+                                                        <tr>
+                                                            <td style=3D"fo=
+nt-family: Arial, sans-serif; font-weight: normal; font-size: 14px; color: =
+#B1B1B1; padding-bottom:2px;" align=3D"left" valign=3D"top">
+                                                                 Amount<br =
+/>
+                                                                <span style=
+=3D"font-weight: bold; color: #4C4C4C;"><nobr>CHF 39.30</nobr></span>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </th>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width=3D"20" class=3D"contentpadding" align=3D"=
+left"></td>
+                    </tr>
+                </table>
+                <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" wid=
+th=3D"700" class=3D"mainwidth">
+                    <tr>
+                        <td style=3D"font-size: 1px; line-height: 1px;" wid=
+th=3D"100%" height=3D"15" align=3D"left">
+                            <table cellpadding=3D"0" cellspacing=3D"0" bord=
+er=3D"0" width=3D"100%">
+                                <tr>
+                                    <td style=3D"font-size: 1px; line-heigh=
+t: 1px;" height=3D"15" align=3D"left"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <!-- /InvoiceOrRefund -->
+
+                <!-- journeys -->
+                <table style=3D"background-color:#ffffff;" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" width=3D"700" class=3D"mainwidth">
+                    <tr>
+                        <td width=3D"20" class=3D"contentpadding" align=3D"=
+left"></td>
+                        <td style=3D"font-family: Arial, sans-serif; font-w=
+eight: normal; font-size: 12px; color:#000000; padding-bottom: 15px; paddin=
+g-top: 11px;" valign=3D"top" align=3D"left">
+                            <table cellpadding=3D"0" cellspacing=3D"0" bord=
+er=3D"0" width=3D"100%">
+                                <tr>
+                                    <td align=3D"left">
+                                        <table style=3D"background-color: #=
+ffffff;" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+                                            <tr>
+                                                <td style=3D"font-family: A=
+rial, sans-serif; font-weight: normal; line-height: 34px; font-size: 22px; =
+color: #000000; padding-top: 12px; padding-bottom: 5px;" align=3D"left" val=
+ign=3D"top">Your journeys on 11.09.2023</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table style=3D"background-color: #ffffff;" cel=
+lpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+                                <tr>
+                                    <td style=3D"font-family: Arial, sans-s=
+erif; font-weight: normal; font-size: 12px; color: #4c4c4c; padding-top: 0p=
+x; padding-bottom: 12px;" valign=3D"top" align=3D"left">
+                                        <table cellpadding=3D"0" cellspacin=
+g=3D"0" border=3D"0" width=3D"100%">
+                                                    <tr>
+                                                        <th align=3D"left" =
+valign=3D"top" width=3D"213" class=3D"autowidth">
+                                                          <table cellpaddin=
+g=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+                                                                <tr>
+                                                                    <td hei=
+ght=3D"12" style=3D"height: 12px; font-size: 1px; line-height: 1px;" />
+                                                                </tr>
+                                                                <tr>
+                                                                    <td sty=
+le=3D"font-family: Arial, sans-serif; font-weight: bold; font-size: 14px; c=
+olor: #4c4c4c; padding-bottom:12px;" align=3D"left" valign=3D"top">
+                                                                        Jou=
+rney from
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td sty=
+le=3D"font-family: Arial, sans-serif; font-weight: normal; font-size: 14px;=
+ color: #4c4c4c; padding-bottom:2px;" class=3D"gmailautolinks" align=3D"lef=
+t" valign=3D"top">
+                                                                        Z=
+=C3=BCrich, Schaffhauserplatz
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </th>
+                                                        <th width=3D"10" al=
+ign=3D"left"></th>
+                                                        <th align=3D"left" =
+valign=3D"top" width=3D"213" class=3D"autowidth">
+                                                            <table cellpadd=
+ing=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+                                                                <tr>
+                                                                    <td hei=
+ght=3D"12" style=3D"height: 12px; font-size: 1px; line-height: 1px;" />
+                                                                </tr>
+                                                                <tr>
+                                                                    <td sty=
+le=3D"font-family: Arial, sans-serif; font-weight: bold; font-size: 14px; c=
+olor: #4c4c4c; padding-bottom:12px;" align=3D"left" valign=3D"top">
+                                                                        To
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td sty=
+le=3D"font-family: Arial, sans-serif; font-weight: normal; font-size: 14px;=
+ color: #4c4c4c; padding-bottom:2px;" class=3D"gmailautolinks" align=3D"lef=
+t" valign=3D"top">
+                                                                        Oen=
+singen
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </th>
+                                                        <th width=3D"10" al=
+ign=3D"left"></th>
+                                                        <th align=3D"left" =
+valign=3D"top" width=3D"213" class=3D"autowidth">
+                                                            <table cellpadd=
+ing=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+                                                                <tr>
+                                                                    <td hei=
+ght=3D"12" style=3D"height: 12px; font-size: 1px; line-height: 1px;" />
+                                                                </tr>
+                                                                <tr>
+                                                                    <td sty=
+le=3D"font-family: Arial, sans-serif; font-weight: bold; font-size: 14px; c=
+olor: #4c4c4c; padding-bottom:12px;" align=3D"left" valign=3D"top">
+                                                                        Cla=
+ss
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td sty=
+le=3D"font-family: Arial, sans-serif; font-weight: normal; font-size: 14px;=
+ color: #4c4c4c; padding-bottom:2px;" class=3D"gmailautolinks" align=3D"lef=
+t" valign=3D"top">
+                                                                        2nd=
+ class
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th align=3D"left" =
+valign=3D"top" width=3D"213" class=3D"autowidth">
+                                                          <table cellpaddin=
+g=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+                                                                <tr>
+                                                                    <td hei=
+ght=3D"12" style=3D"height: 12px; font-size: 1px; line-height: 1px;" />
+                                                                </tr>
+                                                                <tr>
+                                                                    <td sty=
+le=3D"font-family: Arial, sans-serif; font-weight: normal; font-size: 14px;=
+ color: #4c4c4c; padding-bottom:2px;" class=3D"gmailautolinks" align=3D"lef=
+t" valign=3D"top">
+                                                                        Far=
+nern, Jura
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </th>
+                                                        <th width=3D"10" al=
+ign=3D"left"></th>
+                                                        <th align=3D"left" =
+valign=3D"top" width=3D"213" class=3D"autowidth">
+                                                            <table cellpadd=
+ing=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+                                                                <tr>
+                                                                    <td hei=
+ght=3D"12" style=3D"height: 12px; font-size: 1px; line-height: 1px;" />
+                                                                </tr>
+                                                                <tr>
+                                                                    <td sty=
+le=3D"font-family: Arial, sans-serif; font-weight: normal; font-size: 14px;=
+ color: #4c4c4c; padding-bottom:2px;" class=3D"gmailautolinks" align=3D"lef=
+t" valign=3D"top">
+                                                                        Z=
+=C3=BCrich, Schaffhauserplatz
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </th>
+                                                        <th width=3D"10" al=
+ign=3D"left"></th>
+                                                        <th align=3D"left" =
+valign=3D"top" width=3D"213" class=3D"autowidth">
+                                                            <table cellpadd=
+ing=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+                                                                <tr>
+                                                                    <td hei=
+ght=3D"12" style=3D"height: 12px; font-size: 1px; line-height: 1px;" />
+                                                                </tr>
+                                                                <tr>
+                                                                    <td sty=
+le=3D"font-family: Arial, sans-serif; font-weight: normal; font-size: 14px;=
+ color: #4c4c4c; padding-bottom:2px;" class=3D"gmailautolinks" align=3D"lef=
+t" valign=3D"top">
+                                                                        2nd=
+ class
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </th>
+                                                    </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width=3D"20" class=3D"contentpadding" align=3D"=
+left"></td>
+                    </tr>
+                </table>
+                <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" wid=
+th=3D"700" class=3D"mainwidth">
+                    <tr>
+                        <td style=3D"font-size: 1px; line-height: 1px;" wid=
+th=3D"100%" height=3D"15" align=3D"left">
+                            <table cellpadding=3D"0" cellspacing=3D"0" bord=
+er=3D"0" width=3D"100%">
+                                <tr>
+                                    <td style=3D"font-size: 1px; line-heigh=
+t: 1px;" height=3D"15" align=3D"left"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <!-- /journeys -->
+
+                <!-- cancellation -->
+                <!-- /cancellation -->
+
+                <!-- purchase -->
+                <table style=3D"background-color:#ffffff;" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" width=3D"700" class=3D"mainwidth">
+                    <tr>
+                        <td width=3D"20" class=3D"contentpadding" align=3D"=
+left"></td>
+                        <td style=3D"font-family: Arial, sans-serif; font-w=
+eight: normal; font-size: 12px; color:#000000; padding-bottom: 15px; paddin=
+g-top: 11px;" valign=3D"top" align=3D"left">
+                            <table cellpadding=3D"0" cellspacing=3D"0" bord=
+er=3D"0" width=3D"100%">
+                                <tr>
+                                    <td align=3D"left">
+                                        <table style=3D"background-color: #=
+ffffff;" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+                                            <tr>
+                                                <td style=3D"font-family: A=
+rial, sans-serif; font-weight: normal; line-height: 34px; font-size: 22px; =
+color: #000000; padding-top: 12px; padding-bottom: 5px;" align=3D"left" val=
+ign=3D"top">Tickets charged</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table style=3D"background-color: #ffffff;" cel=
+lpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+                                <tr>
+                                    <td style=3D"font-family: Arial, sans-s=
+erif; font-weight: normal; font-size: 12px; color: #4c4c4c; padding-top: 0p=
+x; padding-bottom: 12px;" valign=3D"top" align=3D"left">
+                                        <table cellpadding=3D"0" cellspacin=
+g=3D"0" border=3D"0" width=3D"100%">
+                                                    <tr>
+                                                        <th align=3D"left" =
+valign=3D"top" width=3D"213" class=3D"autowidth">
+                                                          <table cellpaddin=
+g=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+                                                                <tr>
+                                                                    <td hei=
+ght=3D"12" style=3D"height: 12px; font-size: 1px; line-height: 1px;" />
+                                                                </tr>
+                                                                <tr>
+                                                                    <td sty=
+le=3D"font-family: Arial, sans-serif; font-weight: bold; font-size: 14px; c=
+olor: #B1B1B1; padding-bottom:12px;" align=3D"left" valign=3D"top">
+                                                                        Ite=
+m
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td sty=
+le=3D"font-family: Arial, sans-serif; font-weight: normal; font-size: 14px;=
+ color: #4c4c4c; padding-bottom:2px;" class=3D"gmailautolinks" align=3D"lef=
+t" valign=3D"top">
+                                                                        <sp=
+an style=3D"font-weight: bold;">Point-to-point Ticket</span><br />
+                                                                        Z=
+=C3=BCrich, Schaffhauserplatz - Oensingen via Z=C3=BCrich - Olten<br />
+                                                                        <sp=
+an style=3D"color: #B1B1B1;">Reference no. 863032870</span><br />
+                                                                        <sp=
+an style=3D"color: #B1B1B1;">Item no. 125</span>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </th>
+                                                        <th width=3D"10" al=
+ign=3D"left"></th>
+                                                        <th align=3D"left" =
+valign=3D"top" width=3D"213" class=3D"block fullwidth">
+                                                            <table cellpadd=
+ing=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+                                                                <tr>
+                                                                    <td hei=
+ght=3D"12" style=3D"height: 12px; font-size: 1px; line-height: 1px;" />
+                                                                </tr>
+                                                                <tr>
+                                                                    <td sty=
+le=3D"font-family: Arial, sans-serif; font-weight: bold; font-size: 14px; c=
+olor: #B1B1B1; padding-bottom:12px;" align=3D"left" valign=3D"top">
+                                                                        Far=
+e
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td sty=
+le=3D"font-family: Arial, sans-serif; font-weight: normal; font-size: 14px;=
+ color: #4c4c4c; padding-bottom:2px;" class=3D"gmailautolinks" align=3D"lef=
+t" valign=3D"top">
+                                                                        2nd=
+ class, single journey, Half-Fare Travelcard<br />
+                                                                        <sp=
+an style=3D"color: #B1B1B1;">Valid:</span><br />11.09.2023 00:00 &ndash;<br=
+ />12.09.2023 05:00
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </th>
+                                                        <th width=3D"10" al=
+ign=3D"left"></th>
+                                                        <th align=3D"left" =
+valign=3D"top" width=3D"213" class=3D"autowidth">
+                                                            <table cellpadd=
+ing=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+                                                                <tr>
+                                                                    <td hei=
+ght=3D"12" style=3D"height: 12px; font-size: 1px; line-height: 1px;" />
+                                                                </tr>
+                                                                <tr>
+                                                                    <td sty=
+le=3D"font-family: Arial, sans-serif; font-weight: bold; font-size: 14px; c=
+olor: #B1B1B1; padding-bottom:12px;" align=3D"left" valign=3D"top">
+                                                                        Pri=
+ce
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td sty=
+le=3D"font-family: Arial, sans-serif; font-weight: normal; font-size: 14px;=
+ color: #4c4c4c; padding-bottom:2px;" class=3D"gmailautolinks" align=3D"lef=
+t" valign=3D"top">
+                                                                        <no=
+br>CHF 18.00</nobr>
+                                                                        <br=
+ /><span style=3D"color: #B1B1B1;">incl. 7.7% VAT</span>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th align=3D"left" =
+valign=3D"top" width=3D"213" class=3D"autowidth">
+                                                          <table cellpaddin=
+g=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+                                                                <tr>
+                                                                    <td hei=
+ght=3D"12" style=3D"height: 12px; font-size: 1px; line-height: 1px;" />
+                                                                </tr>
+                                                                <tr>
+                                                                    <td sty=
+le=3D"font-family: Arial, sans-serif; font-weight: normal; font-size: 14px;=
+ color: #4c4c4c; padding-bottom:2px;" class=3D"gmailautolinks" align=3D"lef=
+t" valign=3D"top">
+                                                                        <sp=
+an style=3D"font-weight: bold;">Libero Individual Ticket</span><br />
+                                                                        1-2=
+ Zones, null<br />
+                                                                        <sp=
+an style=3D"color: #B1B1B1;">Reference no. 863032865</span><br />
+                                                                        <sp=
+an style=3D"color: #B1B1B1;">Item no. 10972</span>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </th>
+                                                        <th width=3D"10" al=
+ign=3D"left"></th>
+                                                        <th align=3D"left" =
+valign=3D"top" width=3D"213" class=3D"block fullwidth">
+                                                            <table cellpadd=
+ing=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+                                                                <tr>
+                                                                    <td hei=
+ght=3D"12" style=3D"height: 12px; font-size: 1px; line-height: 1px;" />
+                                                                </tr>
+                                                                <tr>
+                                                                    <td sty=
+le=3D"font-family: Arial, sans-serif; font-weight: normal; font-size: 14px;=
+ color: #4c4c4c; padding-bottom:2px;" class=3D"gmailautolinks" align=3D"lef=
+t" valign=3D"top">
+                                                                        2nd=
+ class, Half-Fare Travelcard<br />
+                                                                        <sp=
+an style=3D"color: #B1B1B1;">Valid:</span><br />11.09.2023 16:31 &ndash;<br=
+ />11.09.2023 17:31
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </th>
+                                                        <th width=3D"10" al=
+ign=3D"left"></th>
+                                                        <th align=3D"left" =
+valign=3D"top" width=3D"213" class=3D"autowidth">
+                                                            <table cellpadd=
+ing=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+                                                                <tr>
+                                                                    <td hei=
+ght=3D"12" style=3D"height: 12px; font-size: 1px; line-height: 1px;" />
+                                                                </tr>
+                                                                <tr>
+                                                                    <td sty=
+le=3D"font-family: Arial, sans-serif; font-weight: normal; font-size: 14px;=
+ color: #4c4c4c; padding-bottom:2px;" class=3D"gmailautolinks" align=3D"lef=
+t" valign=3D"top">
+                                                                        <no=
+br>CHF 2.80</nobr>
+                                                                        <br=
+ /><span style=3D"color: #B1B1B1;">incl. 7.7% VAT</span>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th align=3D"left" =
+valign=3D"top" width=3D"213" class=3D"autowidth">
+                                                          <table cellpaddin=
+g=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+                                                                <tr>
+                                                                    <td hei=
+ght=3D"12" style=3D"height: 12px; font-size: 1px; line-height: 1px;" />
+                                                                </tr>
+                                                                <tr>
+                                                                    <td sty=
+le=3D"font-family: Arial, sans-serif; font-weight: normal; font-size: 14px;=
+ color: #4c4c4c; padding-bottom:2px;" class=3D"gmailautolinks" align=3D"lef=
+t" valign=3D"top">
+                                                                        <sp=
+an style=3D"font-weight: bold;">Point-to-point Ticket</span><br />
+                                                                        Wan=
+gen an der Aare - Z=C3=BCrich, Schaffhauserplatz via Olten - Z=C3=BCrich<br=
+ />
+                                                                        <sp=
+an style=3D"color: #B1B1B1;">Reference no. 863032874</span><br />
+                                                                        <sp=
+an style=3D"color: #B1B1B1;">Item no. 125</span>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </th>
+                                                        <th width=3D"10" al=
+ign=3D"left"></th>
+                                                        <th align=3D"left" =
+valign=3D"top" width=3D"213" class=3D"block fullwidth">
+                                                            <table cellpadd=
+ing=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+                                                                <tr>
+                                                                    <td hei=
+ght=3D"12" style=3D"height: 12px; font-size: 1px; line-height: 1px;" />
+                                                                </tr>
+                                                                <tr>
+                                                                    <td sty=
+le=3D"font-family: Arial, sans-serif; font-weight: normal; font-size: 14px;=
+ color: #4c4c4c; padding-bottom:2px;" class=3D"gmailautolinks" align=3D"lef=
+t" valign=3D"top">
+                                                                        2nd=
+ class, single journey, Half-Fare Travelcard<br />
+                                                                        <sp=
+an style=3D"color: #B1B1B1;">Valid:</span><br />11.09.2023 00:00 &ndash;<br=
+ />12.09.2023 05:00
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </th>
+                                                        <th width=3D"10" al=
+ign=3D"left"></th>
+                                                        <th align=3D"left" =
+valign=3D"top" width=3D"213" class=3D"autowidth">
+                                                            <table cellpadd=
+ing=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+                                                                <tr>
+                                                                    <td hei=
+ght=3D"12" style=3D"height: 12px; font-size: 1px; line-height: 1px;" />
+                                                                </tr>
+                                                                <tr>
+                                                                    <td sty=
+le=3D"font-family: Arial, sans-serif; font-weight: normal; font-size: 14px;=
+ color: #4c4c4c; padding-bottom:2px;" class=3D"gmailautolinks" align=3D"lef=
+t" valign=3D"top">
+                                                                        <no=
+br>CHF 18.50</nobr>
+                                                                        <br=
+ /><span style=3D"color: #B1B1B1;">incl. 7.7% VAT</span>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </th>
+                                                    </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style=3D"font-family: Arial, sans-s=
+erif; font-weight: normal; font-size: 12px; color: #4c4c4c; padding-top: 0p=
+x; padding-bottom: 12px;" valign=3D"top" align=3D"left">
+                                        <table cellpadding=3D"0" cellspacin=
+g=3D"0" border=3D"0" width=3D"100%">
+                                            <tr>
+                                                <th align=3D"left" valign=
+=3D"top" width=3D"213" class=3D"block fullwidth">
+                                                  &#160;
+                                                </th>
+                                                <th width=3D"10" class=3D"b=
+lock fullwidth" align=3D"left"></th>
+                                                <th align=3D"left" valign=
+=3D"top" width=3D"213" class=3D"block fullwidth" style=3D"font-family: Aria=
+l, sans-serif; font-weight: bold; font-size: 14px; color: #4C4C4C;">
+                                                    Total
+                                                </th>
+                                                <th width=3D"10" class=3D"b=
+lock fullwidth" align=3D"left"></th>
+                                                <th align=3D"left" valign=
+=3D"top" width=3D"213" class=3D"block fullwidth" style=3D"font-family: Aria=
+l, sans-serif; font-weight: bold; font-size: 14px; color: #4C4C4C;">
+                                                    <nobr>CHF 39.30</nobr>
+                                                </th>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width=3D"20" class=3D"contentpadding" align=3D"=
+left"></td>
+                    </tr>
+                </table>
+                <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" wid=
+th=3D"700" class=3D"mainwidth">
+                    <tr>
+                        <td style=3D"font-size: 1px; line-height: 1px;" wid=
+th=3D"100%" height=3D"15" align=3D"left">
+                            <table cellpadding=3D"0" cellspacing=3D"0" bord=
+er=3D"0" width=3D"100%">
+                                <tr>
+                                    <td style=3D"font-size: 1px; line-heigh=
+t: 1px;" height=3D"15" align=3D"left"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <!-- /purchase -->
+
+                <!-- faq -->
+                <table style=3D"background-color:#ffffff;" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" width=3D"700" class=3D"mainwidth">
+                    <tr>
+                        <td width=3D"20" class=3D"contentpadding" align=3D"=
+left"></td>
+                        <td style=3D"font-family: Arial, sans-serif; font-w=
+eight: normal; font-size: 14px; color:#4c4c4c; padding-top: 22px; padding-b=
+ottom: 18px;" class=3D"padding_bottom_0" valign=3D"top" align=3D"left">
+                            <b>Do you have any questions about the charges =
+made?</b><br />
+                            Open the list of your past EasyRide journeys in=
+ SBB Mobile and choose the relevant travel day. Then select the option =E2=
+=80=98Report a problem with this journey=E2=80=99 and send us your question=
+. We will look into it and get back to you promptly. You can find the <a hr=
+ef=3D"https://www.sbb.ch/de/meta/profil.html" style=3D"font-family: Arial, =
+sans-serif; font-size: 14px; font-weight: bold; line-height: 20px; color:#f=
+22300;" target=3D"_blank">order overview</a> in your account under =E2=80=
+=98Orders=E2=80=99.
+                            <br /><br />
+                            <b>Do you have a general question or feedback a=
+bout EasyRide?</b><br />
+                            Contact us easily via the contact form (in the =
+=E2=80=98Profile=E2=80=99 tab on SBB Mobile under =E2=80=98Help and Feedbac=
+k=E2=80=99) or consult our FAQs on <a href=3D"https://www.sbb.ch/en/easyrid=
+e" style=3D"font-family: Arial, sans-serif; font-size: 14px; font-weight: b=
+old; line-height: 20px; color:#f22300;" target=3D"_blank">www.sbb.ch/en/eas=
+yride</a> under =E2=80=98Help & contact=E2=80=99.
+                        </td>
+                        <td width=3D"20" class=3D"contentpadding" align=3D"=
+left"></td>
+                    </tr>
+                </table>
+                <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" wid=
+th=3D"700" class=3D"mainwidth red">
+                    <tr>
+                        <td height=3D"15" style=3D"height: 15px; font-size:=
+ 1px; line-height: 1px;" />
+                    </tr>
+                </table>
+                <!-- /faq -->
+
+                <!-- futrher infos -->
+                <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" wid=
+th=3D"700" class=3D"mainwidth">
+                    <tr>
+                        <td align=3D"left">
+                            <table style=3D"background-color: #ffffff;" cel=
+lpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+                                <tr>
+                                    <td width=3D"20" class=3D"contentpaddin=
+g" align=3D"left"></td>
+                                    <td style=3D"font-family: Arial, sans-s=
+erif; font-weight: normal; line-height: 34px; font-size: 22px; color: #0000=
+00; padding-top: 12px; padding-bottom: 5px;" align=3D"left" valign=3D"top">=
+Further information</td>
+                                    <td width=3D"20" class=3D"contentpaddin=
+g" align=3D"left"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table style=3D"background-color:#ffffff;" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" width=3D"700" class=3D"mainwidth">
+                    <tr>
+                        <td width=3D"20" class=3D"contentpadding" align=3D"=
+left"></td>
+                        <td style=3D"font-family: Arial, sans-serif; font-w=
+eight: normal; font-size: 12px; color:#000000; padding-bottom: 18px;" class=
+=3D"padding_bottom_0" valign=3D"top" align=3D"left">
+                            <table cellpadding=3D"0" cellspacing=3D"0" bord=
+er=3D"0" width=3D"100%">
+                                <tr>
+                                    <td align=3D"left" valign=3D"top">
+                                        <table cellpadding=3D"0" cellspacin=
+g=3D"0" border=3D"0">
+                                            <tr>
+                                                <th style=3D"font-family: A=
+rial, sans-serif; font-weight: normal; font-size: 14px; line-height: 20px; =
+color:#f22300; padding-bottom: 5px;" height=3D"18" width=3D"*" class=3D"blo=
+ck fullwidth padding_bottom_20" valign=3D"top" align=3D"left"><a href=3D"ht=
+tps://order.info.sbb.ch/r/gxmcc/sbb/ZCRTZFGpMm3RCj0z/ZP_0wNuG8WqEvGfp/eI8_O=
+HpRnFmM-v55/BWsL6mKpEzsEsT0199QwVQ.html?url=3Dhttps%3A%2F%2Fwww.sbb.ch%2Fen=
+%2Ftimetable%2Fmobile-apps%2Fsbb-mobile%2Ffaq.html" style=3D"font-family: H=
+elvetica, sans-serif; font-size: 14px; font-weight: bold; color: #f22300; t=
+ext-decoration: none;" target=3D"_blank">FAQ SBB Mobile and SBB Preview</a>=
+</th>
+                                                <th width=3D"20" style=3D"p=
+adding-bottom: 5px;" class=3D"block fullwidth" align=3D"left"></th>
+                                                <th style=3D"font-family: A=
+rial, sans-serif; font-weight: normal; font-size: 14px; line-height: 20px; =
+color:#f22300; padding-bottom: 5px;" height=3D"18" width=3D"*" class=3D"blo=
+ck fullwidth padding_bottom_20" valign=3D"top" align=3D"left"><a href=3D"ht=
+tps://order.info.sbb.ch/r/gxmcc/sbb/ZCRTZFGpMm3RCj1B/ZP_0wNuG8WqEvGfp/eI8_O=
+HpRnFmM-v55/zu7hJiKa2mas8xzypNlWFg.html?url=3Dhttps%3A%2F%2Fwww.sbb.ch%2Fen=
+%2Fhelp-and-contact%2Fprodukte-services%2Fapps%2Fsbb-mobile-sbb-preview%2Ff=
+aq-easyride.html" style=3D"font-family: Helvetica, sans-serif; font-size: 1=
+4px; font-weight: bold; color: #f22300; text-decoration: none;" target=3D"_=
+blank">FAQ EasyRide</a></th>
+                                                <th width=3D"20" style=3D"p=
+adding-bottom: 0px;" class=3D"hidden fullwidth" align=3D"left"></th>
+                                                <th style=3D"font-family: A=
+rial, sans-serif; font-weight: normal; font-size: 14px; line-height: 20px; =
+color:#f22300; padding-bottom: 0px;" height=3D"18" width=3D"*" class=3D"hid=
+den fullwidth padding_bottom_20" valign=3D"top" align=3D"left"><a href=3D"h=
+ttps://order.info.sbb.ch/r/gxmcc/sbb/ZCRTZFGpMm3RCj1B/ZP_0wNuG8WqEvGfp/eI8_=
+OHpRnFmM-v55/xc40agmBN_fSgK8dGNv2-Q.html?url=3Dhttps%3A%2F%2Fwww.sbb.ch%2Fe=
+n%2Ftimetable%2Fmobile-apps%2Fsbb-mobile%2Feasyride%2Fagb.html" style=3D"fo=
+nt-family: Helvetica, sans-serif; font-size: 14px; font-weight: bold; color=
+: #f22300; text-decoration: none;" target=3D"_blank">General terms and cond=
+itions (GTC)</a></th>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width=3D"20" class=3D"contentpadding" align=3D"=
+left"></td>
+                    </tr>
+                </table>
+                <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" wid=
+th=3D"700" class=3D"mainwidth red">
+                    <tr>
+                        <td height=3D"15" style=3D"height: 15px; font-size:=
+ 1px; line-height: 1px;" />
+                    </tr>
+                </table>
+                <!-- spacer -->
+                <table class=3D"mainwidth" width=3D"700" border=3D"0" cells=
+pacing=3D"0" cellpadding=3D"0">
+                    <tr>
+                        <td height=3D"26" style=3D"height: 26px; font-size:=
+ 1px; line-height: 1px;" />
+                    </tr>
+                </table>
+                <!-- /spacer -->
+                <!-- /futrher infos -->
+
+                <!-- footer -->
+                <table class=3D"mainwidth footer" width=3D"680" border=3D"0=
+" cellspacing=3D"0" cellpadding=3D"0" style=3D"background-color: #f5f5f5;">
+                    <tr>
+                        <td width=3D"100%" align=3D"left">
+                            <table width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0">
+                                <tr>
+                                    <td width=3D"100%" align=3D"center" cla=
+ss=3D"padding_top_40" style=3D"padding-top: 12px;">
+                                        <table border=3D"0" cellspacing=3D"=
+0" cellpadding=3D"0">
+                                            <tr>
+                                                <td align=3D"left" width=3D=
+"30" height=3D"31">
+                                                    <a href=3D"https://orde=
+r.info.sbb.ch/r/gxmcc/sbb/ZCRTZFGpMm3RCj1N/ZP_0wNuG8WqEvGfp/eI8_OHpRnFmM-v5=
+5/4uJNbu8BO2_cPQGcTyJDNw.ch?url=3Dhttps%3A%2F%2Fwww.facebook.com%2Fsbb.cff.=
+ffs.ch" target=3D"_blank">
+                                                        <img src=3D"http://=
+mailing.sbb.ch/images0/framework/2015/flash_nl/fb_dark.jpg" alt=3D"" width=
+=3D"30" height=3D"31" border=3D"0" style=3D"display: block;" />
+                                                    </a>
+                                                </td>
+                                                <td align=3D"left" width=3D=
+"20" />
+                                                <td align=3D"left" width=3D=
+"30" height=3D"31">
+                                                    <a href=3D"https://orde=
+r.info.sbb.ch/r/gxmcc/sbb/ZCRTZFGpMm3RCj1W/ZP_0wNuG8WqEvGfp/eI8_OHpRnFmM-v5=
+5/wPN07siTD-Uni56vbM9gfg?url=3Dhttps%3A%2F%2Ftwitter.com%2FRailService" tar=
+get=3D"_blank">
+                                                        <img src=3D"http://=
+mailing.sbb.ch/images0/framework/2015/flash_nl/twitter_dark.jpg" alt=3D"" w=
+idth=3D"30" height=3D"31" border=3D"0" style=3D"display: block;" />
+                                                    </a>
+                                                </td>
+                                                <td align=3D"left" width=3D=
+"20" />
+                                                <td align=3D"left" width=3D=
+"30" height=3D"31">
+                                                    <a href=3D"https://orde=
+r.info.sbb.ch/r/gxmcc/sbb/ZCRTZFGpMm3RCj1c/ZP_0wNuG8WqEvGfp/eI8_OHpRnFmM-v5=
+5/dzCOVNwD3uP8d2ghxDDpfA?url=3Dhttps%3A%2F%2Finstagram.com%2Fsbbcffffs%2F%3=
+Fhl%3Den" target=3D"_blank">
+                                                        <img src=3D"http://=
+mailing.sbb.ch/images0/framework/2015/flash_nl/insta_dark.jpg" alt=3D"" wid=
+th=3D"30" height=3D"31" border=3D"0" style=3D"display: block;" />
+                                                    </a>
+                                                </td>
+                                                <td align=3D"left" width=3D=
+"20" />
+                                                <td align=3D"left" width=3D=
+"30" height=3D"31">
+                                                    <a href=3D"https://orde=
+r.info.sbb.ch/r/gxmcc/sbb/ZCRTZFGpMm3RCj1i/ZP_0wNuG8WqEvGfp/eI8_OHpRnFmM-v5=
+5/hL4JACf-m8cx78uR2vLJLA?url=3Dhttps%3A%2F%2Fblog.sbb.ch%2F" target=3D"_bla=
+nk">
+                                                        <img src=3D"http://=
+mailing.sbb.ch/images0/framework/2015/flash_nl/bing_dark.jpg" alt=3D"" widt=
+h=3D"30" height=3D"31" border=3D"0" style=3D"display: block;" />
+                                                    </a>
+                                                </td>
+                                                <td align=3D"left" width=3D=
+"20" />
+                                                <td align=3D"left" width=3D=
+"30" height=3D"31">
+                                                    <a href=3D"https://orde=
+r.info.sbb.ch/r/gxmcc/sbb/ZCRTZFGpMm3RCj1o/ZP_0wNuG8WqEvGfp/eI8_OHpRnFmM-v5=
+5/C1vrncXe7F62tGyaHBeDVA?url=3Dhttps%3A%2F%2Fwww.youtube.com%2Fsbbcffffs" t=
+arget=3D"_blank">
+                                                        <img src=3D"http://=
+mailing.sbb.ch/images0/framework/2015/flash_nl/yt_dark.jpg" alt=3D"" width=
+=3D"30" height=3D"31" border=3D"0" style=3D"display: block;" />
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height=3D"30" style=3D"height: 30px; font-size:=
+ 1px; line-height: 1px;" />
+                    </tr>
+                    <tr>
+                        <td width=3D"100%" align=3D"left" style=3D"padding-=
+bottom: 30px;" class=3D"padding_bottom_60">
+                            <table width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0">
+                                <tr>
+                                    <th align=3D"left" class=3D"contentpadd=
+ing" width=3D"40" />
+                                    <th align=3D"left" class=3D"block fullw=
+idth padding_bottom_30" width=3D"267" valign=3D"top">
+                                        <table width=3D"100%" border=3D"0" =
+cellspacing=3D"0" cellpadding=3D"0">
+                                            <tr>
+                                                <td align=3D"left">
+                                                    <table border=3D"0" cel=
+lspacing=3D"0" cellpadding=3D"0">
+                                                        <tr>
+                                                            <td style=3D"wh=
+ite-space:nowrap;line-height:11px;padding-bottom: 12px;"><img src=3D"http:/=
+/mailing.sbb.ch/images0/framework/sbb_nl/icon_link.gif" width=3D"11" height=
+=3D"11" border=3D"0" alt=3D"" />&#160;</td>
+                                                            <td align=3D"le=
+ft" style=3D"font-family: Arial, sans-serif; font-weight: bold; font-size: =
+14px; line-height: 20px; color:#4c4c4c;padding-bottom: 12px;">
+                                                                <a href=3D"=
+https://order.info.sbb.ch/r/gxmcc/sbb/ZCRTZFGpMm3RCj1u/ZP_0wNuG8WqEvGfp/eI8=
+_OHpRnFmM-v55/6rrSxXe9ll8l1hilpfycCg?url=3Dhttps%3A%2F%2Fwww.sbb.ch%2Fen" t=
+arget=3D"_blank" style=3D"font:bold 14px Arial,Helvetica,sans-serif;color:#=
+566373;text-decoration:none;">Your account on sbb.ch.</a>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </th>
+                                    <th align=3D"left" class=3D"block fullw=
+idth" width=3D"66" />
+                                    <th align=3D"left" class=3D"block fullw=
+idth" width=3D"267" valign=3D"top">
+                                        <table width=3D"100%" border=3D"0" =
+cellspacing=3D"0" cellpadding=3D"0">
+                                            <tr>
+                                                <td valign=3D"top" align=3D=
+"left" style=3D"font-family: Arial, sans-serif; font-weight: normal; font-s=
+ize: 14px; line-height: 20px; color:#4c4c4c;">
+                                                    SBB CFF FFS<br />Wylers=
+trasse 123/125<br />CH-3000 Bern 65<br /><br />VAT number: CHE-102.909.703
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign=3D"top" align=3D=
+"left" style=3D"font-family: Arial, sans-serif; font-size: 14px; font-weigh=
+t: bold; line-height: 20px; color:#4c4c4c;">
+                                                    <a href=3D"https://orde=
+r.info.sbb.ch/r/gxmcc/sbb/ZCRTZFGpMm3RCj12/ZP_0wNuG8WqEvGfp/eI8_OHpRnFmM-v5=
+5/Yh_0Hf1ZW9iYzhZ0_ZmXoA?url=3Dhttps%3A%2F%2Fwww.sbb.ch%2Fen" style=3D"font=
+-family: Arial, sans-serif; font-size: 14px; font-weight: bold; line-height=
+: 20px; color:#4c4c4c;" target=3D"_blank">sbb.ch</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </th>
+                                    <th align=3D"left" class=3D"contentpadd=
+ing" width=3D"40" />
+                                </tr>
+                                <tr>
+                                    <td colspan=3D"5" height=3D"30" style=
+=3D"height: 30px; font-size: 1px; line-height: 1px;" />
+                                </tr>
+                                <tr>
+                                    <td class=3D"contentpadding" width=3D"4=
+0" />
+                                    <td colspan=3D"3" width=3D"580" class=
+=3D"fullwidth" style=3D"font-family: Arial, sans-serif; font-weight: normal=
+; font-size: 14px; line-height: 20px; color:#4c4c4c;">
+                                        If you have any questions about you=
+r order or your journey, please contact the <a href=3D"https://www.sbb.ch/e=
+n/meta/kontakte/ticketshop-onlinetickets-mobiletickets.html" style=3D"font-=
+family: Arial, sans-serif; font-size: 14px; font-weight: bold; line-height:=
+ 20px; color:#4c4c4c;" target=3D"_blank">SBB Contact Center</a>. Please sta=
+te your order number and the date of travel for each enquiry.
+                                    </td>
+                                    <td class=3D"contentpadding" width=3D"4=
+0" />
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <!-- /footer -->
+                <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" wid=
+th=3D"700" class=3D"mainwidth">
+                    <tr>
+                        <td height=3D"15" style=3D"height: 15px; font-size:=
+ 1px; line-height: 1px;" />
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+<img src=3D"https://order.info.sbb.ch/r/gxmoc/sbb/ZCRTZFGpMm3RCj1-/ZP_0wNuG=
+8WqEvGfp/eI8_OHpRnFmM-v55/h5Tfe1wjlcYifj3pUSUEwA.gif?url=3Dhttps%3A%2F%2Fwe=
+b.inxmail-commerce.com%2Ftracking%2Ftransparent.gif" width=3D"1" height=3D"=
+1" style=3D"width: 1px; height: 1px" border=3D"0" /></body>
+
+</html>
+
+------=_Part_8912118_521483281.1694495936024--

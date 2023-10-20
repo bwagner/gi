@@ -1,0 +1,91 @@
+Delivered-To: wernbag@gmail.com
+Received: by 2002:a05:6f02:840f:b0:56:fee6:831c with SMTP id v15csp561549rce;
+        Thu, 14 Sep 2023 08:14:41 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHpo+jONfxNtA+H03gEO3oY/X6mxMhQGGK0Slpv/c23N4kfe5vaG22LVzvTIVWnLX56+xM6s0jB+/4=
+X-Received: by 2002:a19:6412:0:b0:500:9734:545a with SMTP id y18-20020a196412000000b005009734545amr3416190lfb.5.1694704481067;
+        Thu, 14 Sep 2023 08:14:41 -0700 (PDT)
+Authentication-Results: mx.google.com;
+       spf=fail (google.com: domain of srs0=amuo=e6=amazonses.com=0100018a943f27dc-174d4c21-1d54-4d4f-a9f0-ab45df7ab241-000000@harris.ch does not designate 54.240.48.6 as permitted sender) smtp.mailfrom="SRS0=AMUo=E6=amazonses.com=0100018a943f27dc-174d4c21-1d54-4d4f-a9f0-ab45df7ab241-000000@harris.ch";
+       dkim=pass header.i=@sendowl.com header.s=byvlvtxxdkutatmxjyys77dqiqdpd755 header.b=TVmBhkGm;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=TIuW8hLN
+Received-SPF: fail (google.com: domain of srs0=amuo=e6=amazonses.com=0100018a943f27dc-174d4c21-1d54-4d4f-a9f0-ab45df7ab241-000000@harris.ch does not designate 54.240.48.6 as permitted sender) client-ip=54.240.48.6;
+Received: by 2002:a05:6402:4502:b0:523:fa4:b5cc with POP3 id ez2-20020a056402450200b005230fa4b5ccmf2605304edb.2;
+        Thu, 14 Sep 2023 08:14:41 -0700 (PDT)
+X-Gmail-Fetch-Info: me@bernhardwagner.net 1 mail.harris.ch 995 bwagner
+Return-Path: <SRS0=AMUo=E6=amazonses.com=0100018a943f27dc-174d4c21-1d54-4d4f-a9f0-ab45df7ab241-000000@harris.ch>
+X-Original-To: pragprog.com@bernhardwagner.net
+Delivered-To: bwagner@harris.ch
+Received: from a48-6.smtp-out.amazonses.com (a48-6.smtp-out.amazonses.com [54.240.48.6])
+	by mail.harris.ch (Postfix) with ESMTPS id C80E588D86
+	for <pragprog.com@bernhardwagner.net>; Thu, 14 Sep 2023 17:11:22 +0200 (CEST)
+Authentication-Results: mail.harris.ch;
+	dkim=pass (1024-bit key; unprotected) header.d=sendowl.com header.i=@sendowl.com header.b="TVmBhkGm";
+	dkim=pass (1024-bit key; unprotected) header.d=amazonses.com header.i=@amazonses.com header.b="TIuW8hLN";
+	dkim-atps=neutral
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=byvlvtxxdkutatmxjyys77dqiqdpd755; d=sendowl.com; t=1694704281;
+	h=Date:From:Reply-To:To:Message-ID:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding;
+	bh=cpDty6W1Lf//s5rTHsowMyrgo7aE4vbpBwmGo8O6hx4=;
+	b=TVmBhkGmWzN4c5kAbsk2+fl3tVB2te0eqwcD+Ej0+fW4vOPGZcGI0o3HpvEG8g8B
+	QOU43AqxiRMDlSnG7rVZry9newPuOfhLzuhUBwL1gXDzlBy1dBRXG+8kMYiz/T9mZFy
+	SPC3/D6tfT10f5/cxSvaV8jlNWvCmqzfPVIb4OPk=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1694704281;
+	h=Date:From:Reply-To:To:Message-ID:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding:Feedback-ID;
+	bh=cpDty6W1Lf//s5rTHsowMyrgo7aE4vbpBwmGo8O6hx4=;
+	b=TIuW8hLNmXjyuIyxPd/7mAuVMsI4AZXrDUT+a6lanLaJCSE+VcDzaqW7VDpJDRk+
+	TOv99YOF0UIB1kHNGw8hzn06Aq9UtvvgSm6Lbi2T8OkjprtMCcwvuKKDlDm2i9uPsKa
+	trqagsH8JZGZ1W+aPbFoKolutFhgGsPwwmhbzIkE=
+Date: Thu, 14 Sep 2023 15:11:21 +0000
+From: Pragmatic Bookshelf Downloads <noreply@sendowl.com>
+Reply-To: support@pragprog.com
+To: pragprog.com@bernhardwagner.net
+Message-ID: <0100018a943f27dc-174d4c21-1d54-4d4f-a9f0-ab45df7ab241-000000@email.amazonses.com>
+Subject: Invoice/Receipt for order 0131872653
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Feedback-ID: 1.us-east-1.zM0e8jptr3nYJ+L8focYx0NSLqewThCE8sGuA1G74DM=:AmazonSES
+X-SES-Outgoing: 2023.09.14-54.240.48.6
+X-Spam-Status: No, score=3.7 required=5.5 tests=BAYES_50,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
+	KAM_ASCII_DIVIDERS,KAM_NUMSUBJECT,L_INV_PAY,L_SENDER_MISMATCH,
+	RCVD_IN_DNSWL_NONE,RCVD_IN_MSPIKE_H2,SPF_HELO_NONE,SPF_PASS
+	autolearn=no autolearn_force=no version=3.4.2
+X-Spam-Level: ***
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.harris.ch
+X-Spam-Relay-Countries: US
+X-Spam-DCC: :trusty 1480; Body=1 Fuz1=1 Fuz2=1
+
+=0D
+INVOICE/RECEIPT FOR ORDER #0131872653=0D
+----------------------------------------------------------------=0D
+=0D
+From:                   Pragmatic Programmers, LLC=0D
+Address:                9650 Strickland Rd Ste 103-255, Raleigh NC 27615,=
+ USA=0D
+Order Number:           0131872653=0D
+Date:                   2023-09-14=0D
+Payment Transaction ID: ch_3NqHCKEPXdZaDdWn1TVdFptM=0D
+Customer Name:          Bernhard Wagner=0D
+Customer Email:         pragprog.com@bernhardwagner.net=0D
+Billing Address:=0D
+St=C3=BCssistrasse 58=0D
+Z=C3=BCrich=0D
+Z=C3=BCrich=0D
+8057=0D
+=0D
+Items Purchased:=0D
+From Objects to Functions x 1 @ $25.95=0D
+=0D
+Sub-Total:              $15.57=0D
+Discount:               $10.38=0D
+Total:                  $15.57=0D
+----------------------------------------------------------------=0D
+=0D
+Thank you for your support! =0D
+Want to be the first to hear about all the latest titles and deals? Sign =
+up for our newsletter at https://pragprog.com/newsletter/.=0D
+Need help? Please email support@pragprog.com, and be sure to include the =
+contents of this email.=0D

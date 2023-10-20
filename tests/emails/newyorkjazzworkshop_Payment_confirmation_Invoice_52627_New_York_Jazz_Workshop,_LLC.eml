@@ -1,0 +1,1273 @@
+Delivered-To: wernbag@gmail.com
+Received: by 2002:a05:6f02:a449:b0:22:d3e0:38ae with SMTP id e9csp2575454rcb;
+        Mon, 5 Sep 2022 09:44:36 -0700 (PDT)
+X-Google-Smtp-Source: AA6agR5Y06QQIfQFIYm8vp4NLCwENwRJpUw1OXNzb6mNSzJUdNcg46v1YMmzQQ3WWiD0bYTOypsqAW4/jv8=
+X-Received: by 2002:a05:6512:3a88:b0:494:8985:6c13 with SMTP id q8-20020a0565123a8800b0049489856c13mr9428127lfu.478.1662396274168;
+        Mon, 05 Sep 2022 09:44:34 -0700 (PDT)
+Authentication-Results: mx.google.com;
+       spf=fail (google.com: domain of srs0=m4iz=zi=sg1.n.intuit.com=bounces+8551759-0da2-me=bernhardwagner.net@harris.ch does not designate 168.245.70.213 as permitted sender) smtp.mailfrom="SRS0=M4iZ=ZI=sg1.n.intuit.com=bounces+8551759-0da2-me=bernhardwagner.net@harris.ch";
+       dkim=pass header.i=@n.intuit.com header.s=s1 header.b="D/j81SfY"
+Received-SPF: fail (google.com: domain of srs0=m4iz=zi=sg1.n.intuit.com=bounces+8551759-0da2-me=bernhardwagner.net@harris.ch does not designate 168.245.70.213 as permitted sender) client-ip=168.245.70.213;
+Received: by 2002:a05:6512:3c9b:b0:492:88d3:8370 with POP3 id h27-20020a0565123c9b00b0049288d38370mf11758488lfv.3;
+        Mon, 05 Sep 2022 09:44:34 -0700 (PDT)
+X-Gmail-Fetch-Info: me@bernhardwagner.net 1 mail.harris.ch 995 bwagner
+Return-Path: <SRS0=M4iZ=ZI=sg1.n.intuit.com=bounces+8551759-0da2-me=bernhardwagner.net@harris.ch>
+X-Original-To: me@bernhardwagner.net
+Delivered-To: bwagner@harris.ch
+Received: from o3.sg.n.intuit.com (o3.sg.n.intuit.com [168.245.70.213])
+	by mail.harris.ch (Postfix) with ESMTPS id 2661485C78
+	for <me@bernhardwagner.net>; Mon,  5 Sep 2022 18:44:13 +0200 (CEST)
+Authentication-Results: mail.harris.ch;
+	dkim=pass (2048-bit key; unprotected) header.d=n.intuit.com header.i=@n.intuit.com header.b="D/j81SfY";
+	dkim-atps=neutral
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=n.intuit.com;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:to:
+	cc;
+	s=s1; bh=XluWd/WrZNlF779TAS3qnrArW64TOy2Du4Li7UjhciM=;
+	b=D/j81SfYmweU58yeGXJsXpctMM2yOZkUaIBP3gqt73tN/uXDik4AJe91nU2kChVBHTeM
+	90Nnv7oSYB4WRWX6JrSuAXcliIFW8Tv9I2an8FTioaBtg40iPRLfKiXTbrT86svt2mHLph
+	0oZ4c5eltFZataRwiiqsVU93rBe+1jPgkO9hFiAW0n8z7U7EIrAXw+U4TSnBH/w1BJp/uE
+	twYFgE/d5vW9TrnhBhgClA40kTdTmZV/qz6ykJBCFG68DjL55u7ADEVSz1N0XIYz9x/Npj
+	Gx2H9a/00WURKEuinEenAJR2uK6HoSIjc2uHG9ilD/yJfxkug/5Ti+HCHoBfb1AQ==
+Received: by filterdrecv-fd7b46bd6-zw2kk with SMTP id filterdrecv-fd7b46bd6-zw2kk-1-6316275B-29
+        2022-09-05 16:44:11.644947925 +0000 UTC m=+930793.637866657
+Received: from ODU1MTc1OQ (unknown)
+	by geopod-ismtpd-6-0 (SG) with HTTP
+	id GRZF1gyhQJqEF_VOOm0UcA
+	for <me@bernhardwagner.net>;
+	Mon, 05 Sep 2022 16:44:11.520 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Date: Mon, 05 Sep 2022 16:44:11 +0000 (UTC)
+From: QuickBooks Payments <quickbooks@notification.intuit.com>
+Mime-Version: 1.0
+Subject: Payment confirmation: Invoice #15337 (New York Jazz Workshop, LLC)
+X-Accept-Language: en
+Message-ID: <GRZF1gyhQJqEF_VOOm0UcA@geopod-ismtpd-6-0>
+X-SG-EID: 
+ =?us-ascii?Q?iBsuyamlS+10LFDlSlZ1VMjK8cqwYrKesbXCKxJuxuJjqHQKXk1LPRy3voJWRN?=
+ =?us-ascii?Q?clMGviC2kgUmDkjz8taq45wThWX4kUPb7OItdye?=
+ =?us-ascii?Q?no1WdMDhJAH9kKvBRShbokz6lq65N+LWZh2y3DT?=
+ =?us-ascii?Q?ppYz32IDNFyTLj7=2FSkL4GR2LZ7GC8SvSjoAbnPn?=
+ =?us-ascii?Q?hrGKINQcXD0O=2FR=2F0nbM1oC+BG3QKHocps1yf6ua?=
+ =?us-ascii?Q?iaR6zEh4B6aN=2FicE1bq=2F3diJSFBi6z5PjIKBwoU?=
+ =?us-ascii?Q?0GnUuReLtd95R0=2FJzEUbg=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb=2F8yqsaMrtKMv205eRnwXaxeWwljgw0wG0r=2F9CrYF8?=
+ =?us-ascii?Q?odI95Zotjx4dU93SU2zGOAM1DkqDbt0=2F+QGQAoP?=
+ =?us-ascii?Q?ZNVlq1KjeN5cDXqemdVswnsTnCjcHZlBg8O8Ej1?=
+ =?us-ascii?Q?nH+7=2F4ADg6jPmzAVFCcU7zstvdKC+gZuZ1j+arp?=
+ =?us-ascii?Q?sgWIU5No5tYbum8IWnZ2N5oisfV+gSIYEKfKwYX?=
+ =?us-ascii?Q?vlz+j3ZBElGxvjR0dP4GstR5=2FcWGvcw1LVSXO0n?=
+ =?us-ascii?Q?QRjvELjpDxTdE0vfI=2Fn2WP=2FYDS7VpJR=2FttehY2q?=
+ =?us-ascii?Q?ltwr+EJYsdnItY9OhmDHfNPf+RyXBlKKliRUbcB?=
+ =?us-ascii?Q?85frOVZTHfAj85bhXxP3ErZtfr1P9PrCCh5PGHO?=
+ =?us-ascii?Q?CQHk0zQvFrT4vFiBEVoMFvgE9UKCq5PsfceoUdD?=
+ =?us-ascii?Q?W4g6u+MODiUe+7sbpjicV9rI71n3W8Lb=2Fj3QyYe?=
+ =?us-ascii?Q?KE3dS7gdqc1UZP56yX2D3EjT=2Fqu4TLcHYrF3M4H?=
+ =?us-ascii?Q?JTDvQ=2F+VHefbilrKh8QSTT=2FmyBdnFtieeCDUheB?=
+ =?us-ascii?Q?Iuewddj+xR5nQIw+NTwxSV=2FcrsNFlo7M6jDrVAc?=
+ =?us-ascii?Q?nnI42h0XnvrbpyLh5oLwcLdRJxgQ+abiNO8R0of?=
+ =?us-ascii?Q?SoP=2F6zLN2yRp2Y8zYRzekOPXiXSi4dBqae53wc=2F?=
+ =?us-ascii?Q?F2s98Jxo4EqRAIw=3D=3D?=
+To: me@bernhardwagner.net
+X-Entity-ID: tlk9D+izFVUfcnja3HmopQ==
+X-Spam-Status: No, score=-1.1 required=5.5 tests=BAYES_50,DCC_CHECK,
+	DKIM_INVALID,DKIM_SIGNED,FSL_BULK_SIG,HTML_MESSAGE,KAM_DMARC_STATUS,
+	KAM_REALLYHUGEIMGSRC,L_INV_PAY,MIME_HTML_ONLY,RCVD_IN_MSPIKE_H2,
+	SCC_BODY_URI_ONLY,SPF_HELO_NONE,SPF_PASS,T_REMOTE_IMAGE,
+	T_SCC_BODY_TEXT_LINE,UNPARSEABLE_RELAY,USER_IN_DEF_SPF_WL autolearn=no
+	autolearn_force=no version=3.4.2
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.harris.ch
+X-Spam-Relay-Countries: US
+X-Spam-DCC: :trusty 1480; Body=1 Fuz1=many Fuz2=1
+
+<!DOCTYPE html>
+<html lang=3D"">
+<!--assign parameters-->
+
+<head>
+  <meta content=3D"text/html; charset=3Dutf-8" http-equiv=3D"Content-Type">
+  <meta content=3D"yes" name=3D"apple-mobile-web-app-capable">
+  <meta content=3D"yes" name=3D"apple-touch-fullscreen">
+  <meta content=3D"black" name=3D"apple-mobile-web-app-status-bar-style">
+  <meta content=3D"telephone=3Dno" name=3D"format-detection">
+  <meta content=3D"initial-scale=3D1, maximum-scale=3D1" name=3D"viewport">
+  <title></title>
+  <style type=3D"text/css">
+    /* @import url("http://hello.myfonts.net/count/2e6650"); */
+
+    .hideme {
+      display: none !important;
+      mso-hide: all;
+    }
+
+    div, p, a, li, td {
+      -webkit-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+    }
+
+    body {
+      margin: 0 !important;
+      padding: 0;
+      min-width: 100%;
+    }
+
+    table td {
+      border-collapse: collapse;
+    }
+
+    .ExternalClass {
+      width: 100%;
+    }
+
+    .ExternalClass * {
+      line-height: 110%;
+    }
+
+    img {
+      -ms-interpolation-mode: bicubic;
+    }
+
+    div[style*=3D"margin: 16px 0"] {
+      margin: 0 auto !important;
+    }
+
+    @font-face {
+      font-family: AvenirNextforINTUIT-Bold;
+      src: url('https://designsystem.intuit.com/wp-content/themes/ids-core/=
+fonts/AvenirNext forINTUIT W05 Bold_web.woff2') format("woff2"),
+      url('https://designsystem.intuit.com/wp-content/themes/ids-core/fonts=
+/AvenirNext forINTUIT W05 Bold_web.woff') format("woff");
+    }
+
+    @font-face {
+      font-family: AvenirNextforINTUIT-Demi;
+      src: url('https://designsystem.intuit.com/wp-content/themes/ids-core/=
+fonts/AvenirNext forINTUIT W05 Demi_web.woff2') format("woff2"),
+      url('https://designsystem.intuit.com/wp-content/themes/ids-core/fonts=
+/AvenirNext forINTUIT W05 Demi_web.woff') format("woff");
+    }
+
+    @font-face {
+      font-family: AvenirNextforINTUIT-Medium;
+      src: url('https://designsystem.intuit.com/wp-content/themes/ids-core/=
+fonts/AvenirNext forINTUIT W05 Mediu_web.woff2') format("woff2"),
+      url('https://designsystem.intuit.com/wp-content/themes/ids-core/fonts=
+/AvenirNext forINTUIT W05 Mediu_web.woff') format("woff");
+    }
+
+    @font-face {
+      font-family: AvenirNextforINTUIT-Regular;
+      src: url('https://designsystem.intuit.com/wp-content/themes/ids-core/=
+fonts/AvenirNext forINTUIT W05 Rg_web.woff2') format("woff2"),
+      url('https://designsystem.intuit.com/wp-content/themes/ids-core/fonts=
+/AvenirNext forINTUIT W05 Rg_web.woff') format("woff");
+    }
+
+    /*This resolves the issue when iphone puts links on dates, etc.*/
+    a[x-apple-data-detectors=3Dtrue] {
+      color: inherit !important;
+      text-decoration: none !important;
+    }
+
+    /*This resolves the issue when Samsung puts links on dates, etc.*/
+    #MessageViewBody a {
+      color: inherit;
+      text-decoration: none;
+      font-size: inherit;
+      font-family: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+    }
+
+    /*This resolves the issue when Gmail puts links on dates, etc.*/
+    u + #body a {
+      color: inherit;
+      text-decoration: none;
+      font-size: inherit;
+      font-family: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+    }
+
+    @media only screen and (min-device-width: 320px) and (max-device-width:=
+ 1024px) {
+      a[href^=3D"tel"],
+      a[href^=3D"sms"],
+      a {
+        color: inherit;
+        cursor: default;
+        text-decoration: none;
+      }
+    }
+
+    @media screen and (max-device-width: 600px), screen and (max-width: 640=
+px) {
+      *[class=3Dto100pc] {
+        width: 100% !important;
+        height: auto !important;
+      }
+
+      *[class=3Dto95pc] {
+        width: 95% !important;
+        height: auto !important;
+      }
+
+      *[class=3Dnomob] {
+        display: none !important;
+      }
+
+      *[class=3Dnominwidth] {
+        min-width: 2px !important;
+      }
+    }
+
+    @media screen and (max-width: 599px) {
+      .logo_mobile {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+      }
+
+      .logo_mobile_max320 {
+        display: block !important;
+        width: 95% !important;
+        height: auto !important;
+        max-width: 380px !important;
+      }
+
+      .hide {
+        display: none !important;
+        width: 1px !important;
+        height: 1px !important;
+      }
+
+      .text24to19 {
+        font-size: 19px !important;
+        line-height: 24px !important;
+      }
+
+      .text16to14 {
+        font-size: 14px !important;
+        line-height: 16px !important;
+      }
+
+      .textMobile32to24 {
+        font-size: 24px !important;
+        line-height: 26px !important;
+      }
+
+      .textMobile24to20 {
+        font-size: 20px !important;
+        line-height: 26px !important;
+      }
+
+      .textMobile24to18 {
+        font-size: 18px !important;
+        line-height: 26px !important;
+      }
+
+      .textMobile24to20Medium {
+        font-size: 20px !important;
+        line-height: 26px !important;
+      }
+
+      .textMobile20to16 {
+        font-size: 16px !important;
+        line-height: 20px !important;
+      }
+
+
+      .textMobile16to14 {
+        font-size: 16px !important;
+        line-height: 18px !important;
+      }
+
+      .textMobile16to16 {
+        font-size: 16px !important;
+        line-height: 18px !important;
+      }
+
+      .iconInMobile {
+        width: 40px;
+        height: 40px;
+      }
+
+
+      .text14to12 {
+        font-size: 12px !important;
+        line-height: 20px !important;
+      }
+
+      .shrinkto10 {
+        width: 1px;
+        height: 10px !important;
+      }
+
+      .shrinkMobileto16 {
+        width: 1px;
+        height: 16px !important;
+      }
+
+
+      .expandto49 {
+        width: 1px;
+        height: 49px !important;
+      }
+
+      .expandto25 {
+        width: 1px;
+        height: 30px !important;
+      }
+
+      .shrinkto20 {
+        width: 1px;
+        height: 20px !important;
+      }
+
+      .shrinkto24 {
+        width: 1px;
+        height: 24px !important;
+      }
+
+      .width20 {
+        width: 20px;
+        height: 6px !important;
+      }
+
+      .logo_merchant {
+        width: 20px;
+        height: 10px;
+      }
+
+    }
+
+    @media yahoo {
+      .desktopSection110 {
+        display: inline !important;
+      }
+    }
+  </style>
+</head>
+<body bgcolor=3D"#ECEEF1" id=3D"body"
+      style=3D"min-width:100%; padding:0; margin:0; -webkit-text-size-adjus=
+t:none; background-color:#eceef1;">
+<table align=3D"center" bgcolor=3D"#ECEEF1" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0"
+       style=3D"margin: 0 auto;" width=3D"100%">
+  <tr>
+    <td align=3D"center" bgcolor=3D"#ECEEF1">
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"to10=
+0pc" width=3D"100%">
+
+        <tr>
+          <td align=3D"center">
+            <table align=3D"center" bgcolor=3D"#ECEEF1" border=3D"0" cellpa=
+dding=3D"0"
+                   cellspacing=3D"0" class=3D"to100pc" style=3D"max-width: =
+640px;"
+                   width=3D"640">
+              <tr>
+                <td align=3D"center">
+                  <a href=3D"https://elink.prd.intuit.com/ls/click?upn=3DIC=
+28GYYrRhMJ-2FrBfQch14gWPXyreHGRnWXNoszRQdfk2P0p4Ib9Mr8bjvFCxdiWZUmMp_aoQ-2F=
+urHYnDKUeUNwNn2lzon3dByUcZgg87PEpOgzo9x5v647KeeECBUs32-2FNSaIjz90Sxz5EL-2Fk=
+2HZe9f3bCseu7icJccDsQRJ13PvAHjs2ADVJCe-2F6xVcCMhTpdE6xN1JIbi6MQQ2-2BKk9xbLS=
+TwEzDEEVd4fXkT2n7glveU1DwyvY8VHFbntvK7aBiUwRZz1lpIicU3zrFKeOGGdorfbpCEcZJEi=
+P7pLYJqdsnVkArClUkoI7gCGQWqXb91lmVxPE9-2FO3SH8GXbNAu7uXuo2g15kBEBJdm-2FtQ-2=
+FbRedVaObhPHqqXZ-2FW349faJoSE60lOGX6d0dtUBjS9HXrPxmqLfOQx2eEAnEPabNHEXaB-2B=
+217j-2BM0N97zhmG3GeWTLG4dpFScLTzVw3Yoa-2FWWLqmjuOS0ydhquzI2SvmpJ3vDy9fAXiBj=
+ELCkcA6CKD8GWS68mAo5VUhE0PcJ1zJuKqfXsx4yZuA55vaXvcir7BKW-2BVmI44Bq6T5J5mXb6=
+T3TmiPUB-2BMK0oUPYNnWdagIqxfKO9v4DPiGMLKPnSLTIA3NebNCCM-2FRktJppW8Kg996w7R2=
+1ZYah-2BRMraMIv3XJUwokYHWHlIOpsWyNSDckEV9Uwpw7aC5HLQePugz3zBtCmQKmqKB8JiGfM=
+uQ7JL-2BzmmYDmh6MtKKi1SVR6Bwx-2BdbcZV6UkAV16IZSXigasttAjNyrFFgaMSmBpHz2Ubdf=
+3UcVojixdqkLkWJhepxqs6qdTCxo2EEqQm-2Fi7Up6PPYQkRnqwpKvUh9nRuX5jV1RljtTPTBgv=
+7pC6avI6v369q-2Fi8zM5QB-2FCtre6XvBb0CcdvJpx7V0NybY2iNAAbUpkqP4z5A-3D-3D"
+                     target=3D"_blank"><img alt=3D"Intuit QuickBooks" borde=
+r=3D"0"
+                                          class=3D"hide" height=3D"70"
+                                          src=3D"https://static.cns-icn-pro=
+d.a.intuit.com/logo_desktop.gif"
+                                          style=3D"display:block;" width=3D=
+"600"></a>
+                </td>
+              </tr>
+              <tr>
+                <td style=3D"line-height:1px;">
+                  <a href=3D"https://elink.prd.intuit.com/ls/click?upn=3DIC=
+28GYYrRhMJ-2FrBfQch14gWPXyreHGRnWXNoszRQdfk2P0p4Ib9Mr8bjvFCxdiWZW31c_aoQ-2F=
+urHYnDKUeUNwNn2lzon3dByUcZgg87PEpOgzo9x5v647KeeECBUs32-2FNSaIjz90Sxz5EL-2Fk=
+2HZe9f3bCseu7icJccDsQRJ13PvAHjs2ADVJCe-2F6xVcCMhTpdE6xN1JIbi6MQQ2-2BKk9xbLS=
+TwEzDEEVd4fXkT2n7glveU1DwyvY8VHFbntvK7aBiUwRZz1lpIicU3zrFKeOGGdorfbpCEcZJEi=
+P7pLYJqdsnVkArClUkoI7gCGQWqXb91lmVxPE9-2FO3SH8GXbNAu7uXuo2g15kBEBJdm-2FtQ-2=
+FbRedVaObhPHqqXZ-2FW349faJoSE60lOGX6d0dtUBjS9HXrPxmqLfOQx2eEAnEPabNHEXaB-2B=
+217j-2BM0N97zhmG3GeWTLG4dpFScLTzVw3Yoa-2FWWLqmjuOS0ydhquzI2SvmpJ3vDy9fAXiBj=
+ELCkcA6CKD8GWS68mAo5VUhE0PcJ1zJuKqfXsx4yZuA55vaXvcir7BKW-2BVmI44Bq6T5J5mXb6=
+T3TmiPUB-2BMK0oUPYNnWdagIqxfKO9v4DPiGMLKPnSLTIA3NebNCCM-2FRktJppW8Kg996w7R2=
+1ZYah-2BRMraMIv3XJUwokYHWHlIOpsWyNSDckEV9Uwpw7aC5HLQePugz3zBtCmQKmqKB8JiGfM=
+uQ7JL-2BzmmYDmvlw9QDBjkh9zS05QjysbeCoQF30IdibnGHETINZf9d-2FTBFIN3HbIAWPFe5n=
+F8sDkmBSUvvj6JUjNZLnonRsnccf5XYSKAtYtY130YhudG6LYmS5SJSrtOqLhcJOtR2feyRdzaK=
+tuqNuT6v6kRmqqrZzG0FjFt-2BIHMr4-2BF2SGyFMNFJxNsUv629Sx3pkTdZokQ-3D-3D"
+                     target=3D"_blank"><img alt=3D"" border=3D"0"
+                                          class=3D"logo_mobile" height=3D"1=
+"
+                                          src=3D"https://static.cns-icn-pro=
+d.a.intuit.com/logo_mobile.gif"
+                                          style=3D"display:none;" width=3D"=
+1"></a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- End upper logo -->
+
+      <!-- Main Table -->
+  <tr>
+    <td align=3D"center">
+      <table align=3D"center" bordercolor=3D"white" bgcolor=3D"#FFFFFF" bor=
+der=3D"0"
+             cellpadding=3D"0" cellspacing=3D"0" class=3D"to95pc"
+             style=3D"max-width: 600px;" width=3D"600">
+        <tr>
+          <td align=3D"left" colspan=3D"2" height=3D"10"
+              style=3D"line-height:10px;max-height:10px;" valign=3D"top"><i=
+mg
+              alt=3D"" border=3D"0" height=3D"10"
+              src=3D"https://static.cns-icn-prod.a.intuit.com/corner1.gif"
+              style=3D"display:block;" width=3D"10"></td>
+          <td align=3D"right" colspan=3D"2" height=3D"10"
+              style=3D"line-height:10px;max-height:10px;" valign=3D"top"><i=
+mg
+              alt=3D"" border=3D"0" height=3D"10"
+              src=3D"https://static.cns-icn-prod.a.intuit.com/corner2.gif"
+              style=3D"display:block;" width=3D"10"></td>
+        </tr><!-- Start header -->
+        <tr>
+          <td colspan=3D"4" style=3D"line-height:10px;"><img alt=3D"" borde=
+r=3D"0"
+                                                         class=3D"shrinkto1=
+0"
+                                                         height=3D"31"
+                                                         src=3D"https://sta=
+tic.cns-icn-prod.a.intuit.com/spacer.gif"
+                                                         style=3D"display:b=
+lock;"
+                                                         width=3D"1"></td>
+        </tr>
+        <tr>
+          <td><img alt=3D"" border=3D"0" class=3D"width20" height=3D"10"
+                   src=3D"https://static.cns-icn-prod.a.intuit.com/spacer.g=
+if"
+                   style=3D"display:block;" width=3D"30"></td>
+          <td align=3D"left" style=3D"padding-top:0px;padding-bottom:6px;">=
+<span
+              class=3D"text16to14"
+              style=3D"font-size:16px; line-height:24px; font-family:Avenir=
+NextforINTUIT-Regular, Avenir Next, Avenir, Helvetica, sans-serif; color:#3=
+93A3D;"></span>
+          </td>
+          <td align=3D"right" style=3D"padding-top:0px;padding-bottom:6px;"=
+><span
+              class=3D"text16to14"
+              style=3D"font-size:16px; line-height:24px; font-family:Avenir=
+NextforINTUIT-Regular, Avenir Next , Avenir, Helvetica, sans-serif; color:#=
+393A3D;"><a
+              href=3D"https://elink.prd.intuit.com/ls/click?upn=3DIC28GYYrR=
+hMJ-2FrBfQch14svhSHNcad4F7WJ1vXMOdrNs-2B7GQVex15usB-2BMdNtIt0PwbV-2BYKm4Tq5=
+jfXHXOZbCZ77hOqlI95wipC58eL8i6IgBlVEMX0HkbUI5ED7rYCQ3To5BB-2BwuSJthP-2BWGRW=
+COfHPjgw9FX5m41fzVE7HTJNVoC9iElr5asaJN0G03NhQZb9YEqzZ-2FiwFoJlRQJve3r16k-2B=
+XZk2eBbn4Y-2FQr8YSxuOb72Kzr-2FUGHKQ7zqe15Hg9WL_aoQ-2FurHYnDKUeUNwNn2lzon3dB=
+yUcZgg87PEpOgzo9x5v647KeeECBUs32-2FNSaIjz90Sxz5EL-2Fk2HZe9f3bCseu7icJccDsQR=
+J13PvAHjs2ADVJCe-2F6xVcCMhTpdE6xN1JIbi6MQQ2-2BKk9xbLSTwEzDEEVd4fXkT2n7glveU=
+1DwyvY8VHFbntvK7aBiUwRZz1lpIicU3zrFKeOGGdorfbpCEcZJEiP7pLYJqdsnVkArClUkoI7g=
+CGQWqXb91lmVxPE9-2FO3SH8GXbNAu7uXuo2g15kBEBJdm-2FtQ-2FbRedVaObhPHqqXZ-2FW34=
+9faJoSE60lOGX6d0dtUBjS9HXrPxmqLfOQx2eEAnEPabNHEXaB-2B217j-2BM0N97zhmG3GeWTL=
+G4dpFScLTzVw3Yoa-2FWWLqmjuOS0ydhquzI2SvmpJ3vDy9fAXiBjELCkcA6CKD8GWS68mAo5VU=
+hE0PcJ1zJuKqfXsx4yZuA55vaXvcir7BKW-2BVmI44Bq6T5J5mXb6T3TmiPUB-2BMK0oUPYNnWd=
+agIqxfKO9v4DPiGMLKPnSLTIA3NebNCCM-2FRktJppW8Kg996w7R21ZYah-2BRMraMIv3XJUwok=
+YHWHlIOpsWyNSDckEV9Uwpw7aC5HLQePugz3zBtCmQKmqKB8JiGfMuQ7JL-2BzmmYDmhyfrj9tv=
+s5T0rtv-2FASv-2BZ1limTxSu7wImVCC5i-2FwY2sM-2BAMOZNchL6vbgzJiAoMnmG9Pmx1o69V=
+hVZ-2FWndC-2BckRMBoF4-2B5mmlAHFvMIQkee5OszEW2wVqld5PZxomThpYi1NtkfvNssslcWR=
+mM3YBoKCr4-2FEmsA4k-2FqIp0XcVLkmhCSyehupscz91XN7ME1CQ-3D-3D" style=3D"color=
+:#077DC6;text-decoration:none!important;"
+              target=3D"_blank">Manage payment</a></span></td>
+          <td><img alt=3D"" border=3D"0" class=3D"width20" height=3D"10"
+                   src=3D"https://static.cns-icn-prod.a.intuit.com/spacer.g=
+if"
+                   style=3D"display:block;" width=3D"30"></td>
+        </tr>
+        <tr>
+          <td colspan=3D"4"><img alt=3D"" border=3D"0" class=3D"expandto25"
+                               height=3D"40"
+                               src=3D"https://static.cns-icn-prod.a.intuit.=
+com/spacer.gif"
+                               style=3D"display:block;" width=3D"1"></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td align=3D"left" class=3D"header" colspan=3D"2"
+              style=3D"border-collapse: collapse; padding:0px;">
+            <table border=3D"0"
+                   style=3D"border-spacing:0pt;mso-table-lspace: 0pt;mso-ta=
+ble-rspace: 0pt;">
+              <tr>
+                <td style=3D"border-collapse: collapse;">
+                  <table border=3D"0"
+                         style=3D"border-spacing:0;mso-table-lspace:0pt;mso=
+-table-rspace:0pt;">
+                    <tr>
+                      <td style=3D"padding-right:14px;padding-bottom:0px;px=
+border-collapse:collapse;vertical-align:top">
+                        <img class=3D"iconInMobile" height=3D"48"
+                             src=3D"https://static.cns-icn-prod.a.intuit.co=
+m/status_paid.png"
+                             width=3D"48"></td>
+                      <td style=3D"border-collapse:collapse;"><span
+                          class=3D"textMobile32to24"
+                          style=3D"color:#393A3D; font-weight:500;font-fami=
+ly:AvenirNextforINTUIT-Demi, Avenir Next, Avenir, Helvetica ,sans-serif;fon=
+t-size:36px;line-height:40px; margin:0;">You paid $100.00</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td style=3D"padding-top:10px;border-collapse:collaps=
+e;">
+                                                            <span class=3D"=
+textMobile16to16"
+                                                                  style=3D"=
+color:#393A3D; font-weight:500;font-family:AvenirNextforINTUIT-Regular, Ave=
+nir Next, Avenir, Helvetica ,sans-serif;font-size:16px;line-height:20px; ma=
+rgin:0;">to</span>
+                        <span class=3D"textMobile16to16"
+                              style=3D"color:#393A3D; font-weight:600;font-=
+family:AvenirNextforINTUIT-Demi, Avenir Next, Avenir, Helvetica ,sans-serif=
+;font-size:16px;line-height:20px; margin:0;">New York Jazz Workshop, LLC</s=
+pan>
+                        <span class=3D"textMobile16to16"
+                              style=3D"color:#393A3D; font-weight:500;font-=
+family:AvenirNextforINTUIT-Regular, Avenir Next, Avenir, Helvetica ,sans-se=
+rif;font-size:16px;line-height:20px; margin:0;">on 09/05/2022</span>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td>&nbsp;</td>
+        </tr><!-- Space 20 -->
+        <tr>
+          <td colspan=3D"4"><img alt=3D"" border=3D"0" class=3D"shrinkto24"
+                               height=3D"20"
+                               src=3D"https://static.cns-icn-prod.a.intuit.=
+com/spacer.gif"
+                               style=3D"display:block;" width=3D"1"></td>
+        </tr><!-- Gray Line  -->
+        <tr>
+          <td height=3D"1" style=3D"line-height:1px;max-height:1px;height:1=
+px;">
+            <img alt=3D"" border=3D"0" height=3D"1"
+                 src=3D"https://static.cns-icn-prod.a.intuit.com/spacer.gif=
+"
+                 style=3D"display:block;" width=3D"1"></td>
+          <td align=3D"left" bgcolor=3D"#E3E5E8" colspan=3D"2" height=3D"1"
+              style=3D"line-height:1px;max-height:1px;height:1px;"><img alt=
+=3D""
+                                                                      borde=
+r=3D"0"
+                                                                      heigh=
+t=3D"1"
+                                                                      src=
+=3D"https://static.cns-icn-prod.a.intuit.com/spacer.gif"
+                                                                      style=
+=3D"display:block;"
+                                                                      width=
+=3D"10">
+          </td>
+          <td height=3D"1" style=3D"line-height:1px;max-height:1px;height:1=
+px;">
+            <img alt=3D"" border=3D"0" height=3D"1"
+                 src=3D"https://static.cns-icn-prod.a.intuit.com/spacer.gif=
+"
+                 style=3D"display:block;" width=3D"1"></td>
+        </tr><!-- End of Gray Line  -->
+        <!-- Space 20 -->
+        <tr>
+          <td colspan=3D"4"><img alt=3D"" border=3D"0" class=3D"shrinkto24"
+                               height=3D"20"
+                               src=3D"https://static.cns-icn-prod.a.intuit.=
+com/spacer.gif"
+                               style=3D"display:block;" width=3D"1"></td>
+        </tr>
+        <!-- Payment details  -->
+        <tr>
+          <td>&nbsp;</td>
+          <td align=3D"left" colspan=3D"2"
+              style=3D"padding-top:0px;padding-bottom:0px;"><span
+              class=3D"textMobile24to20Demi"
+              style=3D"font-size:24px; line-height:26px; font-family:Avenir=
+NextforINTUIT-Demi , Avenir Next, Avenir, Helvetica, sans-serif; color:#393=
+A3D; font-weight:500;">Payment details</span>
+          </td>
+          <td>&nbsp;</td>
+        </tr><!-- Space 20 -->
+        <tr>
+          <td colspan=3D"4"><img alt=3D"" border=3D"0" class=3D"shrinkto24"
+                               height=3D"20"
+                               src=3D"https://static.cns-icn-prod.a.intuit.=
+com/spacer.gif"
+                               style=3D"display:block;" width=3D"1"></td>
+        </tr><!-- Start details -->
+        <!-- Invoice no -->
+        <tr>
+          <td>&nbsp;</td>
+          <td align=3D"left" style=3D"padding-top:0px;padding-bottom:0px;">=
+<span
+              class=3D"text16to14"
+              style=3D"font-size:16px; line-height:24px; font-family: Aveni=
+rNextforINTUIT-Regular, Avenir Next, Avenir, Helvetica, sans-serif; color:#=
+393A3D;">Invoice no.</span>
+          </td>
+          <td align=3D"right" style=3D"padding-top:0px;padding-bottom:0px;"=
+><span
+              class=3D"text16to14"
+              style=3D"font-size:16px; line-height:24px; font-family:Avenir=
+NextforINTUIT-Regular,Avenir Next , Avenir, Helvetica, sans-serif; color:#3=
+93A3D;font-weight:500;"><a
+              href=3D"https://elink.prd.intuit.com/ls/click?upn=3DIC28GYYrR=
+hMJ-2FrBfQch14svhSHNcad4F7WJ1vXMOdrNs-2B7GQVex15usB-2BMdNtIt0PwbV-2BYKm4Tq5=
+jfXHXOZbCZ77hOqlI95wipC58eL8i6IgBlVEMX0HkbUI5ED7rYCQ3To5BB-2BwuSJthP-2BWGRW=
+COfHPjgw9FX5m41fzVE7HTJNVoC9iElr5asaJN0G03NhQZb9YEqzZ-2FiwFoJlRQJve3r16k-2B=
+XZk2eBbn4Y-2FQr8YSxuOb72Kzr-2FUGHKQ7zqe15Hg4jD_aoQ-2FurHYnDKUeUNwNn2lzon3dB=
+yUcZgg87PEpOgzo9x5v647KeeECBUs32-2FNSaIjz90Sxz5EL-2Fk2HZe9f3bCseu7icJccDsQR=
+J13PvAHjs2ADVJCe-2F6xVcCMhTpdE6xN1JIbi6MQQ2-2BKk9xbLSTwEzDEEVd4fXkT2n7glveU=
+1DwyvY8VHFbntvK7aBiUwRZz1lpIicU3zrFKeOGGdorfbpCEcZJEiP7pLYJqdsnVkArClUkoI7g=
+CGQWqXb91lmVxPE9-2FO3SH8GXbNAu7uXuo2g15kBEBJdm-2FtQ-2FbRedVaObhPHqqXZ-2FW34=
+9faJoSE60lOGX6d0dtUBjS9HXrPxmqLfOQx2eEAnEPabNHEXaB-2B217j-2BM0N97zhmG3GeWTL=
+G4dpFScLTzVw3Yoa-2FWWLqmjuOS0ydhquzI2SvmpJ3vDy9fAXiBjELCkcA6CKD8GWS68mAo5VU=
+hE0PcJ1zJuKqfXsx4yZuA55vaXvcir7BKW-2BVmI44Bq6T5J5mXb6T3TmiPUB-2BMK0oUPYNnWd=
+agIqxfKO9v4DPiGMLKPnSLTIA3NebNCCM-2FRktJppW8Kg996w7R21ZYah-2BRMraMIv3XJUwok=
+YHWHlIOpsWyNSDckEV9Uwpw7aC5HLQePugz3zBtCmQKmqKB8JiGfMuQ7JL-2BzmmYDmv26-2F62=
+5bYpluLAJeznRDRgbCdCos2cczuX8EGbtpVnCeavmWIXhhkNMZWVEbOJIrEVb-2BH6WZpVMJLlG=
+x2HkyVMlnGkpdM9kzbkcu0MZ3-2BmkxqX7KslMdr6ZFf961Y4vJ4nZuysaO6oJ3Tbn1BSXTAKVU=
+EkOCti4m2U7tjinFtpy-2BRivDjSDlL06hQSh-2FQpVFA-3D-3D" style=3D"color:#077DC6=
+;text-decoration:none!important;"
+              target=3D"_blank">15337</a></span></td>
+          <td>&nbsp;</td>
+        </tr><!-- Space 10 -->
+        <tr>
+          <td colspan=3D"4"><img alt=3D"" border=3D"0" class=3D"shrinkto24"
+                               height=3D"10"
+                               src=3D"https://static.cns-icn-prod.a.intuit.=
+com/spacer.gif"
+                               style=3D"display:block;" width=3D"1"></td>
+        </tr><!-- Invoice amount -->
+        <tr>
+          <td>&nbsp;</td>
+          <td align=3D"left" style=3D"padding-top:0px;padding-bottom:0px;">=
+<span
+              class=3D"text16to14"
+              style=3D"font-size:16px; line-height:24px; font-family: Aveni=
+rNextforINTUIT-Regular, Avenir Next, Avenir, Helvetica, sans-serif; color:#=
+393A3D;">Invoice amount</span>
+          </td>
+          <td align=3D"right" style=3D"padding-top:0px;padding-bottom:0px;"=
+><span
+              class=3D"text16to14"
+              style=3D"font-size:16px; line-height:24px; font-family:Avenir=
+NextforINTUIT-Regular,Avenir Next , Avenir, Helvetica, sans-serif; color:#3=
+93A3D;font-weight:500;">$100.00</span>
+          </td>
+          <td>&nbsp;</td>
+        </tr><!-- Space 10 -->
+        <tr>
+          <td colspan=3D"4"><img alt=3D"" border=3D"0" class=3D"shrinkto24"
+                               height=3D"10"
+                               src=3D"https://static.cns-icn-prod.a.intuit.=
+com/spacer.gif"
+                               style=3D"display:block;" width=3D"1"></td>
+        </tr><!-- Invoice balance -->
+
+        <!-- Tip  -->
+
+        <!-- Total amount -->
+        <tr>
+          <td>&nbsp;</td>
+          <td align=3D"left" style=3D"padding-top:0px;padding-bottom:0px;">=
+<span
+              class=3D"text16to14"
+              style=3D"font-size:16px; line-height:24px; font-family: Aveni=
+rNextforINTUIT-Demi, Avenir Next, Avenir, Helvetica, sans-serif; color:#393=
+A3D;font-weight:500;">Total amount</span>
+          </td>
+          <td align=3D"right" style=3D"padding-top:0px;padding-bottom:0px;"=
+><span
+              class=3D"text16to14"
+              style=3D"font-size:16px; line-height:24px; font-family:Avenir=
+NextforINTUIT-Demi,Avenir Next , Avenir, Helvetica, sans-serif; color:#393A=
+3D;font-weight:500;"><b>$100.00</b></span>
+          </td>
+          <td>&nbsp;</td>
+        </tr>
+        <!--No Additional Fees -->
+        <tr>
+          <td></td>
+          <td align=3D"left" style=3D"padding-top:0px;padding-bottom:0px;">
+            <span style=3D"font-size:12px; line-height:16px; font-family: A=
+venirNextforINTUIT-Regular, Avenir Next , Avenir, Helvetica, sans-serif; co=
+lor:#6B6C72;">
+              <br>No additional transfer fees or taxes apply.</span></td>
+          <td></td>
+        </tr>
+        <!-- Space 20 -->
+        <tr>
+          <td colspan=3D"4"><img alt=3D"" border=3D"0" class=3D"shrinkto24"
+                               height=3D"20"
+                               src=3D"https://static.cns-icn-prod.a.intuit.=
+com/spacer.gif"
+                               style=3D"display:block;" width=3D"1"></td>
+        </tr><!-- Gray Line  -->
+        <tr>
+          <td height=3D"1" style=3D"line-height:1px;max-height:1px;height:1=
+px;">
+            <img alt=3D"" border=3D"0" height=3D"1"
+                 src=3D"https://static.cns-icn-prod.a.intuit.com/spacer.gif=
+"
+                 style=3D"display:block;" width=3D"1"></td>
+          <td align=3D"left" bgcolor=3D"#E3E5E8" colspan=3D"2" height=3D"1"
+              style=3D"line-height:1px;max-height:1px;height:1px;"><img alt=
+=3D""
+                                                                      borde=
+r=3D"0"
+                                                                      heigh=
+t=3D"1"
+                                                                      src=
+=3D"https://static.cns-icn-prod.a.intuit.com/spacer.gif"
+                                                                      style=
+=3D"display:block;"
+                                                                      width=
+=3D"10">
+          </td>
+          <td height=3D"1" style=3D"line-height:1px;max-height:1px;height:1=
+px;">
+            <img alt=3D"" border=3D"0" height=3D"1"
+                 src=3D"https://static.cns-icn-prod.a.intuit.com/spacer.gif=
+"
+                 style=3D"display:block;" width=3D"1"></td>
+        </tr><!-- End of Gray Line  -->
+        <!-- Space 20 -->
+        <tr>
+          <td colspan=3D"4"><img alt=3D"" border=3D"0" class=3D"shrinkto24"
+                               height=3D"20"
+                               src=3D"https://static.cns-icn-prod.a.intuit.=
+com/spacer.gif"
+                               style=3D"display:block;" width=3D"1"></td>
+        </tr>
+      <!-- Status -->
+  <tr>
+    <td>&nbsp;</td>
+    <td align=3D"left" style=3D"padding-top:0px;padding-bottom:0px;"><span
+        class=3D"text16to14"
+        style=3D"font-size:16px; line-height:24px; font-family: AvenirNextf=
+orINTUIT-Regular, Avenir Next, Avenir, Helvetica, sans-serif; color:#393A3D=
+;">Status</span>
+    </td>
+    <td align=3D"right" style=3D"padding-top:0px;padding-bottom:0px;"><span
+        class=3D"text16to14"
+        style=3D"font-size:16px; line-height:24px; font-family:AvenirNextfo=
+rINTUIT-Regular,Avenir Next , Avenir, Helvetica, sans-serif; color:#393A3D;=
+font-weight:500;">Paid</span>
+    </td>
+    <td>&nbsp;</td>
+  </tr><!-- Space 10 -->
+  <tr>
+    <td colspan=3D"4"><img alt=3D"" border=3D"0" class=3D"shrinkto24"
+                         height=3D"10"
+                         src=3D"https://static.cns-icn-prod.a.intuit.com/sp=
+acer.gif"
+                         style=3D"display:block;" width=3D"1"></td>
+  </tr><!-- Payment method -->
+  <tr>
+    <td>&nbsp;</td>
+    <td align=3D"left" style=3D"padding-top:0px;padding-bottom:0px;"><span
+        class=3D"text16to14"
+        style=3D"font-size:16px; line-height:24px; font-family: AvenirNextf=
+orINTUIT-Regular, Avenir Next, Avenir, Helvetica, sans-serif; color:#393A3D=
+;">Payment method</span>
+    </td>
+    <td align=3D"right" style=3D"padding-top:0px;padding-bottom:0px;"><span
+        class=3D"text16to14"
+        style=3D"font-size:16px; line-height:24px; font-family:AvenirNextfo=
+rINTUIT-Regular,Avenir Next , Avenir, Helvetica, sans-serif; color:#393A3D;=
+font-weight:500;">MASTERCARD****0107</span>
+    </td>
+    <td>&nbsp;</td>
+  </tr><!-- Space 10 -->
+  <tr>
+    <td colspan=3D"4"><img alt=3D"" border=3D"0" class=3D"shrinkto24"
+                         height=3D"10"
+                         src=3D"https://static.cns-icn-prod.a.intuit.com/sp=
+acer.gif"
+                         style=3D"display:block;" width=3D"1"></td>
+  </tr><!-- Authorization -->
+  <tr>
+    <td>&nbsp;</td>
+    <td align=3D"left" style=3D"padding-top:0px;padding-bottom:0px;"><span
+        class=3D"text16to14"
+        style=3D"font-size:16px; line-height:24px; font-family: AvenirNextf=
+orINTUIT-Regular, Avenir Next, Avenir, Helvetica, sans-serif; color:#393A3D=
+;">Authorization ID</span>
+    </td>
+    <td align=3D"right" style=3D"padding-top:0px;padding-bottom:0px;"><span
+        class=3D"text16to14"
+        style=3D"font-size:16px; line-height:24px;text-transform: uppercase=
+; font-family:AvenirNextforINTUIT-Regular,Avenir Next , Avenir, Helvetica, =
+sans-serif; color:#393A3D;font-weight:500;">MU0108858555</span>
+    </td>
+    <td>&nbsp;</td>
+  </tr><!-- Space 40 -->
+  <tr>
+    <td colspan=3D"4"><img alt=3D"" border=3D"0" class=3D"shrinkto24"
+                         height=3D"40"
+                         src=3D"https://static.cns-icn-prod.a.intuit.com/sp=
+acer.gif"
+                         style=3D"display:block;" width=3D"1"></td>
+  </tr>
+
+  <!--Please don't reply -->
+  <tr>
+    <td>&nbsp;</td>
+    <td align=3D"left" colspan=3D"2"
+        style=3D"padding-top:6px;padding-bottom:0px;"><span
+        style=3D"font-size:16px; line-height:16px; font-family: AvenirNextf=
+orINTUIT-Demi, Avenir Next, Avenir, Helvetica, sans-serif; color:#393A3D; f=
+ont-weight:500">
+      Please don't reply to this email, if you need any help regarding this=
+ message, please contact the business directly.
+    </span></td>
+    <td>&nbsp;</td>
+  </tr>
+  <!-- Space 40 -->
+  <tr>
+    <td colspan=3D"4"><img alt=3D"" border=3D"0" class=3D"shrinkto24"
+                         height=3D"40"
+                         src=3D"https://static.cns-icn-prod.a.intuit.com/sp=
+acer.gif"
+                         style=3D"display:block;" width=3D"1"></td>
+  </tr>
+  <!-- Start bottom half -->
+  <tr>
+    <td>&nbsp;</td>
+    <td align=3D"left" colspan=3D"2"
+        style=3D"padding-top:6px;padding-bottom:0px;"><span
+        style=3D"font-size:16px; line-height:16px; font-family: AvenirNextf=
+orINTUIT-Demi, Avenir Next, Avenir, Helvetica, sans-serif; color:#393A3D; f=
+ont-weight:500">Thank you,</span>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+  <!-- Space 20 -->
+  <tr>
+    <td colspan=3D"4"><img alt=3D"" border=3D"0" class=3D"shrinkto24"
+                         height=3D"20"
+                         src=3D"https://static.cns-icn-prod.a.intuit.com/sp=
+acer.gif"
+                         style=3D"display:block;" width=3D"1"></td>
+  </tr><!-- Merchant Details  -->
+  <tr>
+    <td>&nbsp;</td>
+    <td align=3D"left" colspan=3D"2"><img alt=3D""
+                                      src=3D"https://c36.qbo.intuit.com/qbo=
+36/ext/Image/show/350766035/1?14443957200001" style=3D"max-width:150px;
+                                                                  max-heigh=
+t:60px; width:auto;
+                                                                  height:au=
+to; margin-top:16px;">
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td align=3D"left" colspan=3D"2"
+        style=3D"padding-top:8px;padding-bottom:0px;"><span
+        class=3D"textMobile24to20Medium"
+        style=3D"font-size:20px; text-transform: capitalize; line-height:26=
+px; font-family:AvenirNextforINTUIT-Demi, 'Avenir Next', Avenir, Helvetica,=
+ sans-serif; color:#393A3D;font-weight:500;">New York Jazz Workshop, LLC</s=
+pan>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td align=3D"left" colspan=3D"2"
+        style=3D"padding-top:8px;padding-bottom:0px;"><span
+        class=3D"textMobile16to16"
+        style=3D"font-size:16px; line-height:18px; font-family:'Avenir Next=
+', Avenir, Helvetica, sans-serif; color:#393A3D;">(917) 340-0270</span>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td>&nbsp;</td>
+    <td align=3D"left" style=3D"padding-top:8px;padding-bottom:0px;"
+        colspan=3D"2"><span
+        style=3D"font-size:14px; line-height:18px; font-family:AvenirNextfo=
+rINTUIT-Regular, Avenir Next, Avenir, Helvetica, sans-serif; color:#0077C5;=
+"
+        class=3D"text16to14"> www.newyorkjazzworkshop.com | info@newyorkjaz=
+zworkshop.com</span>
+    </td>
+
+  </tr>
+
+  <tr>
+    <td>&nbsp;</td>
+    <td align=3D"left" style=3D"padding-top:4px;padding-bottom:0px;"
+        colspan=3D"2"><span
+        style=3D"font-size:14px; line-height:18px; font-family:AvenirNextfo=
+rINTUIT-Regular,Avenir Next, Avenir, Helvetica, sans-serif; color:#0077C5;"
+        class=3D"text16to14">676 Riverside Drive, New York, NY, 10031, </sp=
+an>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+
+
+  <tr>
+    <td>&nbsp;</td>
+    <td align=3D"left" colspan=3D"2"
+        style=3D"padding-top:8px;padding-bottom:0px;"><span
+        class=3D"text16to14"
+        style=3D"font-size:14px; line-height:18px; font-family:AvenirNextfo=
+rINTUIT-Regular, Avenir Next, Avenir, Helvetica, sans-serif; color:#0077C5;=
+"></span>
+    </td>
+  </tr>
+  <tr>
+    <td colspan=3D"2" align=3D"left"
+        style=3D"line-height:10px;max-height:10px;" height=3D"10"
+        valign=3D"bottom"><img alt=3D"" height=3D"10"
+                             src=3D"https://static.cns-icn-prod.a.intuit.co=
+m/corner3.gif"
+                             style=3D"display:block;" width=3D"10"
+                             border=3D"0"/></td>
+    <td colspan=3D"2" align=3D"right"
+        style=3D"line-height:9px;max-height:10px;" height=3D"10"
+        valign=3D"bottom"><img alt=3D"" height=3D"10"
+                             src=3D"https://static.cns-icn-prod.a.intuit.co=
+m/corner4.gif"
+                             style=3D"display:block;" width=3D"10"
+                             border=3D"0"/></td>
+  </tr>
+</table>
+</td>
+</tr>
+<!-- Start legal -->
+<tr>
+  <td align=3D"center">
+    <table align=3D"center" bgcolor=3D"#ECEEF1" border=3D"0" cellpadding=3D=
+"0"
+           cellspacing=3D"0" class=3D"to95pc" style=3D"max-width: 600px;" w=
+idth=3D"600">
+      <tr><!--Space 20-->
+        <td><img alt=3D"" border=3D"0" height=3D"20"
+                 src=3D"https://static.cns-icn-prod.a.intuit.com/spacer.gif=
+"
+                 style=3D"display:block;" width=3D"1">
+        </td>
+      </tr>
+      <!--Disclaimer-->
+      <tr>
+        <td align=3D"left"
+            style=3D"padding-top:0px;padding-bottom:0px;padding-left:10px;p=
+adding-right:10px;">
+          <span style=3D"font-size:12px; line-height:16px; font-family: Ave=
+nirNextforINTUIT-Regular, Avenir Next, Avenir, Helvetica, sans-serif; color=
+:#6B6C72;">Payment services brought by:</span>
+        </td>
+      </tr>
+      <tr><!--Space 10-->
+        <td style=3D"line-height:10px;"><img alt=3D"" border=3D"0" height=
+=3D"10"
+                                           src=3D"https://static.cns-icn-pr=
+od.a.intuit.com/spacer.gif"
+                                           style=3D"display:block;" width=
+=3D"1">
+        </td>
+      </tr>
+      <tr>
+        <td align=3D"left"
+            style=3D"padding-top:0px;padding-bottom:0px;padding-left:10px;p=
+adding-right:10px;"><span
+            style=3D"font-size:12px; line-height:16px; font-family: AvenirN=
+extforINTUIT-Regular, Avenir Next, Avenir, Helvetica, sans-serif; color:#6B=
+6C72;">Intuit Payments Inc. <br>
+          2700 Coast Avenue, Mountain View, CA 94043 <br>
+          Phone number 1-888-536-4801 <br>
+          NMLS #1098819 <br></span>
+        </td>
+      </tr>
+      <tr><!--Space 10-->
+        <td style=3D"line-height:10px;"><img alt=3D"" border=3D"0" height=
+=3D"10"
+                                           src=3D"https://static.cns-icn-pr=
+od.a.intuit.com/spacer.gif"
+                                           style=3D"display:block;" width=
+=3D"1">
+        </td>
+      </tr>
+
+      <tr>
+        <td align=3D"left"
+            style=3D"padding-top:0px;padding-bottom:0px;padding-left:10px;p=
+adding-right:10px;"><span
+            style=3D"font-size:12px; line-height:16px; font-family: AvenirN=
+extforINTUIT-Regular, Avenir Next , Avenir, Helvetica, sans-serif; color:#6=
+B6C72;">For more information about Intuit Payments' money transmission lice=
+nses, please visit
+          <a href=3D"https://elink.prd.intuit.com/ls/click?upn=3DIC28GYYrRh=
+MJ-2FrBfQch14r5GS8Fvu4f8RsxjmvMwhMlbGgQqm2zJsrM54glnl0NQBlp61ycP91SIVzLx2vO=
+gEA-3D-3DIG_J_aoQ-2FurHYnDKUeUNwNn2lzon3dByUcZgg87PEpOgzo9x5v647KeeECBUs32-=
+2FNSaIjz90Sxz5EL-2Fk2HZe9f3bCseu7icJccDsQRJ13PvAHjs2ADVJCe-2F6xVcCMhTpdE6xN=
+1JIbi6MQQ2-2BKk9xbLSTwEzDEEVd4fXkT2n7glveU1DwyvY8VHFbntvK7aBiUwRZz1lpIicU3z=
+rFKeOGGdorfbpCEcZJEiP7pLYJqdsnVkArClUkoI7gCGQWqXb91lmVxPE9-2FO3SH8GXbNAu7uX=
+uo2g15kBEBJdm-2FtQ-2FbRedVaObhPHqqXZ-2FW349faJoSE60lOGX6d0dtUBjS9HXrPxmqLfO=
+Qx2eEAnEPabNHEXaB-2B217j-2BM0N97zhmG3GeWTLG4dpFScLTzVw3Yoa-2FWWLqmjuOS0ydhq=
+uzI2SvmpJ3vDy9fAXiBjELCkcA6CKD8GWS68mAo5VUhE0PcJ1zJuKqfXsx4yZuA55vaXvcir7BK=
+W-2BVmI44Bq6T5J5mXb6T3TmiPUB-2BMK0oUPYNnWdagIqxfKO9v4DPiGMLKPnSLTIA3NebNCCM=
+-2FRktJppW8Kg996w7R21ZYah-2BRMraMIv3XJUwokYHWHlIOpsWyNSDckEV9Uwpw7aC5HLQePu=
+gz3zBtCmQKmqKB8JiGfMuQ7JL-2BzmmYDmq-2FCioH0JKGeq5bITndDO9rYzTMVixxJPMmV1zzK=
+iDuBDYNR0LRj5iJla-2Br5HQxB-2BfBt30AiYZz-2BRj3bcuFPiL9qIMhm7diNY9Gc2X9cdFRjJ=
+ffDx-2FavIbqY3xXKoUxMNLP1lKhja5sjQHmjKZ-2FBXJzn88kZuMgdqCCer-2Foem-2FguwPld=
+sG2Vrer2n1HOb62vpQ-3D-3D"
+             style=3D"color:#077DC6;text-decoration:none!important;" target=
+=3D"_blank">Payment Licenses page.</a><br>
+                   </span>
+        </td>
+      </tr>
+      <!--End disclaimer-->
+      <tr><!--Space 40-->
+        <td style=3D"line-height:10px;"><img alt=3D"" border=3D"0" height=
+=3D"40"
+                                           src=3D"https://static.cns-icn-pr=
+od.a.intuit.com/spacer.gif"
+                                           style=3D"display:block;" width=
+=3D"1">
+        </td>
+      </tr>
+
+
+      <tr>
+        <td align=3D"left"
+            style=3D"padding-top:0px;padding-bottom:0px;padding-left:10px;p=
+adding-right:10px;">
+                                    <span style=3D"font-size:12px; line-hei=
+ght:16px; font-family:AvenirNextforINTUIT-Regular, Avenir Next, Avenir, Hel=
+vetica, sans-serif; color:#6B6C72;"><a
+                                        href=3D"https://elink.prd.intuit.co=
+m/ls/click?upn=3DIC28GYYrRhMJ-2FrBfQch14lUiT4TTEk-2BnjyMHXlEm2NNJmNmWxu-2Be=
+VO31T27Qbemnm_7Q_aoQ-2FurHYnDKUeUNwNn2lzon3dByUcZgg87PEpOgzo9x5v647KeeECBUs=
+32-2FNSaIjz90Sxz5EL-2Fk2HZe9f3bCseu7icJccDsQRJ13PvAHjs2ADVJCe-2F6xVcCMhTpdE=
+6xN1JIbi6MQQ2-2BKk9xbLSTwEzDEEVd4fXkT2n7glveU1DwyvY8VHFbntvK7aBiUwRZz1lpIic=
+U3zrFKeOGGdorfbpCEcZJEiP7pLYJqdsnVkArClUkoI7gCGQWqXb91lmVxPE9-2FO3SH8GXbNAu=
+7uXuo2g15kBEBJdm-2FtQ-2FbRedVaObhPHqqXZ-2FW349faJoSE60lOGX6d0dtUBjS9HXrPxmq=
+LfOQx2eEAnEPabNHEXaB-2B217j-2BM0N97zhmG3GeWTLG4dpFScLTzVw3Yoa-2FWWLqmjuOS0y=
+dhquzI2SvmpJ3vDy9fAXiBjELCkcA6CKD8GWS68mAo5VUhE0PcJ1zJuKqfXsx4yZuA55vaXvcir=
+7BKW-2BVmI44Bq6T5J5mXb6T3TmiPUB-2BMK0oUPYNnWdagIqxfKO9v4DPiGMLKPnSLTIA3NebN=
+CCM-2FRktJppW8Kg996w7R21ZYah-2BRMraMIv3XJUwokYHWHlIOpsWyNSDckEV9Uwpw7aC5HLQ=
+ePugz3zBtCmQKmqKB8JiGfMuQ7JL-2BzmmYDmk9xs0msSqVaa6bctR2yOTKX2Tr3euzytGVWMtw=
+YdwsqwmegBHof0FkacU0CxwaKjvhLOuFPW2FyIwlhTbphFqwJZCwEp2wUxfNyhjqLNSm-2BBOBM=
+HbbEST7FhVzjMc52hMqi2x9SHnDXCRwE-2BjNheqzoedreLqL4nhlE8fDyh5hSmtJobSRJZj6G2=
+EInOpzdHw-3D-3D"
+                                        style=3D"color:#077DC6;text-decorat=
+ion:none!important;"
+                                        target=3D"_blank">Security</a>&nbsp=
+;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a
+                                        href=3D"https://elink.prd.intuit.co=
+m/ls/click?upn=3DIC28GYYrRhMJ-2FrBfQch14lUiT4TTEk-2BnjyMHXlEm2NOa2QBKjBSzQG=
+BIFEPy1uJBIhVr-2FODVTMvJa6FIAZerUg-3D-3Dw3If_aoQ-2FurHYnDKUeUNwNn2lzon3dByU=
+cZgg87PEpOgzo9x5v647KeeECBUs32-2FNSaIjz90Sxz5EL-2Fk2HZe9f3bCseu7icJccDsQRJ1=
+3PvAHjs2ADVJCe-2F6xVcCMhTpdE6xN1JIbi6MQQ2-2BKk9xbLSTwEzDEEVd4fXkT2n7glveU1D=
+wyvY8VHFbntvK7aBiUwRZz1lpIicU3zrFKeOGGdorfbpCEcZJEiP7pLYJqdsnVkArClUkoI7gCG=
+QWqXb91lmVxPE9-2FO3SH8GXbNAu7uXuo2g15kBEBJdm-2FtQ-2FbRedVaObhPHqqXZ-2FW349f=
+aJoSE60lOGX6d0dtUBjS9HXrPxmqLfOQx2eEAnEPabNHEXaB-2B217j-2BM0N97zhmG3GeWTLG4=
+dpFScLTzVw3Yoa-2FWWLqmjuOS0ydhquzI2SvmpJ3vDy9fAXiBjELCkcA6CKD8GWS68mAo5VUhE=
+0PcJ1zJuKqfXsx4yZuA55vaXvcir7BKW-2BVmI44Bq6T5J5mXb6T3TmiPUB-2BMK0oUPYNnWdag=
+IqxfKO9v4DPiGMLKPnSLTIA3NebNCCM-2FRktJppW8Kg996w7R21ZYah-2BRMraMIv3XJUwokYH=
+WHlIOpsWyNSDckEV9Uwpw7aC5HLQePugz3zBtCmQKmqKB8JiGfMuQ7JL-2BzmmYDmstU4xLCfA4=
+9Alr2qGqgVEG6lV3m7I9nkeKABmgi7mMXmyN2UH6xcv3ftigSk4xVlV-2BDN9enVY3rqdTXpxR2=
+qyKNbdMeMU2xy6FfUXxX2aX82MHHH8THhErqHotPQ0NQfB-2FePJPE7nHA5mvSM3xaNHNAxjyZy=
+nyayDOtTbCI-2B-2FgaMJXLj0gDJtiC96ty-2B7TUew-3D-3D"
+                                        style=3D"color:#077DC6;text-decorat=
+ion:none!important;"
+                                        target=3D"_blank">Privacy statement=
+</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a
+                                        href=3D"https://elink.prd.intuit.co=
+m/ls/click?upn=3DIC28GYYrRhMJ-2FrBfQch14svhSHNcad4F7WJ1vXMOdrPatfrDbspxgZbS=
+sgZ1HK2X8whJcfoogDH7IUWIhfxyhA-3D-3DK5we_aoQ-2FurHYnDKUeUNwNn2lzon3dByUcZgg=
+87PEpOgzo9x5v647KeeECBUs32-2FNSaIjz90Sxz5EL-2Fk2HZe9f3bCseu7icJccDsQRJ13PvA=
+Hjs2ADVJCe-2F6xVcCMhTpdE6xN1JIbi6MQQ2-2BKk9xbLSTwEzDEEVd4fXkT2n7glveU1DwyvY=
+8VHFbntvK7aBiUwRZz1lpIicU3zrFKeOGGdorfbpCEcZJEiP7pLYJqdsnVkArClUkoI7gCGQWqX=
+b91lmVxPE9-2FO3SH8GXbNAu7uXuo2g15kBEBJdm-2FtQ-2FbRedVaObhPHqqXZ-2FW349faJoS=
+E60lOGX6d0dtUBjS9HXrPxmqLfOQx2eEAnEPabNHEXaB-2B217j-2BM0N97zhmG3GeWTLG4dpFS=
+cLTzVw3Yoa-2FWWLqmjuOS0ydhquzI2SvmpJ3vDy9fAXiBjELCkcA6CKD8GWS68mAo5VUhE0PcJ=
+1zJuKqfXsx4yZuA55vaXvcir7BKW-2BVmI44Bq6T5J5mXb6T3TmiPUB-2BMK0oUPYNnWdagIqxf=
+KO9v4DPiGMLKPnSLTIA3NebNCCM-2FRktJppW8Kg996w7R21ZYah-2BRMraMIv3XJUwokYHWHlI=
+OpsWyNSDckEV9Uwpw7aC5HLQePugz3zBtCmQKmqKB8JiGfMuQ7JL-2BzmmYDmtK6lo6aezy4L6N=
+ExN-2FN-2BE7-2F9fs-2BxsWpFLVQ1zfaiX4w6j8d6bx-2Folx9o0u4RYRtDcafcxXrnYXKQeUy=
+sTqBGEmWAL34UXCtGYb8KgY5Kqx63J0Jntc2WGa0JslW5AYAh0Ha5ld3Ptav6Ntx8ERo0kOz54X=
+tssb6XWfHhu8L7H-2Fs50Ns7Wp-2FzmoVKcSILsjLVQ-3D-3D"
+                                        style=3D"color:#077DC6;text-decorat=
+ion:none!important;"
+                                        target=3D"_blank">Terms of Service<=
+/a></span>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td style=3D"line-height:10px;"><img alt=3D"" border=3D"0" height=
+=3D"25"
+                                           src=3D"https://static.cns-icn-pr=
+od.a.intuit.com/spacer.gif"
+                                           style=3D"display:block;" width=
+=3D"1">
+        </td>
+      </tr>
+
+
+      <tr>
+        <td align=3D"left"
+            style=3D"padding-top:0px;padding-bottom:0px;padding-left:10px;p=
+adding-right:10px;"><span
+            style=3D"font-size:12px; line-height:16px; font-family: AvenirN=
+extforINTUIT-Regular, Avenir Next , Avenir, Helvetica, sans-serif; color:#6=
+B6C72;">&copy; 2022 Intuit Inc., All rights reserved. <a
+            href=3D"https://elink.prd.intuit.com/ls/click?upn=3DIC28GYYrRhM=
+J-2FrBfQch14tKAVWnxLwmj2v2kMhA32YWA9Df2fs1808fQsG6Hj2DCcjAf_aoQ-2FurHYnDKUe=
+UNwNn2lzon3dByUcZgg87PEpOgzo9x5v647KeeECBUs32-2FNSaIjz90Sxz5EL-2Fk2HZe9f3bC=
+seu7icJccDsQRJ13PvAHjs2ADVJCe-2F6xVcCMhTpdE6xN1JIbi6MQQ2-2BKk9xbLSTwEzDEEVd=
+4fXkT2n7glveU1DwyvY8VHFbntvK7aBiUwRZz1lpIicU3zrFKeOGGdorfbpCEcZJEiP7pLYJqds=
+nVkArClUkoI7gCGQWqXb91lmVxPE9-2FO3SH8GXbNAu7uXuo2g15kBEBJdm-2FtQ-2FbRedVaOb=
+hPHqqXZ-2FW349faJoSE60lOGX6d0dtUBjS9HXrPxmqLfOQx2eEAnEPabNHEXaB-2B217j-2BM0=
+N97zhmG3GeWTLG4dpFScLTzVw3Yoa-2FWWLqmjuOS0ydhquzI2SvmpJ3vDy9fAXiBjELCkcA6CK=
+D8GWS68mAo5VUhE0PcJ1zJuKqfXsx4yZuA55vaXvcir7BKW-2BVmI44Bq6T5J5mXb6T3TmiPUB-=
+2BMK0oUPYNnWdagIqxfKO9v4DPiGMLKPnSLTIA3NebNCCM-2FRktJppW8Kg996w7R21ZYah-2BR=
+MraMIv3XJUwokYHWHlIOpsWyNSDckEV9Uwpw7aC5HLQePugz3zBtCmQKmqKB8JiGfMuQ7JL-2Bz=
+mmYDmimVaNnpL1bHZsLFsFxaUKAhsO-2FzdfsB8fTGl2ZNoIYt2-2BHz7fHBtWvBwO5mpnklAyK=
+cQn49pVNNMcHXrYt-2Fmhabq1d5d2cu0FU6fUstqnmIVsDlpN-2F-2Fn2ttfmABvEe5QcqOVHQ9=
+A0iQFvhZLctOsTPo-2Fy-2Fh0CMt2D-2B30-2BHibAXA0XwJCeK7uKq5eKyO7ZRDdA-3D-3D"
+            style=3D"color:#077DC6;text-decoration:none!important;"
+            target=3D"_blank">Trademarks.</a><br>
+                  2800 E. Commerce Center Place, Tucson, AZ 85706</span>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td style=3D"line-height:15px;"><img alt=3D"" border=3D"0" height=
+=3D"15"
+                                           src=3D"https://static.cns-icn-pr=
+od.a.intuit.com/spacer.gif"
+                                           style=3D"display:block;" width=
+=3D"1">
+        </td>
+      </tr>
+
+
+      <tr>
+        <td style=3D"padding-left:10px;padding-right:10px;"><a
+            href=3D"https://elink.prd.intuit.com/ls/click?upn=3DIC28GYYrRhM=
+J-2FrBfQch14gWPXyreHGRnWXNoszRQdfk2P0p4Ib9Mr8bjvFCxdiWZh_is_aoQ-2FurHYnDKUe=
+UNwNn2lzon3dByUcZgg87PEpOgzo9x5v647KeeECBUs32-2FNSaIjz90Sxz5EL-2Fk2HZe9f3bC=
+seu7icJccDsQRJ13PvAHjs2ADVJCe-2F6xVcCMhTpdE6xN1JIbi6MQQ2-2BKk9xbLSTwEzDEEVd=
+4fXkT2n7glveU1DwyvY8VHFbntvK7aBiUwRZz1lpIicU3zrFKeOGGdorfbpCEcZJEiP7pLYJqds=
+nVkArClUkoI7gCGQWqXb91lmVxPE9-2FO3SH8GXbNAu7uXuo2g15kBEBJdm-2FtQ-2FbRedVaOb=
+hPHqqXZ-2FW349faJoSE60lOGX6d0dtUBjS9HXrPxmqLfOQx2eEAnEPabNHEXaB-2B217j-2BM0=
+N97zhmG3GeWTLG4dpFScLTzVw3Yoa-2FWWLqmjuOS0ydhquzI2SvmpJ3vDy9fAXiBjELCkcA6CK=
+D8GWS68mAo5VUhE0PcJ1zJuKqfXsx4yZuA55vaXvcir7BKW-2BVmI44Bq6T5J5mXb6T3TmiPUB-=
+2BMK0oUPYNnWdagIqxfKO9v4DPiGMLKPnSLTIA3NebNCCM-2FRktJppW8Kg996w7R21ZYah-2BR=
+MraMIv3XJUwokYHWHlIOpsWyNSDckEV9Uwpw7aC5HLQePugz3zBtCmQKmqKB8JiGfMuQ7JL-2Bz=
+mmYDmjV6oAobbtrNLJHPxeCjeCaatocB8yWVhNP768gptIZjBx09cCZLkAYNpAWu-2FrYEUwonn=
+quVv06sg72-2BdZXyCHHHup9Vu84niDYjJmuijTcYHkB3cmos7M-2Bl1lvyd6E2lyPARotj5W1h=
+Q5lVx-2FcEoV2t4nD3AvdwofmgRhSU1df89lNHzZ0j6hq80HgQJEna6g-3D-3D"
+            target=3D"_blank"><img alt=3D"Intuit - Powering prosperity"
+                                 border=3D"0" class=3D"hide" height=3D"40"
+                                 src=3D"https://static.cns-icn-prod.a.intui=
+t.com/footer_desktop.gif"
+                                 style=3D"display:block;" width=3D"515"></a=
+>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td style=3D"line-height:1px;padding-left:10px;padding-right:10px;"=
+><a
+            href=3D"https://elink.prd.intuit.com/ls/click?upn=3DIC28GYYrRhM=
+J-2FrBfQch14gWPXyreHGRnWXNoszRQdfk2P0p4Ib9Mr8bjvFCxdiWZK2zX_aoQ-2FurHYnDKUe=
+UNwNn2lzon3dByUcZgg87PEpOgzo9x5v647KeeECBUs32-2FNSaIjz90Sxz5EL-2Fk2HZe9f3bC=
+seu7icJccDsQRJ13PvAHjs2ADVJCe-2F6xVcCMhTpdE6xN1JIbi6MQQ2-2BKk9xbLSTwEzDEEVd=
+4fXkT2n7glveU1DwyvY8VHFbntvK7aBiUwRZz1lpIicU3zrFKeOGGdorfbpCEcZJEiP7pLYJqds=
+nVkArClUkoI7gCGQWqXb91lmVxPE9-2FO3SH8GXbNAu7uXuo2g15kBEBJdm-2FtQ-2FbRedVaOb=
+hPHqqXZ-2FW349faJoSE60lOGX6d0dtUBjS9HXrPxmqLfOQx2eEAnEPabNHEXaB-2B217j-2BM0=
+N97zhmG3GeWTLG4dpFScLTzVw3Yoa-2FWWLqmjuOS0ydhquzI2SvmpJ3vDy9fAXiBjELCkcA6CK=
+D8GWS68mAo5VUhE0PcJ1zJuKqfXsx4yZuA55vaXvcir7BKW-2BVmI44Bq6T5J5mXb6T3TmiPUB-=
+2BMK0oUPYNnWdagIqxfKO9v4DPiGMLKPnSLTIA3NebNCCM-2FRktJppW8Kg996w7R21ZYah-2BR=
+MraMIv3XJUwokYHWHlIOpsWyNSDckEV9Uwpw7aC5HLQePugz3zBtCmQKmqKB8JiGfMuQ7JL-2Bz=
+mmYDmksqQy7C0x5nGccohur-2FYBa6IMxAykG-2FN1H3ThCjPb-2Fp1qmDQzPof4AtedWATH4LN=
+zSqAKEPy8mgbTdMEzJFvwft-2FTQLL1-2F6Erk3aV6dPW3WzMSkPnjFpFqhX-2F0nBdSlFU-2Bs=
+FHPYGypiPkEPoSwnn5abj9k9rZ86WGGmayk5akkcM7YUJWv-2BQrGc-2Fh22TxoapQ-3D-3D"
+            target=3D"_blank"><img alt=3D"" border=3D"0"
+                                 class=3D"logo_mobile_max320"
+                                 height=3D"1"
+                                 src=3D"https://static.cns-icn-prod.a.intui=
+t.com/footer_mobile.gif"
+                                 style=3D"display:none;"
+                                 width=3D"1"></a>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td style=3D"line-height:20px;"><img alt=3D"" border=3D"0" height=
+=3D"20"
+                                           src=3D"https://static.cns-icn-pr=
+od.a.intuit.com/spacer.gif"
+                                           style=3D"display:block;" width=
+=3D"1">
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<!-- End legal -->
+</table>
+</td>
+</tr>
+</table>
+<img src=3D"https://elink.prd.intuit.com/wf/open?upn=3D5helHIkdVNMjBh5BWNkV=
+RpVNcxlcRH7hsTr-2Fg80CLCQaAPi1D-2Fw3MSMCcfP2GlvZGvnf8fMJQ71kPHpDAf3LZyZkbA5=
+di1lMdwunBNCf4mh3HHdJP-2BHhXYzWuqON7RYc3dqC-2FnUPJizB2DOzlB6vmV-2BoxoNu-2Bm=
+sw9uBBJ2X5YOkohxM3RuY4hoEdjOSm54WEFGMGdBPAbCPAK7PdmqX1TQvw85U9ZDL-2FPY22ABZ=
+uj-2BXuq5SrCGzoHKT6aGCbsRjTg61qPpfg7qKOPuRl-2BvGHM2h5bxFreR6HIKfyFHJl8N8IVN=
+tOp6lkBZPSNAhFO9S7ML5n7isZNI61CxzQHOo8KiGEeOczE00MWwyNImXWspVtyObrd7rQA2IRg=
+0a9buTTC7uKAQYA7KmytzFh-2FhehGmnSMftcPMFa8H4zFqDBwu38ycvJz-2B9GVfZIqdWTAkbo=
+qmHi8HLyFxaLPX0fYFJUgjFyrpaIsfb74oDTdhk5VOPPBJtavEh2dWP5Lq0zQ8fU5XC3EjwiQqY=
+zKkame8DuwSnkc8ldkauE3Kl7FDwaNPBMLZbXbCCVr-2BGm98FskqmjkoFOyuLb8WjmPJ8TcPas=
+SWwKK803RDjdxW7QNr4jFG4-2BCjoMbHh9u3Ho4Cmj0lt61hTldx2gOlkZKvJWT1bmWBcMffIBw=
+ZIwRLuLfeVOKKKLRA7edEmFXqS5cG6KOoXOvxY2iKe-2F7JdMlWghbr3WtMDskmD-2FjAfSCGK-=
+2BQJjnmVLhdegjdtXKh-2FYQfDA2D4-2BEakryPlEL2txekhZ8gpm5LPhyogeWiu4B9S8jvOQT0=
+WUEpOnhTcAwXtpyZYTuav1VRcImY1bKtVjsV50yeW5CFTpRXz-2BLMPoC2FihswsW2I8-3D" al=
+t=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !important=
+;width:1px !important;border-width:0 !important;margin-top:0 !important;mar=
+gin-bottom:0 !important;margin-right:0 !important;margin-left:0 !important;=
+padding-top:0 !important;padding-bottom:0 !important;padding-right:0 !impor=
+tant;padding-left:0 !important;"/></body>
+</html>

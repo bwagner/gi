@@ -1,0 +1,52 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "get_invoices"
+authors = [
+  { name="Bernhard Wagner", email="get_invoices@nosuch.biz" },
+]
+description = "extract invoices from emails"
+readme = "README.md"
+license = { file = "LICENSE.txt"}
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+]
+dynamic = ["version"]  # this belongs in the [project] section
+dependencies = [
+    "dateparser",
+    "typer",
+    "requests",
+    "lxml",
+    "pdfminer.six",
+    "pyperclip",
+    "simplegmail",
+    "CurrencyConverter",
+    "currency_file @ git+https://github.com/bwagner/currency_file.git",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/bwagner/get_invoices"
+"Bug Tracker" = "https://github.com/bwagner/get_invoices/issues"
+
+[tool.isort]
+profile = 'black'
+
+[project.scripts]
+get_invoices = "main:main"
+
+[tool.pytest.ini_options]
+addopts = "--doctest-modules"
+doctest_optionflags = "NORMALIZE_WHITESPACE ELLIPSIS"
+testpaths = [
+    "tests",
+]
+
+[tool.hatch.version]
+path = "__about__.py"
+
+[tool.hatch.metadata]
+allow-direct-references = true  # required for direct reference currency_file

@@ -1,0 +1,2223 @@
+Delivered-To: wernbag@gmail.com
+Received: by 2002:a05:6f02:219b:b0:52:a7a5:4a2d with SMTP id g27csp182147rcf;
+        Thu, 15 Jun 2023 13:40:02 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ6+Oeu0VN2ZivVsmeMdAKkzNHf7C7JlRoJpNcoqoVxZOpe7zL3VENo1GuiKwd+3C3wKbtO1KwrJzWo=
+X-Received: by 2002:a17:907:2cf4:b0:976:26df:2882 with SMTP id hz20-20020a1709072cf400b0097626df2882mr49938ejc.13.1686861601443;
+        Thu, 15 Jun 2023 13:40:01 -0700 (PDT)
+Authentication-Results: mx.google.com;
+       spf=fail (google.com: domain of srs0=heyc=cd=em2742.li.me=bounces+5013885-b0ef-li.me=nosuch.biz@harris.ch does not designate 168.245.101.116 as permitted sender) smtp.mailfrom="SRS0=Heyc=CD=em2742.li.me=bounces+5013885-b0ef-li.me=nosuch.biz@harris.ch";
+       dkim=pass header.i=@li.me header.s=s1 header.b=M4iuBmcc
+Received-SPF: fail (google.com: domain of srs0=heyc=cd=em2742.li.me=bounces+5013885-b0ef-li.me=nosuch.biz@harris.ch does not designate 168.245.101.116 as permitted sender) client-ip=168.245.101.116;
+Received: by 2002:a17:907:b681:b0:982:3604:a87e with POP3 id vm1-20020a170907b68100b009823604a87emf3710257ejc.4;
+        Thu, 15 Jun 2023 13:40:01 -0700 (PDT)
+X-Gmail-Fetch-Info: me@bernhardwagner.net 1 mail.harris.ch 995 bwagner
+Return-Path: <SRS0=Heyc=CD=em2742.li.me=bounces+5013885-b0ef-li.me=nosuch.biz@harris.ch>
+X-Original-To: li.me@nosuch.biz
+Delivered-To: bwagner@harris.ch
+Received: from o168245101x116.outbound-mail.sendgrid.net (o168245101x116.outbound-mail.sendgrid.net [168.245.101.116])
+	by mail.harris.ch (Postfix) with ESMTPS id E2987803BA
+	for <li.me@nosuch.biz>; Thu, 15 Jun 2023 22:34:17 +0200 (CEST)
+Authentication-Results: mail.harris.ch;
+	dkim=pass (2048-bit key; unprotected) header.d=li.me header.i=@li.me header.b="M4iuBmcc";
+	dkim-atps=neutral
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=li.me;
+	h=content-type:from:mime-version:subject:to:cc:content-type:from:
+	subject:to;
+	s=s1; bh=VnT/zf30dAUq+VFXH5phbMeQRmoyAZf8gtiQu9ZPVR8=;
+	b=M4iuBmcc61a3P2HA1ZgPALQjEFuwmzB7z9WBOCHeXt6GrWANCxMhmHJGDH1OcwMN048r
+	W8gJfD7J4muMG3mQkmftskZmT9u7U8LNnnbWSXBQQ/b2mvb3xSL6z9DpcYYtIPe1+0avlk
+	cId6BOOfFt6kJzGzHW3XRwgCTYa99LzmQTDKsOql8rowfi16sx7JogTW6zk9fGytgIT5j1
+	nhB7OQMuPPckYduOxg5+T9TJkITW/g0Fo9AqfVLQ6AjDExFySqL2G2l79MywQPWVA69ADg
+	ZXK07yhRVypq9u+c21of2OOXjZWoozk71uVgL/UgM8+fP/dXP1/DsOXoq29yWAYA==
+Received: by filterdrecv-6d5d4d7f7c-vj9jj with SMTP id filterdrecv-6d5d4d7f7c-vj9jj-1-648B75C8-58
+        2023-06-15 20:34:16.402620195 +0000 UTC m=+3099492.765137446
+Received: from NTAxMzg4NQ (unknown)
+	by geopod-ismtpd-8 (SG) with HTTP
+	id uzzUt7_-QFuvVFY6eL0FqQ
+	Thu, 15 Jun 2023 20:34:16.323 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=2d2224170d17a4bf07f2a76273cda77a13b07f06f0865bcb4a3687e82259
+Date: Thu, 15 Jun 2023 20:34:16 +0000 (UTC)
+From: Lime Receipts <no-reply@li.me>
+Mime-Version: 1.0
+Message-ID: <uzzUt7_-QFuvVFY6eL0FqQ@geopod-ismtpd-8>
+Subject: Receipt for your Lime ride
+X-SG-EID: 
+ =?us-ascii?Q?RAp6xInygVFQ3AHEAOYl7M1kSM0p12afVlVkX=2F7T4L6zSgvArkXslJ1RfhkNET?=
+ =?us-ascii?Q?BEsQGRkILE2p2DWxgBdbfnQaOFNgdhB2ehfNKrs?=
+ =?us-ascii?Q?E1MEnkEXsjdCPeHLOURO4OhYZZtIagxSgz2srtE?=
+ =?us-ascii?Q?mWbJmHL8qElvq7O2f43wrw1wMQpYLL5bDW1yyVz?=
+ =?us-ascii?Q?gBJ4aSaWZQudk2APLw8OBYOxvjK274Y9U26zTKN?=
+ =?us-ascii?Q?iy41PKhtLk8W8VcvQ=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FKHgAsE=2FCUk5eZaRe5Ltr?=
+ =?us-ascii?Q?cbBlKs0LL969f4E3TDChfdU2vFSYKWbjPIaWaoZ?=
+ =?us-ascii?Q?Pz83=2FwS71GRRh0gh5Cx2IYGrO2QZ+jCGnEOGSo9?=
+ =?us-ascii?Q?=2FWOBhNT0l+q3Fpnv6=2FFJdMI+KHXrrt6GyiWOMxv?=
+ =?us-ascii?Q?LLTb1+G=2FlEfYxma9+WEsG3JzjFQtaYzPCNw=3D=3D?=
+To: Bernhard Wagner <li.me@nosuch.biz>
+X-Entity-ID: L3Sx1tGADZEBfpfajFv1Pw==
+X-Spam-Status: No, score=4.4 required=5.5 tests=BAYES_40,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,HTML_MESSAGE,KAM_INFOUSMEBIZ,
+	KAM_REALLYHUGEIMGSRC,KAM_SENDGRID,LONG_HEX_URI,RCVD_IN_MSPIKE_H2,
+	SENDGRID_REDIR,SPF_HELO_NONE,SPF_PASS,T_FILL_THIS_FORM_FRAUD_PHISH,
+	T_FILL_THIS_FORM_SHORT,T_SCC_BODY_TEXT_LINE,UNPARSEABLE_RELAY
+	autolearn=no autolearn_force=no version=3.4.2
+X-Spam-Level: ****
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.harris.ch
+X-Spam-Relay-Countries: US
+X-Spam-DCC: :trusty 1481; Body=1 Fuz1=1 Fuz2=1
+
+--2d2224170d17a4bf07f2a76273cda77a13b07f06f0865bcb4a3687e82259
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+Invoice for E-vehicle hire - Thank you for riding with Lime.
+
+Summary
+Date of Issue: Jun 15, 2023
+
+
+Start Fee
+CHF1.00
+
+
+Riding - CHF0.45/min
+CHF4.05
+
+
+Subtotal
+CHF4.69
+
+
+VAT 7.7%
+CHF0.36
+
+
+Total (incl. VAT)
+
+CHF5.05
+
+
+Apple Pay
+
+CHF5.05
+
+
+
+Have a question or issue?
+We=E2=80=99ll do our best to resolve it.
+Email us at support@li.me ( support@li.me ).
+
+Get free rides! Give a friend a CHF3 ride credit, and receive a CHF3 ride c=
+redit in return when they ride.
+
+*Share your referral code*
+
+
+RUS6SG7
+
+
+This message was sent to you by Lime ( https://u5013885.ct.sendgrid.net/ls/=
+click?upn=3DOTFP8KsT8juR-2BdWHKCZjFU31-2BrmXZcGk7aG9EOddzSI-3DpIU9_nAfTb-2B=
+mrazJghhV54zSubg1yP2gQF73c889i0TmAvZCuw43tvzs7-2FSy5uDO5qRhJCMk7gWr5l4YwKnO=
+skaqQ9CTacH-2BrZHHnXvicviKny2vulcaIMJmOJPgvgG8A2iXNpCM6IETgc-2FH20ZEwFaly2t=
+SZvMbQM7Yorh-2BExWf7pKGloe2HruW-2FB51vdNsuEgqM9aeFvDAvi59W3iGhsB2ODRlKeFxre=
+by98-2BCfFAZeWEtskGHtBwGGCOlEC0QY10m4gjauJ8C1b8EKQqJAOtEsLvhdpdaQ9g3NrqvAb-=
+2BrvU8UBNRInM3h-2B8dy0D17ZySehYUC4RmtSnxGhT6w2oE-2F-2FKNP5eoaSUVZO7eciQaWWX=
+B457HE7eyVknNBkn7T5adC7 )
+
+( https://u5013885.ct.sendgrid.net/ls/click?upn=3DOTFP8KsT8juR-2BdWHKCZjFV9=
+wLD-2F-2BImUqAhAaJ-2BWJjBfv49jTngql7HHBILfke6aW055__nAfTb-2BmrazJghhV54zSub=
+g1yP2gQF73c889i0TmAvZCuw43tvzs7-2FSy5uDO5qRhJCMk7gWr5l4YwKnOskaqQ9CTacH-2Br=
+ZHHnXvicviKny2vulcaIMJmOJPgvgG8A2iXNpCM6IETgc-2FH20ZEwFaly2tSZvMbQM7Yorh-2B=
+ExWf7pKGloe2HruW-2FB51vdNsuEgqM9aeFvDAvi59W3iGhsB2ODRlKeFxreby98-2BCfFAZeWE=
+swVblau2lcYOYAI-2Fu5Tn-2ByvQeWrSXG9KK0JQwy7d7x28gKK1rdyMc2uclhvoR7RDPlnvH6E=
+XBRyAuwN6QwJRJRUQypHQSWR1KNZNeYSFNGU8qbWK9fF9uSvFLiawx5mNoJXty41lEncLA9B4yS=
+CT7k ) ( https://u5013885.ct.sendgrid.net/ls/click?upn=3DOTFP8KsT8juR-2BdWH=
+KCZjFd3EwIjRlSmyadVYisOXif57eYf7LXup2vOVovWJzulxIGQH_nAfTb-2BmrazJghhV54zSu=
+bg1yP2gQF73c889i0TmAvZCuw43tvzs7-2FSy5uDO5qRhJCMk7gWr5l4YwKnOskaqQ9CTacH-2B=
+rZHHnXvicviKny2vulcaIMJmOJPgvgG8A2iXNpCM6IETgc-2FH20ZEwFaly2tSZvMbQM7Yorh-2=
+BExWf7pKGloe2HruW-2FB51vdNsuEgqM9aeFvDAvi59W3iGhsB2ODRlKeFxreby98-2BCfFAZeW=
+Euf75LAHIgtWrBpqoVKFWMamQY8E-2FbqaJYcL3HSBNJe0aNa4uDIjkFqcUILVezOvqlwICdKpj=
+tctYTSPs87EcHfSJS6kQT-2F8M8CO3quFQab2-2BQseSvw2t99t-2Ba6yTvz2FHkctugEHuHPcF=
+Ya-2BMN3Gh0 ) ( https://u5013885.ct.sendgrid.net/ls/click?upn=3DOTFP8KsT8ju=
+R-2BdWHKCZjFactSJ7pNuoim4aFUcjCnoBRBH1PLEhOlkZJQAdSQ-2BPGySJn_nAfTb-2BmrazJ=
+ghhV54zSubg1yP2gQF73c889i0TmAvZCuw43tvzs7-2FSy5uDO5qRhJCMk7gWr5l4YwKnOskaqQ=
+9CTacH-2BrZHHnXvicviKny2vulcaIMJmOJPgvgG8A2iXNpCM6IETgc-2FH20ZEwFaly2tSZvMb=
+QM7Yorh-2BExWf7pKGloe2HruW-2FB51vdNsuEgqM9aeFvDAvi59W3iGhsB2ODRlKeFxreby98-=
+2BCfFAZeWEtREPcP8zs7y-2BVfLCHJxAmw6-2FZ0xxbsu69eki9yThOiv9SOenwX-2FJo-2BUNl=
+HFPfag3VltlSYMlxCZO1K2fni5aZG-2FlyIOG-2BwZxVmN0IKB4Do2pP4UXQ8Sv9g9a9xzg-2F3=
+UQqS23HFmci92MAbYSXutyBz )
+--2d2224170d17a4bf07f2a76273cda77a13b07f06f0865bcb4a3687e82259
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html data-editor-version=3D"2" class=3D"sg-campaigns" xmlns=3D"http://www.=
+w3.org/1999/xhtml">
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+"/>
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1, minimum-scale=3D1, maximum-scale=3D1"/>
+    <!--[if !mso]><!-->
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3DEdge"/><!--<![endi=
+f]-->
+    <!--[if (gte mso 9)|(IE)]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+    <!--[if (gte mso 9)|(IE)]>
+    <style type=3D"text/css">
+        body {
+            width: 480px;
+            margin: 0 auto;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table, td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+    </style>
+    <![endif]-->
+
+    <style type=3D"text/css">
+        body, p, div {
+            font-family: arial;
+            font-size: 14px;
+        }
+
+        body {
+            color: #000000;
+        }
+
+        body a {
+            color: #1188E6;
+            text-decoration: none;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+       =20
+        table.wrapper {
+            width: 100% !important;
+            table-layout: fixed;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-size-adjust: 100%;
+            -moz-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        img.max-width {
+            max-width: 100% !important;
+        }
+
+        .column.of-2 {
+            width: 50%;
+        }
+
+        .column.of-3 {
+            width: 33.333%;
+        }
+
+        .column.of-4 {
+            width: 25%;
+        }
+       =20
+        .summary-item {
+            color: #9B9B9B;
+        }
+   =20
+
+        @media screen and (max-width: 480px) {
+            .preheader .rightColumnContent,
+            .footer .rightColumnContent {
+                text-align: left !important;
+            }
+
+            .preheader .rightColumnContent div,
+            .preheader .rightColumnContent span,
+            .footer .rightColumnContent div,
+            .footer .rightColumnContent span {
+                text-align: left !important;
+            }
+
+            .preheader .rightColumnContent,
+            .preheader .leftColumnContent {
+                font-size: 80% !important;
+                padding: 5px 0;
+            }
+
+            table.wrapper-mobile {
+                width: 100% !important;
+                table-layout: fixed;
+            }
+
+            img.max-width {
+                height: auto !important;
+                max-width: 480px !important;
+            }
+
+            a.bulletproof-button {
+                display: block !important;
+                width: auto !important;
+                font-size: 80%;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            .columns {
+                width: 100% !important;
+            }
+
+            .column {
+                display: block !important;
+                width: 100% !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+        }
+    </style>
+    <!--user entered Head Start-->
+
+    <!--End Head user entered-->
+</head>
+<body>
+<center class=3D"wrapper" data-link-color=3D"#1188E6"
+        data-body-style=3D"font-size: 14px; font-family: arial; color: #000=
+000; background-color: #ffffff;">
+    <div class=3D"webkit">
+        <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"10=
+0%" class=3D"wrapper" bgcolor=3D"#ffffff">
+            <tr>
+                <td valign=3D"top" bgcolor=3D"#ffffff" width=3D"100%">
+                    <table width=3D"100%" role=3D"content-container" class=
+=3D"outer" align=3D"center" cellpadding=3D"0"
+                           cellspacing=3D"0" border=3D"0">
+                        <tr>
+                            <td width=3D"100%">
+                                <table width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0">
+                                    <tr>
+                                        <td>
+                                            <!--[if mso]>
+                                            <center>
+                                                <table>
+                                                    <tr>
+                                                        <td width=3D"480">
+                                            <![endif]-->
+                                            <table width=3D"100%" cellpaddi=
+ng=3D"0" cellspacing=3D"0" border=3D"0"
+                                                   style=3D"width: 100%; ma=
+x-width:480px;" align=3D"center">
+                                                <tr>
+                                                    <td role=3D"modules-con=
+tainer"
+                                                        style=3D"padding: 0=
+px 0px 0px 0px; color: #000000; text-align: left;"
+                                                        bgcolor=3D"#ffffff"=
+ width=3D"100%" align=3D"left">
+
+                                                        <table class=3D"mod=
+ule preheader preheader-hide" role=3D"module"
+                                                               data-type=3D=
+"preheader" border=3D"0" cellpadding=3D"0"
+                                                               cellspacing=
+=3D"0" width=3D"100%"
+                                                               style=3D"dis=
+play: none !important; mso-hide: all; visibility: hidden; opacity: 0; color=
+: transparent; height: 0; width: 0;">
+                                                            <tr>
+                                                                <td role=3D=
+"module-content">
+                                                                    <p></p>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+
+                                                        <table class=3D"wra=
+pper" role=3D"module" data-type=3D"image"
+                                                               border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"
+                                                               style=3D"tab=
+le-layout: fixed;">
+                                                            <tr>
+                                                                <td style=
+=3D"font-size:6px;line-height:10px;padding:0px 0px 0px 0px;"
+                                                                    valign=
+=3D"top" align=3D"center">
+                                                                    <img cl=
+ass=3D"max-width" width=3D"160" height=3D"85"
+                                                                         bo=
+rder=3D"0"
+                                                                         st=
+yle=3D"display:block;color:#000000;text-decoration:none;font-family:Helveti=
+ca, arial, sans-serif;font-size:16px;"
+                                                                         sr=
+c=3D"https://marketing-image-production.s3.amazonaws.com/uploads/29d90befbe=
+8a3f2ebcbdd719b3783cf76bd41236e75ebc3748241292c77720d515f6e209e5108bbf8b206=
+37038845db52ec33b4113899c2bbdbc78daaeb6c365.png"
+                                                                         al=
+t=3D"Lime">
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                       =20
+
+                                                        <table class=3D"mod=
+ule"
+                                                               role=3D"modu=
+le"
+                                                               data-type=3D=
+"divider"
+                                                               border=3D"0"
+                                                               cellpadding=
+=3D"0"
+                                                               cellspacing=
+=3D"0"
+                                                               width=3D"100=
+%"
+                                                               style=3D"tab=
+le-layout: fixed;">
+                                                            <tr>
+                                                                <td style=
+=3D"padding:10px 0px 10px 0px;background-color:#ffffff;"
+                                                                    role=3D=
+"module-content"
+                                                                    height=
+=3D"100%"
+                                                                    valign=
+=3D"top"
+                                                                    bgcolor=
+=3D"#ffffff">
+                                                                    <table =
+border=3D"0"
+                                                                           =
+cellpadding=3D"0"
+                                                                           =
+cellspacing=3D"0"
+                                                                           =
+align=3D"center"
+                                                                           =
+width=3D"100%"
+                                                                           =
+height=3D"4px"
+                                                                           =
+style=3D"line-height:4px; font-size:4px;">
+                                                                        <tr=
+>
+                                                                           =
+=20
+                                                                        </t=
+r>
+                                                                    </table=
+>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+
+                                                        <table class=3D"mod=
+ule preheader preheader-hide" role=3D"module"
+                                                               data-type=3D=
+"preheader" border=3D"0" cellpadding=3D"0"
+                                                               cellspacing=
+=3D"0" width=3D"100%"
+                                                               style=3D"dis=
+play: none !important; mso-hide: all; visibility: hidden; opacity: 0; color=
+: transparent; height: 0; width: 0;">
+                                                            <tr>
+                                                                <td role=3D=
+"module-content">
+                                                                    <p></p>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <div style=3D"line-=
+height:22px;text-align:inherit;">
+                                                        <b>We&apos;re chang=
+ing how we send email receipts.</b>
+                                                        <br>
+                                                        <span>By default, y=
+ou will no longer receive email receipts for your rides. If you=E2=80=99d l=
+ike to continue receiving email receipts, view the Settings page in your ap=
+p.</span>
+                                                        </div>
+                                                        <div style=3D"line-=
+height:22px;text-align:inherit;">
+
+                                                        </div>
+                                                        <br/>
+                                                        <div >
+                                                        <span class=3D"summ=
+ary-item">
+                                                            <span>Date of I=
+ssue: Jun 15, 2023</span>
+                                                        </span>
+                                                        <span class=3D"summ=
+ary-item">
+                                                            <span style=3D"=
+padding: 0 5px">|</span>
+                                                            <span>1.50km di=
+stance</span>
+                                                        </span>
+                                                        <span class=3D"summ=
+ary-item">
+                                                            <span style=3D"=
+padding: 0 5px">|</span>
+                                                            <span>9:41 PM -=
+ 9:50 PM</span>
+                                                        </span>
+                                                       =20
+                                                        </div>
+                                                        <br/>
+
+                                                       =20
+                                                        <table class=3D"mod=
+ule preheader preheader-hide" role=3D"module"
+                                                               data-type=3D=
+"preheader" border=3D"0" cellpadding=3D"0"
+                                                               cellspacing=
+=3D"0" width=3D"100%"
+                                                               style=3D"dis=
+play: none !important; mso-hide: all; visibility: hidden; opacity: 0; color=
+: transparent; height: 0; width: 0;">
+                                                            <tr>
+                                                                <td role=3D=
+"module-content">
+                                                                    <p></p>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+
+                                                        <table class=3D"mod=
+ule preheader preheader-hide" role=3D"module"
+                                                               data-type=3D=
+"preheader" border=3D"0" cellpadding=3D"0"
+                                                               cellspacing=
+=3D"0" width=3D"100%"
+                                                               style=3D"dis=
+play: none !important; mso-hide: all; visibility: hidden; opacity: 0; color=
+: transparent; height: 0; width: 0;">
+                                                            <tr>
+                                                                <td role=3D=
+"module-content">
+                                                                    <p></p>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+
+                                                        <table class=3D"mod=
+ule"
+                                                               role=3D"modu=
+le"
+                                                               data-type=3D=
+"divider"
+                                                               border=3D"0"
+                                                               cellpadding=
+=3D"0"
+                                                               cellspacing=
+=3D"0"
+                                                               width=3D"100=
+%"
+                                                               style=3D"tab=
+le-layout: fixed;">
+                                                            <tr>
+                                                                <td style=
+=3D"padding:0px 0px 0px 0px;"
+                                                                    role=3D=
+"module-content"
+                                                                    height=
+=3D"100%"
+                                                                    valign=
+=3D"top"
+                                                                    bgcolor=
+=3D"">
+                                                                    <table =
+border=3D"0"
+                                                                           =
+cellpadding=3D"0"
+                                                                           =
+cellspacing=3D"0"
+                                                                           =
+align=3D"center"
+                                                                           =
+width=3D"100%"
+                                                                           =
+height=3D"1px"
+                                                                           =
+style=3D"line-height:1px; font-size:1px;">
+                                                                        <tr=
+>
+                                                                           =
+ <td
+                                                                           =
+         style=3D"padding: 0px 0px 1px 0px;"
+                                                                           =
+         bgcolor=3D"#E9E9E9"></td>
+                                                                        </t=
+r>
+                                                                    </table=
+>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+
+                                                        <table border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" align=3D"center"
+                                                               width=3D"100=
+%" role=3D"module" data-type=3D"columns">
+                                                            <tr>
+                                                                <td style=
+=3D"padding:0px 0px 0px 0px;" bgcolor=3D"">
+
+                                                                    <!--[if=
+ mso]>
+                                                                    <table =
+width=3D"49%" align=3D"left">
+                                                                        <tr=
+>
+                                                                           =
+ <td>
+                                                                    <![endi=
+f]-->
+                                                                    <table =
+style=3D"padding: 0px 0px 0px 0px;"
+                                                                           =
+align=3D"left"
+                                                                           =
+valign=3D"top"
+                                                                           =
+width=3D"100%"
+                                                                           =
+height=3D"100%"
+                                                                           =
+class=3D"column empty">
+                                                                        <tr=
+>
+                                                                           =
+ <td class=3D"columns--column-content">
+
+                                                                           =
+     <table class=3D"module" role=3D"module"
+                                                                           =
+            data-type=3D"text"=20
+                                                                           =
+            cellpadding=3D"0" cellspacing=3D"0"
+                                                                           =
+            width=3D"100%"
+                                                                           =
+            style=3D"table-layout: fixed;">
+                                                                           =
+         <tr>
+                                                                           =
+             <td style=3D"padding:18px 0px 18px 0px;line-height:22px;text-a=
+lign:inherit;color: #666666;"
+                                                                           =
+                 height=3D"100%"
+                                                                           =
+                 valign=3D"top"
+                                                                           =
+                 bgcolor=3D"">
+                                                                           =
+                 <div>
+                                                                           =
+                     Start Fee
+                                                                           =
+                 </div>
+
+                                                                           =
+             </td>
+                                                                           =
+             <td>
+                                                                           =
+                 <div style=3D"text-align: right;font-size:16px;">
+                                                                           =
+                     CHF1.00
+                                                                           =
+                 </div>
+                                                                           =
+             </td>
+                                                                           =
+         </tr>
+                                                                           =
+     </table>
+
+                                                                           =
+     <table class=3D"module" role=3D"module"
+                                                                           =
+            data-type=3D"text"=20
+                                                                           =
+            cellpadding=3D"0" cellspacing=3D"0"
+                                                                           =
+            width=3D"100%"
+                                                                           =
+            style=3D"table-layout: fixed;">
+                                                                           =
+         <tr>
+                                                                           =
+             <td style=3D"padding:18px 0px 18px 0px;line-height:22px;text-a=
+lign:inherit;color: #666666;"
+                                                                           =
+                 height=3D"100%"
+                                                                           =
+                 valign=3D"top"
+                                                                           =
+                 bgcolor=3D"">
+                                                                           =
+                 <div>
+                                                                           =
+                     Riding - CHF0.45/min
+                                                                           =
+                 </div>
+
+                                                                           =
+             </td>
+                                                                           =
+             <td>
+                                                                           =
+                 <div style=3D"text-align: right;font-size:16px;">
+                                                                           =
+                     CHF4.05
+                                                                           =
+                 </div>
+                                                                           =
+             </td>
+                                                                           =
+         </tr>
+                                                                           =
+     </table>
+
+                                                                           =
+     <table class=3D"module" role=3D"module"
+                                                                           =
+            data-type=3D"text"=20
+                                                                           =
+            cellpadding=3D"0" cellspacing=3D"0"
+                                                                           =
+            width=3D"100%"
+                                                                           =
+            style=3D"table-layout: fixed;">
+                                                                           =
+         <tr>
+                                                                           =
+             <td style=3D"padding:18px 0px 18px 0px;line-height:22px;text-a=
+lign:inherit;color: #666666;"
+                                                                           =
+                 height=3D"100%"
+                                                                           =
+                 valign=3D"top"
+                                                                           =
+                 bgcolor=3D"">
+                                                                           =
+                 <div>
+                                                                           =
+                     Subtotal
+                                                                           =
+                 </div>
+
+                                                                           =
+             </td>
+                                                                           =
+             <td>
+                                                                           =
+                 <div style=3D"text-align: right;font-size:16px;">
+                                                                           =
+                     CHF4.69
+                                                                           =
+                 </div>
+                                                                           =
+             </td>
+                                                                           =
+         </tr>
+                                                                           =
+     </table>
+
+                                                                           =
+     <table class=3D"module" role=3D"module"
+                                                                           =
+            data-type=3D"text"=20
+                                                                           =
+            cellpadding=3D"0" cellspacing=3D"0"
+                                                                           =
+            width=3D"100%"
+                                                                           =
+            style=3D"table-layout: fixed;">
+                                                                           =
+         <tr>
+                                                                           =
+             <td style=3D"padding:18px 0px 18px 0px;line-height:22px;text-a=
+lign:inherit;color: #666666;"
+                                                                           =
+                 height=3D"100%"
+                                                                           =
+                 valign=3D"top"
+                                                                           =
+                 bgcolor=3D"">
+                                                                           =
+                 <div>
+                                                                           =
+                     VAT 7.7%
+                                                                           =
+                 </div>
+
+                                                                           =
+             </td>
+                                                                           =
+             <td>
+                                                                           =
+                 <div style=3D"text-align: right;font-size:16px;">
+                                                                           =
+                     CHF0.36
+                                                                           =
+                 </div>
+                                                                           =
+             </td>
+                                                                           =
+         </tr>
+                                                                           =
+     </table>
+
+
+                                                                           =
+ </td>
+                                                                        </t=
+r>
+                                                                    </table=
+>
+
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                       =20
+                                                       =20
+                                                        <table border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" align=3D"center"
+                                                               width=3D"100=
+%" role=3D"module" data-type=3D"columns" >
+                                                            <tr>
+                                                                <td style=
+=3D"padding:0px 0px 0px 0px;" bgcolor=3D"">
+
+                                                                    <!--[if=
+ mso]>
+                                                                    <table =
+width=3D"49%" align=3D"left">
+                                                                        <tr=
+>
+                                                                           =
+ <td>
+                                                                    <![endi=
+f]-->
+                                                                    <table =
+style=3D"padding: 0px 0px 0px 0px;"
+                                                                           =
+align=3D"left"
+                                                                           =
+valign=3D"top"
+                                                                           =
+width=3D"100%"
+                                                                           =
+height=3D"100%"
+                                                                           =
+class=3D"column empty">
+                                                                        <tr=
+>
+                                                                           =
+ <td class=3D"columns--column-content">
+
+
+                                                                           =
+ </td>
+                                                                        </t=
+r>
+                                                                    </table=
+>
+
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                       =20
+                                                       =20
+                                                        <table border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" align=3D"center"
+                                                               width=3D"100=
+%" role=3D"module" data-type=3D"columns" >
+                                                            <tr>
+                                                                <td style=
+=3D"padding:0px 0px 0px 0px;" bgcolor=3D"">
+
+                                                                    <!--[if=
+ mso]>
+                                                                    <table =
+width=3D"49%" align=3D"left">
+                                                                        <tr=
+>
+                                                                           =
+ <td>
+                                                                    <![endi=
+f]-->
+                                                                    <table =
+style=3D"padding: 0px 0px 0px 0px;"
+                                                                           =
+align=3D"left"
+                                                                           =
+valign=3D"top"
+                                                                           =
+width=3D"100%"
+                                                                           =
+height=3D"100%"
+                                                                           =
+class=3D"column empty">
+                                                                        <tr=
+>
+                                                                           =
+ <td class=3D"columns--column-content">
+
+
+                                                                           =
+ </td>
+                                                                        </t=
+r>
+                                                                    </table=
+>
+
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                       =20
+                                                       =20
+                                                        <table border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" align=3D"center"
+                                                               width=3D"100=
+%" role=3D"module" data-type=3D"columns" >
+                                                            <tr>
+                                                                <td style=
+=3D"padding:0px 0px 0px 0px;" bgcolor=3D"">
+
+                                                                    <!--[if=
+ mso]>
+                                                                    <table =
+width=3D"49%" align=3D"left">
+                                                                        <tr=
+>
+                                                                           =
+ <td>
+                                                                    <![endi=
+f]-->
+                                                                    <table =
+style=3D"padding: 0px 0px 0px 0px;"
+                                                                           =
+align=3D"left"
+                                                                           =
+valign=3D"top"
+                                                                           =
+width=3D"100%"
+                                                                           =
+height=3D"100%"
+                                                                           =
+class=3D"column empty">
+                                                                        <tr=
+>
+                                                                           =
+ <td class=3D"columns--column-content">
+
+
+                                                                           =
+ </td>
+                                                                        </t=
+r>
+                                                                    </table=
+>
+
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+
+                                                        <table class=3D"mod=
+ule"
+                                                               role=3D"modu=
+le"
+                                                               data-type=3D=
+"divider"
+                                                               border=3D"0"
+                                                               cellpadding=
+=3D"0"
+                                                               cellspacing=
+=3D"0"
+                                                               width=3D"100=
+%"
+                                                               style=3D"tab=
+le-layout: fixed;">
+                                                            <tr>
+                                                                <td style=
+=3D"padding:0px 0px 0px 0px;"
+                                                                    role=3D=
+"module-content"
+                                                                    height=
+=3D"100%"
+                                                                    valign=
+=3D"top"
+                                                                    bgcolor=
+=3D"">
+                                                                    <table =
+border=3D"0"
+                                                                           =
+cellpadding=3D"0"
+                                                                           =
+cellspacing=3D"0"
+                                                                           =
+align=3D"center"
+                                                                           =
+width=3D"100%"
+                                                                           =
+height=3D"1px"
+                                                                           =
+style=3D"line-height:1px; font-size:1px;">
+                                                                        <tr=
+>
+                                                                           =
+ <td
+                                                                           =
+         style=3D"padding: 0px 0px 1px 0px;"
+                                                                           =
+         bgcolor=3D"#000000"></td>
+                                                                        </t=
+r>
+                                                                    </table=
+>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+
+
+                                                        <table border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" align=3D"center"
+                                                               width=3D"100=
+%" role=3D"module" data-type=3D"columns">
+                                                            <tr>
+                                                                <td style=
+=3D"padding:0px 0px 0px 0px;" bgcolor=3D"">
+
+                                                                    <!--[if=
+ mso]>
+                                                                    <table =
+width=3D"49%" align=3D"left">
+                                                                        <tr=
+>
+                                                                           =
+ <td>
+                                                                    <![endi=
+f]-->
+                                                                    <table =
+style=3D"padding: 0px 0px 0px 0px;"
+                                                                           =
+align=3D"left"
+                                                                           =
+valign=3D"top"
+                                                                           =
+width=3D"50%"
+                                                                           =
+height=3D"100%"
+                                                                           =
+class=3D"column column-0 of-2 empty">
+                                                                        <tr=
+>
+                                                                           =
+ <td class=3D"columns--column-content">
+
+                                                                           =
+     <table class=3D"module" role=3D"module"
+                                                                           =
+            data-type=3D"text" border=3D"0"
+                                                                           =
+            cellpadding=3D"0" cellspacing=3D"0"
+                                                                           =
+            width=3D"100%"
+                                                                           =
+            style=3D"table-layout: fixed;">
+                                                                           =
+         <tr>
+                                                                           =
+             <td style=3D"padding:18px 0px 18px 0px;line-height:22px;text-a=
+lign:inherit;"
+                                                                           =
+                 height=3D"100%"
+                                                                           =
+                 valign=3D"top"
+                                                                           =
+                 bgcolor=3D"">
+                                                                           =
+                 <div>
+                                                                           =
+                     <span
+                                                                           =
+                             style=3D"font-size:16px;color:#000000;">Total =
+(incl. VAT)</span></div>
+
+                                                                           =
+             </td>
+                                                                           =
+         </tr>
+                                                                           =
+     </table>
+
+                                                                           =
+ </td>
+                                                                        </t=
+r>
+                                                                    </table=
+>
+                                                                    <!--[if=
+ mso]>
+                                                                    </td></=
+tr></table>
+                                                                    </cente=
+r>
+                                                                    <![endi=
+f]-->
+
+                                                                </td>
+                                                                <td style=
+=3D"width: 1%">
+                                                                    <!--[if=
+ mso]>
+                                                                    <table =
+width=3D"49%" align=3D"left">
+                                                                        <tr=
+>
+                                                                           =
+ <td>
+                                                                    <![endi=
+f]-->
+                                                                    <table =
+style=3D"padding: 0px 0px 0px 0px; float: right; min-width: 80px;"
+                                                                           =
+align=3D"left"
+                                                                           =
+valign=3D"top"
+                                                                           =
+width=3D"50%"
+                                                                           =
+height=3D"100%"
+                                                                           =
+class=3D"column column-1 of-2 empty">
+                                                                        <tr=
+>
+                                                                           =
+ <td class=3D"columns--column-content">
+
+                                                                           =
+     <table class=3D"module" role=3D"module"
+                                                                           =
+            data-type=3D"text" border=3D"0"
+                                                                           =
+            cellpadding=3D"0" cellspacing=3D"0"
+                                                                           =
+            width=3D"100%"
+                                                                           =
+            style=3D"table-layout: fixed;">
+                                                                           =
+         <tr>
+                                                                           =
+             <td style=3D"padding:18px 0px 18px 0px;line-height:22px;text-a=
+lign:inherit;"
+                                                                           =
+                 height=3D"100%"
+                                                                           =
+                 valign=3D"top"
+                                                                           =
+                 bgcolor=3D"">
+                                                                           =
+                 <div style=3D"text-align: right;">
+                                                                           =
+                     <span
+                                                                           =
+                             style=3D"font-size:16px;">CHF5.05</span>
+                                                                           =
+                 </div>
+
+                                                                           =
+             </td>
+                                                                           =
+         </tr>
+                                                                           =
+     </table>
+
+                                                                           =
+ </td>
+                                                                        </t=
+r>
+                                                                    </table=
+>
+                                                                    <!--[if=
+ mso]>
+                                                                    </td></=
+tr></table>
+                                                                    </cente=
+r>
+                                                                    <![endi=
+f]-->
+
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+
+                                                        <table class=3D"mod=
+ule"
+                                                               role=3D"modu=
+le"
+                                                               data-type=3D=
+"divider"
+                                                               border=3D"0"
+                                                               cellpadding=
+=3D"0"
+                                                               cellspacing=
+=3D"0"
+                                                               width=3D"100=
+%"
+                                                               style=3D"tab=
+le-layout: fixed;">
+                                                            <tr>
+                                                                <td style=
+=3D"padding:0px 0px 0px 0px;"
+                                                                    role=3D=
+"module-content"
+                                                                    height=
+=3D"100%"
+                                                                    valign=
+=3D"top"
+                                                                    bgcolor=
+=3D"">
+                                                                    <table =
+border=3D"0"
+                                                                           =
+cellpadding=3D"0"
+                                                                           =
+cellspacing=3D"0"
+                                                                           =
+align=3D"center"
+                                                                           =
+width=3D"100%"
+                                                                           =
+height=3D"1px"
+                                                                           =
+style=3D"line-height:1px; font-size:1px;">
+                                                                        <tr=
+>
+                                                                           =
+ <td
+                                                                           =
+         style=3D"padding: 0px 0px 1px 0px;"
+                                                                           =
+         bgcolor=3D"#E9E9E9"></td>
+                                                                        </t=
+r>
+                                                                    </table=
+>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+
+                                                       =20
+                                                        <table border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" align=3D"center"
+                                                               width=3D"100=
+%" role=3D"module" data-type=3D"columns"
+                                                               style=3D":ch=
+arged_from_card_style">
+                                                            <tr>
+                                                                <td style=
+=3D"padding:0px 0px 0px 0px;" bgcolor=3D"">
+
+                                                                    <!--[if=
+ mso]>
+                                                                    <table =
+width=3D"49%" align=3D"left">
+                                                                        <tr=
+>
+                                                                           =
+ <td>
+                                                                    <![endi=
+f]-->
+                                                                    <table =
+style=3D"padding: 0px 0px 0px 0px;"
+                                                                           =
+align=3D"left"
+                                                                           =
+valign=3D"top"
+                                                                           =
+width=3D"50%"
+                                                                           =
+height=3D"100%"
+                                                                           =
+class=3D"column column-0 of-2 empty">
+                                                                        <tr=
+>
+                                                                           =
+ <td class=3D"columns--column-content">
+
+                                                                           =
+     <table class=3D"module" role=3D"module"
+                                                                           =
+            data-type=3D"text" border=3D"0"
+                                                                           =
+            cellpadding=3D"0" cellspacing=3D"0"
+                                                                           =
+            width=3D"100%"
+                                                                           =
+            style=3D"table-layout: fixed;">
+                                                                           =
+         <tr>
+                                                                           =
+             <td style=3D"padding:18px 0px;line-height:22px;text-align:inhe=
+rit;"
+                                                                           =
+                 height=3D"100%"
+                                                                           =
+                 valign=3D"top"
+                                                                           =
+                 bgcolor=3D"">
+                                                                           =
+                 <img role=3D"card-icon"
+                                                                           =
+                      height=3D"auto"
+                                                                           =
+                      width=3D"42px"
+                                                                           =
+                      style=3D"float: left;"
+                                                                           =
+                      src=3D"http://d1mers5eae437u.cloudfront.net/images/pa=
+yment_method_icons/apple_pay.png"/>
+                                                                           =
+                 <div style=3D"float: left; padding: 0px 0px 0px 5px">
+                                                                           =
+                     <span style=3D"color:#5E6372;"><span
+                                                                           =
+                             style=3D"font-size:14px;">Apple Pay</span></sp=
+an>
+                                                                           =
+                 </div>
+
+                                                                           =
+             </td>
+                                                                           =
+         </tr>
+                                                                           =
+     </table>
+
+                                                                           =
+ </td>
+                                                                        </t=
+r>
+                                                                    </table=
+>
+                                                                    <!--[if=
+ mso]>
+                                                                    </td></=
+tr></table>
+                                                                    </cente=
+r>
+                                                                    <![endi=
+f]-->
+
+                                                                </td>
+                                                                <td style=
+=3D"width: 1%">
+                                                                    <!--[if=
+ mso]>
+                                                                    <table =
+width=3D"49%" align=3D"left">
+                                                                        <tr=
+>
+                                                                           =
+ <td>
+                                                                    <![endi=
+f]-->
+                                                                    <table =
+style=3D"padding: 0px 0px 0px 0px; float: right; min-width: 80px;"
+                                                                           =
+align=3D"left"
+                                                                           =
+valign=3D"top"
+                                                                           =
+width=3D"50%"
+                                                                           =
+height=3D"100%"
+                                                                           =
+class=3D"column column-1 of-2 empty">
+                                                                        <tr=
+>
+                                                                           =
+ <td class=3D"columns--column-content">
+
+                                                                           =
+     <table class=3D"module" role=3D"module"
+                                                                           =
+            data-type=3D"text" border=3D"0"
+                                                                           =
+            cellpadding=3D"0" cellspacing=3D"0"
+                                                                           =
+            width=3D"100%"
+                                                                           =
+            style=3D"table-layout: fixed;">
+                                                                           =
+         <tr>
+                                                                           =
+             <td style=3D"padding:18px 0px;line-height:22px;text-align:inhe=
+rit;"
+                                                                           =
+                 height=3D"100%"
+                                                                           =
+                 valign=3D"top"
+                                                                           =
+                 bgcolor=3D"">
+                                                                           =
+                 <div style=3D"text-align: right;">
+                                                                           =
+                     <span
+                                                                           =
+                             style=3D"font-size:16px;">CHF5.05</span>
+                                                                           =
+                 </div>
+
+                                                                           =
+             </td>
+                                                                           =
+         </tr>
+                                                                           =
+     </table>
+
+                                                                           =
+ </td>
+                                                                        </t=
+r>
+                                                                    </table=
+>
+                                                                    <!--[if=
+ mso]>
+                                                                    </td></=
+tr></table>
+                                                                    </cente=
+r>
+                                                                    <![endi=
+f]-->
+
+                                                                </td>
+                                                            </tr>
+                                                       =20
+                                                        </table>
+                                                       =20
+                                                        <table class=3D"mod=
+ule" role=3D"module" data-type=3D"text" border=3D"0"
+                                                               cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%"
+                                                               style=3D"tab=
+le-layout: fixed;">
+                                                            <tr>
+                                                                <td style=
+=3D"padding:18px 0px 18px 0px;line-height:22px;text-align:inherit;"
+                                                                    height=
+=3D"100%"
+                                                                    valign=
+=3D"top"
+                                                                    bgcolor=
+=3D"">
+                                                                    <div st=
+yle=3D"text-align: center;"><span
+                                                                           =
+ style=3D"color:#B4B4B4;">Document Number</a></span>
+                                                                    </div>
+
+                                                                    <div st=
+yle=3D"text-align: center;"><span
+                                                                           =
+ style=3D"color:black;">CH-2023-06-2000297236</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                       =20
+                                                       =20
+                                                        <table class=3D"mod=
+ule"
+                                                               role=3D"modu=
+le"
+                                                               data-type=3D=
+"divider"
+                                                               border=3D"0"
+                                                               cellpadding=
+=3D"0"
+                                                               cellspacing=
+=3D"0"
+                                                               width=3D"100=
+%"
+                                                               style=3D"tab=
+le-layout: fixed;">
+                                                            <tr>
+                                                                <td style=
+=3D"padding:0px 0px 0px 0px;"
+                                                                    role=3D=
+"module-content"
+                                                                    height=
+=3D"100%"
+                                                                    valign=
+=3D"top"
+                                                                    bgcolor=
+=3D"">
+                                                                    <table =
+border=3D"0"
+                                                                           =
+cellpadding=3D"0"
+                                                                           =
+cellspacing=3D"0"
+                                                                           =
+align=3D"center"
+                                                                           =
+width=3D"100%"
+                                                                           =
+height=3D"1px"
+                                                                           =
+style=3D"line-height:1px; font-size:1px;">
+                                                                        <tr=
+>
+                                                                           =
+ <td
+                                                                           =
+         style=3D"padding: 0px 0px 1px 0px;"
+                                                                           =
+         bgcolor=3D"#E9E9E9"></td>
+                                                                        </t=
+r>
+                                                                    </table=
+>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <table class=3D"mod=
+ule" role=3D"module" data-type=3D"text" border=3D"0"
+                                                               cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%"
+                                                               style=3D"tab=
+le-layout: fixed;">
+                                                            <tr>
+                                                                <td style=
+=3D"padding:10px 40px 20px 40px;line-height:0px;text-align:inherit;"
+                                                                    height=
+=3D"100%"
+                                                                    valign=
+=3D"top">
+                                                                    <tr>
+                                                                           =
+             <td style=3D"padding:18px 0px 18px 0px;line-height:18px;text-a=
+lign:inherit;"
+                                                                           =
+                 height=3D"100%"
+                                                                           =
+                 valign=3D"top"
+                                                                           =
+                 bgcolor=3D"">
+                                                                           =
+                 <div style=3D"color:#9B9B9B;font-size:12px;text-transform:=
+ uppercase;">
+                                                                           =
+                     <b>Account details<b>
+                                                                           =
+                 </div>
+                                                                           =
+                 <div style=3D"text-align: left;color:#9B9B9B;font-size:12p=
+x;white-space: pre-line;">
+                                                                           =
+                     Name: Bernhard Wagner
+Email: li.me@nosuch.biz
+Phone Number: 41792377781
+                                                                           =
+                 </div>
+                                                                           =
+             </td>
+
+                                                                           =
+             <td style=3D"padding:18px 0px 18px 0px;line-height:18px;text-a=
+lign:inherit;"
+                                                                           =
+                 height=3D"100%"
+                                                                           =
+                 valign=3D"top"
+                                                                           =
+                 bgcolor=3D"">
+                                                                           =
+                 <div style=3D"color:#9B9B9B;font-size:12px;text-transform:=
+ uppercase;">
+                                                                           =
+                     <b>Business name and address<b>
+                                                                           =
+                 </div>
+                                                                           =
+                 <div style=3D"text-align: left;color:#9B9B9B;font-size:12p=
+x;white-space: pre-line;">
+                                                                           =
+                     LimeBike Switzerland AG
+Kanzleistrasse 18. 8004 Z=C3=BCrich
+Tax ID: CHE374568683
+                                                                           =
+                 </div>
+                                                                           =
+             </td>
+
+                                                                    </tr>
+                                                        </table>
+                                                       =20
+                                                         <table class=3D"mo=
+dule"
+                                                               role=3D"modu=
+le"
+                                                               data-type=3D=
+"divider"
+                                                               border=3D"0"
+                                                               cellpadding=
+=3D"0"
+                                                               cellspacing=
+=3D"0"
+                                                               width=3D"100=
+%"
+                                                               style=3D"tab=
+le-layout: fixed;">
+                                                            <tr>
+                                                                <td style=
+=3D"padding:0px 0px 0px 0px;"
+                                                                    role=3D=
+"module-content"
+                                                                    height=
+=3D"100%"
+                                                                    valign=
+=3D"top"
+                                                                    bgcolor=
+=3D"">
+                                                                    <table =
+border=3D"0"
+                                                                           =
+cellpadding=3D"0"
+                                                                           =
+cellspacing=3D"0"
+                                                                           =
+align=3D"center"
+                                                                           =
+width=3D"100%"
+                                                                           =
+height=3D"1px"
+                                                                           =
+style=3D"line-height:1px; font-size:px;">
+                                                                        <tr=
+>
+                                                                           =
+ <td
+                                                                           =
+         style=3D"padding: 0px 0px 0px 0px;"
+                                                                           =
+         bgcolor=3D"#E9E9E9"></td>
+                                                                        </t=
+r>
+                                                                    </table=
+>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                       =20
+                                                        <table class=3D"mod=
+ule" role=3D"module" data-type=3D"text" border=3D"0"
+                                                               cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%"
+                                                               style=3D"tab=
+le-layout: fixed;">
+                                                            <tr>
+                                                                <td style=
+=3D"padding:18px 0px 18px 0px;line-height:22px;text-align:inherit;"
+                                                                    height=
+=3D"100%"
+                                                                    valign=
+=3D"top"
+                                                                    bgcolor=
+=3D"">
+                                                                    <div st=
+yle=3D"text-align: center;"><span
+                                                                           =
+ style=3D"color:#B4B4B4;"></span>
+                                                                    </div>
+                                                                    <div st=
+yle=3D"text-align: center;"><span
+                                                                           =
+ style=3D"color:#B4B4B4;">Have a question or issue?</span>
+                                                                    </div>
+
+                                                                    <div st=
+yle=3D"text-align: center;"><span
+                                                                           =
+ style=3D"color:#B4B4B4;">We=E2=80=99ll do our best to resolve it.</span>
+                                                                    </div>
+                                                                   =20
+                                                                    <div st=
+yle=3D"text-align: center;"><span
+                                                                           =
+ style=3D"color:#B4B4B4;">Email us at </span><a
+                                                                           =
+ href=3D"mailto:support@li.me"><span
+                                                                           =
+ style=3D"color:#05C500;">support@li.me</span></a><span
+                                                                           =
+ style=3D"color:#B4B4B4;">.</span></div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+
+                                                        <table class=3D"mod=
+ule"
+                                                               role=3D"modu=
+le"
+                                                               data-type=3D=
+"divider"
+                                                               border=3D"0"
+                                                               cellpadding=
+=3D"0"
+                                                               cellspacing=
+=3D"0"
+                                                               width=3D"100=
+%"
+                                                               style=3D"tab=
+le-layout: fixed;">
+                                                            <tr>
+                                                                <td style=
+=3D"padding:0px 0px 0px 0px;"
+                                                                    role=3D=
+"module-content"
+                                                                    height=
+=3D"100%"
+                                                                    valign=
+=3D"top"
+                                                                    bgcolor=
+=3D"">
+                                                                    <table =
+border=3D"0"
+                                                                           =
+cellpadding=3D"0"
+                                                                           =
+cellspacing=3D"0"
+                                                                           =
+align=3D"center"
+                                                                           =
+width=3D"100%"
+                                                                           =
+height=3D"1px"
+                                                                           =
+style=3D"line-height:1px; font-size:1px;">
+                                                                        <tr=
+>
+                                                                           =
+ <td
+                                                                           =
+         style=3D"padding: 0px 0px 1px 0px;"
+                                                                           =
+         bgcolor=3D"#E9E9E9"></td>
+                                                                        </t=
+r>
+                                                                    </table=
+>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+
+                                                        <table class=3D"mod=
+ule" role=3D"module" data-type=3D"text" border=3D"0"
+                                                               cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%"
+                                                               style=3D"tab=
+le-layout: fixed;">
+                                                            <tr>
+                                                                <td style=
+=3D"padding:18px 40px 0px 40px;line-height:22px;text-align:inherit;"
+                                                                    height=
+=3D"100%"
+                                                                    valign=
+=3D"top"
+                                                                    bgcolor=
+=3D"">
+                                                                    <div st=
+yle=3D"text-align: center;"><span
+                                                                           =
+ style=3D"color:#B4B4B4;">Get free rides! Give a friend a CHF3 ride credit,=
+ and receive a CHF3 ride credit in return when they ride.</span>
+                                                                    </div>
+
+                                                                    <div st=
+yle=3D"text-align: center;">&nbsp;</div>
+
+                                                                    <div st=
+yle=3D"text-align: center;"><strong><span
+                                                                           =
+ style=3D"color:#9B9B9B;"><span
+                                                                           =
+ style=3D"font-size:12px;">Share your referral code</span></span></strong>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <table border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" class=3D"module"
+                                                               data-role=3D=
+"module-button" data-type=3D"button"
+                                                               role=3D"modu=
+le" style=3D"table-layout:fixed;" width=3D"100%">
+                                                            <tbody>
+                                                            <tr>
+                                                                <td align=
+=3D"center" bgcolor=3D"" class=3D"outer-td"
+                                                                    style=
+=3D"padding:0px 0px 0px 0px;">
+                                                                    <table =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0"
+                                                                           =
+class=3D"button-css__deep-table___2nYCc wrapper-mobile"
+                                                                           =
+style=3D"text-align:center;">
+                                                                        <tb=
+ody>
+                                                                        <tr=
+>
+                                                                           =
+ <td align=3D"center" bgcolor=3D"#05C500"
+                                                                           =
+     class=3D"inner-td"
+                                                                           =
+     style=3D"border-radius:6px;font-size:16px;text-align:center;background=
+-color:inherit;">
+                                                                           =
+     <div style=3D"background-color:#05C500;border:1px solid #333333;border=
+-color:#05C500;border-radius:2px;border-width:1px;color:#ffffff;display:inl=
+ine-block;font-family:arial,helvetica,sans-serif;font-size:16px;font-weight=
+:normal;letter-spacing:0px;line-height:16px;padding:12px 18px 12px 18px;tex=
+t-align:center;text-decoration:none;">=20
+                                                                           =
+    =20
+                                                                           =
+         RUS6SG7
+                                                                           =
+     </div>
+                                                                           =
+ </td>
+                                                                        </t=
+r>
+                                                                        </t=
+body>
+                                                                    </table=
+>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <table class=3D"mod=
+ule"
+                                                               role=3D"modu=
+le"
+                                                               data-type=3D=
+"divider"
+                                                               border=3D"0"
+                                                               cellpadding=
+=3D"0"
+                                                               cellspacing=
+=3D"0"
+                                                               width=3D"100=
+%"
+                                                               style=3D"tab=
+le-layout: fixed;">
+                                                            <tr>
+                                                                <td style=
+=3D"padding:30px 0px 10px 0px;background-color:#ffffff;"
+                                                                    role=3D=
+"module-content"
+                                                                    height=
+=3D"100%"
+                                                                    valign=
+=3D"top"
+                                                                    bgcolor=
+=3D"#ffffff">
+                                                                    <table =
+border=3D"0"
+                                                                           =
+cellpadding=3D"0"
+                                                                           =
+cellspacing=3D"0"
+                                                                           =
+align=3D"center"
+                                                                           =
+width=3D"100%"
+                                                                           =
+height=3D"4px"
+                                                                           =
+style=3D"line-height:4px; font-size:4px;">
+                                                                        <tr=
+>
+                                                                           =
+ <td
+                                                                           =
+         style=3D"padding: 0px 0px 4px 0px;"
+                                                                           =
+         bgcolor=3D"#00DD00"></td>
+                                                                        </t=
+r>
+                                                                    </table=
+>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+
+                                                        <table border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" align=3D"center"
+                                                               width=3D"100=
+%" role=3D"module" data-type=3D"columns">
+                                                            <tr>
+                                                                <td style=
+=3D"padding:0px 5px 0px 5px;background-color:#ffffff;"
+                                                                    bgcolor=
+=3D"#ffffff">
+
+                                                                    <!--[if=
+ mso]>
+                                                                    <table =
+width=3D"99%" align=3D"left">
+                                                                        <tr=
+>
+                                                                           =
+ <td>
+                                                                    <![endi=
+f]-->
+                                                                    <table =
+style=3D"padding: 0px 0px 0px 0px;"
+                                                                           =
+align=3D"left"
+                                                                           =
+valign=3D"top"
+                                                                           =
+height=3D"100%"
+                                                                           =
+class=3D"column column-0 of-1 empty">
+                                                                        <tr=
+>
+                                                                           =
+ <td class=3D"columns--column-content">
+
+                                                                           =
+     <table class=3D"module" role=3D"module"
+                                                                           =
+            data-type=3D"text" border=3D"0"
+                                                                           =
+            cellpadding=3D"0" cellspacing=3D"0"
+                                                                           =
+            width=3D"100%"
+                                                                           =
+            style=3D"table-layout: fixed;">
+                                                                           =
+         <tr>
+                                                                           =
+             <td style=3D"padding:0px 0px 0px 0px;background-color:#ffffff;=
+"
+                                                                           =
+                 height=3D"100%"
+                                                                           =
+                 valign=3D"top"
+                                                                           =
+                 bgcolor=3D"#ffffff">
+                                                                           =
+                 <div style=3D"font-size:12px;line-height:150%;margin:0;tex=
+t-align:center;">
+                                                                           =
+                     <span style=3D"color: rgb(112, 112, 112); font-family:=
+ Helvetica, &quot;Helvetica neue&quot;, Arial, Verdana, sans-serif; font-si=
+ze: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-=
+caps: normal; font-weight: normal; background-color: rgb(255, 255, 255);">T=
+his message was sent to you by</span><span
+                                                                           =
+                         style=3D"font-family: Helvetica, &quot;Helvetica n=
+eue&quot;, Arial, Verdana, sans-serif; font-size: 12px; font-style: normal;=
+ font-variant-ligatures: normal; font-variant-caps: normal; font-weight: no=
+rmal;"><span
+                                                                           =
+                         style=3D"color:#05c500;"> </span><a
+                                                                           =
+                         href=3D"https://u5013885.ct.sendgrid.net/ls/click?=
+upn=3DOTFP8KsT8juR-2BdWHKCZjFU31-2BrmXZcGk7aG9EOddzSI-3DEqv9_nAfTb-2BmrazJg=
+hhV54zSubg1yP2gQF73c889i0TmAvZCuw43tvzs7-2FSy5uDO5qRhJCMk7gWr5l4YwKnOskaqQ9=
+CTacH-2BrZHHnXvicviKny2vulcaIMJmOJPgvgG8A2iXNpCM6IETgc-2FH20ZEwFaly2tSZvMbQ=
+M7Yorh-2BExWf7pKGloe2HruW-2FB51vdNsuEgqM9aeFvDAvi59W3iGhsB2ODRlKeFxreby98-2=
+BCfFAZeWEtg5-2BZSuUu4mqVR02B7DQ3-2FZNT-2Fdu2-2F2w6I9635cQBMG76ZT5AFh-2B9Hfm=
+g3kG9a8URNA4PBmJJsRdFDqMnqnma7Hyt9SbspjOl6d2T9CGN95q4SP8nRyFGP39YFCG0ov-2Bi=
+ayng0Gy6kGokUChO0J1ti"><span
+                                                                           =
+                         style=3D"color:#05c500;">Lime</span></a></span>
+                                                                           =
+                 </div>
+                                                                           =
+             </td>
+                                                                           =
+         </tr>
+                                                                           =
+     </table>
+
+                                                                           =
+ </td>
+                                                                        </t=
+r>
+                                                                    </table=
+>
+                                                                    <!--[if=
+ mso]>
+                                                                    </td></=
+tr></table>
+                                                                    </cente=
+r>
+                                                                    <![endi=
+f]-->
+
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+
+                                                        <table class=3D"mod=
+ule preheader preheader-hide" role=3D"module"
+                                                               data-type=3D=
+"preheader" border=3D"0" cellpadding=3D"0"
+                                                               cellspacing=
+=3D"0" width=3D"100%"
+                                                               style=3D"dis=
+play: none !important; mso-hide: all; visibility: hidden; opacity: 0; color=
+: transparent; height: 0; width: 0;">
+                                                            <tr>
+                                                                <td role=3D=
+"module-content">
+                                                                    <p></p>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+
+                                                        <table class=3D"mod=
+ule" role=3D"module" data-type=3D"social"
+                                                               align=3D"cen=
+ter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"
+                                                               width=3D"100=
+%" style=3D"table-layout: fixed;">
+                                                            <tbody>
+                                                            <tr>
+                                                                <td valign=
+=3D"top"
+                                                                    style=
+=3D"padding:0px 0px 0px 0px;font-size:6px;line-height:10px;">
+                                                                    <table =
+width=3D"100%" border=3D"0" cellspacing=3D"0"
+                                                                           =
+cellpadding=3D"0">
+                                                                        <tr=
+>
+                                                                           =
+ <td align=3D"center">
+                                                                           =
+     <table>
+                                                                           =
+         <tbody>
+                                                                           =
+         <tr>
+                                                                           =
+             <td style=3D"padding: 0px 5px;">
+                                                                           =
+                 <a role=3D"social-icon-link"
+                                                                           =
+                    href=3D"https://u5013885.ct.sendgrid.net/ls/click?upn=
+=3DOTFP8KsT8juR-2BdWHKCZjFV9wLD-2F-2BImUqAhAaJ-2BWJjBfv49jTngql7HHBILfke6aW=
+CTJW_nAfTb-2BmrazJghhV54zSubg1yP2gQF73c889i0TmAvZCuw43tvzs7-2FSy5uDO5qRhJCM=
+k7gWr5l4YwKnOskaqQ9CTacH-2BrZHHnXvicviKny2vulcaIMJmOJPgvgG8A2iXNpCM6IETgc-2=
+FH20ZEwFaly2tSZvMbQM7Yorh-2BExWf7pKGloe2HruW-2FB51vdNsuEgqM9aeFvDAvi59W3iGh=
+sB2ODRlKeFxreby98-2BCfFAZeWEuWY7DW8ARPXy5k17NOg3xAo1APzirmqRzXJJLKXoLcwqLHa=
+DE-2FG-2BtTUNsR-2BgXBj1P2zJ2Mos0KKpWpca7cDuewP-2F71sZRstABjcH-2BO1Qib3U9uai=
+hQrV-2BCFn23v38zUATUhJHNJWPJnjWWcutQe6xu"
+                                                                           =
+                    target=3D"_blank"
+                                                                           =
+                    alt=3D"Facebook"
+                                                                           =
+                    data-nolink=3D"false"
+                                                                           =
+                    title=3D"Facebook "
+                                                                           =
+                    style=3D"-webkit-border-radius:2px;-moz-border-radius:2=
+px;border-radius:2px;display:inline-block;background-color:#96969A;">
+                                                                           =
+                     <img role=3D"social-icon"
+                                                                           =
+                          alt=3D"Facebook"
+                                                                           =
+                          title=3D"Facebook "
+                                                                           =
+                          height=3D"30"
+                                                                           =
+                          width=3D"30"
+                                                                           =
+                          style=3D"height: 30px, width: 30px"
+                                                                           =
+                          src=3D"https://marketing-image-production.s3.amaz=
+onaws.com/social/white/facebook.png"/>
+                                                                           =
+                 </a>
+                                                                           =
+             </td>
+                                                                           =
+             <td style=3D"padding: 0px 5px;">
+                                                                           =
+                 <a role=3D"social-icon-link"
+                                                                           =
+                    href=3D"https://u5013885.ct.sendgrid.net/ls/click?upn=
+=3DOTFP8KsT8juR-2BdWHKCZjFd3EwIjRlSmyadVYisOXif57eYf7LXup2vOVovWJzulxv3Wk_n=
+AfTb-2BmrazJghhV54zSubg1yP2gQF73c889i0TmAvZCuw43tvzs7-2FSy5uDO5qRhJCMk7gWr5=
+l4YwKnOskaqQ9CTacH-2BrZHHnXvicviKny2vulcaIMJmOJPgvgG8A2iXNpCM6IETgc-2FH20ZE=
+wFaly2tSZvMbQM7Yorh-2BExWf7pKGloe2HruW-2FB51vdNsuEgqM9aeFvDAvi59W3iGhsB2ODR=
+lKeFxreby98-2BCfFAZeWEtm7eGiXuBMz0zhrMawshNyimvqR0WrHLRr-2BEwD4JgZuST3gFBD0=
+SlNN9Lg-2B-2F5RPTBCdB0qiSZJP-2FEcwB7bjZnbfooAQmjdiGCNozV84-2B2tznzVlTzU2CIr=
+qwsgmvXel3DYHgPPO7YZ6KCDpZUO5PwZ"
+                                                                           =
+                    target=3D"_blank"
+                                                                           =
+                    alt=3D"Twitter"
+                                                                           =
+                    data-nolink=3D"false"
+                                                                           =
+                    title=3D"Twitter "
+                                                                           =
+                    style=3D"-webkit-border-radius:2px;-moz-border-radius:2=
+px;border-radius:2px;display:inline-block;background-color:#96969A;">
+                                                                           =
+                     <img role=3D"social-icon"
+                                                                           =
+                          alt=3D"Twitter"
+                                                                           =
+                          title=3D"Twitter "
+                                                                           =
+                          height=3D"30"
+                                                                           =
+                          width=3D"30"
+                                                                           =
+                          style=3D"height: 30px, width: 30px"
+                                                                           =
+                          src=3D"https://marketing-image-production.s3.amaz=
+onaws.com/social/white/twitter.png"/>
+                                                                           =
+                 </a>
+                                                                           =
+             </td>
+                                                                           =
+             <td style=3D"padding: 0px 5px;">
+                                                                           =
+                 <a role=3D"social-icon-link"
+                                                                           =
+                    href=3D"https://u5013885.ct.sendgrid.net/ls/click?upn=
+=3DOTFP8KsT8juR-2BdWHKCZjFactSJ7pNuoim4aFUcjCnoBRBH1PLEhOlkZJQAdSQ-2BPGk5cV=
+_nAfTb-2BmrazJghhV54zSubg1yP2gQF73c889i0TmAvZCuw43tvzs7-2FSy5uDO5qRhJCMk7gW=
+r5l4YwKnOskaqQ9CTacH-2BrZHHnXvicviKny2vulcaIMJmOJPgvgG8A2iXNpCM6IETgc-2FH20=
+ZEwFaly2tSZvMbQM7Yorh-2BExWf7pKGloe2HruW-2FB51vdNsuEgqM9aeFvDAvi59W3iGhsB2O=
+DRlKeFxreby98-2BCfFAZeWEuocIGcapP25wTPd-2BkIknZf0xdF-2FQosf1xWe94ObhuRwxo17=
+LeH3foxvFVCwnrpHUIDk76D11g-2FWknFUkEAg0RajqSvpa14yXMkKRqYMzIMSOdQ-2B4o0ObUD=
+Mb-2BYYz-2Fr7bUzzlo9b-2BkucP3z6cCFzvwn"
+                                                                           =
+                    target=3D"_blank"
+                                                                           =
+                    alt=3D"Instagram"
+                                                                           =
+                    data-nolink=3D"false"
+                                                                           =
+                    title=3D"Instagram "
+                                                                           =
+                    style=3D"-webkit-border-radius:2px;-moz-border-radius:2=
+px;border-radius:2px;display:inline-block;background-color:#96969A;">
+                                                                           =
+                     <img role=3D"social-icon"
+                                                                           =
+                          alt=3D"Instagram"
+                                                                           =
+                          title=3D"Instagram "
+                                                                           =
+                          height=3D"30"
+                                                                           =
+                          width=3D"30"
+                                                                           =
+                          style=3D"height: 30px, width: 30px"
+                                                                           =
+                          src=3D"https://marketing-image-production.s3.amaz=
+onaws.com/social/white/instagram.png"/>
+                                                                           =
+                 </a>
+                                                                           =
+             </td>
+
+
+                                                                           =
+         </tr>
+                                                                           =
+         </tbody>
+                                                                           =
+     </table>
+                                                                           =
+ </td>
+                                                                        </t=
+r>
+                                                                    </table=
+>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <!--[if mso]>
+                                            </td></tr></table>
+                                            </center>
+                                            <![endif]-->
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</center>
+<img src=3D"https://u5013885.ct.sendgrid.net/wf/open?upn=3Dq7MOg-2ByLthwgXc=
+19yY8Q591tWF2ocV5RAyIFJmpYKKFLU5afMS5zVMnUJiHXzE7-2Fg-2BnOPdjxNz9MgrrRx7FPq=
+aUKYvYgrUnPsFIpywRC2eehGW2ZejUmVz6e297frxvwrGwm-2FFXin5hcTuI32Nu3-2Bo4vX-2B=
+G38bTg-2FPAjphSoFGAr89IF0yzBQw8K9-2FHv0YXSIO6G75lEZJmGsArk9Tm6ADm9rbMTYpMyJ=
+5-2FQaqbLMOPZ4lU1nIWX7zIOsdWd5-2F3iLAs1g5Kz4v58Ea1J7-2FHQY0Etdo9l2U6KzPHbXa=
+ROfqUbZuV19Oqs3cs85hkF0ppACWle49h4J-2BwfjHMJh6-2F8pYUT0a8hpdfWoAcA1mR78bjU0=
+BSZYNb7tgBb0IBHE-2BDAPN1ePaIRD9Xh6L7kupzCHw-3D-3D" alt=3D"" width=3D"1" hei=
+ght=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !important;=
+border-width:0 !important;margin-top:0 !important;margin-bottom:0 !importan=
+t;margin-right:0 !important;margin-left:0 !important;padding-top:0 !importa=
+nt;padding-bottom:0 !important;padding-right:0 !important;padding-left:0 !i=
+mportant;"/></body>
+</html>
+=20=
+
+--2d2224170d17a4bf07f2a76273cda77a13b07f06f0865bcb4a3687e82259--

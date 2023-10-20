@@ -1,0 +1,8 @@
+TRANSPORT = "Transport"
+LITERATURE = "Fachliteratur"
+SUPPLIES = "Büromaterial"
+COMPUTER_HARDWARE = "Computer Hardware"
+COMPUTER_SOFTWARE = "Computer Software"
+INTERNET = "internet"
+EDUCATION = "Weiterbildung"
+HEALTH = "Gesundheit"

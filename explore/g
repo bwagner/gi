@@ -1,0 +1,103 @@
+Subject: MUSICSTORE Your Music Store sales invoice and shipping information
+Sender: "MUSICSTORE" <export@musicstore.com>
+Recipient: <musicstore.de@nosuch.biz>
+Date: Wed, 16 Aug 2023 14:30:07 +0200
+========= all headers:
+<-Delivered-To->: wernbag@gmail.com
+<-Received->: by 2002:a05:6f02:20a9:b0:56:fee6:831c with SMTP id f41csp1060750rcd;
+        Wed, 16 Aug 2023 05:40:38 -0700 (PDT)
+<-X-Google-Smtp-Source->: AGHT+IHFRiXhfv/eRxtzDmd76Kjli6dogGqn0ZRv1enn5ciwdW6s1RTfULFK4UwoEaCkjeovdHPgRQShZ34=
+<-X-Received->: by 2002:a05:6512:110b:b0:4ff:8f76:677f with SMTP id l11-20020a056512110b00b004ff8f76677fmr1614781lfg.67.1692189637968;
+        Wed, 16 Aug 2023 05:40:37 -0700 (PDT)
+<-Authentication-Results->: mx.google.com;
+       spf=fail (google.com: domain of srs0=sc5u=eb=gz.d.sender-sib.com=bounces-117646822-export=musicstore.com@harris.ch does not designate 77.32.148.26 as permitted sender) smtp.mailfrom="SRS0=sc5u=EB=gz.d.sender-sib.com=bounces-117646822-export=musicstore.com@harris.ch";
+       dkim=pass header.i=@musicstore.com header.s=mail header.b=EyzyoM81
+<-Received-SPF->: fail (google.com: domain of srs0=sc5u=eb=gz.d.sender-sib.com=bounces-117646822-export=musicstore.com@harris.ch does not designate 77.32.148.26 as permitted sender) client-ip=77.32.148.26;
+<-Received->: by 2002:a05:6512:3989:b0:4ff:7288:8d48 with POP3 id j9-20020a056512398900b004ff72888d48mf2522636lfu.4;
+        Wed, 16 Aug 2023 05:40:37 -0700 (PDT)
+<-X-Gmail-Fetch-Info->: me@bernhardwagner.net 1 mail.harris.ch 995 bwagner
+<-Return-Path->: <SRS0=sc5u=EB=gz.d.sender-sib.com=bounces-117646822-export=musicstore.com@harris.ch>
+<-X-Original-To->: musicstore.de@nosuch.biz
+<-Delivered-To->: bwagner@harris.ch
+<-Received->: from gz.d.sender-sib.com (gz.d.sender-sib.com [77.32.148.26])
+	by mail.harris.ch (Postfix) with ESMTPS id 32A2886DEA
+	for <musicstore.de@nosuch.biz>; Wed, 16 Aug 2023 14:30:15 +0200 (CEST)
+<-Authentication-Results->: mail.harris.ch;
+	dkim=pass (1024-bit key; unprotected) header.d=musicstore.com header.i=@musicstore.com header.b="EyzyoM81";
+	dkim-atps=neutral
+<-DKIM-Signature->: v=1; a=rsa-sha256; c=relaxed/relaxed; d=musicstore.com;
+ q=dns/txt; s=mail; bh=4MeY/YPpYTUIYyzvhwMNca9vQWGtvKHOrvtGUplx/Xk=;
+ h=from:subject:date:to:mime-version:content-type:list-unsubscribe:x-csa-complaints:list-unsubscribe-post;
+        b=EyzyoM81t1nk9tKaGy5vOF8hpSKQr9K9GPRLj8b7khJ3zklhN7lAiDNS+dZzdpvLzii1s4l8euVY
+        DYrS4La6XZAAvFK6fLQanVlVs9NGjPiqX/+pEcGbZdTHYLJ6VX+83mwivI/9z1TqkiAQ17s2oBq6
+        5ELO2zTQGJCCZIlGtDA=
+<-Received->: by smtp-relay.sendinblue.com with ESMTP id 7dc54aa4-e2db-463d-a983-bb59c771b413; Wed, 16 August 2023 12:30:08 +0000 (UTC)
+<-X-Mailin-EID->: MTE3NjQ2ODIyfm11c2ljc3RvcmUuZGVAbm9zdWNoLmJpen48NzEzNzEyOWNlZDM1YmI0NDZlNjEwMTMyNjYwNmI5OWZAdmVyc2FuZC5tdXNpY3N0b3JlPn5nei5kLnNlbmRlci1zaWIuY29t
+<-Date->: Wed, 16 Aug 2023 14:30:07 +0200
+<-Subject->: MUSICSTORE Your Music Store sales invoice and shipping information
+<-Message-Id->: <7dc54aa4-e2db-463d-a983-bb59c771b413@smtp-relay.sendinblue.com>
+<-Origin-messageId->: <7137129ced35bb446e6101326606b99f@versand.musicstore>
+<-Mime-Version->: 1.0
+<-Content-Type->: multipart/mixed; boundary="_=_swift_v4_1692189007_947f644bd3d61075874efcc09d27c0ca_=_"
+<-X-Antivirus->: AVG (VPS 230815-10, 15.8.2023), Outbound message
+<-X-Antivirus-Status->: Clean
+<-To->: <musicstore.de@nosuch.biz>
+<-X-sib-id->: aE2Iq9_Cp4fM-WQG04g9uhl5_VUdWEutvu-OVmLiIJdVzgvdPX7CNuaij8d_CtGpZfPc0EmlsnrmgK3qvsBZ4Syv3yBjjTkeI9jUjBoTJ0YbU79q8B5uIdfEAZ2JaQMJMv3IQ8dbcBEQaBG9TQxK9XQq3s4cPAAWAuy2bn2x4_nPBUN-_zw
+<-X-CSA-Complaints->: csa-complaints@eco.de
+<-List-Unsubscribe-Post->: List-Unsubscribe=One-Click
+<-Feedback-ID->: 77.32.148.26:3349679_-1:3349679:Sendinblue
+<-From->: "MUSICSTORE" <export@musicstore.com>
+<-List-Unsubscribe->: <https://ddejghj.r.bh.d.sendibt3.com/tr/un/li/dFCdRYTkaG2vV5jxFRCL5H1pyZB_w9g4UOW1QzfcGWPU5IGZNc7Turshe-fCJQ-ETzXV-RC-XZo0NboKDjDmjgJlfqb3mA2zH-dyhr0yt-scDJDt8TsSJ9SBDlVNvfJtXqwCrDSy3V4FK_7SaKE9H6tVwxX5CxKKpGzMYRlCtNs93-FVZcGJRuK2iaBUoQyvBAJJY99Qh9Wu1foIVVEwk72xGti6AgG2QFCvnyLY0CRFbD3Lgmwyv84MAl3oO6kr37DtAtQpnI0>
+<-X-Spam-Status->: No, score=3.1 required=5.5 tests=BAYES_50,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,HEADER_FROM_DIFFERENT_DOMAINS,HTML_MESSAGE,
+	KAM_REALLYHUGEIMGSRC,L_INV_PAY,MIME_HTML_ONLY,RCVD_IN_MSPIKE_H3,
+	RCVD_IN_MSPIKE_WL,SPF_HELO_PASS,SPF_PASS,T_FILL_THIS_FORM_SHORT
+	autolearn=no autolearn_force=no version=3.4.2
+<-X-Spam-Level->: ***
+<-X-Spam-Checker-Version->: SpamAssassin 3.4.2 (2018-09-13) on mail.harris.ch
+<-X-Spam-Relay-Countries->: FR
+<-X-Spam-DCC->: :trusty 1481; Body=1 Fuz1=1 Fuz2=1
+=========
+========= all headers (defaultdict):
+    - Delivered-To
+    - Received
+    - X-Google-Smtp-Source
+    - X-Received
+    - Authentication-Results
+    - Received-SPF
+    - X-Gmail-Fetch-Info
+    - Return-Path
+    - X-Original-To
+    - DKIM-Signature
+    - X-Mailin-EID
+    - Date
+    - Subject
+    - Message-Id
+    - Origin-messageId
+    - Mime-Version
+    - Content-Type
+    - X-Antivirus
+    - X-Antivirus-Status
+    - To
+    - X-sib-id
+    - X-CSA-Complaints
+    - List-Unsubscribe-Post
+    - Feedback-ID
+    - From
+    - List-Unsubscribe
+    - X-Spam-Status
+    - X-Spam-Level
+    - X-Spam-Checker-Version
+    - X-Spam-Relay-Countries
+    - X-Spam-DCC
+=========
+Inline image/jpeg image found.
+Inline image/jpeg image found.
+Inline image/jpeg image found.
+Inline image/jpeg image found.
+Inline image/png image found.
+Body (plain text):
+'' ...
+Body (HTML):
+'<!DOCTYPE HTML PUBLI' ...
+Attachments: ['VKRE-6765598.pdf', 'Return-Form_EN.pdf']

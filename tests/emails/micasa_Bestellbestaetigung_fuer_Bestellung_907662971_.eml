@@ -1,0 +1,1105 @@
+Delivered-To: wernbag@gmail.com
+Received: by 2002:a05:6f02:10c:b0:44:22b3:a861 with SMTP id 12csp195665rcm;
+        Thu, 2 Feb 2023 00:43:26 -0800 (PST)
+X-Google-Smtp-Source: AK7set+ryLi1gnRx0LkT+1wXX3QmqiTvxvrzPypVmoGJWsf6Ww8ONWwaAsK7lhFI3qn7pMwMb0tQoiAtTEY=
+X-Received: by 2002:a17:906:94cb:b0:878:5995:97ed with SMTP id d11-20020a17090694cb00b00878599597edmr1884412ejy.277.1675327404566;
+        Thu, 02 Feb 2023 00:43:24 -0800 (PST)
+Authentication-Results: mx.google.com;
+       spf=fail (google.com: domain of srs0=shvl=56=mfmag.ch=migros.service@harris.ch does not designate 40.107.8.50 as permitted sender) smtp.mailfrom="SRS0=ShvL=56=mfmag.ch=migros.service@harris.ch";
+       dkim=pass header.i=@mgb.ch header.s=selector1 header.b=Jf17Qwv4
+Received-SPF: fail (google.com: domain of srs0=shvl=56=mfmag.ch=migros.service@harris.ch does not designate 40.107.8.50 as permitted sender) client-ip=40.107.8.50;
+Received: by 2002:a17:907:7f27:b0:84d:4946:743b with POP3 id qf39-20020a1709077f2700b0084d4946743bmf2526075ejc.2;
+        Thu, 02 Feb 2023 00:43:24 -0800 (PST)
+X-Gmail-Fetch-Info: me@bernhardwagner.net 1 mail.harris.ch 995 bwagner
+Return-Path: <SRS0=ShvL=56=mfmag.ch=migros.service@harris.ch>
+X-Original-To: micasa.ch@nosuch.biz
+Delivered-To: bwagner@harris.ch
+Received: from EUR04-VI1-obe.outbound.protection.outlook.com (mail-vi1eur04on2050.outbound.protection.outlook.com [40.107.8.50])
+	by mail.harris.ch (Postfix) with ESMTPS id A415186C1E
+	for <micasa.ch@nosuch.biz>; Thu,  2 Feb 2023 09:30:47 +0100 (CET)
+Authentication-Results: mail.harris.ch;
+	dkim=pass (2048-bit key; unprotected) header.d=mgb.ch header.i=@mgb.ch header.b="Jf17Qwv4";
+	dkim-atps=neutral
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=DV5i803KYFRCkH03fr1y8S/LEN/hg0m8BNrw5kvCkSqaU/D4iMTg2VQ5ugNHAUYYbv7U0alRu0aWVkpIAy+vnIb8oLpCgujBM3rs35i92niCJTzUGItG6GwUNQyXmosplV4vlUtl7chy5s8fjh+70u8PIRhx6llcuwcV5N8N5WWpivb/Jlwg+DyPzZHxiZC9Z2rXpSfUbub6X5w15P0TD8oIhi5JmA2t1KjYrK6ux1BCnrWTP6cB3xHoxX1G6kULpl7fTooaTw3pNHcco5TchlW0PmAJOdZQy6a03WfRXSWd8NIa+jenHO7PYxmGFusarBUZ4eXy3c7/2v26piWaYg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=SjI6Lgv4W1YII6n2c/LlGWxoMaWP9kiOWfy+9yHWNNE=;
+ b=FR3r/pvmZEq9eDxAU++Yfeg61c2E2/8V0ji9U30omzwEcEQRqY1BAf+4rPA905S17z5MEZTccWKanibt1hmMOnfSm0VYtRQZ5mtSbWknu+q3mytltRyV+FLv1mmjZBl7abZKbaLFEJKjcotgHm1WwUekbwT0er8KODf12yxZEkOndpN/lZiF8jSgOQX1gy86ASH2i+E6D19WBpAYXaaJG1HQnn+iCjQJE1IcHNq6mW2Zd6OCwYUIoa6AfFe4Ej45CpElxxJsEhWqUMCx8YCyzbpMSMavJnsV007ZcpS5pV7cUuusrRiAfR0tg+9anqN3oJjSTBPuHYFV1ke5q6f49Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 164.14.194.25) smtp.rcpttodomain=nosuch.biz smtp.mailfrom=mfmag.ch;
+ dmarc=fail (p=none sp=none pct=100) action=none header.from=mgb.ch; dkim=none
+ (message not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mgb.ch; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=SjI6Lgv4W1YII6n2c/LlGWxoMaWP9kiOWfy+9yHWNNE=;
+ b=Jf17Qwv4PKtfST2EE/7Jb2lvEbMytxC77MrBn4kyYitF7q9Y+tflS3/a11VUZujFGtAIIO1o7ciBcqt3PwGeLvGpXcLS7C/+TThbP/Us6e3tVoUZsyQUmOoYqILknRBDytHdWIzWh7+OtxJ+4Zrz2ULXU9n7KotnDbqy4S9OdDWhBUQsuM+6+kml/kygzr+ojaWySoj7iaVbzmAdlwtDa7ymjyJf8W88p2fCL/LH6x2yd53HR1fBbqeO7G16g8ujSMZnrAzByE1OPPIF2QFa9Z+T8IGZgvtKYknUGCOrcAlvhvbOfEk5n1kSWyy3nfc+aK+4COQn7v4Qwwm+jAMZ1A==
+Received: from DUZPR01CA0208.eurprd01.prod.exchangelabs.com
+ (2603:10a6:10:4b6::6) by ZRAP278MB0062.CHEP278.PROD.OUTLOOK.COM
+ (2603:10a6:910:11::10) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6064.24; Thu, 2 Feb
+ 2023 08:30:45 +0000
+Received: from DBAEUR03FT022.eop-EUR03.prod.protection.outlook.com
+ (2603:10a6:10:4b6:cafe::83) by DUZPR01CA0208.outlook.office365.com
+ (2603:10a6:10:4b6::6) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6064.24 via Frontend
+ Transport; Thu, 2 Feb 2023 08:30:45 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 164.14.194.25)
+ smtp.mailfrom=mfmag.ch; dkim=none (message not signed)
+ header.d=none;dmarc=fail action=none header.from=mgb.ch;
+Received-SPF: Pass (protection.outlook.com: domain of mfmag.ch designates
+ 164.14.194.25 as permitted sender) receiver=protection.outlook.com;
+ client-ip=164.14.194.25; helo=outlook.migros.net; pr=C
+Received: from outlook.migros.net (164.14.194.25) by
+ DBAEUR03FT022.mail.protection.outlook.com (100.127.142.217) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.6064.24 via Frontend Transport; Thu, 2 Feb 2023 08:30:45 +0000
+Received: from backgroundprocessing-646cbd4464-7djcq (164.14.66.213) by
+ SWEXP142.corp.ADS.Migros.ch (164.14.194.25) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.1.2507.16; Thu, 2 Feb 2023 09:30:44 +0100
+Date: Thu, 2 Feb 2023 09:30:44 +0100
+From: Micasa <migros.service@mgb.ch>
+Reply-To: "migros.service@mgb.ch" <migros.service@mgb.ch>
+To: Bernhard Wagner <micasa.ch@nosuch.biz>
+Message-ID: <512223607.26031.1675326644102@backgroundprocessing-646cbd4464-7djcq>
+Subject: =?UTF-8?Q?=EF=BB=BFBestellbest=C3=A4tigung_f=C3=BCr_Bestellung_907662971_?=
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+	boundary="----=_Part_26030_76239800.1675326644095"
+X-Originating-IP: [164.14.66.213]
+X-ClientProxiedBy: SWEXP142.corp.ADS.Migros.ch (164.14.194.25) To
+ SWEXP142.corp.ADS.Migros.ch (164.14.194.25)
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DBAEUR03FT022:EE_|ZRAP278MB0062:EE_
+X-MS-Office365-Filtering-Correlation-Id: 01362bb9-3dba-4a64-1265-08db04f7c768
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info:
+	HzBY+7yCthL7U0URjtOwoMBSCtnd7niGYN/pC6lv7ITaulhDaPSc2ig60tASvPza1uCSbjXJ36pss3Zt5HpNZcxcaHO/fUbxhc/45pU/rXyp3aPa+vUNcnNnfeVbuP6DS9FSd4rDjHE1vWjfAhhKs0DlmTaT/MVNECA9OIWBo4ehFFuFapOk8HGshespiCfnJP6V4CWnqLP9h741gbPI1UDpr4kGhOkTWnXvC/FID17MJjwqMbUNWXL7qikptbB9emb73NFrxEVcAnlLp0a/7m4yqXctimVIylUCozC3AbHU2ho3SqVoP+5tQHzvmpyqj5cc3Oi3HA+0fVK4U7jRMZnHMIhFaiFmOGLz35vBZ/8ApoJVoYHje7Tc83kR7VIhBrtJrCzspTxWjCTmdUnihSBXe729wmZJpcIXYc60iM8Wr4f0fObkzToQkPkqpMpXy2zXFgZ7XvgugsXeWoT+rKx1X6xwoe49MoP7k83Tvu069XZH6ROmXb7RIKjaFUrePk8R0tyeHy4YeOyy0AIYk7xHgXuZJ0sEOrmvA+ddsGaJFrFDuXb8wYCXv48DFIuZZ900nrNKVXtFs6Ejz5FPcOc1cePjrwMDqz+xybckL0N/8qWCw6qh2j6JufHtsp1hohq+Mn5jJUF6RhUx5VIqV517S/zi1+UuAhKGqkw9TKgvPsFMTX+Ee+01j7ECOhruczfVozKchuZGdOpfklTqnyoD4ccNw3V4QKdWuHf52xiEOhn+5ddJ/inVhrCnoFyCW0L7n6lZm2JDMEbEBRvPCuWzsKbSXZs4bB7VbevELPw=
+X-Forefront-Antispam-Report:
+	CIP:164.14.194.25;CTRY:CH;LANG:de;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:outlook.migros.net;PTR:smtpout.migros.net;CAT:NONE;SFS:(13230025)(4636009)(346002)(396003)(136003)(39860400002)(376002)(7200799011)(451199018)(1690799011)(40470700004)(46966006)(36840700001)(19627405001)(3450700001)(7066003)(70586007)(47076005)(6916009)(8400799011)(70206006)(66899018)(36860700001)(33716001)(41300700001)(66574015)(8936002)(8796002)(42882007)(19273905006)(4743002)(5660300002)(336012)(55016003)(82740400003)(478600001)(7636003)(40480700001)(316002)(82310400005)(166002)(2906002)(33964004)(40460700003)(356005)(16526019)(26005)(9686003)(956004)(21615005)(186003)(224303003)(83170400001);DIR:OUT;SFP:1101;
+X-OriginatorOrg: mgb.ch
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Feb 2023 08:30:45.1195
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 01362bb9-3dba-4a64-1265-08db04f7c768
+X-MS-Exchange-CrossTenant-Id: 35aa8c5b-ac0a-4b15-9788-ff6dfa22901f
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=35aa8c5b-ac0a-4b15-9788-ff6dfa22901f;Ip=[164.14.194.25];Helo=[outlook.migros.net]
+X-MS-Exchange-CrossTenant-AuthSource:
+	DBAEUR03FT022.eop-EUR03.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: ZRAP278MB0062
+X-Spam-Status: No, score=2.7 required=5.5 tests=BAYES_50,DKIM_INVALID,
+	DKIM_SIGNED,FORGED_SPF_HELO,HEADER_FROM_DIFFERENT_DOMAINS,HTML_MESSAGE,
+	KAM_DMARC_NONE,KAM_DMARC_STATUS,LOTS_OF_MONEY,L_SENDER_MISMATCH,
+	MIME_HTML_ONLY,RCVD_IN_DNSWL_NONE,RCVD_IN_MSPIKE_H2,SPF_HELO_PASS,
+	SPF_NONE,T_KAM_HTML_FONT_INVALID autolearn=no autolearn_force=no
+	version=3.4.2
+X-Spam-Level: **
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.harris.ch
+X-Spam-Relay-Countries: AT US US CH CH CH CH
+X-Spam-DCC: :trusty 1480; Body=1 Fuz1=746 Fuz2=1
+
+------=_Part_26030_76239800.1675326644095
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+<head>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml><![endif]-->
+    <title>Micasa E-Mail</title>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+"/>
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0"/>
+<style type=3D"text/css">
+    :root {
+        --main-bg-color: #f2f2f2;
+    }
+    a {
+        outline: none;
+        color: #167f77;
+        text-decoration: underline;
+    }
+    a:hover {
+        text-decoration: none !important;
+    }
+    .h-u a {
+        text-decoration: none;
+    }
+    .h-u a:hover {
+        text-decoration: underline !important;
+    }
+    a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+    }
+    a[href^=3D"tel"]:hover {
+        text-decoration: none !important;
+    }
+    .active-i a:hover,
+    .active-t:hover {
+        opacity: 0.8;
+    }
+    .active-i a,
+    .active-t {
+        transition: all 0.3s ease;
+    }
+    a img {
+        border: none;
+    }
+    b, strong {
+        font-weight:700;
+    }
+    p {
+        margin:0;
+    }
+    th {
+        padding: 0;
+    }
+    table td {
+        mso-line-height-rule: exactly;
+    }
+    [owa] div {
+        display: block !important;
+        font-size: 1px;
+        line-height: 1px;
+    }
+    [owa] div button {
+        display: block;
+        font-size: 1px;
+        line-height: 1px;
+    }
+    .ns span,
+    .ns a {
+        color: #333 !important;
+        text-decoration:none !important;
+        border: none !important;
+    }
+    .btn:hover {
+        background-color: #ebebeb !important;
+    }
+    .btn {
+        transition: all 0.3s ease;
+    }
+    .btn-01 a {
+        color:#fff;
+        text-decoration:none;
+        display:block;
+        padding:7px 15px;
+    }
+    ul {
+        Margin:0 0 0 20px;
+        padding:0;
+    }
+    .tpl-content {
+        padding:0 !important;
+    }
+    .cke_show_borders {
+        background:#e4e4e4 !important;
+    }
+    .tpl-repeatmovewrap > .tpl-repeatmove {
+        top:-15px !important;
+    }
+    .l-grey a {
+        color:#7f7f7f;
+    }
+    @media only screen and (max-width: 375px) and (min-width: 374px) {
+        .gmail-fix {
+            min-width: 374px !important;
+        }
+    }
+    @media only screen and (max-width: 414px) and (min-width: 413px) {
+        .gmail-fix {
+            min-width: 413px !important;
+        }
+    }
+    @media only screen and (max-width: 500px) {
+        /* default style */
+        .flexible {
+            width: 100% !important;
+        }
+        .table-center {
+            float: none !important;
+            margin: 0 auto !important;
+        }
+        .img-flex img {
+            width: 100% !important;
+            height: auto !important;
+        }
+        .alignleft {
+            text-align: left !important;
+        }
+        .flex {
+            display: block !important;
+            width: 100% !important;
+        }
+        .hide {
+            display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+            padding: 0 !important;
+            font-size: 0 !important;
+            line-height: 0 !important;
+        }
+        .b-n {
+            border: none !important;
+        }
+        .bg-white {
+            background: #fff;
+        }
+        .va-b {
+            vertical-align: bottom !important;
+        }
+        .w-a {
+            width: auto !important;
+        }
+        .w-13p {
+            width: 13% !important;
+        }
+        .w-25p {
+            width: 25% !important;
+        }
+        .w-60p {
+            width: 60% !important;
+        }
+        .w-45 {
+            width: 45px !important;
+        }
+        .w-52 {
+            width: 52px !important;
+        }
+        .p-15 {
+            padding: 15px !important;
+        }
+        .plr-10 {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+        .plr-15 {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+        }
+        .pt-0 {
+            padding-top: 0 !important;
+        }
+        .pt-10 {
+            padding-top: 10px !important;
+        }
+        .pt-15 {
+            padding-top: 15px !important;
+        }
+        .pt-80 {
+            padding-top: 80px !important;
+        }
+        .pb-5 {
+            padding-bottom: 5px !important;
+        }
+        .pb-10 {
+            padding-bottom: 10px !important;
+        }
+        .pb-12 {
+            padding-bottom: 12px !important;
+        }
+        .pb-15 {
+            padding-bottom: 15px !important;
+        }
+        .pb-25 {
+            padding-bottom: 25px !important;
+        }
+        .fs-12 {
+            font-size: 12px !important;
+        }
+        /* custom style */
+        .db {
+            display: block !important;
+        }
+        .fs-13 {
+            font-size: 13px !important;
+        }
+        .lh-18 {
+            line-height: 18px !important;
+        }
+        .fw-b {
+            font-weight: bold !important;
+        }
+        .bb {
+            border-bottom: 1px solid #777;
+        }
+    }
+    @media only screen and (max-width:649px) {
+        .w-100p {
+            width:100% !important;
+        }
+        .tflex {
+            display:block !important;
+            width:100% !important;
+            box-sizing:border-box !important;
+        }
+        .maxw-375 {
+            max-width:375px !important;
+        }
+        .p-0 {
+            padding:0 !important;
+        }
+        .plr-16 {
+            padding-left:16px !important;
+            padding-right:16px !important;
+        }
+        .pr-16 {
+            padding-right:16px !important;
+        }
+        .pt-10 {
+            padding-top:10px !important;
+        }
+        .pt-14 {
+            padding-top:14px !important;
+        }
+        .pt-15 {
+            padding-top:15px !important;
+        }
+        .pb-9 {
+            padding-bottom:9px !important;
+        }
+        .pb-16 {
+            padding-bottom:16px !important;
+        }
+        .pb-17 {
+            padding-bottom:17px !important;
+        }
+        .pb-24 {
+            padding-bottom:24px !important;
+        }
+        .pb-39 {
+            padding-bottom:39px !important;
+        }
+    }
+</style>
+
+
+</head>
+<body bgcolor=3D"#f2f2f2" style=3D"margin:0; padding:0; -webkit-text-size-a=
+djust:100%; -ms-text-size-adjust:100%;">
+<table class=3D"gmail-fix" bgcolor=3D"#f2f2f2" width=3D"100%" style=3D"min-=
+width:320px;" cellspacing=3D"0" cellpadding=3D"0">
+    <tr>
+        <td style=3D"display:none; font-size:0; line-height:0;">
+            <!-- Preheader -->
+        </td>
+    </tr>
+    <!-- header -->
+
+
+<tr>
+    <td  bgcolor=3D"#ffffff"
+        valign=3D"top">
+        <!--[if gte mso 9]>
+        <v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" str=
+oke=3D"false" style=3D"mso-width-percent:1000;height:106;">
+            <v:fill type=3D"tile"  color=3D"#ffffff"/>
+            <v:textbox inset=3D"0,0,0,0">
+        <![endif]-->
+        <div>
+            <table class=3D"flexible" width=3D"632" align=3D"center" style=
+=3D"margin:0 auto;" cellpadding=3D"0" cellspacing=3D"0">
+                <tr>
+                    <td align=3D"center" style=3D"padding:16px;">
+                        <a style=3D"text-decoration:none;" href=3D"https://=
+www.micasa.ch">
+                            <img src=3D"https://shop-images.migros.ch/origi=
+nal/c462febacd9fccfc90ae1045c09657c79fe4efc9.png"
+                                 width=3D"200"                             =
+    height=3D"74"                                 style=3D"width:200px;  he=
+ight:74px;  vertical-align:top; font:24px/26px Helvetica, Arial, sans-serif=
+; color:#fff;"
+                                 alt=3D"micasa migros"/>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--[if gte mso 9]>
+        </v:textbox>
+        </v:rect>
+        <![endif]-->
+    </td>
+</tr>
+
+
+
+
+    <!-- content -->
+    <tr>
+        <td class=3D"pt-10" style=3D"padding:40px 0 20px;">
+            <table class=3D"flexible" width=3D"632" align=3D"center" style=
+=3D"margin:0 auto;" cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+    <td class=3D"pb-10" style=3D"padding:0 0 16px;">
+        <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0">
+            <tr>
+                <td class=3D"p-15" bgcolor=3D"#ffffff" style=3D"padding:31p=
+x 32px 30px;">
+                    <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0">
+                        <tr>
+                            <td class=3D"alignleft" style=3D"padding:0 0 9p=
+x; font:bold 18px/22px Helvetica, Arial, sans-serif; color:#167f77;">
+                                 Vielen Dank f=C3=BCr Ihre Bestellung Nr. <=
+font color=3D"167f77">  907662971  </font>
+                            </td>
+                        </tr>
+                                                    <tr>
+                                <td class=3D"alignleft" style=3D"padding:0 =
+0 15px; font:13px/18px Helvetica, Arial, sans-serif; color:#333;">
+                                    Den aktuellen Status Ihrer Bestellung k=
+=C3=B6nnen Sie <a style=3D"color:#006633; text-decoration:underline;" href=
+=3D"https://www.micasa.ch/de/account/order/907662971">hier</a> einsehen.
+                                </td>
+                            </tr>
+                                            </table>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+
+
+
+<tr>
+    <td class=3D"pb-10" style=3D"padding:0 0 16px;">
+        <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0">
+            <tr>
+                <td class=3D"p-15" bgcolor=3D"#ffffff" style=3D"padding:31p=
+x 32px 26px;">
+                    <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0">
+                        <tr>
+                            <td class=3D"alignleft" style=3D"padding:0 0 9p=
+x; font:bold 18px/22px Helvetica, Arial, sans-serif; color:#167f77;">
+                                Sehr geehrter Herr Bernhard Wagner
+                            </td>
+                        </tr>
+                                                        <tr>
+    <td style=3D"padding:0 0 23px; font:13px/18px Helvetica, Arial, sans-se=
+rif; color:#333;">
+                Vielen Dank f=C3=BCr Ihre Bestellung bei Micasa. Wir haben =
+Ihre Bestellung erhalten und werden sie umgehend bearbeiten.
+   =20
+    </td>
+</tr>
+    <tr>
+    <td style=3D"padding:0 0 4px; font:13px/18px Helvetica, Arial, sans-ser=
+if; color:#333;">
+                Wir w=C3=BCnschen Ihnen viel Spass mit Ihrem Einkauf und fr=
+euen uns auf Ihren n=C3=A4chsten Besuch.<br><br>Freundliche Gr=C3=BCsse
+   =20
+    </td>
+</tr>
+    <tr>
+    <td style=3D"padding:0 0 4px; font:13px/18px Helvetica, Arial, sans-ser=
+if; color:#333;">
+                Ihr Micasa Team
+   =20
+    </td>
+</tr>
+                                            </table>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+
+
+                                <tr>
+    <td class=3D"pb-10" style=3D"padding:0 0 16px;">
+        <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0">
+            <tr>
+                <td class=3D"p-15" bgcolor=3D"#ffffff" style=3D"padding:31p=
+x 32px 24px;">
+                    <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0">
+                        <tr>
+                            <td style=3D"padding:0 0 9px; font:bold 15px/18=
+px Helvetica, Arial, sans-serif; color:#333; border-bottom:2px solid #333;"=
+>
+                                Liefertermin
+                            </td>
+                        </tr>
+                                                                           =
+                         <tr>
+    <td style=3D"padding:16px 0 8px;">
+        <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0">
+            <td class=3D"w-52" width=3D"60" valign=3D"top">
+                <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0">
+                    <tr>
+                        <td style=3D"padding:4px 0 0;">
+                            <img src=3D"https://shop-images.migros.ch/origi=
+nal/56a7a30ffa440f9f0b06d522d96a033a2b6bea93.png" width=3D"40" style=3D"wid=
+th:40px; vertical-align:top;" alt=3D""/>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0">
+                            <tr>
+    <td style=3D"padding:0 0 8px; font:13px/18px Helvetica, Arial, sans-ser=
+if; color:#333;">
+        Sie haben als Lieferadresse den PickMup-Standort Denner Z=C3=BCrich=
+ Winterthurerstrasse gew=C3=A4hlt. Sobald Ihre Bestellung eingetroffen und =
+abholbereit ist, werden wir Sie per E-Mail informieren.<br/><br/>Voraussich=
+tlicher Versand an PickMup-Standort: 03.02.2023<br/><br/>Wichtig: Bitte hol=
+en Sie Ihre Bestellung erst nach einem positiven Bescheid ab.
+    </td>
+</tr>
+   =20
+                </table>
+            </td>
+        </table>
+    </td>
+</tr>
+                                                </table>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+
+
+                <tr>
+    <td class=3D"pb-10" style=3D"padding:0 0 16px;">
+        <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0">
+            <!-- block -->
+            <tr>
+                <td class=3D"p-15" bgcolor=3D"#ffffff" style=3D"padding:31p=
+x 32px 24px;">
+                    <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0">
+                        <tr>
+                            <td style=3D"padding:0 0 9px; font:bold 15px/18=
+px Helvetica, Arial, sans-serif; color:#333; border-bottom:2px solid #333;"=
+>
+                                 Zahlungsart TWINT
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style=3D"padding:16px 0 8px;">
+                                <table width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0">
+                                    <tr>
+                                        <td class=3D"w-52" width=3D"60" val=
+ign=3D"top">
+                                            <table width=3D"100%" cellpaddi=
+ng=3D"0" cellspacing=3D"0">
+                                                <tr>
+                                                    <td style=3D"padding:0 =
+3px;">
+                                                        <img src=3D"https:/=
+/shop-images.migros.ch/original/dbf587e65ac398bdfc561bc59d8802c7e3a3f35a.pn=
+g" width=3D"32" style=3D"width:32px; vertical-align:top;" alt=3D""/>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td style=3D"font:13px/18px Helveti=
+ca, Arial, sans-serif; color:#333;">
+                                            Sie haben eine Zahlung via TWIN=
+T als Zahlungsart gew=C3=A4hlt.
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+
+
+        <tr>
+    <td class=3D"pb-10" style=3D"padding:0 0 16px;">
+        <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0">
+            <tr>
+                <td class=3D"p-15" bgcolor=3D"#ffffff" style=3D"padding:32p=
+x;">
+                    <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0">
+                        <tr>
+                            <td style=3D"padding:0 0 8px; font:bold 15px/18=
+px Helvetica, Arial, sans-serif; color:#333; border-bottom:2px solid #333;"=
+>
+                                Rechnungs- & Lieferadresse
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style=3D"padding:16px 0 0;">
+                                <table width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0">
+                                    <tr>
+                                        <td width=3D"280" valign=3D"top">
+                                            <table width=3D"100%" cellpaddi=
+ng=3D"0" cellspacing=3D"0">
+                                                <tr>
+                                                    <td style=3D"padding:0 =
+0 4px; font:bold 13px/18px Helvetica, Arial, sans-serif; color:#333;">
+                                                        Rechnungsadresse
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class=3D"ns" style=
+=3D"padding:0 0 8px; font:13px/18px Helvetica, Arial, sans-serif; color:#33=
+3;">
+                                                                           =
+                                     Herr<br/>
+                                                        Bernhard Wagner<br/=
+>
+                                                        St=C3=BCssistrasse
+                                                                           =
+                                         58
+                                                                           =
+                                     <br/>
+                                                        8057  Z=C3=BCrich
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class=3D"h-u" style=
+=3D"font:13px/18px Helvetica, Arial, sans-serif; color:#333;">
+                                                        E-Mail:
+                                                        <a style=3D"color:#=
+333; text-decoration:none;" href=3D"mailto:micasa.ch@nosuch.biz">micasa.ch@=
+nosuch.biz</a><br/>
+                                                                           =
+                                         Telefon
+                                                            <a style=3D"col=
+or:#333; text-decoration:none;" href=3D"tel:+41 79 237 77 81">
+                                                                +41 79 237 =
+77 81
+                                                            </a
+                                                                           =
+                                 </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td width=3D"20" style=3D"min-width=
+:8px;"></td>
+                                        <td width=3D"268" valign=3D"top">
+                                            <table width=3D"100%" cellpaddi=
+ng=3D"0" cellspacing=3D"0">
+                                                <tr>
+                                                    <td style=3D"padding:0 =
+0 4px; font:bold 13px/18px Helvetica, Arial, sans-serif; color:#333;">
+                                                        Lieferadresse
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class=3D"ns" style=
+=3D"padding:0 0 8px; font:13px/18px Helvetica, Arial, sans-serif; color:#33=
+3;">
+                                                                           =
+                                                                           =
+                              Denner Z=C3=BCrich Winterthurerstrasse  <br/>
+                                                                           =
+                                                                           =
+                              Winterthurerstrasse
+                                                                           =
+                                                 83
+                                                                           =
+                                             <br/>
+                                                            8006  Z=C3=BCri=
+ch
+                                                                           =
+                                 </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+
+
+<!-- overview 1 -->
+<tr>
+    <td class=3D"pb-10" style=3D"padding:0 0 16px;">
+        <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0">
+            <tr>
+                <td class=3D"p-15 plr-10" bgcolor=3D"#ffffff" style=3D"padd=
+ing:31px 32px 32px;">
+                    <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0">
+                        <tr>
+                            <td style=3D"padding:0 0 9px; font:bold 15px/18=
+px Helvetica, Arial, sans-serif; color:#333; border-bottom:2px solid #333;"=
+>
+                                Ihre Bestellung in der =C3=9Cbersicht
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style=3D"padding:16px 0 4px; border-bottom:=
+1px solid #777;">
+                                <table width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0">
+                                    <tr>
+                                        <td class=3D"w-60p fs-12" width=3D"=
+396" valign=3D"top" style=3D"font:bold 13px/18px Helvetica, Arial, sans-ser=
+if; color:#333;">
+                                            Artikel
+                                        </td>
+                                        <td width=3D"5" style=3D"min-width:=
+2px;"></td>
+                                        <td class=3D"w-13p fs-12" width=3D"=
+42" align=3D"right" valign=3D"top" style=3D"font:bold 13px/18px Helvetica, =
+Arial, sans-serif; color:#333;">
+                                            Menge
+                                        </td>
+                                        <td width=3D"5" style=3D"min-width:=
+5px;"></td>
+                                        <td class=3D"w-25p fs-12" width=3D"=
+120" align=3D"right" valign=3D"top" style=3D"font:bold 13px/18px Helvetica,=
+ Arial, sans-serif; color:#333;">
+                                            Gesamtpreis
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                                                            <tr>
+                    <td style=3D'padding:16px 0; border-bottom:1px solid #7=
+77;'>
+        <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0">
+            <tr>
+                <td class=3D"w-60p" width=3D"396" style=3D"padding:0 0 16px=
+;">
+                    <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0">
+                        <tr>
+                            <td class=3D"flex" width=3D"80" align=3D"left" =
+style=3D"vertical-align:top; text-align: center;">
+                                                    <img src=3D"https://ima=
+ge.migros.ch/fm-thumbnail-email/1f0a55923add832caf099eadbc5b6307a3248f12/ro=
+und-tee-infuser.jpg" alt=3D"ROUND"
+                         style=3D"max-width: 80px; max-height: 112px; verti=
+cal-align: top;object-fit: contain;"/>
+                                        </td>
+                            <th class=3D"hide" width=3D"8"></th>
+                            <td class=3D"flex fs-12" align=3D"left" style=
+=3D"font:13px/18px Helvetica, Arial, sans-serif; color:#333; vertical-align=
+:top;">
+                                <b>
+                                                                        ROU=
+ND
+                                </b>
+                                <br/>
+                                                                           =
+                         Artikelnr. 441027800000
+                                    <br/>
+                                                                           =
+                                                                           =
+                                                          CHF 7.90
+                                                                    <br/>
+                                                                           =
+                                                 </td>
+                        </tr>
+                    </table>
+                </td>
+                <td width=3D"5" style=3D"padding:0 0 16px; min-width:2px;">=
+</td>
+                <td class=3D"w-13p" width=3D"42" valign=3D"top" style=3D"pa=
+dding:0 0 16px;">
+                    <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0">
+                        <tr>
+                            <td class=3D"pt-80 fs-12" align=3D"right" style=
+=3D"font:13px/18px Helvetica, Arial, sans-serif; color:#333;">
+                                    1&times;
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td width=3D"5" style=3D"padding:0 0 16px; min-width:5px;">=
+</td>
+                <td class=3D"w-25p" width=3D"120" valign=3D"top" style=3D"p=
+adding:0 0 16px;">
+                    <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0">
+                        <tr>
+                            <td class=3D"pt-80 fs-12" align=3D"right" style=
+=3D"font:13px/18px Helvetica, Arial, sans-serif; color:#333;">
+                                CHF 7.90
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+                                                                           =
+     <tr>
+                            <td style=3D"padding:11px 0; border-bottom:1px =
+solid #e5e5e5;">
+                                <table width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0">
+                                    <tr>
+                                        <td style=3D"font:13px/18px Helveti=
+ca, Arial, sans-serif; color:#333;">
+                                            Subtotal (inkl. MwSt.)
+                                        </td>
+                                        <td style=3D"min-width:10px;"></td>
+                                        <td align=3D"right" style=3D"font:1=
+3px/18px Helvetica, Arial, sans-serif; color:#333;">
+                                            CHF 7.90
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style=3D"padding:11px 0; border-bottom:1px =
+solid #e5e5e5;">
+                                <table width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0">
+                                    <tr>
+                                        <td style=3D"font:13px/18px Helveti=
+ca, Arial, sans-serif; color:#333;">
+                                            Lieferung
+                                        </td>
+                                        <td style=3D"min-width:10px;"></td>
+                                        <td align=3D"right" style=3D"font:1=
+3px/18px Helvetica, Arial, sans-serif; color:#333;">
+                                            CHF 0.00
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                                                                           =
+                                                                           =
+                  <tr>
+                            <td style=3D"padding:24px 0 8px; border-bottom:=
+2px solid #333;">
+                                <table width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0">
+                                    <tr>
+                                        <td style=3D"font:bold 15px/18px He=
+lvetica, Arial, sans-serif; color:#333;">
+                                            Gesamtsumme
+                                        </td>
+                                        <td style=3D"min-width:10px;"></td>
+                                        <td align=3D"right" style=3D"font:b=
+old 15px/18px Helvetica, Arial, sans-serif; color:#333;">
+                                            CHF 7.90
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                                                <tr>
+                            <td style=3D"padding:11px 0 13px; border-bottom=
+:1px solid #e5e5e5;">
+                                                                    <table =
+width=3D"100%" cellpadding=3D"0" cellspacing=3D"0">
+                                        <tr>
+                                            <td style=3D"font:13px/18px Hel=
+vetica, Arial, sans-serif; color:#333;">
+                                                Cumulus
+                                            </td>
+                                            <td style=3D"min-width:10px;"><=
+/td>
+                                            <td align=3D"right" style=3D"fo=
+nt:13px/18px Helvetica, Arial, sans-serif; color:#333;">
+                                                Punkte   7.90
+                                            </td>
+                                        </tr>
+                                    </table>
+                                                            </td>
+                        </tr>
+                    </table>
+                                                                           =
+ </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+
+
+<tr>
+    <td class=3D"pb-10" style=3D"padding:0 0 16px;">
+        <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0">
+            <tr>
+                <th class=3D"flex pb-10" width=3D"316" align=3D"left" style=
+=3D"vertical-align:top;">
+                    <table bgcolor=3D"#ffffff" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0">
+                        <tr>
+                            <td style=3D"padding:32px;" class=3D"p-15">
+                                <table width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0">
+                                    <tr>
+                                        <td>
+                                            <table width=3D"100%" cellpaddi=
+ng=3D"0" cellspacing=3D"0">
+                                                <tr>
+                                                    <td style=3D"padding:0 =
+0 8px; font:bold 15px/18px Helvetica, Arial, sans-serif; color:#333;">
+                                                        Fragen zur Bestellu=
+ng?
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style=3D"padding:0 =
+0 8px; font:13px/18px Helvetica, Arial, sans-serif; color:#333;">
+                                                        Besuchen Sie unsere=
+ <a style=3D"color:#006633; text-decoration:underline;" href=3D"https://hel=
+p.micasa.ch/hc/de">FAQs</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style=3D"padding:0 =
+0 8px; font:13px/18px Helvetica, Arial, sans-serif; color:#333;">
+                                                        Kundenbetreuung:<br=
+><a style=3D"color:#163d82; text-decoration:underline;" href=3D"mailto:migr=
+os.service@mfmag.ch">migros.service@mfmag.ch</a><br>oder <a style=3D"color:=
+#163d82; text-decoration:underline;" href=3D"tel:0848151151">0848 151 151</=
+a> (8 Rp./Min.)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style=3D"font:13px/=
+18px Helvetica, Arial, sans-serif; color:#333;">
+                                                        Montag bis Freitag =
+08.00 - 17.00 Uhr
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td width=3D"29" valign=3D"top" ali=
+gn=3D"right">
+                                            <img src=3D"https://shop-images=
+.migros.ch/original/10401af93396c1e4592cc782bc3745405af9c809.png" width=3D"=
+24" style=3D"width:24px; vertical-align:top;" alt=3D""/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </th>
+                <th class=3D"flex bg-white" align=3D"left" style=3D"vertica=
+l-align:top;">
+                    <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0">
+                        <tr>
+                            <td style=3D"padding:32px;" class=3D"p-15">
+                                <table width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0">
+                                    <tr>
+                                        <td>
+                                            <table width=3D"100%" cellpaddi=
+ng=3D"0" cellspacing=3D"0">
+                                                <tr>
+                                                    <td valign=3D"top" styl=
+e=3D"padding:0 0 8px; font:13px/18px Helvetica, Arial, sans-serif; color:#3=
+33;">
+                                                        Abonnieren Sie unse=
+ren Newsletter und bleiben Sie stets informiert.
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <table cellpadding=
+=3D"0" cellspacing=3D"0">
+                                                            <tr>
+                                                                <td class=
+=3D"btn" align=3D"center" style=3D"mso-padding-alt:5px 15px; font:bold 13px=
+/18px Helvetica, Arial, sans-serif; border:2px solid #167f77;">
+                                                                    <a styl=
+e=3D"padding:5px 15px; color:#167f77; text-decoration:none; display:block;"=
+ href=3D"https://www.micasa.ch/de/cp/newsletter">
+                                                                        New=
+sletter abonnieren
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td width=3D"35" valign=3D"top">
+                                            <table width=3D"100%" cellpaddi=
+ng=3D"0" cellspacing=3D"0">
+                                                <tr>
+                                                    <td align=3D"right" sty=
+le=3D"padding:2px 0 0;">
+                                                        <img src=3D"https:/=
+/shop-images.migros.ch/original/e0d9354b8f2e3fd5f7168950080c2a36a1681f7c.pn=
+g"  width=3D"24" style=3D"width:24px; vertical-align:top;" alt=3D""/>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </th>
+            </tr>
+        </table>
+    </td>
+</tr>
+
+
+<tr>
+    <td class=3D"ns" align=3D"center" style=3D"font:12px/24px Helvetica, Ar=
+ial, sans-serif; color:#7f7f7f; padding-top: 10px;">
+        <a style=3D"color:#7f7f7f; text-decoration:underline;" href=3D"http=
+://www.micasa.ch/de/cp/agb">AGB</a> =C2=A0
+        <a style=3D"color:#7f7f7f; text-decoration:underline;" href=3D"http=
+s://www.migros.ch/de/datenschutz.html">Datenschutz</a> =C2=A0
+        <a style=3D"color:#7f7f7f; text-decoration:underline;" href=3D"http=
+://www.micasa.ch/de/cp/impressum">Impressum</a><br/>
+        Copyright =C2=A9 by Migros-Genossenschafts-Bund, Limmatstrasse 152,=
+ CH-8005 Z=C3=BCrich.
+    </td>
+</tr>
+
+
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
+
+
+
+
+
+
+------=_Part_26030_76239800.1675326644095--
